@@ -1852,82 +1852,82 @@ public final class TctrlSchemaProto {
         getLabelBytes();
 
     /**
-     * <code>.google.protobuf.Any minLimit = 3;</code>
+     * <code>.google.protobuf.Value minLimit = 3;</code>
      */
     boolean hasMinLimit();
     /**
-     * <code>.google.protobuf.Any minLimit = 3;</code>
+     * <code>.google.protobuf.Value minLimit = 3;</code>
      */
-    com.google.protobuf.Any getMinLimit();
+    com.google.protobuf.Value getMinLimit();
     /**
-     * <code>.google.protobuf.Any minLimit = 3;</code>
+     * <code>.google.protobuf.Value minLimit = 3;</code>
      */
-    com.google.protobuf.AnyOrBuilder getMinLimitOrBuilder();
+    com.google.protobuf.ValueOrBuilder getMinLimitOrBuilder();
 
     /**
-     * <code>.google.protobuf.Any maxLimit = 4;</code>
+     * <code>.google.protobuf.Value maxLimit = 4;</code>
      */
     boolean hasMaxLimit();
     /**
-     * <code>.google.protobuf.Any maxLimit = 4;</code>
+     * <code>.google.protobuf.Value maxLimit = 4;</code>
      */
-    com.google.protobuf.Any getMaxLimit();
+    com.google.protobuf.Value getMaxLimit();
     /**
-     * <code>.google.protobuf.Any maxLimit = 4;</code>
+     * <code>.google.protobuf.Value maxLimit = 4;</code>
      */
-    com.google.protobuf.AnyOrBuilder getMaxLimitOrBuilder();
+    com.google.protobuf.ValueOrBuilder getMaxLimitOrBuilder();
 
     /**
-     * <code>.google.protobuf.Any minNorm = 5;</code>
+     * <code>.google.protobuf.Value minNorm = 5;</code>
      */
     boolean hasMinNorm();
     /**
-     * <code>.google.protobuf.Any minNorm = 5;</code>
+     * <code>.google.protobuf.Value minNorm = 5;</code>
      */
-    com.google.protobuf.Any getMinNorm();
+    com.google.protobuf.Value getMinNorm();
     /**
-     * <code>.google.protobuf.Any minNorm = 5;</code>
+     * <code>.google.protobuf.Value minNorm = 5;</code>
      */
-    com.google.protobuf.AnyOrBuilder getMinNormOrBuilder();
+    com.google.protobuf.ValueOrBuilder getMinNormOrBuilder();
 
     /**
-     * <code>.google.protobuf.Any maxNorm = 6;</code>
+     * <code>.google.protobuf.Value maxNorm = 6;</code>
      */
     boolean hasMaxNorm();
     /**
-     * <code>.google.protobuf.Any maxNorm = 6;</code>
+     * <code>.google.protobuf.Value maxNorm = 6;</code>
      */
-    com.google.protobuf.Any getMaxNorm();
+    com.google.protobuf.Value getMaxNorm();
     /**
-     * <code>.google.protobuf.Any maxNorm = 6;</code>
+     * <code>.google.protobuf.Value maxNorm = 6;</code>
      */
-    com.google.protobuf.AnyOrBuilder getMaxNormOrBuilder();
+    com.google.protobuf.ValueOrBuilder getMaxNormOrBuilder();
 
     /**
-     * <code>.google.protobuf.Any defaultVal = 7;</code>
+     * <code>.google.protobuf.Value defaultVal = 7;</code>
      */
     boolean hasDefaultVal();
     /**
-     * <code>.google.protobuf.Any defaultVal = 7;</code>
+     * <code>.google.protobuf.Value defaultVal = 7;</code>
      */
-    com.google.protobuf.Any getDefaultVal();
+    com.google.protobuf.Value getDefaultVal();
     /**
-     * <code>.google.protobuf.Any defaultVal = 7;</code>
+     * <code>.google.protobuf.Value defaultVal = 7;</code>
      */
-    com.google.protobuf.AnyOrBuilder getDefaultValOrBuilder();
+    com.google.protobuf.ValueOrBuilder getDefaultValOrBuilder();
 
     /**
-     * <code>.google.protobuf.Any value = 8;</code>
+     * <code>.google.protobuf.Value value = 8;</code>
      */
     boolean hasValue();
     /**
-     * <code>.google.protobuf.Any value = 8;</code>
+     * <code>.google.protobuf.Value value = 8;</code>
      */
-    com.google.protobuf.Any getValue();
+    com.google.protobuf.Value getValue();
     /**
-     * <code>.google.protobuf.Any value = 8;</code>
+     * <code>.google.protobuf.Value value = 8;</code>
      */
-    com.google.protobuf.AnyOrBuilder getValueOrBuilder();
+    com.google.protobuf.ValueOrBuilder getValueOrBuilder();
   }
   /**
    * Protobuf type {@code tctrl.schema.ParamPartSpec}
@@ -1983,11 +1983,11 @@ public final class TctrlSchemaProto {
               break;
             }
             case 26: {
-              com.google.protobuf.Any.Builder subBuilder = null;
+              com.google.protobuf.Value.Builder subBuilder = null;
               if (minLimit_ != null) {
                 subBuilder = minLimit_.toBuilder();
               }
-              minLimit_ = input.readMessage(com.google.protobuf.Any.parser(), extensionRegistry);
+              minLimit_ = input.readMessage(com.google.protobuf.Value.parser(), extensionRegistry);
               if (subBuilder != null) {
                 subBuilder.mergeFrom(minLimit_);
                 minLimit_ = subBuilder.buildPartial();
@@ -1996,11 +1996,11 @@ public final class TctrlSchemaProto {
               break;
             }
             case 34: {
-              com.google.protobuf.Any.Builder subBuilder = null;
+              com.google.protobuf.Value.Builder subBuilder = null;
               if (maxLimit_ != null) {
                 subBuilder = maxLimit_.toBuilder();
               }
-              maxLimit_ = input.readMessage(com.google.protobuf.Any.parser(), extensionRegistry);
+              maxLimit_ = input.readMessage(com.google.protobuf.Value.parser(), extensionRegistry);
               if (subBuilder != null) {
                 subBuilder.mergeFrom(maxLimit_);
                 maxLimit_ = subBuilder.buildPartial();
@@ -2009,11 +2009,11 @@ public final class TctrlSchemaProto {
               break;
             }
             case 42: {
-              com.google.protobuf.Any.Builder subBuilder = null;
+              com.google.protobuf.Value.Builder subBuilder = null;
               if (minNorm_ != null) {
                 subBuilder = minNorm_.toBuilder();
               }
-              minNorm_ = input.readMessage(com.google.protobuf.Any.parser(), extensionRegistry);
+              minNorm_ = input.readMessage(com.google.protobuf.Value.parser(), extensionRegistry);
               if (subBuilder != null) {
                 subBuilder.mergeFrom(minNorm_);
                 minNorm_ = subBuilder.buildPartial();
@@ -2022,11 +2022,11 @@ public final class TctrlSchemaProto {
               break;
             }
             case 50: {
-              com.google.protobuf.Any.Builder subBuilder = null;
+              com.google.protobuf.Value.Builder subBuilder = null;
               if (maxNorm_ != null) {
                 subBuilder = maxNorm_.toBuilder();
               }
-              maxNorm_ = input.readMessage(com.google.protobuf.Any.parser(), extensionRegistry);
+              maxNorm_ = input.readMessage(com.google.protobuf.Value.parser(), extensionRegistry);
               if (subBuilder != null) {
                 subBuilder.mergeFrom(maxNorm_);
                 maxNorm_ = subBuilder.buildPartial();
@@ -2035,11 +2035,11 @@ public final class TctrlSchemaProto {
               break;
             }
             case 58: {
-              com.google.protobuf.Any.Builder subBuilder = null;
+              com.google.protobuf.Value.Builder subBuilder = null;
               if (defaultVal_ != null) {
                 subBuilder = defaultVal_.toBuilder();
               }
-              defaultVal_ = input.readMessage(com.google.protobuf.Any.parser(), extensionRegistry);
+              defaultVal_ = input.readMessage(com.google.protobuf.Value.parser(), extensionRegistry);
               if (subBuilder != null) {
                 subBuilder.mergeFrom(defaultVal_);
                 defaultVal_ = subBuilder.buildPartial();
@@ -2048,11 +2048,11 @@ public final class TctrlSchemaProto {
               break;
             }
             case 66: {
-              com.google.protobuf.Any.Builder subBuilder = null;
+              com.google.protobuf.Value.Builder subBuilder = null;
               if (value_ != null) {
                 subBuilder = value_.toBuilder();
               }
-              value_ = input.readMessage(com.google.protobuf.Any.parser(), extensionRegistry);
+              value_ = input.readMessage(com.google.protobuf.Value.parser(), extensionRegistry);
               if (subBuilder != null) {
                 subBuilder.mergeFrom(value_);
                 value_ = subBuilder.buildPartial();
@@ -2152,128 +2152,128 @@ public final class TctrlSchemaProto {
     }
 
     public static final int MINLIMIT_FIELD_NUMBER = 3;
-    private com.google.protobuf.Any minLimit_;
+    private com.google.protobuf.Value minLimit_;
     /**
-     * <code>.google.protobuf.Any minLimit = 3;</code>
+     * <code>.google.protobuf.Value minLimit = 3;</code>
      */
     public boolean hasMinLimit() {
       return minLimit_ != null;
     }
     /**
-     * <code>.google.protobuf.Any minLimit = 3;</code>
+     * <code>.google.protobuf.Value minLimit = 3;</code>
      */
-    public com.google.protobuf.Any getMinLimit() {
-      return minLimit_ == null ? com.google.protobuf.Any.getDefaultInstance() : minLimit_;
+    public com.google.protobuf.Value getMinLimit() {
+      return minLimit_ == null ? com.google.protobuf.Value.getDefaultInstance() : minLimit_;
     }
     /**
-     * <code>.google.protobuf.Any minLimit = 3;</code>
+     * <code>.google.protobuf.Value minLimit = 3;</code>
      */
-    public com.google.protobuf.AnyOrBuilder getMinLimitOrBuilder() {
+    public com.google.protobuf.ValueOrBuilder getMinLimitOrBuilder() {
       return getMinLimit();
     }
 
     public static final int MAXLIMIT_FIELD_NUMBER = 4;
-    private com.google.protobuf.Any maxLimit_;
+    private com.google.protobuf.Value maxLimit_;
     /**
-     * <code>.google.protobuf.Any maxLimit = 4;</code>
+     * <code>.google.protobuf.Value maxLimit = 4;</code>
      */
     public boolean hasMaxLimit() {
       return maxLimit_ != null;
     }
     /**
-     * <code>.google.protobuf.Any maxLimit = 4;</code>
+     * <code>.google.protobuf.Value maxLimit = 4;</code>
      */
-    public com.google.protobuf.Any getMaxLimit() {
-      return maxLimit_ == null ? com.google.protobuf.Any.getDefaultInstance() : maxLimit_;
+    public com.google.protobuf.Value getMaxLimit() {
+      return maxLimit_ == null ? com.google.protobuf.Value.getDefaultInstance() : maxLimit_;
     }
     /**
-     * <code>.google.protobuf.Any maxLimit = 4;</code>
+     * <code>.google.protobuf.Value maxLimit = 4;</code>
      */
-    public com.google.protobuf.AnyOrBuilder getMaxLimitOrBuilder() {
+    public com.google.protobuf.ValueOrBuilder getMaxLimitOrBuilder() {
       return getMaxLimit();
     }
 
     public static final int MINNORM_FIELD_NUMBER = 5;
-    private com.google.protobuf.Any minNorm_;
+    private com.google.protobuf.Value minNorm_;
     /**
-     * <code>.google.protobuf.Any minNorm = 5;</code>
+     * <code>.google.protobuf.Value minNorm = 5;</code>
      */
     public boolean hasMinNorm() {
       return minNorm_ != null;
     }
     /**
-     * <code>.google.protobuf.Any minNorm = 5;</code>
+     * <code>.google.protobuf.Value minNorm = 5;</code>
      */
-    public com.google.protobuf.Any getMinNorm() {
-      return minNorm_ == null ? com.google.protobuf.Any.getDefaultInstance() : minNorm_;
+    public com.google.protobuf.Value getMinNorm() {
+      return minNorm_ == null ? com.google.protobuf.Value.getDefaultInstance() : minNorm_;
     }
     /**
-     * <code>.google.protobuf.Any minNorm = 5;</code>
+     * <code>.google.protobuf.Value minNorm = 5;</code>
      */
-    public com.google.protobuf.AnyOrBuilder getMinNormOrBuilder() {
+    public com.google.protobuf.ValueOrBuilder getMinNormOrBuilder() {
       return getMinNorm();
     }
 
     public static final int MAXNORM_FIELD_NUMBER = 6;
-    private com.google.protobuf.Any maxNorm_;
+    private com.google.protobuf.Value maxNorm_;
     /**
-     * <code>.google.protobuf.Any maxNorm = 6;</code>
+     * <code>.google.protobuf.Value maxNorm = 6;</code>
      */
     public boolean hasMaxNorm() {
       return maxNorm_ != null;
     }
     /**
-     * <code>.google.protobuf.Any maxNorm = 6;</code>
+     * <code>.google.protobuf.Value maxNorm = 6;</code>
      */
-    public com.google.protobuf.Any getMaxNorm() {
-      return maxNorm_ == null ? com.google.protobuf.Any.getDefaultInstance() : maxNorm_;
+    public com.google.protobuf.Value getMaxNorm() {
+      return maxNorm_ == null ? com.google.protobuf.Value.getDefaultInstance() : maxNorm_;
     }
     /**
-     * <code>.google.protobuf.Any maxNorm = 6;</code>
+     * <code>.google.protobuf.Value maxNorm = 6;</code>
      */
-    public com.google.protobuf.AnyOrBuilder getMaxNormOrBuilder() {
+    public com.google.protobuf.ValueOrBuilder getMaxNormOrBuilder() {
       return getMaxNorm();
     }
 
     public static final int DEFAULTVAL_FIELD_NUMBER = 7;
-    private com.google.protobuf.Any defaultVal_;
+    private com.google.protobuf.Value defaultVal_;
     /**
-     * <code>.google.protobuf.Any defaultVal = 7;</code>
+     * <code>.google.protobuf.Value defaultVal = 7;</code>
      */
     public boolean hasDefaultVal() {
       return defaultVal_ != null;
     }
     /**
-     * <code>.google.protobuf.Any defaultVal = 7;</code>
+     * <code>.google.protobuf.Value defaultVal = 7;</code>
      */
-    public com.google.protobuf.Any getDefaultVal() {
-      return defaultVal_ == null ? com.google.protobuf.Any.getDefaultInstance() : defaultVal_;
+    public com.google.protobuf.Value getDefaultVal() {
+      return defaultVal_ == null ? com.google.protobuf.Value.getDefaultInstance() : defaultVal_;
     }
     /**
-     * <code>.google.protobuf.Any defaultVal = 7;</code>
+     * <code>.google.protobuf.Value defaultVal = 7;</code>
      */
-    public com.google.protobuf.AnyOrBuilder getDefaultValOrBuilder() {
+    public com.google.protobuf.ValueOrBuilder getDefaultValOrBuilder() {
       return getDefaultVal();
     }
 
     public static final int VALUE_FIELD_NUMBER = 8;
-    private com.google.protobuf.Any value_;
+    private com.google.protobuf.Value value_;
     /**
-     * <code>.google.protobuf.Any value = 8;</code>
+     * <code>.google.protobuf.Value value = 8;</code>
      */
     public boolean hasValue() {
       return value_ != null;
     }
     /**
-     * <code>.google.protobuf.Any value = 8;</code>
+     * <code>.google.protobuf.Value value = 8;</code>
      */
-    public com.google.protobuf.Any getValue() {
-      return value_ == null ? com.google.protobuf.Any.getDefaultInstance() : value_;
+    public com.google.protobuf.Value getValue() {
+      return value_ == null ? com.google.protobuf.Value.getDefaultInstance() : value_;
     }
     /**
-     * <code>.google.protobuf.Any value = 8;</code>
+     * <code>.google.protobuf.Value value = 8;</code>
      */
-    public com.google.protobuf.AnyOrBuilder getValueOrBuilder() {
+    public com.google.protobuf.ValueOrBuilder getValueOrBuilder() {
       return getValue();
     }
 
@@ -2881,29 +2881,29 @@ public final class TctrlSchemaProto {
         return this;
       }
 
-      private com.google.protobuf.Any minLimit_ = null;
+      private com.google.protobuf.Value minLimit_ = null;
       private com.google.protobuf.SingleFieldBuilderV3<
-          com.google.protobuf.Any, com.google.protobuf.Any.Builder, com.google.protobuf.AnyOrBuilder> minLimitBuilder_;
+          com.google.protobuf.Value, com.google.protobuf.Value.Builder, com.google.protobuf.ValueOrBuilder> minLimitBuilder_;
       /**
-       * <code>.google.protobuf.Any minLimit = 3;</code>
+       * <code>.google.protobuf.Value minLimit = 3;</code>
        */
       public boolean hasMinLimit() {
         return minLimitBuilder_ != null || minLimit_ != null;
       }
       /**
-       * <code>.google.protobuf.Any minLimit = 3;</code>
+       * <code>.google.protobuf.Value minLimit = 3;</code>
        */
-      public com.google.protobuf.Any getMinLimit() {
+      public com.google.protobuf.Value getMinLimit() {
         if (minLimitBuilder_ == null) {
-          return minLimit_ == null ? com.google.protobuf.Any.getDefaultInstance() : minLimit_;
+          return minLimit_ == null ? com.google.protobuf.Value.getDefaultInstance() : minLimit_;
         } else {
           return minLimitBuilder_.getMessage();
         }
       }
       /**
-       * <code>.google.protobuf.Any minLimit = 3;</code>
+       * <code>.google.protobuf.Value minLimit = 3;</code>
        */
-      public Builder setMinLimit(com.google.protobuf.Any value) {
+      public Builder setMinLimit(com.google.protobuf.Value value) {
         if (minLimitBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -2917,10 +2917,10 @@ public final class TctrlSchemaProto {
         return this;
       }
       /**
-       * <code>.google.protobuf.Any minLimit = 3;</code>
+       * <code>.google.protobuf.Value minLimit = 3;</code>
        */
       public Builder setMinLimit(
-          com.google.protobuf.Any.Builder builderForValue) {
+          com.google.protobuf.Value.Builder builderForValue) {
         if (minLimitBuilder_ == null) {
           minLimit_ = builderForValue.build();
           onChanged();
@@ -2931,13 +2931,13 @@ public final class TctrlSchemaProto {
         return this;
       }
       /**
-       * <code>.google.protobuf.Any minLimit = 3;</code>
+       * <code>.google.protobuf.Value minLimit = 3;</code>
        */
-      public Builder mergeMinLimit(com.google.protobuf.Any value) {
+      public Builder mergeMinLimit(com.google.protobuf.Value value) {
         if (minLimitBuilder_ == null) {
           if (minLimit_ != null) {
             minLimit_ =
-              com.google.protobuf.Any.newBuilder(minLimit_).mergeFrom(value).buildPartial();
+              com.google.protobuf.Value.newBuilder(minLimit_).mergeFrom(value).buildPartial();
           } else {
             minLimit_ = value;
           }
@@ -2949,7 +2949,7 @@ public final class TctrlSchemaProto {
         return this;
       }
       /**
-       * <code>.google.protobuf.Any minLimit = 3;</code>
+       * <code>.google.protobuf.Value minLimit = 3;</code>
        */
       public Builder clearMinLimit() {
         if (minLimitBuilder_ == null) {
@@ -2963,33 +2963,33 @@ public final class TctrlSchemaProto {
         return this;
       }
       /**
-       * <code>.google.protobuf.Any minLimit = 3;</code>
+       * <code>.google.protobuf.Value minLimit = 3;</code>
        */
-      public com.google.protobuf.Any.Builder getMinLimitBuilder() {
+      public com.google.protobuf.Value.Builder getMinLimitBuilder() {
         
         onChanged();
         return getMinLimitFieldBuilder().getBuilder();
       }
       /**
-       * <code>.google.protobuf.Any minLimit = 3;</code>
+       * <code>.google.protobuf.Value minLimit = 3;</code>
        */
-      public com.google.protobuf.AnyOrBuilder getMinLimitOrBuilder() {
+      public com.google.protobuf.ValueOrBuilder getMinLimitOrBuilder() {
         if (minLimitBuilder_ != null) {
           return minLimitBuilder_.getMessageOrBuilder();
         } else {
           return minLimit_ == null ?
-              com.google.protobuf.Any.getDefaultInstance() : minLimit_;
+              com.google.protobuf.Value.getDefaultInstance() : minLimit_;
         }
       }
       /**
-       * <code>.google.protobuf.Any minLimit = 3;</code>
+       * <code>.google.protobuf.Value minLimit = 3;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
-          com.google.protobuf.Any, com.google.protobuf.Any.Builder, com.google.protobuf.AnyOrBuilder> 
+          com.google.protobuf.Value, com.google.protobuf.Value.Builder, com.google.protobuf.ValueOrBuilder> 
           getMinLimitFieldBuilder() {
         if (minLimitBuilder_ == null) {
           minLimitBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              com.google.protobuf.Any, com.google.protobuf.Any.Builder, com.google.protobuf.AnyOrBuilder>(
+              com.google.protobuf.Value, com.google.protobuf.Value.Builder, com.google.protobuf.ValueOrBuilder>(
                   getMinLimit(),
                   getParentForChildren(),
                   isClean());
@@ -2998,29 +2998,29 @@ public final class TctrlSchemaProto {
         return minLimitBuilder_;
       }
 
-      private com.google.protobuf.Any maxLimit_ = null;
+      private com.google.protobuf.Value maxLimit_ = null;
       private com.google.protobuf.SingleFieldBuilderV3<
-          com.google.protobuf.Any, com.google.protobuf.Any.Builder, com.google.protobuf.AnyOrBuilder> maxLimitBuilder_;
+          com.google.protobuf.Value, com.google.protobuf.Value.Builder, com.google.protobuf.ValueOrBuilder> maxLimitBuilder_;
       /**
-       * <code>.google.protobuf.Any maxLimit = 4;</code>
+       * <code>.google.protobuf.Value maxLimit = 4;</code>
        */
       public boolean hasMaxLimit() {
         return maxLimitBuilder_ != null || maxLimit_ != null;
       }
       /**
-       * <code>.google.protobuf.Any maxLimit = 4;</code>
+       * <code>.google.protobuf.Value maxLimit = 4;</code>
        */
-      public com.google.protobuf.Any getMaxLimit() {
+      public com.google.protobuf.Value getMaxLimit() {
         if (maxLimitBuilder_ == null) {
-          return maxLimit_ == null ? com.google.protobuf.Any.getDefaultInstance() : maxLimit_;
+          return maxLimit_ == null ? com.google.protobuf.Value.getDefaultInstance() : maxLimit_;
         } else {
           return maxLimitBuilder_.getMessage();
         }
       }
       /**
-       * <code>.google.protobuf.Any maxLimit = 4;</code>
+       * <code>.google.protobuf.Value maxLimit = 4;</code>
        */
-      public Builder setMaxLimit(com.google.protobuf.Any value) {
+      public Builder setMaxLimit(com.google.protobuf.Value value) {
         if (maxLimitBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -3034,10 +3034,10 @@ public final class TctrlSchemaProto {
         return this;
       }
       /**
-       * <code>.google.protobuf.Any maxLimit = 4;</code>
+       * <code>.google.protobuf.Value maxLimit = 4;</code>
        */
       public Builder setMaxLimit(
-          com.google.protobuf.Any.Builder builderForValue) {
+          com.google.protobuf.Value.Builder builderForValue) {
         if (maxLimitBuilder_ == null) {
           maxLimit_ = builderForValue.build();
           onChanged();
@@ -3048,13 +3048,13 @@ public final class TctrlSchemaProto {
         return this;
       }
       /**
-       * <code>.google.protobuf.Any maxLimit = 4;</code>
+       * <code>.google.protobuf.Value maxLimit = 4;</code>
        */
-      public Builder mergeMaxLimit(com.google.protobuf.Any value) {
+      public Builder mergeMaxLimit(com.google.protobuf.Value value) {
         if (maxLimitBuilder_ == null) {
           if (maxLimit_ != null) {
             maxLimit_ =
-              com.google.protobuf.Any.newBuilder(maxLimit_).mergeFrom(value).buildPartial();
+              com.google.protobuf.Value.newBuilder(maxLimit_).mergeFrom(value).buildPartial();
           } else {
             maxLimit_ = value;
           }
@@ -3066,7 +3066,7 @@ public final class TctrlSchemaProto {
         return this;
       }
       /**
-       * <code>.google.protobuf.Any maxLimit = 4;</code>
+       * <code>.google.protobuf.Value maxLimit = 4;</code>
        */
       public Builder clearMaxLimit() {
         if (maxLimitBuilder_ == null) {
@@ -3080,33 +3080,33 @@ public final class TctrlSchemaProto {
         return this;
       }
       /**
-       * <code>.google.protobuf.Any maxLimit = 4;</code>
+       * <code>.google.protobuf.Value maxLimit = 4;</code>
        */
-      public com.google.protobuf.Any.Builder getMaxLimitBuilder() {
+      public com.google.protobuf.Value.Builder getMaxLimitBuilder() {
         
         onChanged();
         return getMaxLimitFieldBuilder().getBuilder();
       }
       /**
-       * <code>.google.protobuf.Any maxLimit = 4;</code>
+       * <code>.google.protobuf.Value maxLimit = 4;</code>
        */
-      public com.google.protobuf.AnyOrBuilder getMaxLimitOrBuilder() {
+      public com.google.protobuf.ValueOrBuilder getMaxLimitOrBuilder() {
         if (maxLimitBuilder_ != null) {
           return maxLimitBuilder_.getMessageOrBuilder();
         } else {
           return maxLimit_ == null ?
-              com.google.protobuf.Any.getDefaultInstance() : maxLimit_;
+              com.google.protobuf.Value.getDefaultInstance() : maxLimit_;
         }
       }
       /**
-       * <code>.google.protobuf.Any maxLimit = 4;</code>
+       * <code>.google.protobuf.Value maxLimit = 4;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
-          com.google.protobuf.Any, com.google.protobuf.Any.Builder, com.google.protobuf.AnyOrBuilder> 
+          com.google.protobuf.Value, com.google.protobuf.Value.Builder, com.google.protobuf.ValueOrBuilder> 
           getMaxLimitFieldBuilder() {
         if (maxLimitBuilder_ == null) {
           maxLimitBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              com.google.protobuf.Any, com.google.protobuf.Any.Builder, com.google.protobuf.AnyOrBuilder>(
+              com.google.protobuf.Value, com.google.protobuf.Value.Builder, com.google.protobuf.ValueOrBuilder>(
                   getMaxLimit(),
                   getParentForChildren(),
                   isClean());
@@ -3115,29 +3115,29 @@ public final class TctrlSchemaProto {
         return maxLimitBuilder_;
       }
 
-      private com.google.protobuf.Any minNorm_ = null;
+      private com.google.protobuf.Value minNorm_ = null;
       private com.google.protobuf.SingleFieldBuilderV3<
-          com.google.protobuf.Any, com.google.protobuf.Any.Builder, com.google.protobuf.AnyOrBuilder> minNormBuilder_;
+          com.google.protobuf.Value, com.google.protobuf.Value.Builder, com.google.protobuf.ValueOrBuilder> minNormBuilder_;
       /**
-       * <code>.google.protobuf.Any minNorm = 5;</code>
+       * <code>.google.protobuf.Value minNorm = 5;</code>
        */
       public boolean hasMinNorm() {
         return minNormBuilder_ != null || minNorm_ != null;
       }
       /**
-       * <code>.google.protobuf.Any minNorm = 5;</code>
+       * <code>.google.protobuf.Value minNorm = 5;</code>
        */
-      public com.google.protobuf.Any getMinNorm() {
+      public com.google.protobuf.Value getMinNorm() {
         if (minNormBuilder_ == null) {
-          return minNorm_ == null ? com.google.protobuf.Any.getDefaultInstance() : minNorm_;
+          return minNorm_ == null ? com.google.protobuf.Value.getDefaultInstance() : minNorm_;
         } else {
           return minNormBuilder_.getMessage();
         }
       }
       /**
-       * <code>.google.protobuf.Any minNorm = 5;</code>
+       * <code>.google.protobuf.Value minNorm = 5;</code>
        */
-      public Builder setMinNorm(com.google.protobuf.Any value) {
+      public Builder setMinNorm(com.google.protobuf.Value value) {
         if (minNormBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -3151,10 +3151,10 @@ public final class TctrlSchemaProto {
         return this;
       }
       /**
-       * <code>.google.protobuf.Any minNorm = 5;</code>
+       * <code>.google.protobuf.Value minNorm = 5;</code>
        */
       public Builder setMinNorm(
-          com.google.protobuf.Any.Builder builderForValue) {
+          com.google.protobuf.Value.Builder builderForValue) {
         if (minNormBuilder_ == null) {
           minNorm_ = builderForValue.build();
           onChanged();
@@ -3165,13 +3165,13 @@ public final class TctrlSchemaProto {
         return this;
       }
       /**
-       * <code>.google.protobuf.Any minNorm = 5;</code>
+       * <code>.google.protobuf.Value minNorm = 5;</code>
        */
-      public Builder mergeMinNorm(com.google.protobuf.Any value) {
+      public Builder mergeMinNorm(com.google.protobuf.Value value) {
         if (minNormBuilder_ == null) {
           if (minNorm_ != null) {
             minNorm_ =
-              com.google.protobuf.Any.newBuilder(minNorm_).mergeFrom(value).buildPartial();
+              com.google.protobuf.Value.newBuilder(minNorm_).mergeFrom(value).buildPartial();
           } else {
             minNorm_ = value;
           }
@@ -3183,7 +3183,7 @@ public final class TctrlSchemaProto {
         return this;
       }
       /**
-       * <code>.google.protobuf.Any minNorm = 5;</code>
+       * <code>.google.protobuf.Value minNorm = 5;</code>
        */
       public Builder clearMinNorm() {
         if (minNormBuilder_ == null) {
@@ -3197,33 +3197,33 @@ public final class TctrlSchemaProto {
         return this;
       }
       /**
-       * <code>.google.protobuf.Any minNorm = 5;</code>
+       * <code>.google.protobuf.Value minNorm = 5;</code>
        */
-      public com.google.protobuf.Any.Builder getMinNormBuilder() {
+      public com.google.protobuf.Value.Builder getMinNormBuilder() {
         
         onChanged();
         return getMinNormFieldBuilder().getBuilder();
       }
       /**
-       * <code>.google.protobuf.Any minNorm = 5;</code>
+       * <code>.google.protobuf.Value minNorm = 5;</code>
        */
-      public com.google.protobuf.AnyOrBuilder getMinNormOrBuilder() {
+      public com.google.protobuf.ValueOrBuilder getMinNormOrBuilder() {
         if (minNormBuilder_ != null) {
           return minNormBuilder_.getMessageOrBuilder();
         } else {
           return minNorm_ == null ?
-              com.google.protobuf.Any.getDefaultInstance() : minNorm_;
+              com.google.protobuf.Value.getDefaultInstance() : minNorm_;
         }
       }
       /**
-       * <code>.google.protobuf.Any minNorm = 5;</code>
+       * <code>.google.protobuf.Value minNorm = 5;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
-          com.google.protobuf.Any, com.google.protobuf.Any.Builder, com.google.protobuf.AnyOrBuilder> 
+          com.google.protobuf.Value, com.google.protobuf.Value.Builder, com.google.protobuf.ValueOrBuilder> 
           getMinNormFieldBuilder() {
         if (minNormBuilder_ == null) {
           minNormBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              com.google.protobuf.Any, com.google.protobuf.Any.Builder, com.google.protobuf.AnyOrBuilder>(
+              com.google.protobuf.Value, com.google.protobuf.Value.Builder, com.google.protobuf.ValueOrBuilder>(
                   getMinNorm(),
                   getParentForChildren(),
                   isClean());
@@ -3232,29 +3232,29 @@ public final class TctrlSchemaProto {
         return minNormBuilder_;
       }
 
-      private com.google.protobuf.Any maxNorm_ = null;
+      private com.google.protobuf.Value maxNorm_ = null;
       private com.google.protobuf.SingleFieldBuilderV3<
-          com.google.protobuf.Any, com.google.protobuf.Any.Builder, com.google.protobuf.AnyOrBuilder> maxNormBuilder_;
+          com.google.protobuf.Value, com.google.protobuf.Value.Builder, com.google.protobuf.ValueOrBuilder> maxNormBuilder_;
       /**
-       * <code>.google.protobuf.Any maxNorm = 6;</code>
+       * <code>.google.protobuf.Value maxNorm = 6;</code>
        */
       public boolean hasMaxNorm() {
         return maxNormBuilder_ != null || maxNorm_ != null;
       }
       /**
-       * <code>.google.protobuf.Any maxNorm = 6;</code>
+       * <code>.google.protobuf.Value maxNorm = 6;</code>
        */
-      public com.google.protobuf.Any getMaxNorm() {
+      public com.google.protobuf.Value getMaxNorm() {
         if (maxNormBuilder_ == null) {
-          return maxNorm_ == null ? com.google.protobuf.Any.getDefaultInstance() : maxNorm_;
+          return maxNorm_ == null ? com.google.protobuf.Value.getDefaultInstance() : maxNorm_;
         } else {
           return maxNormBuilder_.getMessage();
         }
       }
       /**
-       * <code>.google.protobuf.Any maxNorm = 6;</code>
+       * <code>.google.protobuf.Value maxNorm = 6;</code>
        */
-      public Builder setMaxNorm(com.google.protobuf.Any value) {
+      public Builder setMaxNorm(com.google.protobuf.Value value) {
         if (maxNormBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -3268,10 +3268,10 @@ public final class TctrlSchemaProto {
         return this;
       }
       /**
-       * <code>.google.protobuf.Any maxNorm = 6;</code>
+       * <code>.google.protobuf.Value maxNorm = 6;</code>
        */
       public Builder setMaxNorm(
-          com.google.protobuf.Any.Builder builderForValue) {
+          com.google.protobuf.Value.Builder builderForValue) {
         if (maxNormBuilder_ == null) {
           maxNorm_ = builderForValue.build();
           onChanged();
@@ -3282,13 +3282,13 @@ public final class TctrlSchemaProto {
         return this;
       }
       /**
-       * <code>.google.protobuf.Any maxNorm = 6;</code>
+       * <code>.google.protobuf.Value maxNorm = 6;</code>
        */
-      public Builder mergeMaxNorm(com.google.protobuf.Any value) {
+      public Builder mergeMaxNorm(com.google.protobuf.Value value) {
         if (maxNormBuilder_ == null) {
           if (maxNorm_ != null) {
             maxNorm_ =
-              com.google.protobuf.Any.newBuilder(maxNorm_).mergeFrom(value).buildPartial();
+              com.google.protobuf.Value.newBuilder(maxNorm_).mergeFrom(value).buildPartial();
           } else {
             maxNorm_ = value;
           }
@@ -3300,7 +3300,7 @@ public final class TctrlSchemaProto {
         return this;
       }
       /**
-       * <code>.google.protobuf.Any maxNorm = 6;</code>
+       * <code>.google.protobuf.Value maxNorm = 6;</code>
        */
       public Builder clearMaxNorm() {
         if (maxNormBuilder_ == null) {
@@ -3314,33 +3314,33 @@ public final class TctrlSchemaProto {
         return this;
       }
       /**
-       * <code>.google.protobuf.Any maxNorm = 6;</code>
+       * <code>.google.protobuf.Value maxNorm = 6;</code>
        */
-      public com.google.protobuf.Any.Builder getMaxNormBuilder() {
+      public com.google.protobuf.Value.Builder getMaxNormBuilder() {
         
         onChanged();
         return getMaxNormFieldBuilder().getBuilder();
       }
       /**
-       * <code>.google.protobuf.Any maxNorm = 6;</code>
+       * <code>.google.protobuf.Value maxNorm = 6;</code>
        */
-      public com.google.protobuf.AnyOrBuilder getMaxNormOrBuilder() {
+      public com.google.protobuf.ValueOrBuilder getMaxNormOrBuilder() {
         if (maxNormBuilder_ != null) {
           return maxNormBuilder_.getMessageOrBuilder();
         } else {
           return maxNorm_ == null ?
-              com.google.protobuf.Any.getDefaultInstance() : maxNorm_;
+              com.google.protobuf.Value.getDefaultInstance() : maxNorm_;
         }
       }
       /**
-       * <code>.google.protobuf.Any maxNorm = 6;</code>
+       * <code>.google.protobuf.Value maxNorm = 6;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
-          com.google.protobuf.Any, com.google.protobuf.Any.Builder, com.google.protobuf.AnyOrBuilder> 
+          com.google.protobuf.Value, com.google.protobuf.Value.Builder, com.google.protobuf.ValueOrBuilder> 
           getMaxNormFieldBuilder() {
         if (maxNormBuilder_ == null) {
           maxNormBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              com.google.protobuf.Any, com.google.protobuf.Any.Builder, com.google.protobuf.AnyOrBuilder>(
+              com.google.protobuf.Value, com.google.protobuf.Value.Builder, com.google.protobuf.ValueOrBuilder>(
                   getMaxNorm(),
                   getParentForChildren(),
                   isClean());
@@ -3349,29 +3349,29 @@ public final class TctrlSchemaProto {
         return maxNormBuilder_;
       }
 
-      private com.google.protobuf.Any defaultVal_ = null;
+      private com.google.protobuf.Value defaultVal_ = null;
       private com.google.protobuf.SingleFieldBuilderV3<
-          com.google.protobuf.Any, com.google.protobuf.Any.Builder, com.google.protobuf.AnyOrBuilder> defaultValBuilder_;
+          com.google.protobuf.Value, com.google.protobuf.Value.Builder, com.google.protobuf.ValueOrBuilder> defaultValBuilder_;
       /**
-       * <code>.google.protobuf.Any defaultVal = 7;</code>
+       * <code>.google.protobuf.Value defaultVal = 7;</code>
        */
       public boolean hasDefaultVal() {
         return defaultValBuilder_ != null || defaultVal_ != null;
       }
       /**
-       * <code>.google.protobuf.Any defaultVal = 7;</code>
+       * <code>.google.protobuf.Value defaultVal = 7;</code>
        */
-      public com.google.protobuf.Any getDefaultVal() {
+      public com.google.protobuf.Value getDefaultVal() {
         if (defaultValBuilder_ == null) {
-          return defaultVal_ == null ? com.google.protobuf.Any.getDefaultInstance() : defaultVal_;
+          return defaultVal_ == null ? com.google.protobuf.Value.getDefaultInstance() : defaultVal_;
         } else {
           return defaultValBuilder_.getMessage();
         }
       }
       /**
-       * <code>.google.protobuf.Any defaultVal = 7;</code>
+       * <code>.google.protobuf.Value defaultVal = 7;</code>
        */
-      public Builder setDefaultVal(com.google.protobuf.Any value) {
+      public Builder setDefaultVal(com.google.protobuf.Value value) {
         if (defaultValBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -3385,10 +3385,10 @@ public final class TctrlSchemaProto {
         return this;
       }
       /**
-       * <code>.google.protobuf.Any defaultVal = 7;</code>
+       * <code>.google.protobuf.Value defaultVal = 7;</code>
        */
       public Builder setDefaultVal(
-          com.google.protobuf.Any.Builder builderForValue) {
+          com.google.protobuf.Value.Builder builderForValue) {
         if (defaultValBuilder_ == null) {
           defaultVal_ = builderForValue.build();
           onChanged();
@@ -3399,13 +3399,13 @@ public final class TctrlSchemaProto {
         return this;
       }
       /**
-       * <code>.google.protobuf.Any defaultVal = 7;</code>
+       * <code>.google.protobuf.Value defaultVal = 7;</code>
        */
-      public Builder mergeDefaultVal(com.google.protobuf.Any value) {
+      public Builder mergeDefaultVal(com.google.protobuf.Value value) {
         if (defaultValBuilder_ == null) {
           if (defaultVal_ != null) {
             defaultVal_ =
-              com.google.protobuf.Any.newBuilder(defaultVal_).mergeFrom(value).buildPartial();
+              com.google.protobuf.Value.newBuilder(defaultVal_).mergeFrom(value).buildPartial();
           } else {
             defaultVal_ = value;
           }
@@ -3417,7 +3417,7 @@ public final class TctrlSchemaProto {
         return this;
       }
       /**
-       * <code>.google.protobuf.Any defaultVal = 7;</code>
+       * <code>.google.protobuf.Value defaultVal = 7;</code>
        */
       public Builder clearDefaultVal() {
         if (defaultValBuilder_ == null) {
@@ -3431,33 +3431,33 @@ public final class TctrlSchemaProto {
         return this;
       }
       /**
-       * <code>.google.protobuf.Any defaultVal = 7;</code>
+       * <code>.google.protobuf.Value defaultVal = 7;</code>
        */
-      public com.google.protobuf.Any.Builder getDefaultValBuilder() {
+      public com.google.protobuf.Value.Builder getDefaultValBuilder() {
         
         onChanged();
         return getDefaultValFieldBuilder().getBuilder();
       }
       /**
-       * <code>.google.protobuf.Any defaultVal = 7;</code>
+       * <code>.google.protobuf.Value defaultVal = 7;</code>
        */
-      public com.google.protobuf.AnyOrBuilder getDefaultValOrBuilder() {
+      public com.google.protobuf.ValueOrBuilder getDefaultValOrBuilder() {
         if (defaultValBuilder_ != null) {
           return defaultValBuilder_.getMessageOrBuilder();
         } else {
           return defaultVal_ == null ?
-              com.google.protobuf.Any.getDefaultInstance() : defaultVal_;
+              com.google.protobuf.Value.getDefaultInstance() : defaultVal_;
         }
       }
       /**
-       * <code>.google.protobuf.Any defaultVal = 7;</code>
+       * <code>.google.protobuf.Value defaultVal = 7;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
-          com.google.protobuf.Any, com.google.protobuf.Any.Builder, com.google.protobuf.AnyOrBuilder> 
+          com.google.protobuf.Value, com.google.protobuf.Value.Builder, com.google.protobuf.ValueOrBuilder> 
           getDefaultValFieldBuilder() {
         if (defaultValBuilder_ == null) {
           defaultValBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              com.google.protobuf.Any, com.google.protobuf.Any.Builder, com.google.protobuf.AnyOrBuilder>(
+              com.google.protobuf.Value, com.google.protobuf.Value.Builder, com.google.protobuf.ValueOrBuilder>(
                   getDefaultVal(),
                   getParentForChildren(),
                   isClean());
@@ -3466,29 +3466,29 @@ public final class TctrlSchemaProto {
         return defaultValBuilder_;
       }
 
-      private com.google.protobuf.Any value_ = null;
+      private com.google.protobuf.Value value_ = null;
       private com.google.protobuf.SingleFieldBuilderV3<
-          com.google.protobuf.Any, com.google.protobuf.Any.Builder, com.google.protobuf.AnyOrBuilder> valueBuilder_;
+          com.google.protobuf.Value, com.google.protobuf.Value.Builder, com.google.protobuf.ValueOrBuilder> valueBuilder_;
       /**
-       * <code>.google.protobuf.Any value = 8;</code>
+       * <code>.google.protobuf.Value value = 8;</code>
        */
       public boolean hasValue() {
         return valueBuilder_ != null || value_ != null;
       }
       /**
-       * <code>.google.protobuf.Any value = 8;</code>
+       * <code>.google.protobuf.Value value = 8;</code>
        */
-      public com.google.protobuf.Any getValue() {
+      public com.google.protobuf.Value getValue() {
         if (valueBuilder_ == null) {
-          return value_ == null ? com.google.protobuf.Any.getDefaultInstance() : value_;
+          return value_ == null ? com.google.protobuf.Value.getDefaultInstance() : value_;
         } else {
           return valueBuilder_.getMessage();
         }
       }
       /**
-       * <code>.google.protobuf.Any value = 8;</code>
+       * <code>.google.protobuf.Value value = 8;</code>
        */
-      public Builder setValue(com.google.protobuf.Any value) {
+      public Builder setValue(com.google.protobuf.Value value) {
         if (valueBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -3502,10 +3502,10 @@ public final class TctrlSchemaProto {
         return this;
       }
       /**
-       * <code>.google.protobuf.Any value = 8;</code>
+       * <code>.google.protobuf.Value value = 8;</code>
        */
       public Builder setValue(
-          com.google.protobuf.Any.Builder builderForValue) {
+          com.google.protobuf.Value.Builder builderForValue) {
         if (valueBuilder_ == null) {
           value_ = builderForValue.build();
           onChanged();
@@ -3516,13 +3516,13 @@ public final class TctrlSchemaProto {
         return this;
       }
       /**
-       * <code>.google.protobuf.Any value = 8;</code>
+       * <code>.google.protobuf.Value value = 8;</code>
        */
-      public Builder mergeValue(com.google.protobuf.Any value) {
+      public Builder mergeValue(com.google.protobuf.Value value) {
         if (valueBuilder_ == null) {
           if (value_ != null) {
             value_ =
-              com.google.protobuf.Any.newBuilder(value_).mergeFrom(value).buildPartial();
+              com.google.protobuf.Value.newBuilder(value_).mergeFrom(value).buildPartial();
           } else {
             value_ = value;
           }
@@ -3534,7 +3534,7 @@ public final class TctrlSchemaProto {
         return this;
       }
       /**
-       * <code>.google.protobuf.Any value = 8;</code>
+       * <code>.google.protobuf.Value value = 8;</code>
        */
       public Builder clearValue() {
         if (valueBuilder_ == null) {
@@ -3548,33 +3548,33 @@ public final class TctrlSchemaProto {
         return this;
       }
       /**
-       * <code>.google.protobuf.Any value = 8;</code>
+       * <code>.google.protobuf.Value value = 8;</code>
        */
-      public com.google.protobuf.Any.Builder getValueBuilder() {
+      public com.google.protobuf.Value.Builder getValueBuilder() {
         
         onChanged();
         return getValueFieldBuilder().getBuilder();
       }
       /**
-       * <code>.google.protobuf.Any value = 8;</code>
+       * <code>.google.protobuf.Value value = 8;</code>
        */
-      public com.google.protobuf.AnyOrBuilder getValueOrBuilder() {
+      public com.google.protobuf.ValueOrBuilder getValueOrBuilder() {
         if (valueBuilder_ != null) {
           return valueBuilder_.getMessageOrBuilder();
         } else {
           return value_ == null ?
-              com.google.protobuf.Any.getDefaultInstance() : value_;
+              com.google.protobuf.Value.getDefaultInstance() : value_;
         }
       }
       /**
-       * <code>.google.protobuf.Any value = 8;</code>
+       * <code>.google.protobuf.Value value = 8;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
-          com.google.protobuf.Any, com.google.protobuf.Any.Builder, com.google.protobuf.AnyOrBuilder> 
+          com.google.protobuf.Value, com.google.protobuf.Value.Builder, com.google.protobuf.ValueOrBuilder> 
           getValueFieldBuilder() {
         if (valueBuilder_ == null) {
           valueBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              com.google.protobuf.Any, com.google.protobuf.Any.Builder, com.google.protobuf.AnyOrBuilder>(
+              com.google.protobuf.Value, com.google.protobuf.Value.Builder, com.google.protobuf.ValueOrBuilder>(
                   getValue(),
                   getParentForChildren(),
                   isClean());
@@ -3685,82 +3685,82 @@ public final class TctrlSchemaProto {
         getOtherTypeBytes();
 
     /**
-     * <code>.google.protobuf.Any minLimit = 6;</code>
+     * <code>.google.protobuf.Value minLimit = 6;</code>
      */
     boolean hasMinLimit();
     /**
-     * <code>.google.protobuf.Any minLimit = 6;</code>
+     * <code>.google.protobuf.Value minLimit = 6;</code>
      */
-    com.google.protobuf.Any getMinLimit();
+    com.google.protobuf.Value getMinLimit();
     /**
-     * <code>.google.protobuf.Any minLimit = 6;</code>
+     * <code>.google.protobuf.Value minLimit = 6;</code>
      */
-    com.google.protobuf.AnyOrBuilder getMinLimitOrBuilder();
+    com.google.protobuf.ValueOrBuilder getMinLimitOrBuilder();
 
     /**
-     * <code>.google.protobuf.Any maxLimit = 7;</code>
+     * <code>.google.protobuf.Value maxLimit = 7;</code>
      */
     boolean hasMaxLimit();
     /**
-     * <code>.google.protobuf.Any maxLimit = 7;</code>
+     * <code>.google.protobuf.Value maxLimit = 7;</code>
      */
-    com.google.protobuf.Any getMaxLimit();
+    com.google.protobuf.Value getMaxLimit();
     /**
-     * <code>.google.protobuf.Any maxLimit = 7;</code>
+     * <code>.google.protobuf.Value maxLimit = 7;</code>
      */
-    com.google.protobuf.AnyOrBuilder getMaxLimitOrBuilder();
+    com.google.protobuf.ValueOrBuilder getMaxLimitOrBuilder();
 
     /**
-     * <code>.google.protobuf.Any minNorm = 8;</code>
+     * <code>.google.protobuf.Value minNorm = 8;</code>
      */
     boolean hasMinNorm();
     /**
-     * <code>.google.protobuf.Any minNorm = 8;</code>
+     * <code>.google.protobuf.Value minNorm = 8;</code>
      */
-    com.google.protobuf.Any getMinNorm();
+    com.google.protobuf.Value getMinNorm();
     /**
-     * <code>.google.protobuf.Any minNorm = 8;</code>
+     * <code>.google.protobuf.Value minNorm = 8;</code>
      */
-    com.google.protobuf.AnyOrBuilder getMinNormOrBuilder();
+    com.google.protobuf.ValueOrBuilder getMinNormOrBuilder();
 
     /**
-     * <code>.google.protobuf.Any maxNorm = 9;</code>
+     * <code>.google.protobuf.Value maxNorm = 9;</code>
      */
     boolean hasMaxNorm();
     /**
-     * <code>.google.protobuf.Any maxNorm = 9;</code>
+     * <code>.google.protobuf.Value maxNorm = 9;</code>
      */
-    com.google.protobuf.Any getMaxNorm();
+    com.google.protobuf.Value getMaxNorm();
     /**
-     * <code>.google.protobuf.Any maxNorm = 9;</code>
+     * <code>.google.protobuf.Value maxNorm = 9;</code>
      */
-    com.google.protobuf.AnyOrBuilder getMaxNormOrBuilder();
+    com.google.protobuf.ValueOrBuilder getMaxNormOrBuilder();
 
     /**
-     * <code>.google.protobuf.Any defaultVal = 10;</code>
+     * <code>.google.protobuf.Value defaultVal = 10;</code>
      */
     boolean hasDefaultVal();
     /**
-     * <code>.google.protobuf.Any defaultVal = 10;</code>
+     * <code>.google.protobuf.Value defaultVal = 10;</code>
      */
-    com.google.protobuf.Any getDefaultVal();
+    com.google.protobuf.Value getDefaultVal();
     /**
-     * <code>.google.protobuf.Any defaultVal = 10;</code>
+     * <code>.google.protobuf.Value defaultVal = 10;</code>
      */
-    com.google.protobuf.AnyOrBuilder getDefaultValOrBuilder();
+    com.google.protobuf.ValueOrBuilder getDefaultValOrBuilder();
 
     /**
-     * <code>.google.protobuf.Any value = 11;</code>
+     * <code>.google.protobuf.Value value = 11;</code>
      */
     boolean hasValue();
     /**
-     * <code>.google.protobuf.Any value = 11;</code>
+     * <code>.google.protobuf.Value value = 11;</code>
      */
-    com.google.protobuf.Any getValue();
+    com.google.protobuf.Value getValue();
     /**
-     * <code>.google.protobuf.Any value = 11;</code>
+     * <code>.google.protobuf.Value value = 11;</code>
      */
-    com.google.protobuf.AnyOrBuilder getValueOrBuilder();
+    com.google.protobuf.ValueOrBuilder getValueOrBuilder();
 
     /**
      * <code>int32 valueIndex = 12;</code>
@@ -3895,22 +3895,27 @@ public final class TctrlSchemaProto {
         getButtonTextBytes();
 
     /**
-     * <pre>
-     * map&lt;string, Any&gt; properties = 1000;
-     * </pre>
-     *
      * <code>string buttonOffText = 22;</code>
      */
     java.lang.String getButtonOffText();
     /**
-     * <pre>
-     * map&lt;string, Any&gt; properties = 1000;
-     * </pre>
-     *
      * <code>string buttonOffText = 22;</code>
      */
     com.google.protobuf.ByteString
         getButtonOffTextBytes();
+
+    /**
+     * <code>.google.protobuf.Struct properties = 1000;</code>
+     */
+    boolean hasProperties();
+    /**
+     * <code>.google.protobuf.Struct properties = 1000;</code>
+     */
+    com.google.protobuf.Struct getProperties();
+    /**
+     * <code>.google.protobuf.Struct properties = 1000;</code>
+     */
+    com.google.protobuf.StructOrBuilder getPropertiesOrBuilder();
   }
   /**
    * Protobuf type {@code tctrl.schema.ParamSpec}
@@ -3998,11 +4003,11 @@ public final class TctrlSchemaProto {
               break;
             }
             case 50: {
-              com.google.protobuf.Any.Builder subBuilder = null;
+              com.google.protobuf.Value.Builder subBuilder = null;
               if (minLimit_ != null) {
                 subBuilder = minLimit_.toBuilder();
               }
-              minLimit_ = input.readMessage(com.google.protobuf.Any.parser(), extensionRegistry);
+              minLimit_ = input.readMessage(com.google.protobuf.Value.parser(), extensionRegistry);
               if (subBuilder != null) {
                 subBuilder.mergeFrom(minLimit_);
                 minLimit_ = subBuilder.buildPartial();
@@ -4011,11 +4016,11 @@ public final class TctrlSchemaProto {
               break;
             }
             case 58: {
-              com.google.protobuf.Any.Builder subBuilder = null;
+              com.google.protobuf.Value.Builder subBuilder = null;
               if (maxLimit_ != null) {
                 subBuilder = maxLimit_.toBuilder();
               }
-              maxLimit_ = input.readMessage(com.google.protobuf.Any.parser(), extensionRegistry);
+              maxLimit_ = input.readMessage(com.google.protobuf.Value.parser(), extensionRegistry);
               if (subBuilder != null) {
                 subBuilder.mergeFrom(maxLimit_);
                 maxLimit_ = subBuilder.buildPartial();
@@ -4024,11 +4029,11 @@ public final class TctrlSchemaProto {
               break;
             }
             case 66: {
-              com.google.protobuf.Any.Builder subBuilder = null;
+              com.google.protobuf.Value.Builder subBuilder = null;
               if (minNorm_ != null) {
                 subBuilder = minNorm_.toBuilder();
               }
-              minNorm_ = input.readMessage(com.google.protobuf.Any.parser(), extensionRegistry);
+              minNorm_ = input.readMessage(com.google.protobuf.Value.parser(), extensionRegistry);
               if (subBuilder != null) {
                 subBuilder.mergeFrom(minNorm_);
                 minNorm_ = subBuilder.buildPartial();
@@ -4037,11 +4042,11 @@ public final class TctrlSchemaProto {
               break;
             }
             case 74: {
-              com.google.protobuf.Any.Builder subBuilder = null;
+              com.google.protobuf.Value.Builder subBuilder = null;
               if (maxNorm_ != null) {
                 subBuilder = maxNorm_.toBuilder();
               }
-              maxNorm_ = input.readMessage(com.google.protobuf.Any.parser(), extensionRegistry);
+              maxNorm_ = input.readMessage(com.google.protobuf.Value.parser(), extensionRegistry);
               if (subBuilder != null) {
                 subBuilder.mergeFrom(maxNorm_);
                 maxNorm_ = subBuilder.buildPartial();
@@ -4050,11 +4055,11 @@ public final class TctrlSchemaProto {
               break;
             }
             case 82: {
-              com.google.protobuf.Any.Builder subBuilder = null;
+              com.google.protobuf.Value.Builder subBuilder = null;
               if (defaultVal_ != null) {
                 subBuilder = defaultVal_.toBuilder();
               }
-              defaultVal_ = input.readMessage(com.google.protobuf.Any.parser(), extensionRegistry);
+              defaultVal_ = input.readMessage(com.google.protobuf.Value.parser(), extensionRegistry);
               if (subBuilder != null) {
                 subBuilder.mergeFrom(defaultVal_);
                 defaultVal_ = subBuilder.buildPartial();
@@ -4063,11 +4068,11 @@ public final class TctrlSchemaProto {
               break;
             }
             case 90: {
-              com.google.protobuf.Any.Builder subBuilder = null;
+              com.google.protobuf.Value.Builder subBuilder = null;
               if (value_ != null) {
                 subBuilder = value_.toBuilder();
               }
-              value_ = input.readMessage(com.google.protobuf.Any.parser(), extensionRegistry);
+              value_ = input.readMessage(com.google.protobuf.Value.parser(), extensionRegistry);
               if (subBuilder != null) {
                 subBuilder.mergeFrom(value_);
                 value_ = subBuilder.buildPartial();
@@ -4147,6 +4152,19 @@ public final class TctrlSchemaProto {
               java.lang.String s = input.readStringRequireUtf8();
 
               buttonOffText_ = s;
+              break;
+            }
+            case 8002: {
+              com.google.protobuf.Struct.Builder subBuilder = null;
+              if (properties_ != null) {
+                subBuilder = properties_.toBuilder();
+              }
+              properties_ = input.readMessage(com.google.protobuf.Struct.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(properties_);
+                properties_ = subBuilder.buildPartial();
+              }
+
               break;
             }
           }
@@ -4335,128 +4353,128 @@ public final class TctrlSchemaProto {
     }
 
     public static final int MINLIMIT_FIELD_NUMBER = 6;
-    private com.google.protobuf.Any minLimit_;
+    private com.google.protobuf.Value minLimit_;
     /**
-     * <code>.google.protobuf.Any minLimit = 6;</code>
+     * <code>.google.protobuf.Value minLimit = 6;</code>
      */
     public boolean hasMinLimit() {
       return minLimit_ != null;
     }
     /**
-     * <code>.google.protobuf.Any minLimit = 6;</code>
+     * <code>.google.protobuf.Value minLimit = 6;</code>
      */
-    public com.google.protobuf.Any getMinLimit() {
-      return minLimit_ == null ? com.google.protobuf.Any.getDefaultInstance() : minLimit_;
+    public com.google.protobuf.Value getMinLimit() {
+      return minLimit_ == null ? com.google.protobuf.Value.getDefaultInstance() : minLimit_;
     }
     /**
-     * <code>.google.protobuf.Any minLimit = 6;</code>
+     * <code>.google.protobuf.Value minLimit = 6;</code>
      */
-    public com.google.protobuf.AnyOrBuilder getMinLimitOrBuilder() {
+    public com.google.protobuf.ValueOrBuilder getMinLimitOrBuilder() {
       return getMinLimit();
     }
 
     public static final int MAXLIMIT_FIELD_NUMBER = 7;
-    private com.google.protobuf.Any maxLimit_;
+    private com.google.protobuf.Value maxLimit_;
     /**
-     * <code>.google.protobuf.Any maxLimit = 7;</code>
+     * <code>.google.protobuf.Value maxLimit = 7;</code>
      */
     public boolean hasMaxLimit() {
       return maxLimit_ != null;
     }
     /**
-     * <code>.google.protobuf.Any maxLimit = 7;</code>
+     * <code>.google.protobuf.Value maxLimit = 7;</code>
      */
-    public com.google.protobuf.Any getMaxLimit() {
-      return maxLimit_ == null ? com.google.protobuf.Any.getDefaultInstance() : maxLimit_;
+    public com.google.protobuf.Value getMaxLimit() {
+      return maxLimit_ == null ? com.google.protobuf.Value.getDefaultInstance() : maxLimit_;
     }
     /**
-     * <code>.google.protobuf.Any maxLimit = 7;</code>
+     * <code>.google.protobuf.Value maxLimit = 7;</code>
      */
-    public com.google.protobuf.AnyOrBuilder getMaxLimitOrBuilder() {
+    public com.google.protobuf.ValueOrBuilder getMaxLimitOrBuilder() {
       return getMaxLimit();
     }
 
     public static final int MINNORM_FIELD_NUMBER = 8;
-    private com.google.protobuf.Any minNorm_;
+    private com.google.protobuf.Value minNorm_;
     /**
-     * <code>.google.protobuf.Any minNorm = 8;</code>
+     * <code>.google.protobuf.Value minNorm = 8;</code>
      */
     public boolean hasMinNorm() {
       return minNorm_ != null;
     }
     /**
-     * <code>.google.protobuf.Any minNorm = 8;</code>
+     * <code>.google.protobuf.Value minNorm = 8;</code>
      */
-    public com.google.protobuf.Any getMinNorm() {
-      return minNorm_ == null ? com.google.protobuf.Any.getDefaultInstance() : minNorm_;
+    public com.google.protobuf.Value getMinNorm() {
+      return minNorm_ == null ? com.google.protobuf.Value.getDefaultInstance() : minNorm_;
     }
     /**
-     * <code>.google.protobuf.Any minNorm = 8;</code>
+     * <code>.google.protobuf.Value minNorm = 8;</code>
      */
-    public com.google.protobuf.AnyOrBuilder getMinNormOrBuilder() {
+    public com.google.protobuf.ValueOrBuilder getMinNormOrBuilder() {
       return getMinNorm();
     }
 
     public static final int MAXNORM_FIELD_NUMBER = 9;
-    private com.google.protobuf.Any maxNorm_;
+    private com.google.protobuf.Value maxNorm_;
     /**
-     * <code>.google.protobuf.Any maxNorm = 9;</code>
+     * <code>.google.protobuf.Value maxNorm = 9;</code>
      */
     public boolean hasMaxNorm() {
       return maxNorm_ != null;
     }
     /**
-     * <code>.google.protobuf.Any maxNorm = 9;</code>
+     * <code>.google.protobuf.Value maxNorm = 9;</code>
      */
-    public com.google.protobuf.Any getMaxNorm() {
-      return maxNorm_ == null ? com.google.protobuf.Any.getDefaultInstance() : maxNorm_;
+    public com.google.protobuf.Value getMaxNorm() {
+      return maxNorm_ == null ? com.google.protobuf.Value.getDefaultInstance() : maxNorm_;
     }
     /**
-     * <code>.google.protobuf.Any maxNorm = 9;</code>
+     * <code>.google.protobuf.Value maxNorm = 9;</code>
      */
-    public com.google.protobuf.AnyOrBuilder getMaxNormOrBuilder() {
+    public com.google.protobuf.ValueOrBuilder getMaxNormOrBuilder() {
       return getMaxNorm();
     }
 
     public static final int DEFAULTVAL_FIELD_NUMBER = 10;
-    private com.google.protobuf.Any defaultVal_;
+    private com.google.protobuf.Value defaultVal_;
     /**
-     * <code>.google.protobuf.Any defaultVal = 10;</code>
+     * <code>.google.protobuf.Value defaultVal = 10;</code>
      */
     public boolean hasDefaultVal() {
       return defaultVal_ != null;
     }
     /**
-     * <code>.google.protobuf.Any defaultVal = 10;</code>
+     * <code>.google.protobuf.Value defaultVal = 10;</code>
      */
-    public com.google.protobuf.Any getDefaultVal() {
-      return defaultVal_ == null ? com.google.protobuf.Any.getDefaultInstance() : defaultVal_;
+    public com.google.protobuf.Value getDefaultVal() {
+      return defaultVal_ == null ? com.google.protobuf.Value.getDefaultInstance() : defaultVal_;
     }
     /**
-     * <code>.google.protobuf.Any defaultVal = 10;</code>
+     * <code>.google.protobuf.Value defaultVal = 10;</code>
      */
-    public com.google.protobuf.AnyOrBuilder getDefaultValOrBuilder() {
+    public com.google.protobuf.ValueOrBuilder getDefaultValOrBuilder() {
       return getDefaultVal();
     }
 
     public static final int VALUE_FIELD_NUMBER = 11;
-    private com.google.protobuf.Any value_;
+    private com.google.protobuf.Value value_;
     /**
-     * <code>.google.protobuf.Any value = 11;</code>
+     * <code>.google.protobuf.Value value = 11;</code>
      */
     public boolean hasValue() {
       return value_ != null;
     }
     /**
-     * <code>.google.protobuf.Any value = 11;</code>
+     * <code>.google.protobuf.Value value = 11;</code>
      */
-    public com.google.protobuf.Any getValue() {
-      return value_ == null ? com.google.protobuf.Any.getDefaultInstance() : value_;
+    public com.google.protobuf.Value getValue() {
+      return value_ == null ? com.google.protobuf.Value.getDefaultInstance() : value_;
     }
     /**
-     * <code>.google.protobuf.Any value = 11;</code>
+     * <code>.google.protobuf.Value value = 11;</code>
      */
-    public com.google.protobuf.AnyOrBuilder getValueOrBuilder() {
+    public com.google.protobuf.ValueOrBuilder getValueOrBuilder() {
       return getValue();
     }
 
@@ -4775,10 +4793,6 @@ public final class TctrlSchemaProto {
     public static final int BUTTONOFFTEXT_FIELD_NUMBER = 22;
     private volatile java.lang.Object buttonOffText_;
     /**
-     * <pre>
-     * map&lt;string, Any&gt; properties = 1000;
-     * </pre>
-     *
      * <code>string buttonOffText = 22;</code>
      */
     public java.lang.String getButtonOffText() {
@@ -4794,10 +4808,6 @@ public final class TctrlSchemaProto {
       }
     }
     /**
-     * <pre>
-     * map&lt;string, Any&gt; properties = 1000;
-     * </pre>
-     *
      * <code>string buttonOffText = 22;</code>
      */
     public com.google.protobuf.ByteString
@@ -4812,6 +4822,27 @@ public final class TctrlSchemaProto {
       } else {
         return (com.google.protobuf.ByteString) ref;
       }
+    }
+
+    public static final int PROPERTIES_FIELD_NUMBER = 1000;
+    private com.google.protobuf.Struct properties_;
+    /**
+     * <code>.google.protobuf.Struct properties = 1000;</code>
+     */
+    public boolean hasProperties() {
+      return properties_ != null;
+    }
+    /**
+     * <code>.google.protobuf.Struct properties = 1000;</code>
+     */
+    public com.google.protobuf.Struct getProperties() {
+      return properties_ == null ? com.google.protobuf.Struct.getDefaultInstance() : properties_;
+    }
+    /**
+     * <code>.google.protobuf.Struct properties = 1000;</code>
+     */
+    public com.google.protobuf.StructOrBuilder getPropertiesOrBuilder() {
+      return getProperties();
     }
 
     private byte memoizedIsInitialized = -1;
@@ -4891,6 +4922,9 @@ public final class TctrlSchemaProto {
       }
       if (!getButtonOffTextBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 22, buttonOffText_);
+      }
+      if (properties_ != null) {
+        output.writeMessage(1000, getProperties());
       }
     }
 
@@ -4980,6 +5014,10 @@ public final class TctrlSchemaProto {
       if (!getButtonOffTextBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(22, buttonOffText_);
       }
+      if (properties_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(1000, getProperties());
+      }
       memoizedSize = size;
       return size;
     }
@@ -5057,6 +5095,11 @@ public final class TctrlSchemaProto {
           .equals(other.getButtonText());
       result = result && getButtonOffText()
           .equals(other.getButtonOffText());
+      result = result && (hasProperties() == other.hasProperties());
+      if (hasProperties()) {
+        result = result && getProperties()
+            .equals(other.getProperties());
+      }
       return result;
     }
 
@@ -5129,6 +5172,10 @@ public final class TctrlSchemaProto {
       hash = (53 * hash) + getButtonText().hashCode();
       hash = (37 * hash) + BUTTONOFFTEXT_FIELD_NUMBER;
       hash = (53 * hash) + getButtonOffText().hashCode();
+      if (hasProperties()) {
+        hash = (37 * hash) + PROPERTIES_FIELD_NUMBER;
+        hash = (53 * hash) + getProperties().hashCode();
+      }
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -5325,6 +5372,12 @@ public final class TctrlSchemaProto {
 
         buttonOffText_ = "";
 
+        if (propertiesBuilder_ == null) {
+          properties_ = null;
+        } else {
+          properties_ = null;
+          propertiesBuilder_ = null;
+        }
         return this;
       }
 
@@ -5415,6 +5468,11 @@ public final class TctrlSchemaProto {
         result.offHelp_ = offHelp_;
         result.buttonText_ = buttonText_;
         result.buttonOffText_ = buttonOffText_;
+        if (propertiesBuilder_ == null) {
+          result.properties_ = properties_;
+        } else {
+          result.properties_ = propertiesBuilder_.build();
+        }
         result.bitField0_ = to_bitField0_;
         onBuilt();
         return result;
@@ -5586,6 +5644,9 @@ public final class TctrlSchemaProto {
         if (!other.getButtonOffText().isEmpty()) {
           buttonOffText_ = other.buttonOffText_;
           onChanged();
+        }
+        if (other.hasProperties()) {
+          mergeProperties(other.getProperties());
         }
         onChanged();
         return this;
@@ -5934,29 +5995,29 @@ public final class TctrlSchemaProto {
         return this;
       }
 
-      private com.google.protobuf.Any minLimit_ = null;
+      private com.google.protobuf.Value minLimit_ = null;
       private com.google.protobuf.SingleFieldBuilderV3<
-          com.google.protobuf.Any, com.google.protobuf.Any.Builder, com.google.protobuf.AnyOrBuilder> minLimitBuilder_;
+          com.google.protobuf.Value, com.google.protobuf.Value.Builder, com.google.protobuf.ValueOrBuilder> minLimitBuilder_;
       /**
-       * <code>.google.protobuf.Any minLimit = 6;</code>
+       * <code>.google.protobuf.Value minLimit = 6;</code>
        */
       public boolean hasMinLimit() {
         return minLimitBuilder_ != null || minLimit_ != null;
       }
       /**
-       * <code>.google.protobuf.Any minLimit = 6;</code>
+       * <code>.google.protobuf.Value minLimit = 6;</code>
        */
-      public com.google.protobuf.Any getMinLimit() {
+      public com.google.protobuf.Value getMinLimit() {
         if (minLimitBuilder_ == null) {
-          return minLimit_ == null ? com.google.protobuf.Any.getDefaultInstance() : minLimit_;
+          return minLimit_ == null ? com.google.protobuf.Value.getDefaultInstance() : minLimit_;
         } else {
           return minLimitBuilder_.getMessage();
         }
       }
       /**
-       * <code>.google.protobuf.Any minLimit = 6;</code>
+       * <code>.google.protobuf.Value minLimit = 6;</code>
        */
-      public Builder setMinLimit(com.google.protobuf.Any value) {
+      public Builder setMinLimit(com.google.protobuf.Value value) {
         if (minLimitBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -5970,10 +6031,10 @@ public final class TctrlSchemaProto {
         return this;
       }
       /**
-       * <code>.google.protobuf.Any minLimit = 6;</code>
+       * <code>.google.protobuf.Value minLimit = 6;</code>
        */
       public Builder setMinLimit(
-          com.google.protobuf.Any.Builder builderForValue) {
+          com.google.protobuf.Value.Builder builderForValue) {
         if (minLimitBuilder_ == null) {
           minLimit_ = builderForValue.build();
           onChanged();
@@ -5984,13 +6045,13 @@ public final class TctrlSchemaProto {
         return this;
       }
       /**
-       * <code>.google.protobuf.Any minLimit = 6;</code>
+       * <code>.google.protobuf.Value minLimit = 6;</code>
        */
-      public Builder mergeMinLimit(com.google.protobuf.Any value) {
+      public Builder mergeMinLimit(com.google.protobuf.Value value) {
         if (minLimitBuilder_ == null) {
           if (minLimit_ != null) {
             minLimit_ =
-              com.google.protobuf.Any.newBuilder(minLimit_).mergeFrom(value).buildPartial();
+              com.google.protobuf.Value.newBuilder(minLimit_).mergeFrom(value).buildPartial();
           } else {
             minLimit_ = value;
           }
@@ -6002,7 +6063,7 @@ public final class TctrlSchemaProto {
         return this;
       }
       /**
-       * <code>.google.protobuf.Any minLimit = 6;</code>
+       * <code>.google.protobuf.Value minLimit = 6;</code>
        */
       public Builder clearMinLimit() {
         if (minLimitBuilder_ == null) {
@@ -6016,33 +6077,33 @@ public final class TctrlSchemaProto {
         return this;
       }
       /**
-       * <code>.google.protobuf.Any minLimit = 6;</code>
+       * <code>.google.protobuf.Value minLimit = 6;</code>
        */
-      public com.google.protobuf.Any.Builder getMinLimitBuilder() {
+      public com.google.protobuf.Value.Builder getMinLimitBuilder() {
         
         onChanged();
         return getMinLimitFieldBuilder().getBuilder();
       }
       /**
-       * <code>.google.protobuf.Any minLimit = 6;</code>
+       * <code>.google.protobuf.Value minLimit = 6;</code>
        */
-      public com.google.protobuf.AnyOrBuilder getMinLimitOrBuilder() {
+      public com.google.protobuf.ValueOrBuilder getMinLimitOrBuilder() {
         if (minLimitBuilder_ != null) {
           return minLimitBuilder_.getMessageOrBuilder();
         } else {
           return minLimit_ == null ?
-              com.google.protobuf.Any.getDefaultInstance() : minLimit_;
+              com.google.protobuf.Value.getDefaultInstance() : minLimit_;
         }
       }
       /**
-       * <code>.google.protobuf.Any minLimit = 6;</code>
+       * <code>.google.protobuf.Value minLimit = 6;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
-          com.google.protobuf.Any, com.google.protobuf.Any.Builder, com.google.protobuf.AnyOrBuilder> 
+          com.google.protobuf.Value, com.google.protobuf.Value.Builder, com.google.protobuf.ValueOrBuilder> 
           getMinLimitFieldBuilder() {
         if (minLimitBuilder_ == null) {
           minLimitBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              com.google.protobuf.Any, com.google.protobuf.Any.Builder, com.google.protobuf.AnyOrBuilder>(
+              com.google.protobuf.Value, com.google.protobuf.Value.Builder, com.google.protobuf.ValueOrBuilder>(
                   getMinLimit(),
                   getParentForChildren(),
                   isClean());
@@ -6051,29 +6112,29 @@ public final class TctrlSchemaProto {
         return minLimitBuilder_;
       }
 
-      private com.google.protobuf.Any maxLimit_ = null;
+      private com.google.protobuf.Value maxLimit_ = null;
       private com.google.protobuf.SingleFieldBuilderV3<
-          com.google.protobuf.Any, com.google.protobuf.Any.Builder, com.google.protobuf.AnyOrBuilder> maxLimitBuilder_;
+          com.google.protobuf.Value, com.google.protobuf.Value.Builder, com.google.protobuf.ValueOrBuilder> maxLimitBuilder_;
       /**
-       * <code>.google.protobuf.Any maxLimit = 7;</code>
+       * <code>.google.protobuf.Value maxLimit = 7;</code>
        */
       public boolean hasMaxLimit() {
         return maxLimitBuilder_ != null || maxLimit_ != null;
       }
       /**
-       * <code>.google.protobuf.Any maxLimit = 7;</code>
+       * <code>.google.protobuf.Value maxLimit = 7;</code>
        */
-      public com.google.protobuf.Any getMaxLimit() {
+      public com.google.protobuf.Value getMaxLimit() {
         if (maxLimitBuilder_ == null) {
-          return maxLimit_ == null ? com.google.protobuf.Any.getDefaultInstance() : maxLimit_;
+          return maxLimit_ == null ? com.google.protobuf.Value.getDefaultInstance() : maxLimit_;
         } else {
           return maxLimitBuilder_.getMessage();
         }
       }
       /**
-       * <code>.google.protobuf.Any maxLimit = 7;</code>
+       * <code>.google.protobuf.Value maxLimit = 7;</code>
        */
-      public Builder setMaxLimit(com.google.protobuf.Any value) {
+      public Builder setMaxLimit(com.google.protobuf.Value value) {
         if (maxLimitBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -6087,10 +6148,10 @@ public final class TctrlSchemaProto {
         return this;
       }
       /**
-       * <code>.google.protobuf.Any maxLimit = 7;</code>
+       * <code>.google.protobuf.Value maxLimit = 7;</code>
        */
       public Builder setMaxLimit(
-          com.google.protobuf.Any.Builder builderForValue) {
+          com.google.protobuf.Value.Builder builderForValue) {
         if (maxLimitBuilder_ == null) {
           maxLimit_ = builderForValue.build();
           onChanged();
@@ -6101,13 +6162,13 @@ public final class TctrlSchemaProto {
         return this;
       }
       /**
-       * <code>.google.protobuf.Any maxLimit = 7;</code>
+       * <code>.google.protobuf.Value maxLimit = 7;</code>
        */
-      public Builder mergeMaxLimit(com.google.protobuf.Any value) {
+      public Builder mergeMaxLimit(com.google.protobuf.Value value) {
         if (maxLimitBuilder_ == null) {
           if (maxLimit_ != null) {
             maxLimit_ =
-              com.google.protobuf.Any.newBuilder(maxLimit_).mergeFrom(value).buildPartial();
+              com.google.protobuf.Value.newBuilder(maxLimit_).mergeFrom(value).buildPartial();
           } else {
             maxLimit_ = value;
           }
@@ -6119,7 +6180,7 @@ public final class TctrlSchemaProto {
         return this;
       }
       /**
-       * <code>.google.protobuf.Any maxLimit = 7;</code>
+       * <code>.google.protobuf.Value maxLimit = 7;</code>
        */
       public Builder clearMaxLimit() {
         if (maxLimitBuilder_ == null) {
@@ -6133,33 +6194,33 @@ public final class TctrlSchemaProto {
         return this;
       }
       /**
-       * <code>.google.protobuf.Any maxLimit = 7;</code>
+       * <code>.google.protobuf.Value maxLimit = 7;</code>
        */
-      public com.google.protobuf.Any.Builder getMaxLimitBuilder() {
+      public com.google.protobuf.Value.Builder getMaxLimitBuilder() {
         
         onChanged();
         return getMaxLimitFieldBuilder().getBuilder();
       }
       /**
-       * <code>.google.protobuf.Any maxLimit = 7;</code>
+       * <code>.google.protobuf.Value maxLimit = 7;</code>
        */
-      public com.google.protobuf.AnyOrBuilder getMaxLimitOrBuilder() {
+      public com.google.protobuf.ValueOrBuilder getMaxLimitOrBuilder() {
         if (maxLimitBuilder_ != null) {
           return maxLimitBuilder_.getMessageOrBuilder();
         } else {
           return maxLimit_ == null ?
-              com.google.protobuf.Any.getDefaultInstance() : maxLimit_;
+              com.google.protobuf.Value.getDefaultInstance() : maxLimit_;
         }
       }
       /**
-       * <code>.google.protobuf.Any maxLimit = 7;</code>
+       * <code>.google.protobuf.Value maxLimit = 7;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
-          com.google.protobuf.Any, com.google.protobuf.Any.Builder, com.google.protobuf.AnyOrBuilder> 
+          com.google.protobuf.Value, com.google.protobuf.Value.Builder, com.google.protobuf.ValueOrBuilder> 
           getMaxLimitFieldBuilder() {
         if (maxLimitBuilder_ == null) {
           maxLimitBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              com.google.protobuf.Any, com.google.protobuf.Any.Builder, com.google.protobuf.AnyOrBuilder>(
+              com.google.protobuf.Value, com.google.protobuf.Value.Builder, com.google.protobuf.ValueOrBuilder>(
                   getMaxLimit(),
                   getParentForChildren(),
                   isClean());
@@ -6168,29 +6229,29 @@ public final class TctrlSchemaProto {
         return maxLimitBuilder_;
       }
 
-      private com.google.protobuf.Any minNorm_ = null;
+      private com.google.protobuf.Value minNorm_ = null;
       private com.google.protobuf.SingleFieldBuilderV3<
-          com.google.protobuf.Any, com.google.protobuf.Any.Builder, com.google.protobuf.AnyOrBuilder> minNormBuilder_;
+          com.google.protobuf.Value, com.google.protobuf.Value.Builder, com.google.protobuf.ValueOrBuilder> minNormBuilder_;
       /**
-       * <code>.google.protobuf.Any minNorm = 8;</code>
+       * <code>.google.protobuf.Value minNorm = 8;</code>
        */
       public boolean hasMinNorm() {
         return minNormBuilder_ != null || minNorm_ != null;
       }
       /**
-       * <code>.google.protobuf.Any minNorm = 8;</code>
+       * <code>.google.protobuf.Value minNorm = 8;</code>
        */
-      public com.google.protobuf.Any getMinNorm() {
+      public com.google.protobuf.Value getMinNorm() {
         if (minNormBuilder_ == null) {
-          return minNorm_ == null ? com.google.protobuf.Any.getDefaultInstance() : minNorm_;
+          return minNorm_ == null ? com.google.protobuf.Value.getDefaultInstance() : minNorm_;
         } else {
           return minNormBuilder_.getMessage();
         }
       }
       /**
-       * <code>.google.protobuf.Any minNorm = 8;</code>
+       * <code>.google.protobuf.Value minNorm = 8;</code>
        */
-      public Builder setMinNorm(com.google.protobuf.Any value) {
+      public Builder setMinNorm(com.google.protobuf.Value value) {
         if (minNormBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -6204,10 +6265,10 @@ public final class TctrlSchemaProto {
         return this;
       }
       /**
-       * <code>.google.protobuf.Any minNorm = 8;</code>
+       * <code>.google.protobuf.Value minNorm = 8;</code>
        */
       public Builder setMinNorm(
-          com.google.protobuf.Any.Builder builderForValue) {
+          com.google.protobuf.Value.Builder builderForValue) {
         if (minNormBuilder_ == null) {
           minNorm_ = builderForValue.build();
           onChanged();
@@ -6218,13 +6279,13 @@ public final class TctrlSchemaProto {
         return this;
       }
       /**
-       * <code>.google.protobuf.Any minNorm = 8;</code>
+       * <code>.google.protobuf.Value minNorm = 8;</code>
        */
-      public Builder mergeMinNorm(com.google.protobuf.Any value) {
+      public Builder mergeMinNorm(com.google.protobuf.Value value) {
         if (minNormBuilder_ == null) {
           if (minNorm_ != null) {
             minNorm_ =
-              com.google.protobuf.Any.newBuilder(minNorm_).mergeFrom(value).buildPartial();
+              com.google.protobuf.Value.newBuilder(minNorm_).mergeFrom(value).buildPartial();
           } else {
             minNorm_ = value;
           }
@@ -6236,7 +6297,7 @@ public final class TctrlSchemaProto {
         return this;
       }
       /**
-       * <code>.google.protobuf.Any minNorm = 8;</code>
+       * <code>.google.protobuf.Value minNorm = 8;</code>
        */
       public Builder clearMinNorm() {
         if (minNormBuilder_ == null) {
@@ -6250,33 +6311,33 @@ public final class TctrlSchemaProto {
         return this;
       }
       /**
-       * <code>.google.protobuf.Any minNorm = 8;</code>
+       * <code>.google.protobuf.Value minNorm = 8;</code>
        */
-      public com.google.protobuf.Any.Builder getMinNormBuilder() {
+      public com.google.protobuf.Value.Builder getMinNormBuilder() {
         
         onChanged();
         return getMinNormFieldBuilder().getBuilder();
       }
       /**
-       * <code>.google.protobuf.Any minNorm = 8;</code>
+       * <code>.google.protobuf.Value minNorm = 8;</code>
        */
-      public com.google.protobuf.AnyOrBuilder getMinNormOrBuilder() {
+      public com.google.protobuf.ValueOrBuilder getMinNormOrBuilder() {
         if (minNormBuilder_ != null) {
           return minNormBuilder_.getMessageOrBuilder();
         } else {
           return minNorm_ == null ?
-              com.google.protobuf.Any.getDefaultInstance() : minNorm_;
+              com.google.protobuf.Value.getDefaultInstance() : minNorm_;
         }
       }
       /**
-       * <code>.google.protobuf.Any minNorm = 8;</code>
+       * <code>.google.protobuf.Value minNorm = 8;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
-          com.google.protobuf.Any, com.google.protobuf.Any.Builder, com.google.protobuf.AnyOrBuilder> 
+          com.google.protobuf.Value, com.google.protobuf.Value.Builder, com.google.protobuf.ValueOrBuilder> 
           getMinNormFieldBuilder() {
         if (minNormBuilder_ == null) {
           minNormBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              com.google.protobuf.Any, com.google.protobuf.Any.Builder, com.google.protobuf.AnyOrBuilder>(
+              com.google.protobuf.Value, com.google.protobuf.Value.Builder, com.google.protobuf.ValueOrBuilder>(
                   getMinNorm(),
                   getParentForChildren(),
                   isClean());
@@ -6285,29 +6346,29 @@ public final class TctrlSchemaProto {
         return minNormBuilder_;
       }
 
-      private com.google.protobuf.Any maxNorm_ = null;
+      private com.google.protobuf.Value maxNorm_ = null;
       private com.google.protobuf.SingleFieldBuilderV3<
-          com.google.protobuf.Any, com.google.protobuf.Any.Builder, com.google.protobuf.AnyOrBuilder> maxNormBuilder_;
+          com.google.protobuf.Value, com.google.protobuf.Value.Builder, com.google.protobuf.ValueOrBuilder> maxNormBuilder_;
       /**
-       * <code>.google.protobuf.Any maxNorm = 9;</code>
+       * <code>.google.protobuf.Value maxNorm = 9;</code>
        */
       public boolean hasMaxNorm() {
         return maxNormBuilder_ != null || maxNorm_ != null;
       }
       /**
-       * <code>.google.protobuf.Any maxNorm = 9;</code>
+       * <code>.google.protobuf.Value maxNorm = 9;</code>
        */
-      public com.google.protobuf.Any getMaxNorm() {
+      public com.google.protobuf.Value getMaxNorm() {
         if (maxNormBuilder_ == null) {
-          return maxNorm_ == null ? com.google.protobuf.Any.getDefaultInstance() : maxNorm_;
+          return maxNorm_ == null ? com.google.protobuf.Value.getDefaultInstance() : maxNorm_;
         } else {
           return maxNormBuilder_.getMessage();
         }
       }
       /**
-       * <code>.google.protobuf.Any maxNorm = 9;</code>
+       * <code>.google.protobuf.Value maxNorm = 9;</code>
        */
-      public Builder setMaxNorm(com.google.protobuf.Any value) {
+      public Builder setMaxNorm(com.google.protobuf.Value value) {
         if (maxNormBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -6321,10 +6382,10 @@ public final class TctrlSchemaProto {
         return this;
       }
       /**
-       * <code>.google.protobuf.Any maxNorm = 9;</code>
+       * <code>.google.protobuf.Value maxNorm = 9;</code>
        */
       public Builder setMaxNorm(
-          com.google.protobuf.Any.Builder builderForValue) {
+          com.google.protobuf.Value.Builder builderForValue) {
         if (maxNormBuilder_ == null) {
           maxNorm_ = builderForValue.build();
           onChanged();
@@ -6335,13 +6396,13 @@ public final class TctrlSchemaProto {
         return this;
       }
       /**
-       * <code>.google.protobuf.Any maxNorm = 9;</code>
+       * <code>.google.protobuf.Value maxNorm = 9;</code>
        */
-      public Builder mergeMaxNorm(com.google.protobuf.Any value) {
+      public Builder mergeMaxNorm(com.google.protobuf.Value value) {
         if (maxNormBuilder_ == null) {
           if (maxNorm_ != null) {
             maxNorm_ =
-              com.google.protobuf.Any.newBuilder(maxNorm_).mergeFrom(value).buildPartial();
+              com.google.protobuf.Value.newBuilder(maxNorm_).mergeFrom(value).buildPartial();
           } else {
             maxNorm_ = value;
           }
@@ -6353,7 +6414,7 @@ public final class TctrlSchemaProto {
         return this;
       }
       /**
-       * <code>.google.protobuf.Any maxNorm = 9;</code>
+       * <code>.google.protobuf.Value maxNorm = 9;</code>
        */
       public Builder clearMaxNorm() {
         if (maxNormBuilder_ == null) {
@@ -6367,33 +6428,33 @@ public final class TctrlSchemaProto {
         return this;
       }
       /**
-       * <code>.google.protobuf.Any maxNorm = 9;</code>
+       * <code>.google.protobuf.Value maxNorm = 9;</code>
        */
-      public com.google.protobuf.Any.Builder getMaxNormBuilder() {
+      public com.google.protobuf.Value.Builder getMaxNormBuilder() {
         
         onChanged();
         return getMaxNormFieldBuilder().getBuilder();
       }
       /**
-       * <code>.google.protobuf.Any maxNorm = 9;</code>
+       * <code>.google.protobuf.Value maxNorm = 9;</code>
        */
-      public com.google.protobuf.AnyOrBuilder getMaxNormOrBuilder() {
+      public com.google.protobuf.ValueOrBuilder getMaxNormOrBuilder() {
         if (maxNormBuilder_ != null) {
           return maxNormBuilder_.getMessageOrBuilder();
         } else {
           return maxNorm_ == null ?
-              com.google.protobuf.Any.getDefaultInstance() : maxNorm_;
+              com.google.protobuf.Value.getDefaultInstance() : maxNorm_;
         }
       }
       /**
-       * <code>.google.protobuf.Any maxNorm = 9;</code>
+       * <code>.google.protobuf.Value maxNorm = 9;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
-          com.google.protobuf.Any, com.google.protobuf.Any.Builder, com.google.protobuf.AnyOrBuilder> 
+          com.google.protobuf.Value, com.google.protobuf.Value.Builder, com.google.protobuf.ValueOrBuilder> 
           getMaxNormFieldBuilder() {
         if (maxNormBuilder_ == null) {
           maxNormBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              com.google.protobuf.Any, com.google.protobuf.Any.Builder, com.google.protobuf.AnyOrBuilder>(
+              com.google.protobuf.Value, com.google.protobuf.Value.Builder, com.google.protobuf.ValueOrBuilder>(
                   getMaxNorm(),
                   getParentForChildren(),
                   isClean());
@@ -6402,29 +6463,29 @@ public final class TctrlSchemaProto {
         return maxNormBuilder_;
       }
 
-      private com.google.protobuf.Any defaultVal_ = null;
+      private com.google.protobuf.Value defaultVal_ = null;
       private com.google.protobuf.SingleFieldBuilderV3<
-          com.google.protobuf.Any, com.google.protobuf.Any.Builder, com.google.protobuf.AnyOrBuilder> defaultValBuilder_;
+          com.google.protobuf.Value, com.google.protobuf.Value.Builder, com.google.protobuf.ValueOrBuilder> defaultValBuilder_;
       /**
-       * <code>.google.protobuf.Any defaultVal = 10;</code>
+       * <code>.google.protobuf.Value defaultVal = 10;</code>
        */
       public boolean hasDefaultVal() {
         return defaultValBuilder_ != null || defaultVal_ != null;
       }
       /**
-       * <code>.google.protobuf.Any defaultVal = 10;</code>
+       * <code>.google.protobuf.Value defaultVal = 10;</code>
        */
-      public com.google.protobuf.Any getDefaultVal() {
+      public com.google.protobuf.Value getDefaultVal() {
         if (defaultValBuilder_ == null) {
-          return defaultVal_ == null ? com.google.protobuf.Any.getDefaultInstance() : defaultVal_;
+          return defaultVal_ == null ? com.google.protobuf.Value.getDefaultInstance() : defaultVal_;
         } else {
           return defaultValBuilder_.getMessage();
         }
       }
       /**
-       * <code>.google.protobuf.Any defaultVal = 10;</code>
+       * <code>.google.protobuf.Value defaultVal = 10;</code>
        */
-      public Builder setDefaultVal(com.google.protobuf.Any value) {
+      public Builder setDefaultVal(com.google.protobuf.Value value) {
         if (defaultValBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -6438,10 +6499,10 @@ public final class TctrlSchemaProto {
         return this;
       }
       /**
-       * <code>.google.protobuf.Any defaultVal = 10;</code>
+       * <code>.google.protobuf.Value defaultVal = 10;</code>
        */
       public Builder setDefaultVal(
-          com.google.protobuf.Any.Builder builderForValue) {
+          com.google.protobuf.Value.Builder builderForValue) {
         if (defaultValBuilder_ == null) {
           defaultVal_ = builderForValue.build();
           onChanged();
@@ -6452,13 +6513,13 @@ public final class TctrlSchemaProto {
         return this;
       }
       /**
-       * <code>.google.protobuf.Any defaultVal = 10;</code>
+       * <code>.google.protobuf.Value defaultVal = 10;</code>
        */
-      public Builder mergeDefaultVal(com.google.protobuf.Any value) {
+      public Builder mergeDefaultVal(com.google.protobuf.Value value) {
         if (defaultValBuilder_ == null) {
           if (defaultVal_ != null) {
             defaultVal_ =
-              com.google.protobuf.Any.newBuilder(defaultVal_).mergeFrom(value).buildPartial();
+              com.google.protobuf.Value.newBuilder(defaultVal_).mergeFrom(value).buildPartial();
           } else {
             defaultVal_ = value;
           }
@@ -6470,7 +6531,7 @@ public final class TctrlSchemaProto {
         return this;
       }
       /**
-       * <code>.google.protobuf.Any defaultVal = 10;</code>
+       * <code>.google.protobuf.Value defaultVal = 10;</code>
        */
       public Builder clearDefaultVal() {
         if (defaultValBuilder_ == null) {
@@ -6484,33 +6545,33 @@ public final class TctrlSchemaProto {
         return this;
       }
       /**
-       * <code>.google.protobuf.Any defaultVal = 10;</code>
+       * <code>.google.protobuf.Value defaultVal = 10;</code>
        */
-      public com.google.protobuf.Any.Builder getDefaultValBuilder() {
+      public com.google.protobuf.Value.Builder getDefaultValBuilder() {
         
         onChanged();
         return getDefaultValFieldBuilder().getBuilder();
       }
       /**
-       * <code>.google.protobuf.Any defaultVal = 10;</code>
+       * <code>.google.protobuf.Value defaultVal = 10;</code>
        */
-      public com.google.protobuf.AnyOrBuilder getDefaultValOrBuilder() {
+      public com.google.protobuf.ValueOrBuilder getDefaultValOrBuilder() {
         if (defaultValBuilder_ != null) {
           return defaultValBuilder_.getMessageOrBuilder();
         } else {
           return defaultVal_ == null ?
-              com.google.protobuf.Any.getDefaultInstance() : defaultVal_;
+              com.google.protobuf.Value.getDefaultInstance() : defaultVal_;
         }
       }
       /**
-       * <code>.google.protobuf.Any defaultVal = 10;</code>
+       * <code>.google.protobuf.Value defaultVal = 10;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
-          com.google.protobuf.Any, com.google.protobuf.Any.Builder, com.google.protobuf.AnyOrBuilder> 
+          com.google.protobuf.Value, com.google.protobuf.Value.Builder, com.google.protobuf.ValueOrBuilder> 
           getDefaultValFieldBuilder() {
         if (defaultValBuilder_ == null) {
           defaultValBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              com.google.protobuf.Any, com.google.protobuf.Any.Builder, com.google.protobuf.AnyOrBuilder>(
+              com.google.protobuf.Value, com.google.protobuf.Value.Builder, com.google.protobuf.ValueOrBuilder>(
                   getDefaultVal(),
                   getParentForChildren(),
                   isClean());
@@ -6519,29 +6580,29 @@ public final class TctrlSchemaProto {
         return defaultValBuilder_;
       }
 
-      private com.google.protobuf.Any value_ = null;
+      private com.google.protobuf.Value value_ = null;
       private com.google.protobuf.SingleFieldBuilderV3<
-          com.google.protobuf.Any, com.google.protobuf.Any.Builder, com.google.protobuf.AnyOrBuilder> valueBuilder_;
+          com.google.protobuf.Value, com.google.protobuf.Value.Builder, com.google.protobuf.ValueOrBuilder> valueBuilder_;
       /**
-       * <code>.google.protobuf.Any value = 11;</code>
+       * <code>.google.protobuf.Value value = 11;</code>
        */
       public boolean hasValue() {
         return valueBuilder_ != null || value_ != null;
       }
       /**
-       * <code>.google.protobuf.Any value = 11;</code>
+       * <code>.google.protobuf.Value value = 11;</code>
        */
-      public com.google.protobuf.Any getValue() {
+      public com.google.protobuf.Value getValue() {
         if (valueBuilder_ == null) {
-          return value_ == null ? com.google.protobuf.Any.getDefaultInstance() : value_;
+          return value_ == null ? com.google.protobuf.Value.getDefaultInstance() : value_;
         } else {
           return valueBuilder_.getMessage();
         }
       }
       /**
-       * <code>.google.protobuf.Any value = 11;</code>
+       * <code>.google.protobuf.Value value = 11;</code>
        */
-      public Builder setValue(com.google.protobuf.Any value) {
+      public Builder setValue(com.google.protobuf.Value value) {
         if (valueBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -6555,10 +6616,10 @@ public final class TctrlSchemaProto {
         return this;
       }
       /**
-       * <code>.google.protobuf.Any value = 11;</code>
+       * <code>.google.protobuf.Value value = 11;</code>
        */
       public Builder setValue(
-          com.google.protobuf.Any.Builder builderForValue) {
+          com.google.protobuf.Value.Builder builderForValue) {
         if (valueBuilder_ == null) {
           value_ = builderForValue.build();
           onChanged();
@@ -6569,13 +6630,13 @@ public final class TctrlSchemaProto {
         return this;
       }
       /**
-       * <code>.google.protobuf.Any value = 11;</code>
+       * <code>.google.protobuf.Value value = 11;</code>
        */
-      public Builder mergeValue(com.google.protobuf.Any value) {
+      public Builder mergeValue(com.google.protobuf.Value value) {
         if (valueBuilder_ == null) {
           if (value_ != null) {
             value_ =
-              com.google.protobuf.Any.newBuilder(value_).mergeFrom(value).buildPartial();
+              com.google.protobuf.Value.newBuilder(value_).mergeFrom(value).buildPartial();
           } else {
             value_ = value;
           }
@@ -6587,7 +6648,7 @@ public final class TctrlSchemaProto {
         return this;
       }
       /**
-       * <code>.google.protobuf.Any value = 11;</code>
+       * <code>.google.protobuf.Value value = 11;</code>
        */
       public Builder clearValue() {
         if (valueBuilder_ == null) {
@@ -6601,33 +6662,33 @@ public final class TctrlSchemaProto {
         return this;
       }
       /**
-       * <code>.google.protobuf.Any value = 11;</code>
+       * <code>.google.protobuf.Value value = 11;</code>
        */
-      public com.google.protobuf.Any.Builder getValueBuilder() {
+      public com.google.protobuf.Value.Builder getValueBuilder() {
         
         onChanged();
         return getValueFieldBuilder().getBuilder();
       }
       /**
-       * <code>.google.protobuf.Any value = 11;</code>
+       * <code>.google.protobuf.Value value = 11;</code>
        */
-      public com.google.protobuf.AnyOrBuilder getValueOrBuilder() {
+      public com.google.protobuf.ValueOrBuilder getValueOrBuilder() {
         if (valueBuilder_ != null) {
           return valueBuilder_.getMessageOrBuilder();
         } else {
           return value_ == null ?
-              com.google.protobuf.Any.getDefaultInstance() : value_;
+              com.google.protobuf.Value.getDefaultInstance() : value_;
         }
       }
       /**
-       * <code>.google.protobuf.Any value = 11;</code>
+       * <code>.google.protobuf.Value value = 11;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
-          com.google.protobuf.Any, com.google.protobuf.Any.Builder, com.google.protobuf.AnyOrBuilder> 
+          com.google.protobuf.Value, com.google.protobuf.Value.Builder, com.google.protobuf.ValueOrBuilder> 
           getValueFieldBuilder() {
         if (valueBuilder_ == null) {
           valueBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              com.google.protobuf.Any, com.google.protobuf.Any.Builder, com.google.protobuf.AnyOrBuilder>(
+              com.google.protobuf.Value, com.google.protobuf.Value.Builder, com.google.protobuf.ValueOrBuilder>(
                   getValue(),
                   getParentForChildren(),
                   isClean());
@@ -7652,10 +7713,6 @@ public final class TctrlSchemaProto {
 
       private java.lang.Object buttonOffText_ = "";
       /**
-       * <pre>
-       * map&lt;string, Any&gt; properties = 1000;
-       * </pre>
-       *
        * <code>string buttonOffText = 22;</code>
        */
       public java.lang.String getButtonOffText() {
@@ -7671,10 +7728,6 @@ public final class TctrlSchemaProto {
         }
       }
       /**
-       * <pre>
-       * map&lt;string, Any&gt; properties = 1000;
-       * </pre>
-       *
        * <code>string buttonOffText = 22;</code>
        */
       public com.google.protobuf.ByteString
@@ -7691,10 +7744,6 @@ public final class TctrlSchemaProto {
         }
       }
       /**
-       * <pre>
-       * map&lt;string, Any&gt; properties = 1000;
-       * </pre>
-       *
        * <code>string buttonOffText = 22;</code>
        */
       public Builder setButtonOffText(
@@ -7708,10 +7757,6 @@ public final class TctrlSchemaProto {
         return this;
       }
       /**
-       * <pre>
-       * map&lt;string, Any&gt; properties = 1000;
-       * </pre>
-       *
        * <code>string buttonOffText = 22;</code>
        */
       public Builder clearButtonOffText() {
@@ -7721,10 +7766,6 @@ public final class TctrlSchemaProto {
         return this;
       }
       /**
-       * <pre>
-       * map&lt;string, Any&gt; properties = 1000;
-       * </pre>
-       *
        * <code>string buttonOffText = 22;</code>
        */
       public Builder setButtonOffTextBytes(
@@ -7737,6 +7778,123 @@ public final class TctrlSchemaProto {
         buttonOffText_ = value;
         onChanged();
         return this;
+      }
+
+      private com.google.protobuf.Struct properties_ = null;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.google.protobuf.Struct, com.google.protobuf.Struct.Builder, com.google.protobuf.StructOrBuilder> propertiesBuilder_;
+      /**
+       * <code>.google.protobuf.Struct properties = 1000;</code>
+       */
+      public boolean hasProperties() {
+        return propertiesBuilder_ != null || properties_ != null;
+      }
+      /**
+       * <code>.google.protobuf.Struct properties = 1000;</code>
+       */
+      public com.google.protobuf.Struct getProperties() {
+        if (propertiesBuilder_ == null) {
+          return properties_ == null ? com.google.protobuf.Struct.getDefaultInstance() : properties_;
+        } else {
+          return propertiesBuilder_.getMessage();
+        }
+      }
+      /**
+       * <code>.google.protobuf.Struct properties = 1000;</code>
+       */
+      public Builder setProperties(com.google.protobuf.Struct value) {
+        if (propertiesBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          properties_ = value;
+          onChanged();
+        } else {
+          propertiesBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.google.protobuf.Struct properties = 1000;</code>
+       */
+      public Builder setProperties(
+          com.google.protobuf.Struct.Builder builderForValue) {
+        if (propertiesBuilder_ == null) {
+          properties_ = builderForValue.build();
+          onChanged();
+        } else {
+          propertiesBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <code>.google.protobuf.Struct properties = 1000;</code>
+       */
+      public Builder mergeProperties(com.google.protobuf.Struct value) {
+        if (propertiesBuilder_ == null) {
+          if (properties_ != null) {
+            properties_ =
+              com.google.protobuf.Struct.newBuilder(properties_).mergeFrom(value).buildPartial();
+          } else {
+            properties_ = value;
+          }
+          onChanged();
+        } else {
+          propertiesBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.google.protobuf.Struct properties = 1000;</code>
+       */
+      public Builder clearProperties() {
+        if (propertiesBuilder_ == null) {
+          properties_ = null;
+          onChanged();
+        } else {
+          properties_ = null;
+          propertiesBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <code>.google.protobuf.Struct properties = 1000;</code>
+       */
+      public com.google.protobuf.Struct.Builder getPropertiesBuilder() {
+        
+        onChanged();
+        return getPropertiesFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.google.protobuf.Struct properties = 1000;</code>
+       */
+      public com.google.protobuf.StructOrBuilder getPropertiesOrBuilder() {
+        if (propertiesBuilder_ != null) {
+          return propertiesBuilder_.getMessageOrBuilder();
+        } else {
+          return properties_ == null ?
+              com.google.protobuf.Struct.getDefaultInstance() : properties_;
+        }
+      }
+      /**
+       * <code>.google.protobuf.Struct properties = 1000;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.google.protobuf.Struct, com.google.protobuf.Struct.Builder, com.google.protobuf.StructOrBuilder> 
+          getPropertiesFieldBuilder() {
+        if (propertiesBuilder_ == null) {
+          propertiesBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              com.google.protobuf.Struct, com.google.protobuf.Struct.Builder, com.google.protobuf.StructOrBuilder>(
+                  getProperties(),
+                  getParentForChildren(),
+                  isClean());
+          properties_ = null;
+        }
+        return propertiesBuilder_;
       }
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
@@ -16550,59 +16708,61 @@ public final class TctrlSchemaProto {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\022tctrl-schema.proto\022\014tctrl.schema\032\031goog" +
-      "le/protobuf/any.proto\")\n\013ParamOption\022\013\n\003" +
-      "key\030\001 \001(\t\022\r\n\005label\030\002 \001(\t\"S\n\nOptionList\022\013" +
-      "\n\003key\030\001 \001(\t\022\r\n\005label\030\002 \001(\t\022)\n\006option\030\003 \003" +
-      "(\0132\031.tctrl.schema.ParamOption\"\230\002\n\rParamP" +
-      "artSpec\022\013\n\003key\030\001 \001(\t\022\r\n\005label\030\002 \001(\t\022&\n\010m" +
-      "inLimit\030\003 \001(\0132\024.google.protobuf.Any\022&\n\010m" +
-      "axLimit\030\004 \001(\0132\024.google.protobuf.Any\022%\n\007m" +
-      "inNorm\030\005 \001(\0132\024.google.protobuf.Any\022%\n\007ma" +
-      "xNorm\030\006 \001(\0132\024.google.protobuf.Any\022(\n\ndef",
-      "aultVal\030\007 \001(\0132\024.google.protobuf.Any\022#\n\005v" +
-      "alue\030\010 \001(\0132\024.google.protobuf.Any\"\322\004\n\tPar" +
-      "amSpec\022\013\n\003key\030\001 \001(\t\022\r\n\005label\030\002 \001(\t\022%\n\004ty" +
-      "pe\030\003 \001(\0162\027.tctrl.schema.ParamType\022\014\n\004pat" +
-      "h\030\004 \001(\t\022\021\n\totherType\030\005 \001(\t\022&\n\010minLimit\030\006" +
-      " \001(\0132\024.google.protobuf.Any\022&\n\010maxLimit\030\007" +
-      " \001(\0132\024.google.protobuf.Any\022%\n\007minNorm\030\010 " +
-      "\001(\0132\024.google.protobuf.Any\022%\n\007maxNorm\030\t \001" +
-      "(\0132\024.google.protobuf.Any\022(\n\ndefaultVal\030\n" +
-      " \001(\0132\024.google.protobuf.Any\022#\n\005value\030\013 \001(",
-      "\0132\024.google.protobuf.Any\022\022\n\nvalueIndex\030\014 " +
-      "\001(\005\022)\n\004part\030\r \003(\0132\033.tctrl.schema.ParamPa" +
-      "rtSpec\022\r\n\005style\030\016 \001(\t\022\r\n\005group\030\017 \001(\t\022)\n\006" +
-      "option\030\020 \003(\0132\031.tctrl.schema.ParamOption\022" +
-      "\025\n\roptionListKey\030\021 \001(\t\022\013\n\003tag\030\022 \003(\t\022\014\n\004h" +
-      "elp\030\023 \001(\t\022\017\n\007offHelp\030\024 \001(\t\022\022\n\nbuttonText" +
-      "\030\025 \001(\t\022\025\n\rbuttonOffText\030\026 \001(\t\"\201\001\n\016Module" +
-      "TypeSpec\022\013\n\003key\030\001 \001(\t\022\r\n\005label\030\002 \001(\t\022&\n\005" +
-      "param\030\007 \003(\0132\027.tctrl.schema.ParamSpec\022+\n\n" +
-      "paramGroup\030\t \003(\0132\027.tctrl.schema.GroupInf",
-      "o\"\227\002\n\nModuleSpec\022\013\n\003key\030\001 \001(\t\022\r\n\005label\030\002" +
-      " \001(\t\022\014\n\004path\030\003 \001(\t\022\022\n\nmoduleType\030\004 \001(\t\022\r" +
-      "\n\005group\030\005 \001(\t\022\013\n\003tag\030\006 \003(\t\022&\n\005param\030\007 \003(" +
-      "\0132\027.tctrl.schema.ParamSpec\022-\n\013childModul" +
-      "e\030\010 \003(\0132\030.tctrl.schema.ModuleSpec\022+\n\npar" +
-      "amGroup\030\t \003(\0132\027.tctrl.schema.GroupInfo\022+" +
-      "\n\nchildGroup\030\n \003(\0132\027.tctrl.schema.GroupI" +
-      "nfo\"V\n\016ConnectionInfo\022\013\n\003key\030\001 \001(\t\022\r\n\005la" +
-      "bel\030\002 \001(\t\022\014\n\004type\030\003 \001(\t\022\014\n\004host\030\004 \001(\t\022\014\n" +
-      "\004port\030\005 \001(\005\"4\n\tGroupInfo\022\013\n\003key\030\001 \001(\t\022\r\n",
-      "\005label\030\002 \001(\t\022\013\n\003tag\030\003 \003(\t\"\264\002\n\tAppSchema\022" +
-      "\013\n\003key\030\001 \001(\t\022\r\n\005label\030\002 \001(\t\022\013\n\003tag\030\003 \003(\t" +
-      "\022\023\n\013description\030\004 \001(\t\022*\n\010children\030\005 \003(\0132" +
-      "\030.tctrl.schema.ModuleSpec\022+\n\nchildGroup\030" +
-      "\006 \003(\0132\027.tctrl.schema.GroupInfo\022,\n\noption" +
-      "List\030\007 \003(\0132\030.tctrl.schema.OptionList\0220\n\n" +
-      "connection\030\010 \003(\0132\034.tctrl.schema.Connecti" +
-      "onInfo\0220\n\nmoduleType\030\t \003(\0132\034.tctrl.schem" +
-      "a.ModuleTypeSpec*k\n\tParamType\022\t\n\005OTHER\020\000" +
-      "\022\010\n\004BOOL\020\003\022\n\n\006STRING\020\004\022\007\n\003INT\020\005\022\t\n\005FLOAT",
-      "\020\006\022\010\n\004IVEC\020\007\022\010\n\004FVEC\020\010\022\010\n\004MENU\020\n\022\013\n\007TRIG" +
-      "GER\020\013B)\n\025net.t3kt.tctrl.schemaB\020TctrlSch" +
-      "emaProtob\006proto3"
+      "\n\022tctrl-schema.proto\022\014tctrl.schema\032\034goog" +
+      "le/protobuf/struct.proto\")\n\013ParamOption\022" +
+      "\013\n\003key\030\001 \001(\t\022\r\n\005label\030\002 \001(\t\"S\n\nOptionLis" +
+      "t\022\013\n\003key\030\001 \001(\t\022\r\n\005label\030\002 \001(\t\022)\n\006option\030" +
+      "\003 \003(\0132\031.tctrl.schema.ParamOption\"\244\002\n\rPar" +
+      "amPartSpec\022\013\n\003key\030\001 \001(\t\022\r\n\005label\030\002 \001(\t\022(" +
+      "\n\010minLimit\030\003 \001(\0132\026.google.protobuf.Value" +
+      "\022(\n\010maxLimit\030\004 \001(\0132\026.google.protobuf.Val" +
+      "ue\022\'\n\007minNorm\030\005 \001(\0132\026.google.protobuf.Va" +
+      "lue\022\'\n\007maxNorm\030\006 \001(\0132\026.google.protobuf.V",
+      "alue\022*\n\ndefaultVal\030\007 \001(\0132\026.google.protob" +
+      "uf.Value\022%\n\005value\030\010 \001(\0132\026.google.protobu" +
+      "f.Value\"\214\005\n\tParamSpec\022\013\n\003key\030\001 \001(\t\022\r\n\005la" +
+      "bel\030\002 \001(\t\022%\n\004type\030\003 \001(\0162\027.tctrl.schema.P" +
+      "aramType\022\014\n\004path\030\004 \001(\t\022\021\n\totherType\030\005 \001(" +
+      "\t\022(\n\010minLimit\030\006 \001(\0132\026.google.protobuf.Va" +
+      "lue\022(\n\010maxLimit\030\007 \001(\0132\026.google.protobuf." +
+      "Value\022\'\n\007minNorm\030\010 \001(\0132\026.google.protobuf" +
+      ".Value\022\'\n\007maxNorm\030\t \001(\0132\026.google.protobu" +
+      "f.Value\022*\n\ndefaultVal\030\n \001(\0132\026.google.pro",
+      "tobuf.Value\022%\n\005value\030\013 \001(\0132\026.google.prot" +
+      "obuf.Value\022\022\n\nvalueIndex\030\014 \001(\005\022)\n\004part\030\r" +
+      " \003(\0132\033.tctrl.schema.ParamPartSpec\022\r\n\005sty" +
+      "le\030\016 \001(\t\022\r\n\005group\030\017 \001(\t\022)\n\006option\030\020 \003(\0132" +
+      "\031.tctrl.schema.ParamOption\022\025\n\roptionList" +
+      "Key\030\021 \001(\t\022\013\n\003tag\030\022 \003(\t\022\014\n\004help\030\023 \001(\t\022\017\n\007" +
+      "offHelp\030\024 \001(\t\022\022\n\nbuttonText\030\025 \001(\t\022\025\n\rbut" +
+      "tonOffText\030\026 \001(\t\022,\n\nproperties\030\350\007 \001(\0132\027." +
+      "google.protobuf.Struct\"\201\001\n\016ModuleTypeSpe" +
+      "c\022\013\n\003key\030\001 \001(\t\022\r\n\005label\030\002 \001(\t\022&\n\005param\030\007",
+      " \003(\0132\027.tctrl.schema.ParamSpec\022+\n\nparamGr" +
+      "oup\030\t \003(\0132\027.tctrl.schema.GroupInfo\"\227\002\n\nM" +
+      "oduleSpec\022\013\n\003key\030\001 \001(\t\022\r\n\005label\030\002 \001(\t\022\014\n" +
+      "\004path\030\003 \001(\t\022\022\n\nmoduleType\030\004 \001(\t\022\r\n\005group" +
+      "\030\005 \001(\t\022\013\n\003tag\030\006 \003(\t\022&\n\005param\030\007 \003(\0132\027.tct" +
+      "rl.schema.ParamSpec\022-\n\013childModule\030\010 \003(\013" +
+      "2\030.tctrl.schema.ModuleSpec\022+\n\nparamGroup" +
+      "\030\t \003(\0132\027.tctrl.schema.GroupInfo\022+\n\nchild" +
+      "Group\030\n \003(\0132\027.tctrl.schema.GroupInfo\"V\n\016" +
+      "ConnectionInfo\022\013\n\003key\030\001 \001(\t\022\r\n\005label\030\002 \001",
+      "(\t\022\014\n\004type\030\003 \001(\t\022\014\n\004host\030\004 \001(\t\022\014\n\004port\030\005" +
+      " \001(\005\"4\n\tGroupInfo\022\013\n\003key\030\001 \001(\t\022\r\n\005label\030" +
+      "\002 \001(\t\022\013\n\003tag\030\003 \003(\t\"\264\002\n\tAppSchema\022\013\n\003key\030" +
+      "\001 \001(\t\022\r\n\005label\030\002 \001(\t\022\013\n\003tag\030\003 \003(\t\022\023\n\013des" +
+      "cription\030\004 \001(\t\022*\n\010children\030\005 \003(\0132\030.tctrl" +
+      ".schema.ModuleSpec\022+\n\nchildGroup\030\006 \003(\0132\027" +
+      ".tctrl.schema.GroupInfo\022,\n\noptionList\030\007 " +
+      "\003(\0132\030.tctrl.schema.OptionList\0220\n\nconnect" +
+      "ion\030\010 \003(\0132\034.tctrl.schema.ConnectionInfo\022" +
+      "0\n\nmoduleType\030\t \003(\0132\034.tctrl.schema.Modul",
+      "eTypeSpec*k\n\tParamType\022\t\n\005OTHER\020\000\022\010\n\004BOO" +
+      "L\020\003\022\n\n\006STRING\020\004\022\007\n\003INT\020\005\022\t\n\005FLOAT\020\006\022\010\n\004I" +
+      "VEC\020\007\022\010\n\004FVEC\020\010\022\010\n\004MENU\020\n\022\013\n\007TRIGGER\020\013B)" +
+      "\n\025net.t3kt.tctrl.schemaB\020TctrlSchemaProt" +
+      "ob\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -16615,7 +16775,7 @@ public final class TctrlSchemaProto {
     com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
-          com.google.protobuf.AnyProto.getDescriptor(),
+          com.google.protobuf.StructProto.getDescriptor(),
         }, assigner);
     internal_static_tctrl_schema_ParamOption_descriptor =
       getDescriptor().getMessageTypes().get(0);
@@ -16640,7 +16800,7 @@ public final class TctrlSchemaProto {
     internal_static_tctrl_schema_ParamSpec_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_tctrl_schema_ParamSpec_descriptor,
-        new java.lang.String[] { "Key", "Label", "Type", "Path", "OtherType", "MinLimit", "MaxLimit", "MinNorm", "MaxNorm", "DefaultVal", "Value", "ValueIndex", "Part", "Style", "Group", "Option", "OptionListKey", "Tag", "Help", "OffHelp", "ButtonText", "ButtonOffText", });
+        new java.lang.String[] { "Key", "Label", "Type", "Path", "OtherType", "MinLimit", "MaxLimit", "MinNorm", "MaxNorm", "DefaultVal", "Value", "ValueIndex", "Part", "Style", "Group", "Option", "OptionListKey", "Tag", "Help", "OffHelp", "ButtonText", "ButtonOffText", "Properties", });
     internal_static_tctrl_schema_ModuleTypeSpec_descriptor =
       getDescriptor().getMessageTypes().get(4);
     internal_static_tctrl_schema_ModuleTypeSpec_fieldAccessorTable = new
@@ -16671,7 +16831,7 @@ public final class TctrlSchemaProto {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_tctrl_schema_AppSchema_descriptor,
         new java.lang.String[] { "Key", "Label", "Tag", "Description", "Children", "ChildGroup", "OptionList", "Connection", "ModuleType", });
-    com.google.protobuf.AnyProto.getDescriptor();
+    com.google.protobuf.StructProto.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

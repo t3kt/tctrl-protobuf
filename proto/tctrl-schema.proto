@@ -2,7 +2,7 @@ syntax = "proto3";
 
 package tctrl.schema;
 
-import "google/protobuf/any.proto";
+import "google/protobuf/struct.proto";
 
 option java_package = "net.t3kt.tctrl.schema";
 option java_outer_classname = "TctrlSchemaProto";
@@ -33,12 +33,12 @@ message OptionList {
 message ParamPartSpec {
     string key = 1;
     string label = 2;
-    google.protobuf.Any minLimit = 3;
-    google.protobuf.Any maxLimit = 4;
-    google.protobuf.Any minNorm = 5;
-    google.protobuf.Any maxNorm = 6;
-    google.protobuf.Any defaultVal = 7;
-    google.protobuf.Any value = 8;
+    google.protobuf.Value minLimit = 3;
+    google.protobuf.Value maxLimit = 4;
+    google.protobuf.Value minNorm = 5;
+    google.protobuf.Value maxNorm = 6;
+    google.protobuf.Value defaultVal = 7;
+    google.protobuf.Value value = 8;
 }
 
 message ParamSpec {
@@ -47,12 +47,12 @@ message ParamSpec {
     ParamType type = 3;
     string path = 4;
     string otherType = 5;
-    google.protobuf.Any minLimit = 6;
-    google.protobuf.Any maxLimit = 7;
-    google.protobuf.Any minNorm = 8;
-    google.protobuf.Any maxNorm = 9;
-    google.protobuf.Any defaultVal = 10;
-    google.protobuf.Any value = 11;
+    google.protobuf.Value minLimit = 6;
+    google.protobuf.Value maxLimit = 7;
+    google.protobuf.Value minNorm = 8;
+    google.protobuf.Value maxNorm = 9;
+    google.protobuf.Value defaultVal = 10;
+    google.protobuf.Value value = 11;
     int32 valueIndex = 12;
     repeated ParamPartSpec part = 13;
     string style = 14;
@@ -64,7 +64,7 @@ message ParamSpec {
     string offHelp = 20;
     string buttonText = 21;
     string buttonOffText = 22;
-    // map<string, Any> properties = 1000;
+    google.protobuf.Struct properties = 1000;
 }
 
 message ModuleTypeSpec {
