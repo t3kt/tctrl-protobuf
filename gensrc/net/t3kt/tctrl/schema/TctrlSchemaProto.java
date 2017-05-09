@@ -20,80 +20,80 @@ public final class TctrlSchemaProto {
   public enum ParamType
       implements com.google.protobuf.ProtocolMessageEnum {
     /**
-     * <code>other = 0;</code>
+     * <code>OTHER = 0;</code>
      */
-    other(0),
+    OTHER(0),
     /**
-     * <code>bool = 3;</code>
+     * <code>BOOL = 3;</code>
      */
-    bool(3),
+    BOOL(3),
     /**
-     * <code>string = 4;</code>
+     * <code>STRING = 4;</code>
      */
-    string(4),
+    STRING(4),
     /**
-     * <code>int = 5;</code>
+     * <code>INT = 5;</code>
      */
-    int(5),
+    INT(5),
     /**
-     * <code>float = 6;</code>
+     * <code>FLOAT = 6;</code>
      */
-    float(6),
+    FLOAT(6),
     /**
-     * <code>ivec = 7;</code>
+     * <code>IVEC = 7;</code>
      */
-    ivec(7),
+    IVEC(7),
     /**
-     * <code>fvec = 8;</code>
+     * <code>FVEC = 8;</code>
      */
-    fvec(8),
+    FVEC(8),
     /**
-     * <code>menu = 10;</code>
+     * <code>MENU = 10;</code>
      */
-    menu(10),
+    MENU(10),
     /**
-     * <code>trigger = 11;</code>
+     * <code>TRIGGER = 11;</code>
      */
-    trigger(11),
+    TRIGGER(11),
     UNRECOGNIZED(-1),
     ;
 
     /**
-     * <code>other = 0;</code>
+     * <code>OTHER = 0;</code>
      */
-    public static final int other_VALUE = 0;
+    public static final int OTHER_VALUE = 0;
     /**
-     * <code>bool = 3;</code>
+     * <code>BOOL = 3;</code>
      */
-    public static final int bool_VALUE = 3;
+    public static final int BOOL_VALUE = 3;
     /**
-     * <code>string = 4;</code>
+     * <code>STRING = 4;</code>
      */
-    public static final int string_VALUE = 4;
+    public static final int STRING_VALUE = 4;
     /**
-     * <code>int = 5;</code>
+     * <code>INT = 5;</code>
      */
-    public static final int int_VALUE = 5;
+    public static final int INT_VALUE = 5;
     /**
-     * <code>float = 6;</code>
+     * <code>FLOAT = 6;</code>
      */
-    public static final int float_VALUE = 6;
+    public static final int FLOAT_VALUE = 6;
     /**
-     * <code>ivec = 7;</code>
+     * <code>IVEC = 7;</code>
      */
-    public static final int ivec_VALUE = 7;
+    public static final int IVEC_VALUE = 7;
     /**
-     * <code>fvec = 8;</code>
+     * <code>FVEC = 8;</code>
      */
-    public static final int fvec_VALUE = 8;
+    public static final int FVEC_VALUE = 8;
     /**
-     * <code>menu = 10;</code>
+     * <code>MENU = 10;</code>
      */
-    public static final int menu_VALUE = 10;
+    public static final int MENU_VALUE = 10;
     /**
-     * <code>trigger = 11;</code>
+     * <code>TRIGGER = 11;</code>
      */
-    public static final int trigger_VALUE = 11;
+    public static final int TRIGGER_VALUE = 11;
 
 
     public final int getNumber() {
@@ -114,15 +114,15 @@ public final class TctrlSchemaProto {
 
     public static ParamType forNumber(int value) {
       switch (value) {
-        case 0: return other;
-        case 3: return bool;
-        case 4: return string;
-        case 5: return int;
-        case 6: return float;
-        case 7: return ivec;
-        case 8: return fvec;
-        case 10: return menu;
-        case 11: return trigger;
+        case 0: return OTHER;
+        case 3: return BOOL;
+        case 4: return STRING;
+        case 5: return INT;
+        case 6: return FLOAT;
+        case 7: return IVEC;
+        case 8: return FVEC;
+        case 10: return MENU;
+        case 11: return TRIGGER;
         default: return null;
       }
     }
@@ -4832,7 +4832,7 @@ public final class TctrlSchemaProto {
       if (!getLabelBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 2, label_);
       }
-      if (type_ != net.t3kt.tctrl.schema.TctrlSchemaProto.ParamType.other.getNumber()) {
+      if (type_ != net.t3kt.tctrl.schema.TctrlSchemaProto.ParamType.OTHER.getNumber()) {
         output.writeEnum(3, type_);
       }
       if (!getPathBytes().isEmpty()) {
@@ -4905,7 +4905,7 @@ public final class TctrlSchemaProto {
       if (!getLabelBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, label_);
       }
-      if (type_ != net.t3kt.tctrl.schema.TctrlSchemaProto.ParamType.other.getNumber()) {
+      if (type_ != net.t3kt.tctrl.schema.TctrlSchemaProto.ParamType.OTHER.getNumber()) {
         size += com.google.protobuf.CodedOutputStream
           .computeEnumSize(3, type_);
       }
@@ -16598,10 +16598,10 @@ public final class TctrlSchemaProto {
       "List\030\007 \003(\0132\030.tctrl.schema.OptionList\0220\n\n" +
       "connection\030\010 \003(\0132\034.tctrl.schema.Connecti" +
       "onInfo\0220\n\nmoduleType\030\t \003(\0132\034.tctrl.schem" +
-      "a.ModuleTypeSpec*k\n\tParamType\022\t\n\005other\020\000" +
-      "\022\010\n\004bool\020\003\022\n\n\006string\020\004\022\007\n\003int\020\005\022\t\n\005float",
-      "\020\006\022\010\n\004ivec\020\007\022\010\n\004fvec\020\010\022\010\n\004menu\020\n\022\013\n\007trig" +
-      "ger\020\013B)\n\025net.t3kt.tctrl.schemaB\020TctrlSch" +
+      "a.ModuleTypeSpec*k\n\tParamType\022\t\n\005OTHER\020\000" +
+      "\022\010\n\004BOOL\020\003\022\n\n\006STRING\020\004\022\007\n\003INT\020\005\022\t\n\005FLOAT",
+      "\020\006\022\010\n\004IVEC\020\007\022\010\n\004FVEC\020\010\022\010\n\004MENU\020\n\022\013\n\007TRIG" +
+      "GER\020\013B)\n\025net.t3kt.tctrl.schemaB\020TctrlSch" +
       "emaProtob\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =

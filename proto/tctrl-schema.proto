@@ -8,15 +8,15 @@ option java_package = "net.t3kt.tctrl.schema";
 option java_outer_classname = "TctrlSchemaProto";
 
 enum ParamType {
-    other = 0;
-    bool = 3;
-    string = 4;
-    int = 5;
-    float = 6;
-    ivec = 7;
-    fvec = 8;
-    menu = 10;
-    trigger = 11;
+    OTHER = 0;
+    BOOL = 3;
+    STRING = 4;
+    INT = 5;
+    FLOAT = 6;
+    IVEC = 7;
+    FVEC = 8;
+    MENU = 10;
+    TRIGGER = 11;
 }
 
 message ParamOption {
