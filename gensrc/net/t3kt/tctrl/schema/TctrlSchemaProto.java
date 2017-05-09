@@ -13979,8 +13979,8 @@ public final class TctrlSchemaProto {
 
   }
 
-  public interface AppSchemaOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:tctrl.schema.AppSchema)
+  public interface AppSpecOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:tctrl.schema.AppSpec)
       com.google.protobuf.MessageOrBuilder {
 
     /**
@@ -14153,17 +14153,17 @@ public final class TctrlSchemaProto {
         int index);
   }
   /**
-   * Protobuf type {@code tctrl.schema.AppSchema}
+   * Protobuf type {@code tctrl.schema.AppSpec}
    */
-  public  static final class AppSchema extends
+  public  static final class AppSpec extends
       com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:tctrl.schema.AppSchema)
-      AppSchemaOrBuilder {
-    // Use AppSchema.newBuilder() to construct.
-    private AppSchema(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      // @@protoc_insertion_point(message_implements:tctrl.schema.AppSpec)
+      AppSpecOrBuilder {
+    // Use AppSpec.newBuilder() to construct.
+    private AppSpec(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
     }
-    private AppSchema() {
+    private AppSpec() {
       key_ = "";
       label_ = "";
       tag_ = com.google.protobuf.LazyStringArrayList.EMPTY;
@@ -14180,7 +14180,7 @@ public final class TctrlSchemaProto {
     getUnknownFields() {
       return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
     }
-    private AppSchema(
+    private AppSpec(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -14303,14 +14303,14 @@ public final class TctrlSchemaProto {
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return net.t3kt.tctrl.schema.TctrlSchemaProto.internal_static_tctrl_schema_AppSchema_descriptor;
+      return net.t3kt.tctrl.schema.TctrlSchemaProto.internal_static_tctrl_schema_AppSpec_descriptor;
     }
 
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return net.t3kt.tctrl.schema.TctrlSchemaProto.internal_static_tctrl_schema_AppSchema_fieldAccessorTable
+      return net.t3kt.tctrl.schema.TctrlSchemaProto.internal_static_tctrl_schema_AppSpec_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              net.t3kt.tctrl.schema.TctrlSchemaProto.AppSchema.class, net.t3kt.tctrl.schema.TctrlSchemaProto.AppSchema.Builder.class);
+              net.t3kt.tctrl.schema.TctrlSchemaProto.AppSpec.class, net.t3kt.tctrl.schema.TctrlSchemaProto.AppSpec.Builder.class);
     }
 
     private int bitField0_;
@@ -14713,10 +14713,10 @@ public final class TctrlSchemaProto {
       if (obj == this) {
        return true;
       }
-      if (!(obj instanceof net.t3kt.tctrl.schema.TctrlSchemaProto.AppSchema)) {
+      if (!(obj instanceof net.t3kt.tctrl.schema.TctrlSchemaProto.AppSpec)) {
         return super.equals(obj);
       }
-      net.t3kt.tctrl.schema.TctrlSchemaProto.AppSchema other = (net.t3kt.tctrl.schema.TctrlSchemaProto.AppSchema) obj;
+      net.t3kt.tctrl.schema.TctrlSchemaProto.AppSpec other = (net.t3kt.tctrl.schema.TctrlSchemaProto.AppSpec) obj;
 
       boolean result = true;
       result = result && getKey()
@@ -14782,58 +14782,58 @@ public final class TctrlSchemaProto {
       return hash;
     }
 
-    public static net.t3kt.tctrl.schema.TctrlSchemaProto.AppSchema parseFrom(
+    public static net.t3kt.tctrl.schema.TctrlSchemaProto.AppSpec parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static net.t3kt.tctrl.schema.TctrlSchemaProto.AppSchema parseFrom(
+    public static net.t3kt.tctrl.schema.TctrlSchemaProto.AppSpec parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static net.t3kt.tctrl.schema.TctrlSchemaProto.AppSchema parseFrom(byte[] data)
+    public static net.t3kt.tctrl.schema.TctrlSchemaProto.AppSpec parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static net.t3kt.tctrl.schema.TctrlSchemaProto.AppSchema parseFrom(
+    public static net.t3kt.tctrl.schema.TctrlSchemaProto.AppSpec parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static net.t3kt.tctrl.schema.TctrlSchemaProto.AppSchema parseFrom(java.io.InputStream input)
+    public static net.t3kt.tctrl.schema.TctrlSchemaProto.AppSpec parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static net.t3kt.tctrl.schema.TctrlSchemaProto.AppSchema parseFrom(
+    public static net.t3kt.tctrl.schema.TctrlSchemaProto.AppSpec parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
-    public static net.t3kt.tctrl.schema.TctrlSchemaProto.AppSchema parseDelimitedFrom(java.io.InputStream input)
+    public static net.t3kt.tctrl.schema.TctrlSchemaProto.AppSpec parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input);
     }
-    public static net.t3kt.tctrl.schema.TctrlSchemaProto.AppSchema parseDelimitedFrom(
+    public static net.t3kt.tctrl.schema.TctrlSchemaProto.AppSpec parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
-    public static net.t3kt.tctrl.schema.TctrlSchemaProto.AppSchema parseFrom(
+    public static net.t3kt.tctrl.schema.TctrlSchemaProto.AppSpec parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static net.t3kt.tctrl.schema.TctrlSchemaProto.AppSchema parseFrom(
+    public static net.t3kt.tctrl.schema.TctrlSchemaProto.AppSpec parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -14845,7 +14845,7 @@ public final class TctrlSchemaProto {
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(net.t3kt.tctrl.schema.TctrlSchemaProto.AppSchema prototype) {
+    public static Builder newBuilder(net.t3kt.tctrl.schema.TctrlSchemaProto.AppSpec prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
     public Builder toBuilder() {
@@ -14860,25 +14860,25 @@ public final class TctrlSchemaProto {
       return builder;
     }
     /**
-     * Protobuf type {@code tctrl.schema.AppSchema}
+     * Protobuf type {@code tctrl.schema.AppSpec}
      */
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:tctrl.schema.AppSchema)
-        net.t3kt.tctrl.schema.TctrlSchemaProto.AppSchemaOrBuilder {
+        // @@protoc_insertion_point(builder_implements:tctrl.schema.AppSpec)
+        net.t3kt.tctrl.schema.TctrlSchemaProto.AppSpecOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return net.t3kt.tctrl.schema.TctrlSchemaProto.internal_static_tctrl_schema_AppSchema_descriptor;
+        return net.t3kt.tctrl.schema.TctrlSchemaProto.internal_static_tctrl_schema_AppSpec_descriptor;
       }
 
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return net.t3kt.tctrl.schema.TctrlSchemaProto.internal_static_tctrl_schema_AppSchema_fieldAccessorTable
+        return net.t3kt.tctrl.schema.TctrlSchemaProto.internal_static_tctrl_schema_AppSpec_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                net.t3kt.tctrl.schema.TctrlSchemaProto.AppSchema.class, net.t3kt.tctrl.schema.TctrlSchemaProto.AppSchema.Builder.class);
+                net.t3kt.tctrl.schema.TctrlSchemaProto.AppSpec.class, net.t3kt.tctrl.schema.TctrlSchemaProto.AppSpec.Builder.class);
       }
 
-      // Construct using net.t3kt.tctrl.schema.TctrlSchemaProto.AppSchema.newBuilder()
+      // Construct using net.t3kt.tctrl.schema.TctrlSchemaProto.AppSpec.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
       }
@@ -14943,23 +14943,23 @@ public final class TctrlSchemaProto {
 
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return net.t3kt.tctrl.schema.TctrlSchemaProto.internal_static_tctrl_schema_AppSchema_descriptor;
+        return net.t3kt.tctrl.schema.TctrlSchemaProto.internal_static_tctrl_schema_AppSpec_descriptor;
       }
 
-      public net.t3kt.tctrl.schema.TctrlSchemaProto.AppSchema getDefaultInstanceForType() {
-        return net.t3kt.tctrl.schema.TctrlSchemaProto.AppSchema.getDefaultInstance();
+      public net.t3kt.tctrl.schema.TctrlSchemaProto.AppSpec getDefaultInstanceForType() {
+        return net.t3kt.tctrl.schema.TctrlSchemaProto.AppSpec.getDefaultInstance();
       }
 
-      public net.t3kt.tctrl.schema.TctrlSchemaProto.AppSchema build() {
-        net.t3kt.tctrl.schema.TctrlSchemaProto.AppSchema result = buildPartial();
+      public net.t3kt.tctrl.schema.TctrlSchemaProto.AppSpec build() {
+        net.t3kt.tctrl.schema.TctrlSchemaProto.AppSpec result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
         return result;
       }
 
-      public net.t3kt.tctrl.schema.TctrlSchemaProto.AppSchema buildPartial() {
-        net.t3kt.tctrl.schema.TctrlSchemaProto.AppSchema result = new net.t3kt.tctrl.schema.TctrlSchemaProto.AppSchema(this);
+      public net.t3kt.tctrl.schema.TctrlSchemaProto.AppSpec buildPartial() {
+        net.t3kt.tctrl.schema.TctrlSchemaProto.AppSpec result = new net.t3kt.tctrl.schema.TctrlSchemaProto.AppSpec(this);
         int from_bitField0_ = bitField0_;
         int to_bitField0_ = 0;
         result.key_ = key_;
@@ -15047,16 +15047,16 @@ public final class TctrlSchemaProto {
         return (Builder) super.addRepeatedField(field, value);
       }
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof net.t3kt.tctrl.schema.TctrlSchemaProto.AppSchema) {
-          return mergeFrom((net.t3kt.tctrl.schema.TctrlSchemaProto.AppSchema)other);
+        if (other instanceof net.t3kt.tctrl.schema.TctrlSchemaProto.AppSpec) {
+          return mergeFrom((net.t3kt.tctrl.schema.TctrlSchemaProto.AppSpec)other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(net.t3kt.tctrl.schema.TctrlSchemaProto.AppSchema other) {
-        if (other == net.t3kt.tctrl.schema.TctrlSchemaProto.AppSchema.getDefaultInstance()) return this;
+      public Builder mergeFrom(net.t3kt.tctrl.schema.TctrlSchemaProto.AppSpec other) {
+        if (other == net.t3kt.tctrl.schema.TctrlSchemaProto.AppSpec.getDefaultInstance()) return this;
         if (!other.getKey().isEmpty()) {
           key_ = other.key_;
           onChanged();
@@ -15221,11 +15221,11 @@ public final class TctrlSchemaProto {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        net.t3kt.tctrl.schema.TctrlSchemaProto.AppSchema parsedMessage = null;
+        net.t3kt.tctrl.schema.TctrlSchemaProto.AppSpec parsedMessage = null;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (net.t3kt.tctrl.schema.TctrlSchemaProto.AppSchema) e.getUnfinishedMessage();
+          parsedMessage = (net.t3kt.tctrl.schema.TctrlSchemaProto.AppSpec) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
           if (parsedMessage != null) {
@@ -16747,39 +16747,39 @@ public final class TctrlSchemaProto {
       }
 
 
-      // @@protoc_insertion_point(builder_scope:tctrl.schema.AppSchema)
+      // @@protoc_insertion_point(builder_scope:tctrl.schema.AppSpec)
     }
 
-    // @@protoc_insertion_point(class_scope:tctrl.schema.AppSchema)
-    private static final net.t3kt.tctrl.schema.TctrlSchemaProto.AppSchema DEFAULT_INSTANCE;
+    // @@protoc_insertion_point(class_scope:tctrl.schema.AppSpec)
+    private static final net.t3kt.tctrl.schema.TctrlSchemaProto.AppSpec DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new net.t3kt.tctrl.schema.TctrlSchemaProto.AppSchema();
+      DEFAULT_INSTANCE = new net.t3kt.tctrl.schema.TctrlSchemaProto.AppSpec();
     }
 
-    public static net.t3kt.tctrl.schema.TctrlSchemaProto.AppSchema getDefaultInstance() {
+    public static net.t3kt.tctrl.schema.TctrlSchemaProto.AppSpec getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
-    private static final com.google.protobuf.Parser<AppSchema>
-        PARSER = new com.google.protobuf.AbstractParser<AppSchema>() {
-      public AppSchema parsePartialFrom(
+    private static final com.google.protobuf.Parser<AppSpec>
+        PARSER = new com.google.protobuf.AbstractParser<AppSpec>() {
+      public AppSpec parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-          return new AppSchema(input, extensionRegistry);
+          return new AppSpec(input, extensionRegistry);
       }
     };
 
-    public static com.google.protobuf.Parser<AppSchema> parser() {
+    public static com.google.protobuf.Parser<AppSpec> parser() {
       return PARSER;
     }
 
     @java.lang.Override
-    public com.google.protobuf.Parser<AppSchema> getParserForType() {
+    public com.google.protobuf.Parser<AppSpec> getParserForType() {
       return PARSER;
     }
 
-    public net.t3kt.tctrl.schema.TctrlSchemaProto.AppSchema getDefaultInstanceForType() {
+    public net.t3kt.tctrl.schema.TctrlSchemaProto.AppSpec getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
@@ -16826,10 +16826,10 @@ public final class TctrlSchemaProto {
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_tctrl_schema_GroupInfo_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_tctrl_schema_AppSchema_descriptor;
+    internal_static_tctrl_schema_AppSpec_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_tctrl_schema_AppSchema_fieldAccessorTable;
+      internal_static_tctrl_schema_AppSpec_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -16883,18 +16883,18 @@ public final class TctrlSchemaProto {
       "ey\030\001 \001(\t\022\r\n\005label\030\002 \001(\t\022\014\n\004type\030\003 \001(\t\022\014\n" +
       "\004host\030\004 \001(\t\022\014\n\004port\030\005 \001(\005\"4\n\tGroupInfo\022\013" +
       "\n\003key\030\001 \001(\t\022\r\n\005label\030\002 \001(\t\022\013\n\003tag\030\003 \003(\t\"" +
-      "\264\002\n\tAppSchema\022\013\n\003key\030\001 \001(\t\022\r\n\005label\030\002 \001(" +
-      "\t\022\013\n\003tag\030\003 \003(\t\022\023\n\013description\030\004 \001(\t\022*\n\010c" +
-      "hildren\030\005 \003(\0132\030.tctrl.schema.ModuleSpec\022" +
-      "+\n\nchildGroup\030\006 \003(\0132\027.tctrl.schema.Group" +
-      "Info\022,\n\noptionList\030\007 \003(\0132\030.tctrl.schema." +
-      "OptionList\0220\n\nconnection\030\010 \003(\0132\034.tctrl.s",
-      "chema.ConnectionInfo\0220\n\nmoduleType\030\t \003(\013" +
-      "2\034.tctrl.schema.ModuleTypeSpec*k\n\tParamT" +
-      "ype\022\t\n\005OTHER\020\000\022\010\n\004BOOL\020\003\022\n\n\006STRING\020\004\022\007\n\003" +
-      "INT\020\005\022\t\n\005FLOAT\020\006\022\010\n\004IVEC\020\007\022\010\n\004FVEC\020\010\022\010\n\004" +
-      "MENU\020\n\022\013\n\007TRIGGER\020\013B)\n\025net.t3kt.tctrl.sc" +
-      "hemaB\020TctrlSchemaProtob\006proto3"
+      "\262\002\n\007AppSpec\022\013\n\003key\030\001 \001(\t\022\r\n\005label\030\002 \001(\t\022" +
+      "\013\n\003tag\030\003 \003(\t\022\023\n\013description\030\004 \001(\t\022*\n\010chi" +
+      "ldren\030\005 \003(\0132\030.tctrl.schema.ModuleSpec\022+\n" +
+      "\nchildGroup\030\006 \003(\0132\027.tctrl.schema.GroupIn" +
+      "fo\022,\n\noptionList\030\007 \003(\0132\030.tctrl.schema.Op" +
+      "tionList\0220\n\nconnection\030\010 \003(\0132\034.tctrl.sch",
+      "ema.ConnectionInfo\0220\n\nmoduleType\030\t \003(\0132\034" +
+      ".tctrl.schema.ModuleTypeSpec*k\n\tParamTyp" +
+      "e\022\t\n\005OTHER\020\000\022\010\n\004BOOL\020\003\022\n\n\006STRING\020\004\022\007\n\003IN" +
+      "T\020\005\022\t\n\005FLOAT\020\006\022\010\n\004IVEC\020\007\022\010\n\004FVEC\020\010\022\010\n\004ME" +
+      "NU\020\n\022\013\n\007TRIGGER\020\013B)\n\025net.t3kt.tctrl.sche" +
+      "maB\020TctrlSchemaProtob\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -16958,11 +16958,11 @@ public final class TctrlSchemaProto {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_tctrl_schema_GroupInfo_descriptor,
         new java.lang.String[] { "Key", "Label", "Tag", });
-    internal_static_tctrl_schema_AppSchema_descriptor =
+    internal_static_tctrl_schema_AppSpec_descriptor =
       getDescriptor().getMessageTypes().get(8);
-    internal_static_tctrl_schema_AppSchema_fieldAccessorTable = new
+    internal_static_tctrl_schema_AppSpec_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_tctrl_schema_AppSchema_descriptor,
+        internal_static_tctrl_schema_AppSpec_descriptor,
         new java.lang.String[] { "Key", "Label", "Tag", "Description", "Children", "ChildGroup", "OptionList", "Connection", "ModuleType", });
     com.google.protobuf.StructProto.getDescriptor();
     com.google.protobuf.WrappersProto.getDescriptor();

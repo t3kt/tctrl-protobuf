@@ -1,7 +1,7 @@
 package net.t3kt.tctrl.schema.tools;
 
 import net.t3kt.tctrl.schema.Schemas;
-import net.t3kt.tctrl.schema.TctrlSchemaProto.AppSchema;
+import net.t3kt.tctrl.schema.TctrlSchemaProto.AppSpec;
 import org.kohsuke.args4j.CmdLineException;
 import org.kohsuke.args4j.CmdLineParser;
 import org.kohsuke.args4j.Option;
@@ -25,7 +25,7 @@ final class SchemaTool {
 
     private void dumpSchema() throws IOException {
         try (Reader reader = new FileReader(schemaFile)) {
-            AppSchema appSchema = Schemas.parseAppSchemaJson(reader);
+            AppSpec appSchema = Schemas.parseAppSchemaJson(reader);
             Schemas.writeJson(appSchema, System.out);
         }
     }

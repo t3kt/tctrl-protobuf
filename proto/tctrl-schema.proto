@@ -102,7 +102,7 @@ message GroupInfo {
     repeated string tag = 3;
 }
 
-message AppSchema {
+message AppSpec {
     string key = 1;
     string label = 2;
     repeated string tag = 3;
