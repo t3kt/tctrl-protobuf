@@ -64,6 +64,31 @@ public abstract class ParamSchema {
         return new OtherParamSchema(spec);
     }
 
+    public static ParamSchema forParam(ParamSpec spec, @Nullable OptionListProvider optionListProvider) {
+        switch (spec.getType()) {
+            case BOOL:
+                return forBoolean(spec);
+            case STRING:
+                return forString(spec, optionListProvider);
+            case MENU:
+                return forMenu(spec, optionListProvider);
+            case INT:
+                return forInteger(spec);
+            case FLOAT:
+                return forFloat(spec);
+            case IVEC:
+                return forIntegerVector(spec);
+            case FVEC:
+                return forFloatVector(spec);
+            case TRIGGER:
+                return forTrigger(spec);
+            case OTHER:
+            case UNRECOGNIZED:
+            default:
+                return forOther(spec);
+        }
+    }
+
     final ParamSpec spec;
 
     ParamSchema(ParamSpec spec) {

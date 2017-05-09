@@ -14033,27 +14033,27 @@ public final class TctrlSchemaProto {
         getDescriptionBytes();
 
     /**
-     * <code>repeated .tctrl.schema.ModuleSpec children = 5;</code>
+     * <code>repeated .tctrl.schema.ModuleSpec childModule = 5;</code>
      */
     java.util.List<net.t3kt.tctrl.schema.TctrlSchemaProto.ModuleSpec> 
-        getChildrenList();
+        getChildModuleList();
     /**
-     * <code>repeated .tctrl.schema.ModuleSpec children = 5;</code>
+     * <code>repeated .tctrl.schema.ModuleSpec childModule = 5;</code>
      */
-    net.t3kt.tctrl.schema.TctrlSchemaProto.ModuleSpec getChildren(int index);
+    net.t3kt.tctrl.schema.TctrlSchemaProto.ModuleSpec getChildModule(int index);
     /**
-     * <code>repeated .tctrl.schema.ModuleSpec children = 5;</code>
+     * <code>repeated .tctrl.schema.ModuleSpec childModule = 5;</code>
      */
-    int getChildrenCount();
+    int getChildModuleCount();
     /**
-     * <code>repeated .tctrl.schema.ModuleSpec children = 5;</code>
+     * <code>repeated .tctrl.schema.ModuleSpec childModule = 5;</code>
      */
     java.util.List<? extends net.t3kt.tctrl.schema.TctrlSchemaProto.ModuleSpecOrBuilder> 
-        getChildrenOrBuilderList();
+        getChildModuleOrBuilderList();
     /**
-     * <code>repeated .tctrl.schema.ModuleSpec children = 5;</code>
+     * <code>repeated .tctrl.schema.ModuleSpec childModule = 5;</code>
      */
-    net.t3kt.tctrl.schema.TctrlSchemaProto.ModuleSpecOrBuilder getChildrenOrBuilder(
+    net.t3kt.tctrl.schema.TctrlSchemaProto.ModuleSpecOrBuilder getChildModuleOrBuilder(
         int index);
 
     /**
@@ -14168,7 +14168,7 @@ public final class TctrlSchemaProto {
       label_ = "";
       tag_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       description_ = "";
-      children_ = java.util.Collections.emptyList();
+      childModule_ = java.util.Collections.emptyList();
       childGroup_ = java.util.Collections.emptyList();
       optionList_ = java.util.Collections.emptyList();
       connection_ = java.util.Collections.emptyList();
@@ -14229,10 +14229,10 @@ public final class TctrlSchemaProto {
             }
             case 42: {
               if (!((mutable_bitField0_ & 0x00000010) == 0x00000010)) {
-                children_ = new java.util.ArrayList<net.t3kt.tctrl.schema.TctrlSchemaProto.ModuleSpec>();
+                childModule_ = new java.util.ArrayList<net.t3kt.tctrl.schema.TctrlSchemaProto.ModuleSpec>();
                 mutable_bitField0_ |= 0x00000010;
               }
-              children_.add(
+              childModule_.add(
                   input.readMessage(net.t3kt.tctrl.schema.TctrlSchemaProto.ModuleSpec.parser(), extensionRegistry));
               break;
             }
@@ -14284,7 +14284,7 @@ public final class TctrlSchemaProto {
           tag_ = tag_.getUnmodifiableView();
         }
         if (((mutable_bitField0_ & 0x00000010) == 0x00000010)) {
-          children_ = java.util.Collections.unmodifiableList(children_);
+          childModule_ = java.util.Collections.unmodifiableList(childModule_);
         }
         if (((mutable_bitField0_ & 0x00000020) == 0x00000020)) {
           childGroup_ = java.util.Collections.unmodifiableList(childGroup_);
@@ -14445,39 +14445,39 @@ public final class TctrlSchemaProto {
       }
     }
 
-    public static final int CHILDREN_FIELD_NUMBER = 5;
-    private java.util.List<net.t3kt.tctrl.schema.TctrlSchemaProto.ModuleSpec> children_;
+    public static final int CHILDMODULE_FIELD_NUMBER = 5;
+    private java.util.List<net.t3kt.tctrl.schema.TctrlSchemaProto.ModuleSpec> childModule_;
     /**
-     * <code>repeated .tctrl.schema.ModuleSpec children = 5;</code>
+     * <code>repeated .tctrl.schema.ModuleSpec childModule = 5;</code>
      */
-    public java.util.List<net.t3kt.tctrl.schema.TctrlSchemaProto.ModuleSpec> getChildrenList() {
-      return children_;
+    public java.util.List<net.t3kt.tctrl.schema.TctrlSchemaProto.ModuleSpec> getChildModuleList() {
+      return childModule_;
     }
     /**
-     * <code>repeated .tctrl.schema.ModuleSpec children = 5;</code>
+     * <code>repeated .tctrl.schema.ModuleSpec childModule = 5;</code>
      */
     public java.util.List<? extends net.t3kt.tctrl.schema.TctrlSchemaProto.ModuleSpecOrBuilder> 
-        getChildrenOrBuilderList() {
-      return children_;
+        getChildModuleOrBuilderList() {
+      return childModule_;
     }
     /**
-     * <code>repeated .tctrl.schema.ModuleSpec children = 5;</code>
+     * <code>repeated .tctrl.schema.ModuleSpec childModule = 5;</code>
      */
-    public int getChildrenCount() {
-      return children_.size();
+    public int getChildModuleCount() {
+      return childModule_.size();
     }
     /**
-     * <code>repeated .tctrl.schema.ModuleSpec children = 5;</code>
+     * <code>repeated .tctrl.schema.ModuleSpec childModule = 5;</code>
      */
-    public net.t3kt.tctrl.schema.TctrlSchemaProto.ModuleSpec getChildren(int index) {
-      return children_.get(index);
+    public net.t3kt.tctrl.schema.TctrlSchemaProto.ModuleSpec getChildModule(int index) {
+      return childModule_.get(index);
     }
     /**
-     * <code>repeated .tctrl.schema.ModuleSpec children = 5;</code>
+     * <code>repeated .tctrl.schema.ModuleSpec childModule = 5;</code>
      */
-    public net.t3kt.tctrl.schema.TctrlSchemaProto.ModuleSpecOrBuilder getChildrenOrBuilder(
+    public net.t3kt.tctrl.schema.TctrlSchemaProto.ModuleSpecOrBuilder getChildModuleOrBuilder(
         int index) {
-      return children_.get(index);
+      return childModule_.get(index);
     }
 
     public static final int CHILDGROUP_FIELD_NUMBER = 6;
@@ -14644,8 +14644,8 @@ public final class TctrlSchemaProto {
       if (!getDescriptionBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 4, description_);
       }
-      for (int i = 0; i < children_.size(); i++) {
-        output.writeMessage(5, children_.get(i));
+      for (int i = 0; i < childModule_.size(); i++) {
+        output.writeMessage(5, childModule_.get(i));
       }
       for (int i = 0; i < childGroup_.size(); i++) {
         output.writeMessage(6, childGroup_.get(i));
@@ -14683,9 +14683,9 @@ public final class TctrlSchemaProto {
       if (!getDescriptionBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, description_);
       }
-      for (int i = 0; i < children_.size(); i++) {
+      for (int i = 0; i < childModule_.size(); i++) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(5, children_.get(i));
+          .computeMessageSize(5, childModule_.get(i));
       }
       for (int i = 0; i < childGroup_.size(); i++) {
         size += com.google.protobuf.CodedOutputStream
@@ -14727,8 +14727,8 @@ public final class TctrlSchemaProto {
           .equals(other.getTagList());
       result = result && getDescription()
           .equals(other.getDescription());
-      result = result && getChildrenList()
-          .equals(other.getChildrenList());
+      result = result && getChildModuleList()
+          .equals(other.getChildModuleList());
       result = result && getChildGroupList()
           .equals(other.getChildGroupList());
       result = result && getOptionListList()
@@ -14757,9 +14757,9 @@ public final class TctrlSchemaProto {
       }
       hash = (37 * hash) + DESCRIPTION_FIELD_NUMBER;
       hash = (53 * hash) + getDescription().hashCode();
-      if (getChildrenCount() > 0) {
-        hash = (37 * hash) + CHILDREN_FIELD_NUMBER;
-        hash = (53 * hash) + getChildrenList().hashCode();
+      if (getChildModuleCount() > 0) {
+        hash = (37 * hash) + CHILDMODULE_FIELD_NUMBER;
+        hash = (53 * hash) + getChildModuleList().hashCode();
       }
       if (getChildGroupCount() > 0) {
         hash = (37 * hash) + CHILDGROUP_FIELD_NUMBER;
@@ -14891,7 +14891,7 @@ public final class TctrlSchemaProto {
       private void maybeForceBuilderInitialization() {
         if (com.google.protobuf.GeneratedMessageV3
                 .alwaysUseFieldBuilders) {
-          getChildrenFieldBuilder();
+          getChildModuleFieldBuilder();
           getChildGroupFieldBuilder();
           getOptionListFieldBuilder();
           getConnectionFieldBuilder();
@@ -14908,11 +14908,11 @@ public final class TctrlSchemaProto {
         bitField0_ = (bitField0_ & ~0x00000004);
         description_ = "";
 
-        if (childrenBuilder_ == null) {
-          children_ = java.util.Collections.emptyList();
+        if (childModuleBuilder_ == null) {
+          childModule_ = java.util.Collections.emptyList();
           bitField0_ = (bitField0_ & ~0x00000010);
         } else {
-          childrenBuilder_.clear();
+          childModuleBuilder_.clear();
         }
         if (childGroupBuilder_ == null) {
           childGroup_ = java.util.Collections.emptyList();
@@ -14970,14 +14970,14 @@ public final class TctrlSchemaProto {
         }
         result.tag_ = tag_;
         result.description_ = description_;
-        if (childrenBuilder_ == null) {
+        if (childModuleBuilder_ == null) {
           if (((bitField0_ & 0x00000010) == 0x00000010)) {
-            children_ = java.util.Collections.unmodifiableList(children_);
+            childModule_ = java.util.Collections.unmodifiableList(childModule_);
             bitField0_ = (bitField0_ & ~0x00000010);
           }
-          result.children_ = children_;
+          result.childModule_ = childModule_;
         } else {
-          result.children_ = childrenBuilder_.build();
+          result.childModule_ = childModuleBuilder_.build();
         }
         if (childGroupBuilder_ == null) {
           if (((bitField0_ & 0x00000020) == 0x00000020)) {
@@ -15079,29 +15079,29 @@ public final class TctrlSchemaProto {
           description_ = other.description_;
           onChanged();
         }
-        if (childrenBuilder_ == null) {
-          if (!other.children_.isEmpty()) {
-            if (children_.isEmpty()) {
-              children_ = other.children_;
+        if (childModuleBuilder_ == null) {
+          if (!other.childModule_.isEmpty()) {
+            if (childModule_.isEmpty()) {
+              childModule_ = other.childModule_;
               bitField0_ = (bitField0_ & ~0x00000010);
             } else {
-              ensureChildrenIsMutable();
-              children_.addAll(other.children_);
+              ensureChildModuleIsMutable();
+              childModule_.addAll(other.childModule_);
             }
             onChanged();
           }
         } else {
-          if (!other.children_.isEmpty()) {
-            if (childrenBuilder_.isEmpty()) {
-              childrenBuilder_.dispose();
-              childrenBuilder_ = null;
-              children_ = other.children_;
+          if (!other.childModule_.isEmpty()) {
+            if (childModuleBuilder_.isEmpty()) {
+              childModuleBuilder_.dispose();
+              childModuleBuilder_ = null;
+              childModule_ = other.childModule_;
               bitField0_ = (bitField0_ & ~0x00000010);
-              childrenBuilder_ = 
+              childModuleBuilder_ = 
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
-                   getChildrenFieldBuilder() : null;
+                   getChildModuleFieldBuilder() : null;
             } else {
-              childrenBuilder_.addAllMessages(other.children_);
+              childModuleBuilder_.addAllMessages(other.childModule_);
             }
           }
         }
@@ -15537,244 +15537,244 @@ public final class TctrlSchemaProto {
         return this;
       }
 
-      private java.util.List<net.t3kt.tctrl.schema.TctrlSchemaProto.ModuleSpec> children_ =
+      private java.util.List<net.t3kt.tctrl.schema.TctrlSchemaProto.ModuleSpec> childModule_ =
         java.util.Collections.emptyList();
-      private void ensureChildrenIsMutable() {
+      private void ensureChildModuleIsMutable() {
         if (!((bitField0_ & 0x00000010) == 0x00000010)) {
-          children_ = new java.util.ArrayList<net.t3kt.tctrl.schema.TctrlSchemaProto.ModuleSpec>(children_);
+          childModule_ = new java.util.ArrayList<net.t3kt.tctrl.schema.TctrlSchemaProto.ModuleSpec>(childModule_);
           bitField0_ |= 0x00000010;
          }
       }
 
       private com.google.protobuf.RepeatedFieldBuilderV3<
-          net.t3kt.tctrl.schema.TctrlSchemaProto.ModuleSpec, net.t3kt.tctrl.schema.TctrlSchemaProto.ModuleSpec.Builder, net.t3kt.tctrl.schema.TctrlSchemaProto.ModuleSpecOrBuilder> childrenBuilder_;
+          net.t3kt.tctrl.schema.TctrlSchemaProto.ModuleSpec, net.t3kt.tctrl.schema.TctrlSchemaProto.ModuleSpec.Builder, net.t3kt.tctrl.schema.TctrlSchemaProto.ModuleSpecOrBuilder> childModuleBuilder_;
 
       /**
-       * <code>repeated .tctrl.schema.ModuleSpec children = 5;</code>
+       * <code>repeated .tctrl.schema.ModuleSpec childModule = 5;</code>
        */
-      public java.util.List<net.t3kt.tctrl.schema.TctrlSchemaProto.ModuleSpec> getChildrenList() {
-        if (childrenBuilder_ == null) {
-          return java.util.Collections.unmodifiableList(children_);
+      public java.util.List<net.t3kt.tctrl.schema.TctrlSchemaProto.ModuleSpec> getChildModuleList() {
+        if (childModuleBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(childModule_);
         } else {
-          return childrenBuilder_.getMessageList();
+          return childModuleBuilder_.getMessageList();
         }
       }
       /**
-       * <code>repeated .tctrl.schema.ModuleSpec children = 5;</code>
+       * <code>repeated .tctrl.schema.ModuleSpec childModule = 5;</code>
        */
-      public int getChildrenCount() {
-        if (childrenBuilder_ == null) {
-          return children_.size();
+      public int getChildModuleCount() {
+        if (childModuleBuilder_ == null) {
+          return childModule_.size();
         } else {
-          return childrenBuilder_.getCount();
+          return childModuleBuilder_.getCount();
         }
       }
       /**
-       * <code>repeated .tctrl.schema.ModuleSpec children = 5;</code>
+       * <code>repeated .tctrl.schema.ModuleSpec childModule = 5;</code>
        */
-      public net.t3kt.tctrl.schema.TctrlSchemaProto.ModuleSpec getChildren(int index) {
-        if (childrenBuilder_ == null) {
-          return children_.get(index);
+      public net.t3kt.tctrl.schema.TctrlSchemaProto.ModuleSpec getChildModule(int index) {
+        if (childModuleBuilder_ == null) {
+          return childModule_.get(index);
         } else {
-          return childrenBuilder_.getMessage(index);
+          return childModuleBuilder_.getMessage(index);
         }
       }
       /**
-       * <code>repeated .tctrl.schema.ModuleSpec children = 5;</code>
+       * <code>repeated .tctrl.schema.ModuleSpec childModule = 5;</code>
        */
-      public Builder setChildren(
+      public Builder setChildModule(
           int index, net.t3kt.tctrl.schema.TctrlSchemaProto.ModuleSpec value) {
-        if (childrenBuilder_ == null) {
+        if (childModuleBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
           }
-          ensureChildrenIsMutable();
-          children_.set(index, value);
+          ensureChildModuleIsMutable();
+          childModule_.set(index, value);
           onChanged();
         } else {
-          childrenBuilder_.setMessage(index, value);
+          childModuleBuilder_.setMessage(index, value);
         }
         return this;
       }
       /**
-       * <code>repeated .tctrl.schema.ModuleSpec children = 5;</code>
+       * <code>repeated .tctrl.schema.ModuleSpec childModule = 5;</code>
        */
-      public Builder setChildren(
+      public Builder setChildModule(
           int index, net.t3kt.tctrl.schema.TctrlSchemaProto.ModuleSpec.Builder builderForValue) {
-        if (childrenBuilder_ == null) {
-          ensureChildrenIsMutable();
-          children_.set(index, builderForValue.build());
+        if (childModuleBuilder_ == null) {
+          ensureChildModuleIsMutable();
+          childModule_.set(index, builderForValue.build());
           onChanged();
         } else {
-          childrenBuilder_.setMessage(index, builderForValue.build());
+          childModuleBuilder_.setMessage(index, builderForValue.build());
         }
         return this;
       }
       /**
-       * <code>repeated .tctrl.schema.ModuleSpec children = 5;</code>
+       * <code>repeated .tctrl.schema.ModuleSpec childModule = 5;</code>
        */
-      public Builder addChildren(net.t3kt.tctrl.schema.TctrlSchemaProto.ModuleSpec value) {
-        if (childrenBuilder_ == null) {
+      public Builder addChildModule(net.t3kt.tctrl.schema.TctrlSchemaProto.ModuleSpec value) {
+        if (childModuleBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
           }
-          ensureChildrenIsMutable();
-          children_.add(value);
+          ensureChildModuleIsMutable();
+          childModule_.add(value);
           onChanged();
         } else {
-          childrenBuilder_.addMessage(value);
+          childModuleBuilder_.addMessage(value);
         }
         return this;
       }
       /**
-       * <code>repeated .tctrl.schema.ModuleSpec children = 5;</code>
+       * <code>repeated .tctrl.schema.ModuleSpec childModule = 5;</code>
        */
-      public Builder addChildren(
+      public Builder addChildModule(
           int index, net.t3kt.tctrl.schema.TctrlSchemaProto.ModuleSpec value) {
-        if (childrenBuilder_ == null) {
+        if (childModuleBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
           }
-          ensureChildrenIsMutable();
-          children_.add(index, value);
+          ensureChildModuleIsMutable();
+          childModule_.add(index, value);
           onChanged();
         } else {
-          childrenBuilder_.addMessage(index, value);
+          childModuleBuilder_.addMessage(index, value);
         }
         return this;
       }
       /**
-       * <code>repeated .tctrl.schema.ModuleSpec children = 5;</code>
+       * <code>repeated .tctrl.schema.ModuleSpec childModule = 5;</code>
        */
-      public Builder addChildren(
+      public Builder addChildModule(
           net.t3kt.tctrl.schema.TctrlSchemaProto.ModuleSpec.Builder builderForValue) {
-        if (childrenBuilder_ == null) {
-          ensureChildrenIsMutable();
-          children_.add(builderForValue.build());
+        if (childModuleBuilder_ == null) {
+          ensureChildModuleIsMutable();
+          childModule_.add(builderForValue.build());
           onChanged();
         } else {
-          childrenBuilder_.addMessage(builderForValue.build());
+          childModuleBuilder_.addMessage(builderForValue.build());
         }
         return this;
       }
       /**
-       * <code>repeated .tctrl.schema.ModuleSpec children = 5;</code>
+       * <code>repeated .tctrl.schema.ModuleSpec childModule = 5;</code>
        */
-      public Builder addChildren(
+      public Builder addChildModule(
           int index, net.t3kt.tctrl.schema.TctrlSchemaProto.ModuleSpec.Builder builderForValue) {
-        if (childrenBuilder_ == null) {
-          ensureChildrenIsMutable();
-          children_.add(index, builderForValue.build());
+        if (childModuleBuilder_ == null) {
+          ensureChildModuleIsMutable();
+          childModule_.add(index, builderForValue.build());
           onChanged();
         } else {
-          childrenBuilder_.addMessage(index, builderForValue.build());
+          childModuleBuilder_.addMessage(index, builderForValue.build());
         }
         return this;
       }
       /**
-       * <code>repeated .tctrl.schema.ModuleSpec children = 5;</code>
+       * <code>repeated .tctrl.schema.ModuleSpec childModule = 5;</code>
        */
-      public Builder addAllChildren(
+      public Builder addAllChildModule(
           java.lang.Iterable<? extends net.t3kt.tctrl.schema.TctrlSchemaProto.ModuleSpec> values) {
-        if (childrenBuilder_ == null) {
-          ensureChildrenIsMutable();
+        if (childModuleBuilder_ == null) {
+          ensureChildModuleIsMutable();
           com.google.protobuf.AbstractMessageLite.Builder.addAll(
-              values, children_);
+              values, childModule_);
           onChanged();
         } else {
-          childrenBuilder_.addAllMessages(values);
+          childModuleBuilder_.addAllMessages(values);
         }
         return this;
       }
       /**
-       * <code>repeated .tctrl.schema.ModuleSpec children = 5;</code>
+       * <code>repeated .tctrl.schema.ModuleSpec childModule = 5;</code>
        */
-      public Builder clearChildren() {
-        if (childrenBuilder_ == null) {
-          children_ = java.util.Collections.emptyList();
+      public Builder clearChildModule() {
+        if (childModuleBuilder_ == null) {
+          childModule_ = java.util.Collections.emptyList();
           bitField0_ = (bitField0_ & ~0x00000010);
           onChanged();
         } else {
-          childrenBuilder_.clear();
+          childModuleBuilder_.clear();
         }
         return this;
       }
       /**
-       * <code>repeated .tctrl.schema.ModuleSpec children = 5;</code>
+       * <code>repeated .tctrl.schema.ModuleSpec childModule = 5;</code>
        */
-      public Builder removeChildren(int index) {
-        if (childrenBuilder_ == null) {
-          ensureChildrenIsMutable();
-          children_.remove(index);
+      public Builder removeChildModule(int index) {
+        if (childModuleBuilder_ == null) {
+          ensureChildModuleIsMutable();
+          childModule_.remove(index);
           onChanged();
         } else {
-          childrenBuilder_.remove(index);
+          childModuleBuilder_.remove(index);
         }
         return this;
       }
       /**
-       * <code>repeated .tctrl.schema.ModuleSpec children = 5;</code>
+       * <code>repeated .tctrl.schema.ModuleSpec childModule = 5;</code>
        */
-      public net.t3kt.tctrl.schema.TctrlSchemaProto.ModuleSpec.Builder getChildrenBuilder(
+      public net.t3kt.tctrl.schema.TctrlSchemaProto.ModuleSpec.Builder getChildModuleBuilder(
           int index) {
-        return getChildrenFieldBuilder().getBuilder(index);
+        return getChildModuleFieldBuilder().getBuilder(index);
       }
       /**
-       * <code>repeated .tctrl.schema.ModuleSpec children = 5;</code>
+       * <code>repeated .tctrl.schema.ModuleSpec childModule = 5;</code>
        */
-      public net.t3kt.tctrl.schema.TctrlSchemaProto.ModuleSpecOrBuilder getChildrenOrBuilder(
+      public net.t3kt.tctrl.schema.TctrlSchemaProto.ModuleSpecOrBuilder getChildModuleOrBuilder(
           int index) {
-        if (childrenBuilder_ == null) {
-          return children_.get(index);  } else {
-          return childrenBuilder_.getMessageOrBuilder(index);
+        if (childModuleBuilder_ == null) {
+          return childModule_.get(index);  } else {
+          return childModuleBuilder_.getMessageOrBuilder(index);
         }
       }
       /**
-       * <code>repeated .tctrl.schema.ModuleSpec children = 5;</code>
+       * <code>repeated .tctrl.schema.ModuleSpec childModule = 5;</code>
        */
       public java.util.List<? extends net.t3kt.tctrl.schema.TctrlSchemaProto.ModuleSpecOrBuilder> 
-           getChildrenOrBuilderList() {
-        if (childrenBuilder_ != null) {
-          return childrenBuilder_.getMessageOrBuilderList();
+           getChildModuleOrBuilderList() {
+        if (childModuleBuilder_ != null) {
+          return childModuleBuilder_.getMessageOrBuilderList();
         } else {
-          return java.util.Collections.unmodifiableList(children_);
+          return java.util.Collections.unmodifiableList(childModule_);
         }
       }
       /**
-       * <code>repeated .tctrl.schema.ModuleSpec children = 5;</code>
+       * <code>repeated .tctrl.schema.ModuleSpec childModule = 5;</code>
        */
-      public net.t3kt.tctrl.schema.TctrlSchemaProto.ModuleSpec.Builder addChildrenBuilder() {
-        return getChildrenFieldBuilder().addBuilder(
+      public net.t3kt.tctrl.schema.TctrlSchemaProto.ModuleSpec.Builder addChildModuleBuilder() {
+        return getChildModuleFieldBuilder().addBuilder(
             net.t3kt.tctrl.schema.TctrlSchemaProto.ModuleSpec.getDefaultInstance());
       }
       /**
-       * <code>repeated .tctrl.schema.ModuleSpec children = 5;</code>
+       * <code>repeated .tctrl.schema.ModuleSpec childModule = 5;</code>
        */
-      public net.t3kt.tctrl.schema.TctrlSchemaProto.ModuleSpec.Builder addChildrenBuilder(
+      public net.t3kt.tctrl.schema.TctrlSchemaProto.ModuleSpec.Builder addChildModuleBuilder(
           int index) {
-        return getChildrenFieldBuilder().addBuilder(
+        return getChildModuleFieldBuilder().addBuilder(
             index, net.t3kt.tctrl.schema.TctrlSchemaProto.ModuleSpec.getDefaultInstance());
       }
       /**
-       * <code>repeated .tctrl.schema.ModuleSpec children = 5;</code>
+       * <code>repeated .tctrl.schema.ModuleSpec childModule = 5;</code>
        */
       public java.util.List<net.t3kt.tctrl.schema.TctrlSchemaProto.ModuleSpec.Builder> 
-           getChildrenBuilderList() {
-        return getChildrenFieldBuilder().getBuilderList();
+           getChildModuleBuilderList() {
+        return getChildModuleFieldBuilder().getBuilderList();
       }
       private com.google.protobuf.RepeatedFieldBuilderV3<
           net.t3kt.tctrl.schema.TctrlSchemaProto.ModuleSpec, net.t3kt.tctrl.schema.TctrlSchemaProto.ModuleSpec.Builder, net.t3kt.tctrl.schema.TctrlSchemaProto.ModuleSpecOrBuilder> 
-          getChildrenFieldBuilder() {
-        if (childrenBuilder_ == null) {
-          childrenBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+          getChildModuleFieldBuilder() {
+        if (childModuleBuilder_ == null) {
+          childModuleBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
               net.t3kt.tctrl.schema.TctrlSchemaProto.ModuleSpec, net.t3kt.tctrl.schema.TctrlSchemaProto.ModuleSpec.Builder, net.t3kt.tctrl.schema.TctrlSchemaProto.ModuleSpecOrBuilder>(
-                  children_,
+                  childModule_,
                   ((bitField0_ & 0x00000010) == 0x00000010),
                   getParentForChildren(),
                   isClean());
-          children_ = null;
+          childModule_ = null;
         }
-        return childrenBuilder_;
+        return childModuleBuilder_;
       }
 
       private java.util.List<net.t3kt.tctrl.schema.TctrlSchemaProto.GroupInfo> childGroup_ =
@@ -16883,18 +16883,18 @@ public final class TctrlSchemaProto {
       "ey\030\001 \001(\t\022\r\n\005label\030\002 \001(\t\022\014\n\004type\030\003 \001(\t\022\014\n" +
       "\004host\030\004 \001(\t\022\014\n\004port\030\005 \001(\005\"4\n\tGroupInfo\022\013" +
       "\n\003key\030\001 \001(\t\022\r\n\005label\030\002 \001(\t\022\013\n\003tag\030\003 \003(\t\"" +
-      "\262\002\n\007AppSpec\022\013\n\003key\030\001 \001(\t\022\r\n\005label\030\002 \001(\t\022" +
-      "\013\n\003tag\030\003 \003(\t\022\023\n\013description\030\004 \001(\t\022*\n\010chi" +
-      "ldren\030\005 \003(\0132\030.tctrl.schema.ModuleSpec\022+\n" +
-      "\nchildGroup\030\006 \003(\0132\027.tctrl.schema.GroupIn" +
-      "fo\022,\n\noptionList\030\007 \003(\0132\030.tctrl.schema.Op" +
-      "tionList\0220\n\nconnection\030\010 \003(\0132\034.tctrl.sch",
-      "ema.ConnectionInfo\0220\n\nmoduleType\030\t \003(\0132\034" +
-      ".tctrl.schema.ModuleTypeSpec*k\n\tParamTyp" +
-      "e\022\t\n\005OTHER\020\000\022\010\n\004BOOL\020\003\022\n\n\006STRING\020\004\022\007\n\003IN" +
-      "T\020\005\022\t\n\005FLOAT\020\006\022\010\n\004IVEC\020\007\022\010\n\004FVEC\020\010\022\010\n\004ME" +
-      "NU\020\n\022\013\n\007TRIGGER\020\013B)\n\025net.t3kt.tctrl.sche" +
-      "maB\020TctrlSchemaProtob\006proto3"
+      "\265\002\n\007AppSpec\022\013\n\003key\030\001 \001(\t\022\r\n\005label\030\002 \001(\t\022" +
+      "\013\n\003tag\030\003 \003(\t\022\023\n\013description\030\004 \001(\t\022-\n\013chi" +
+      "ldModule\030\005 \003(\0132\030.tctrl.schema.ModuleSpec" +
+      "\022+\n\nchildGroup\030\006 \003(\0132\027.tctrl.schema.Grou" +
+      "pInfo\022,\n\noptionList\030\007 \003(\0132\030.tctrl.schema" +
+      ".OptionList\0220\n\nconnection\030\010 \003(\0132\034.tctrl.",
+      "schema.ConnectionInfo\0220\n\nmoduleType\030\t \003(" +
+      "\0132\034.tctrl.schema.ModuleTypeSpec*k\n\tParam" +
+      "Type\022\t\n\005OTHER\020\000\022\010\n\004BOOL\020\003\022\n\n\006STRING\020\004\022\007\n" +
+      "\003INT\020\005\022\t\n\005FLOAT\020\006\022\010\n\004IVEC\020\007\022\010\n\004FVEC\020\010\022\010\n" +
+      "\004MENU\020\n\022\013\n\007TRIGGER\020\013B)\n\025net.t3kt.tctrl.s" +
+      "chemaB\020TctrlSchemaProtob\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -16963,7 +16963,7 @@ public final class TctrlSchemaProto {
     internal_static_tctrl_schema_AppSpec_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_tctrl_schema_AppSpec_descriptor,
-        new java.lang.String[] { "Key", "Label", "Tag", "Description", "Children", "ChildGroup", "OptionList", "Connection", "ModuleType", });
+        new java.lang.String[] { "Key", "Label", "Tag", "Description", "ChildModule", "ChildGroup", "OptionList", "Connection", "ModuleType", });
     com.google.protobuf.StructProto.getDescriptor();
     com.google.protobuf.WrappersProto.getDescriptor();
   }

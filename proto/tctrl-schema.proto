@@ -107,7 +107,7 @@ message AppSpec {
     string label = 2;
     repeated string tag = 3;
     string description = 4;
-    repeated ModuleSpec children = 5;
+    repeated ModuleSpec childModule = 5;
     repeated GroupInfo childGroup = 6;
     repeated OptionList optionList = 7;
     repeated ConnectionInfo connection = 8;
