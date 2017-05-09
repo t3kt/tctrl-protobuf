@@ -1,0 +1,109 @@
+syntax = "proto3";
+
+import "google/protobuf/any.proto";
+
+enum ParamType {
+    other = 0;
+    bool = 3;
+    string = 4;
+    int = 5;
+    float = 6;
+    ivec = 7;
+    fvec = 8;
+    menu = 10;
+    trigger = 11;
+}
+
+message ParamOption {
+    string key = 1;
+    string label = 2;
+}
+
+message OptionList {
+    string key = 1;
+    string label = 2;
+    repeated ParamOption option = 3;
+}
+
+message ParamPartSpec {
+    string key = 1;
+    string label = 2;
+    Any minLimit = 3;
+    Any maxLimit = 4;
+    Any minNorm = 5;
+    Any maxNorm = 6;
+    Any defaultVal = 7;
+    Any value = 8;
+}
+
+message ParamSpec {
+    string key = 1;
+    string label = 2;
+    ParamType type = 3;
+    string path = 4;
+    string otherType = 5;
+    Any minLimit = 6;
+    Any maxLimit = 7;
+    Any minNorm = 8;
+    Any maxNorm = 9;
+    Any defaultVal = 10;
+    Any value = 11;
+    int32 valueIndex = 12;
+    repeated ParamPartSpec part = 13;
+    string style = 14;
+    string group = 15;
+    repeated ParamOption option = 16;
+    string optionList = 17;
+    repeated string tag = 18;
+    string help = 19;
+    string offHelp = 20;
+    string buttonText = 21;
+    string buttonOffText = 22;
+    // map<string, Any> properties = 1000;
+}
+
+message ModuleTypeSpec {
+    string key = 1;
+    string label = 2;
+    repeated ParamSpec param = 7;
+    repeated GroupInfo paramGroup = 9;
+}
+
+message ModuleSpec {
+    string key = 1;
+    string label = 2;
+    string path = 3;
+    string moduleType = 4;
+    string group = 5;
+    repeated string tag = 6;
+    repeated ParamSpec param = 7;
+    repeated ModuleSpec childModule = 8;
+    repeated GroupInfo paramGroup = 9;
+    repeated GroupInfo childGroup = 10;
+}
+
+message ConnectionInfo {
+    string key = 1;
+    string label = 2;
+    string type = 3;
+    string host = 4;
+    int32 port = 5;
+}
+
+message GroupInfo {
+    string key = 1;
+    string label = 2;
+    repeated string tag = 3;
+}
+
+message AppSchema {
+    string key = 1;
+    string label = 2;
+    repeated string tag = 3;
+    string description = 4;
+    repeated ModuleSpec children = 5;
+    repeated GroupInfo childGroup = 6;
+    repeated OptionList optionList = 7;
+    repeated ConnectionInfo connection = 8;
+    repeated ModuleTypeSpec moduleType = 9;
+}
