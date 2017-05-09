@@ -1,6 +1,11 @@
 syntax = "proto3";
 
+package tctrl.schema;
+
 import "google/protobuf/any.proto";
+
+option java_package = "net.t3kt.tctrl.schema";
+option java_outer_classname = "TctrlSchemaProto";
 
 enum ParamType {
     other = 0;
@@ -28,12 +33,12 @@ message OptionList {
 message ParamPartSpec {
     string key = 1;
     string label = 2;
-    Any minLimit = 3;
-    Any maxLimit = 4;
-    Any minNorm = 5;
-    Any maxNorm = 6;
-    Any defaultVal = 7;
-    Any value = 8;
+    google.protobuf.Any minLimit = 3;
+    google.protobuf.Any maxLimit = 4;
+    google.protobuf.Any minNorm = 5;
+    google.protobuf.Any maxNorm = 6;
+    google.protobuf.Any defaultVal = 7;
+    google.protobuf.Any value = 8;
 }
 
 message ParamSpec {
@@ -42,18 +47,18 @@ message ParamSpec {
     ParamType type = 3;
     string path = 4;
     string otherType = 5;
-    Any minLimit = 6;
-    Any maxLimit = 7;
-    Any minNorm = 8;
-    Any maxNorm = 9;
-    Any defaultVal = 10;
-    Any value = 11;
+    google.protobuf.Any minLimit = 6;
+    google.protobuf.Any maxLimit = 7;
+    google.protobuf.Any minNorm = 8;
+    google.protobuf.Any maxNorm = 9;
+    google.protobuf.Any defaultVal = 10;
+    google.protobuf.Any value = 11;
     int32 valueIndex = 12;
     repeated ParamPartSpec part = 13;
     string style = 14;
     string group = 15;
     repeated ParamOption option = 16;
-    string optionList = 17;
+    string optionListKey = 17;
     repeated string tag = 18;
     string help = 19;
     string offHelp = 20;
