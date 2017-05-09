@@ -7,10 +7,10 @@ import net.t3kt.tctrl.schema.TctrlSchemaProto.ParamPartSpec;
 import java.util.List;
 import java.util.Optional;
 
-public abstract class NumericParamPartSpec<T extends Number> {
+public abstract class NumericParamPartSchema<T extends Number> {
 
-    static NumericParamPartSpec<Integer> forInteger(ParamPartSpec spec) {
-        return new NumericParamPartSpec<Integer>(spec) {
+    static NumericParamPartSchema<Integer> forInteger(ParamPartSpec spec) {
+        return new NumericParamPartSchema<Integer>(spec) {
             @Override
             protected Optional<Integer> convert(Value value) {
                 return Values.toInt(value);
@@ -18,8 +18,8 @@ public abstract class NumericParamPartSpec<T extends Number> {
         };
     }
 
-    static NumericParamPartSpec<Float> forFloat(ParamPartSpec spec) {
-        return new NumericParamPartSpec<Float>(spec) {
+    static NumericParamPartSchema<Float> forFloat(ParamPartSpec spec) {
+        return new NumericParamPartSchema<Float>(spec) {
             @Override
             protected Optional<Float> convert(Value value) {
                 return Values.toFloat(value);
@@ -27,27 +27,27 @@ public abstract class NumericParamPartSpec<T extends Number> {
         };
     }
 
-    static ImmutableList<NumericParamPartSpec<Integer>> forIntegers(List<ParamPartSpec> parts) {
+    static ImmutableList<NumericParamPartSchema<Integer>> forIntegers(List<ParamPartSpec> parts) {
         if (parts.isEmpty()) {
             return ImmutableList.of();
         }
         return parts.stream()
-                .map(NumericParamPartSpec::forInteger)
+                .map(NumericParamPartSchema::forInteger)
                 .collect(ImmutableList.toImmutableList());
     }
 
-    static ImmutableList<NumericParamPartSpec<Float>> forFloats(List<ParamPartSpec> parts) {
+    static ImmutableList<NumericParamPartSchema<Float>> forFloats(List<ParamPartSpec> parts) {
         if (parts.isEmpty()) {
             return ImmutableList.of();
         }
         return parts.stream()
-                .map(NumericParamPartSpec::forFloat)
+                .map(NumericParamPartSchema::forFloat)
                 .collect(ImmutableList.toImmutableList());
     }
 
     private final ParamPartSpec spec;
 
-    private NumericParamPartSpec(ParamPartSpec spec) {
+    private NumericParamPartSchema(ParamPartSpec spec) {
         this.spec = spec;
     }
 

@@ -5,12 +5,10 @@ import net.t3kt.tctrl.schema.TctrlSchemaProto.ParamSpec;
 
 import java.util.Optional;
 
-public abstract class ScalarParamSpec<T> {
+public abstract class ScalarParamSchema<T> extends ParamSchema {
 
-    final ParamSpec spec;
-
-    ScalarParamSpec(ParamSpec spec) {
-        this.spec = spec;
+    ScalarParamSchema(ParamSpec spec) {
+        super(spec);
     }
 
     public Optional<T> getValue() {

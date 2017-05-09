@@ -3,6 +3,7 @@ syntax = "proto3";
 package tctrl.schema;
 
 import "google/protobuf/struct.proto";
+import "google/protobuf/wrappers.proto";
 
 option java_package = "net.t3kt.tctrl.schema";
 option java_outer_classname = "TctrlSchemaProto";
@@ -53,7 +54,7 @@ message ParamSpec {
     google.protobuf.Value maxNorm = 9;
     google.protobuf.Value defaultVal = 10;
     google.protobuf.Value value = 11;
-    int32 valueIndex = 12;
+    google.protobuf.Int32Value valueIndex = 12;
     repeated ParamPartSpec part = 13;
     string style = 14;
     string group = 15;
