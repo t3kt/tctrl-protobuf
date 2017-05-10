@@ -10,6 +10,8 @@ import static net.t3kt.tctrl.schema.json.ParserUtil.has;
 
 import com.google.common.base.Enums;
 import com.google.common.base.Strings;
+import java.io.Reader;
+import javax.json.Json;
 import javax.json.JsonObject;
 import net.t3kt.tctrl.schema.TctrlSchemaProto.AppSpec;
 import net.t3kt.tctrl.schema.TctrlSchemaProto.ConnectionInfo;
@@ -23,13 +25,18 @@ import net.t3kt.tctrl.schema.TctrlSchemaProto.ParamSpec;
 import net.t3kt.tctrl.schema.TctrlSchemaProto.ParamType;
 
 public final class LegacyJsonParser {
-    private LegacyJsonParser() {}
+    private LegacyJsonParser() {
+    }
 
     public static ParamOption parseParamOption(JsonObject obj) {
-        ParamOption.Builder result = ParamOption.newBuilder()
-                .setKey(obj.getString("key"));
-        getString(obj, "label").ifPresent(result::setLabel);
-        return result.build();
+        try {
+            ParamOption.Builder result = ParamOption.newBuilder()
+                    .setKey(obj.getString("key"));
+            getString(obj, "label").ifPresent(result::setLabel);
+            return result.build();
+        } catch (Exception ex) {
+            throw new SchemaParsingException(ex);
+        }
     }
 
     public static OptionList parseOptionList(JsonObject obj) {
@@ -64,7 +71,12 @@ public final class LegacyJsonParser {
     public static ParamSpec parseParamSpec(JsonObject obj) {
         ParamSpec.Builder result = ParamSpec.newBuilder();
         result.setKey(obj.getString("key"));
-        result.setPath(obj.getString("path"));
+//        if (!has(obj, "path")) {
+//            int OMG = 123;
+//        }
+//        result.setPath(obj.getString("path"));
+        // TODO: make path strictly required once pytctrl's handling of vector param paths is fixed
+        getString(obj, "path").ifPresent(result::setPath);
         getString(obj, "label").ifPresent(result::setLabel);
         getString(obj, "style").ifPresent(result::setStyle);
         getString(obj, "group").ifPresent(result::setGroup);
@@ -151,5 +163,10 @@ public final class LegacyJsonParser {
         getObjects(obj, "children", LegacyJsonParser::parseModuleSpec).ifPresent(result::addAllChildModule);
         getObjects(obj, "connections", LegacyJsonParser::parseConnectionInfo).ifPresent(result::addAllConnection);
         return result.build();
+    }
+
+    public static AppSpec parseAppSpec(Reader reader) {
+        JsonObject obj = Json.createReader(reader).readObject();
+        return parseAppSpec(obj);
     }
 }

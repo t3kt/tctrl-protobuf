@@ -81,7 +81,7 @@ final class ParserUtil {
             return Optional.empty();
         }
         JsonValue val = obj.get(key);
-        switch (obj.getValueType()) {
+        switch (val.getValueType()) {
             case NUMBER:
                 return Optional.of(Values.fromDouble(((JsonNumber) val).doubleValue()));
             case TRUE:
