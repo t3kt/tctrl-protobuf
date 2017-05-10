@@ -2,12 +2,13 @@ package net.t3kt.tctrl.schema.params;
 
 import com.google.common.collect.ImmutableList;
 import com.google.protobuf.Value;
+import net.t3kt.tctrl.schema.SchemaNode;
 import net.t3kt.tctrl.schema.TctrlSchemaProto.ParamPartSpec;
 
 import java.util.List;
 import java.util.Optional;
 
-public abstract class NumericParamPartSchema<T extends Number> {
+public abstract class NumericParamPartSchema<T extends Number> extends SchemaNode<ParamPartSpec> {
 
     static NumericParamPartSchema<Integer> forInteger(ParamPartSpec spec) {
         return new NumericParamPartSchema<Integer>(spec) {
@@ -45,14 +46,8 @@ public abstract class NumericParamPartSchema<T extends Number> {
                 .collect(ImmutableList.toImmutableList());
     }
 
-    private final ParamPartSpec spec;
-
     private NumericParamPartSchema(ParamPartSpec spec) {
-        this.spec = spec;
-    }
-
-    ParamPartSpec getSpec() {
-        return spec;
+        super(spec);
     }
 
     public String getKey() {

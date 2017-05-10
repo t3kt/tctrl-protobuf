@@ -7,14 +7,14 @@ import com.google.common.collect.Maps;
 import com.google.common.collect.Multimaps;
 import net.t3kt.tctrl.schema.AppSchema;
 import net.t3kt.tctrl.schema.SchemaGroupList;
+import net.t3kt.tctrl.schema.SchemaNode;
 import net.t3kt.tctrl.schema.TctrlSchemaProto.ModuleSpec;
 import net.t3kt.tctrl.schema.TctrlSchemaProto.ParamSpec;
 import net.t3kt.tctrl.schema.params.ParamSchema;
 
 import java.util.List;
 
-public final class ModuleSchema {
-    private final ModuleSpec spec;
+public final class ModuleSchema extends SchemaNode<ModuleSpec> {
     private final SchemaGroupList childGroups;
     private final SchemaGroupList paramGroups;
     private final ImmutableList<ModuleSchema> childModules;
@@ -23,7 +23,7 @@ public final class ModuleSchema {
     private final ImmutableListMultimap<String, ParamSchema> paramsByGroup;
 
     public ModuleSchema(ModuleSpec spec, AppSchema appSchema) {
-        this.spec = spec;
+        super(spec);
         this.childGroups = new SchemaGroupList(spec.getChildGroupList(), spec.getChildModuleList().stream().map(ModuleSpec::getGroup));
         this.paramGroups = new SchemaGroupList(spec.getParamGroupList(), spec.getParamList().stream().map(ParamSpec::getGroup));
         this.childModules = spec.getChildModuleList()

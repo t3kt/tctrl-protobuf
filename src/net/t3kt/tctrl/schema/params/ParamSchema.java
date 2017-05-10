@@ -2,6 +2,7 @@ package net.t3kt.tctrl.schema.params;
 
 import com.google.common.base.Preconditions;
 import com.google.protobuf.Value;
+import net.t3kt.tctrl.schema.SchemaNode;
 import net.t3kt.tctrl.schema.TctrlSchemaProto.ParamSpec;
 import net.t3kt.tctrl.schema.TctrlSchemaProto.ParamType;
 
@@ -9,7 +10,7 @@ import javax.annotation.Nullable;
 import java.util.List;
 import java.util.Optional;
 
-public abstract class ParamSchema {
+public abstract class ParamSchema extends SchemaNode<ParamSpec> {
     public static VectorParamSchema<Integer> forIntegerVector(ParamSpec spec) {
         Preconditions.checkArgument(spec.getType() == ParamType.IVEC);
         return new VectorParamSchema<>(spec, NumericParamPartSchema.forIntegers(spec.getPartList()));
@@ -89,10 +90,8 @@ public abstract class ParamSchema {
         }
     }
 
-    final ParamSpec spec;
-
     ParamSchema(ParamSpec spec) {
-        this.spec = spec;
+        super(spec);
     }
 
     public String getKey() {

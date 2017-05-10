@@ -1,5 +1,6 @@
 package net.t3kt.tctrl.schema.tools;
 
+import net.t3kt.tctrl.schema.AppSchema;
 import net.t3kt.tctrl.schema.Schemas;
 import net.t3kt.tctrl.schema.TctrlSchemaProto.AppSpec;
 import org.kohsuke.args4j.CmdLineException;
@@ -26,11 +27,16 @@ final class SchemaTool {
         dumpSchema();
     }
 
-    private void dumpSchema() throws IOException {
+    private AppSpec readAppSpec() throws IOException {
         try (Reader reader = new FileReader(schemaFile)) {
-            AppSpec appSchema = Schemas.parseAppSchemaJson(reader);
-            Schemas.writeJson(appSchema, System.out);
+            return Schemas.parseAppSpecJson(reader);
         }
+    }
+
+    private void dumpSchema() throws IOException {
+        AppSpec appSpec = readAppSpec();
+        AppSchema appSchema = new AppSchema(appSpec);
+        appSchema.writeJson(System.out);
     }
 
     public static void main(String[] args) {

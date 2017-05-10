@@ -12,18 +12,17 @@ import net.t3kt.tctrl.schema.params.OptionListProvider;
 
 import java.util.List;
 
-public final class AppSchema implements OptionListProvider {
-    private final AppSpec spec;
+public final class AppSchema extends SchemaNode<AppSpec> implements OptionListProvider {
     private final ImmutableList<ModuleSchema> childModules;
     private final ImmutableMap<String, ModuleSchema> modulesByPath;
 
     public AppSchema(AppSpec spec) {
-        this.spec = spec;
+        super(spec);
         this.childModules = spec.getChildModuleList()
                 .stream()
                 .map(m -> new ModuleSchema(m, this))
                 .collect(ImmutableList.toImmutableList());
-        this.modulesByPath = Maps.uniqueIndex(childModules, ((ModuleSchema moduleSchema) -> moduleSchema.getKey()));
+        this.modulesByPath = Maps.uniqueIndex(childModules, ((ModuleSchema m) -> m.getKey()));
     }
 
     public String getKey() {
