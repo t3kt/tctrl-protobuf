@@ -16,6 +16,7 @@ import static net.t3kt.tctrl.schema.json.ParserUtil.getInt;
 import static net.t3kt.tctrl.schema.json.ParserUtil.getObjects;
 import static net.t3kt.tctrl.schema.json.ParserUtil.getString;
 import static net.t3kt.tctrl.schema.json.ParserUtil.getStrings;
+import static net.t3kt.tctrl.schema.json.ParserUtil.has;
 
 public final class LegacyJsonParser {
 
@@ -43,10 +44,20 @@ public final class LegacyJsonParser {
     }
 
     public ModuleTypeSpec parseModuleTypeSpec(JsonObject obj) {
-        throw new RuntimeException("NOT IMPLEMENTED! NOT IMPLEMENTED! NOT IMPLEMENTED! NOT IMPLEMENTED! NOT IMPLEMENTED!");
+        ModuleTypeSpec.Builder result = ModuleTypeSpec.newBuilder()
+                .setKey(obj.getString("key"));
+        getString(obj, "label").ifPresent(result::setLabel);
+        getObjects(obj, "paramGroups", this::parseGroupInfo).ifPresent(result::addAllParamGroup);
+        getObjects(obj, "params", this::parseParamSpec).ifPresent(result::addAllParam);
+        return result.build();
     }
 
     public ModuleSpec parseModuleSpec(JsonObject obj) {
+        ModuleSpec.Builder result = ModuleSpec.newBuilder()
+                .setKey(obj.getString("key"));
+        getString(obj, "label").ifPresent(result::setLabel);
+        getObjects(obj, "paramGroups", this::parseGroupInfo).ifPresent(result::addAllParamGroup);
+        getObjects(obj, "params", this::parseParamSpec).ifPresent(result::addAllParam);
         throw new RuntimeException("NOT IMPLEMENTED! NOT IMPLEMENTED! NOT IMPLEMENTED! NOT IMPLEMENTED! NOT IMPLEMENTED!");
     }
 
@@ -75,6 +86,15 @@ public final class LegacyJsonParser {
         getStrings(obj, "tags").ifPresent(result::addAllTag);
         getString(obj, "description").ifPresent(result::setDescription);
         getObjects(obj, "childGroups", this::parseGroupInfo).ifPresent(result::addAllChildGroup);
-        throw new RuntimeException("NOT IMPLEMENTED! NOT IMPLEMENTED! NOT IMPLEMENTED! NOT IMPLEMENTED! NOT IMPLEMENTED!");
+        if (has(obj, "path")) {
+            result.setPath(obj.getString("path"));
+        } else {
+            result.setPath("/" + result.getKey());
+        }
+        getObjects(obj, "optionLists", this::parseOptionList).ifPresent(result::addAllOptionList);
+        getObjects(obj, "moduleTypes", this::parseModuleTypeSpec).ifPresent(result::addAllModuleType);
+        getObjects(obj, "children", this::parseModuleSpec).ifPresent(result::addAllChildModule);
+        getObjects(obj, "connections", this::parseConnectionInfo).ifPresent(result::addAllConnection);
+        return result.build();
     }
 }
