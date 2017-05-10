@@ -1,5 +1,6 @@
 package net.t3kt.tctrl.schema.json;
 
+import com.google.common.base.Enums;
 import net.t3kt.tctrl.schema.TctrlSchemaProto.AppSpec;
 import net.t3kt.tctrl.schema.TctrlSchemaProto.ConnectionInfo;
 import net.t3kt.tctrl.schema.TctrlSchemaProto.GroupInfo;
@@ -9,13 +10,16 @@ import net.t3kt.tctrl.schema.TctrlSchemaProto.OptionList;
 import net.t3kt.tctrl.schema.TctrlSchemaProto.ParamOption;
 import net.t3kt.tctrl.schema.TctrlSchemaProto.ParamPartSpec;
 import net.t3kt.tctrl.schema.TctrlSchemaProto.ParamSpec;
+import net.t3kt.tctrl.schema.TctrlSchemaProto.ParamType;
 
 import javax.json.JsonObject;
 
 import static net.t3kt.tctrl.schema.json.ParserUtil.getInt;
+import static net.t3kt.tctrl.schema.json.ParserUtil.getInt32Value;
 import static net.t3kt.tctrl.schema.json.ParserUtil.getObjects;
 import static net.t3kt.tctrl.schema.json.ParserUtil.getString;
 import static net.t3kt.tctrl.schema.json.ParserUtil.getStrings;
+import static net.t3kt.tctrl.schema.json.ParserUtil.getValue;
 import static net.t3kt.tctrl.schema.json.ParserUtil.has;
 
 public final class LegacyJsonParser {
@@ -36,11 +40,48 @@ public final class LegacyJsonParser {
     }
 
     public ParamPartSpec parseParamPartSpec(JsonObject obj) {
-        throw new RuntimeException("NOT IMPLEMENTED! NOT IMPLEMENTED! NOT IMPLEMENTED! NOT IMPLEMENTED! NOT IMPLEMENTED!");
+        ParamPartSpec.Builder result = ParamPartSpec.newBuilder()
+                .setKey(obj.getString("key"));
+        getString(obj, "label").ifPresent(result::setLabel);
+        getString(obj, "path").ifPresent(result::setPath);
+        getValue(obj, "default").ifPresent(result::setDefaultVal);
+        getValue(obj, "value").ifPresent(result::setValue);
+        getValue(obj, "minLimit").ifPresent(result::setMinLimit);
+        getValue(obj, "maxLimit").ifPresent(result::setMaxLimit);
+        getValue(obj, "minNorm").ifPresent(result::setMinNorm);
+        getValue(obj, "maxNorm").ifPresent(result::setMaxNorm);
+        return result.build();
     }
 
     public ParamSpec parseParamSpec(JsonObject obj) {
-        throw new RuntimeException("NOT IMPLEMENTED! NOT IMPLEMENTED! NOT IMPLEMENTED! NOT IMPLEMENTED! NOT IMPLEMENTED!");
+        ParamSpec.Builder result = ParamSpec.newBuilder();
+        result.setKey(obj.getString("key"));
+        result.setPath(obj.getString("path"));
+        getString(obj, "label").ifPresent(result::setLabel);
+        getString(obj, "style").ifPresent(result::setStyle);
+        getString(obj, "group").ifPresent(result::setGroup);
+        getStrings(obj, "tags").ifPresent(result::addAllTag);
+        getString(obj, "help").ifPresent(result::setHelp);
+        getString(obj, "offHelp").ifPresent(result::setOffHelp);
+        getString(obj, "buttonText").ifPresent(result::setButtonText);
+        getString(obj, "buttonOffText").ifPresent(result::setButtonOffText);
+        String typeStr = getString(obj,"type").orElse(null);
+        ParamType type = typeStr == null ? ParamType.OTHER : Enums.getIfPresent(ParamType.class, typeStr).or(ParamType.OTHER);
+        result.setType(type);
+        if (type == ParamType.OTHER) {
+            result.setOtherType(obj.getString("otherType", typeStr));
+        }
+        getValue(obj, "default").ifPresent(result::setDefaultVal);
+        getValue(obj, "value").ifPresent(result::setValue);
+        getInt32Value(obj, "valueIndex").ifPresent(result::setValueIndex);
+        getValue(obj, "minLimit").ifPresent(result::setMinLimit);
+        getValue(obj, "maxLimit").ifPresent(result::setMaxLimit);
+        getValue(obj, "minNorm").ifPresent(result::setMinNorm);
+        getValue(obj, "maxNorm").ifPresent(result::setMaxNorm);
+        getObjects(obj, "options", this::parseParamOption).ifPresent(result::addAllOption);
+        getString(obj, "optionsList").ifPresent(result::setOptionListKey);
+        getObjects(obj, "parts", this::parseParamPartSpec).ifPresent(result::addAllPart);
+        return result.build();
     }
 
     public ModuleTypeSpec parseModuleTypeSpec(JsonObject obj) {
@@ -54,11 +95,17 @@ public final class LegacyJsonParser {
 
     public ModuleSpec parseModuleSpec(JsonObject obj) {
         ModuleSpec.Builder result = ModuleSpec.newBuilder()
-                .setKey(obj.getString("key"));
+                .setKey(obj.getString("key"))
+                .setPath(obj.getString("path"));
         getString(obj, "label").ifPresent(result::setLabel);
+        getString(obj, "moduleType").ifPresent(result::setModuleType);
+        getString(obj, "group").ifPresent(result::setGroup);
+        getStrings(obj, "tags").ifPresent(result::addAllTag);
         getObjects(obj, "paramGroups", this::parseGroupInfo).ifPresent(result::addAllParamGroup);
         getObjects(obj, "params", this::parseParamSpec).ifPresent(result::addAllParam);
-        throw new RuntimeException("NOT IMPLEMENTED! NOT IMPLEMENTED! NOT IMPLEMENTED! NOT IMPLEMENTED! NOT IMPLEMENTED!");
+        getObjects(obj, "childGroups", this::parseGroupInfo).ifPresent(result::addAllChildGroup);
+        getObjects(obj, "children", this::parseModuleSpec).ifPresent(result::addAllChildModule);
+        return result.build();
     }
 
     public ConnectionInfo parseConnectionInfo(JsonObject obj) {

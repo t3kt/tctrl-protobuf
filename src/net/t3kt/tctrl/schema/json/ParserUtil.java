@@ -1,8 +1,15 @@
 package net.t3kt.tctrl.schema.json;
 
+import com.google.common.primitives.Ints;
+import com.google.protobuf.Int32Value;
+import com.google.protobuf.Value;
+import net.t3kt.tctrl.schema.params.Values;
+
 import javax.json.JsonArray;
+import javax.json.JsonNumber;
 import javax.json.JsonObject;
 import javax.json.JsonString;
+import javax.json.JsonValue;
 import java.util.List;
 import java.util.Optional;
 import java.util.function.Function;
@@ -18,11 +25,29 @@ final class ParserUtil {
     }
 
     static Optional<String> getString(JsonObject obj, String key) {
-        return has(obj, key) ? Optional.of(obj.getString(key)) : Optional.empty();
+        if (!has(obj, key)) {
+            return Optional.empty();
+        }
+        String str = obj.getString(key);
+        if (str.isEmpty()) {
+            return Optional.empty();
+        }
+        return Optional.of(str);
     }
 
     static Optional<Integer> getInt(JsonObject obj, String key) {
         return has(obj, key) ? Optional.of(obj.getInt(key)) : Optional.empty();
+    }
+
+    static Optional<Float> getFloat(JsonObject obj, String key) {
+        if (!has(obj, key)) {
+            return Optional.empty();
+        }
+        return Optional.of((float) obj.getJsonNumber(key).doubleValue());
+    }
+
+    static Optional<Boolean> getBool(JsonObject obj, String key) {
+        return has(obj, key) ? Optional.of(obj.getBoolean(key)) : Optional.empty();
     }
 
     static Optional<JsonArray> getArray(JsonObject obj, String key) {
@@ -51,5 +76,30 @@ final class ParserUtil {
                 .map(objs -> objs.stream()
                         .map(parser)
                         .collect(toImmutableList()));
+    }
+
+    static Optional<Value> getValue(JsonObject obj, String key) {
+        if (!has(obj, key)) {
+            return Optional.empty();
+        }
+        JsonValue val = obj.get(key);
+        switch (obj.getValueType()) {
+            case NUMBER:
+                return Optional.of(Values.fromDouble(((JsonNumber) val).doubleValue()));
+            case TRUE:
+                return Optional.of(Values.fromBool(true));
+            case FALSE:
+                return Optional.of(Values.fromBool(false));
+            case STRING:
+                return Optional.of(Values.fromString(((JsonString) val).getString()));
+            default:
+                throw new SchemaParsingException("Unsupported value type: " + val);
+        }
+    }
+
+    static Optional<Int32Value> getInt32Value(JsonObject obj, String key) {
+        return getInt(obj, key).map(val -> Int32Value.newBuilder()
+                .setValue(val)
+                .build());
     }
 }

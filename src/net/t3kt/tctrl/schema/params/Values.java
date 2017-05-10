@@ -4,7 +4,7 @@ import com.google.protobuf.Value;
 
 import java.util.Optional;
 
-final class Values {
+public final class Values {
     private Values() {}
 
     private static IllegalStateException unsupportedType(Value value) {
@@ -67,5 +67,23 @@ final class Values {
             default:
                 throw unsupportedType(value);
         }
+    }
+
+    public static Value fromDouble(double value) {
+        return Value.newBuilder()
+                .setNumberValue(value)
+                .build();
+    }
+
+    public static Value fromBool(boolean value) {
+        return Value.newBuilder()
+                .setBoolValue(value)
+                .build();
+    }
+
+    public static Value fromString(String value) {
+        return Value.newBuilder()
+                .setStringValue(value)
+                .build();
     }
 }
