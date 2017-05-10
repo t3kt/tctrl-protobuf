@@ -5,11 +5,13 @@ import javax.json.JsonObject;
 import javax.json.JsonString;
 import java.util.List;
 import java.util.Optional;
+import java.util.function.Function;
 
 import static com.google.common.collect.ImmutableList.toImmutableList;
 
 final class ParserUtil {
-    private ParserUtil() {}
+    private ParserUtil() {
+    }
 
     static boolean has(JsonObject obj, String key) {
         return obj.containsKey(key) && !obj.isNull(key);
@@ -36,6 +38,18 @@ final class ParserUtil {
                 .map(array -> array.getValuesAs(JsonString.class)
                         .stream()
                         .map(JsonString::getString)
+                        .collect(toImmutableList()));
+    }
+
+    static Optional<List<JsonObject>> getObjects(JsonObject obj, String key) {
+        return getArray(obj, key)
+                .map(array -> array.getValuesAs(JsonObject.class));
+    }
+
+    static <T> Optional<List<T>> getObjects(JsonObject obj, String key, Function<JsonObject, T> parser) {
+        return getObjects(obj, key)
+                .map(objs -> objs.stream()
+                        .map(parser)
                         .collect(toImmutableList()));
     }
 }
