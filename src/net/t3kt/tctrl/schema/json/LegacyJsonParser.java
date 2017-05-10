@@ -23,22 +23,22 @@ import net.t3kt.tctrl.schema.TctrlSchemaProto.ParamType;
 
 public final class LegacyJsonParser {
 
-    public ParamOption parseParamOption(JsonObject obj) {
+    public static ParamOption parseParamOption(JsonObject obj) {
         ParamOption.Builder result = ParamOption.newBuilder()
                 .setKey(obj.getString("key"));
         getString(obj, "label").ifPresent(result::setLabel);
         return result.build();
     }
 
-    public OptionList parseOptionList(JsonObject obj) {
+    public static OptionList parseOptionList(JsonObject obj) {
         OptionList.Builder result = OptionList.newBuilder()
                 .setKey(obj.getString("key"));
         getString(obj, "label").ifPresent(result::setLabel);
-        getObjects(obj, "options", this::parseParamOption).ifPresent(result::addAllOption);
+        getObjects(obj, "options", LegacyJsonParser::parseParamOption).ifPresent(result::addAllOption);
         return result.build();
     }
 
-    public ParamPartSpec parseParamPartSpec(JsonObject obj) {
+    public static ParamPartSpec parseParamPartSpec(JsonObject obj) {
         ParamPartSpec.Builder result = ParamPartSpec.newBuilder()
                 .setKey(obj.getString("key"));
         getString(obj, "label").ifPresent(result::setLabel);
@@ -52,7 +52,7 @@ public final class LegacyJsonParser {
         return result.build();
     }
 
-    public ParamSpec parseParamSpec(JsonObject obj) {
+    public static ParamSpec parseParamSpec(JsonObject obj) {
         ParamSpec.Builder result = ParamSpec.newBuilder();
         result.setKey(obj.getString("key"));
         result.setPath(obj.getString("path"));
@@ -77,22 +77,22 @@ public final class LegacyJsonParser {
         getValue(obj, "maxLimit").ifPresent(result::setMaxLimit);
         getValue(obj, "minNorm").ifPresent(result::setMinNorm);
         getValue(obj, "maxNorm").ifPresent(result::setMaxNorm);
-        getObjects(obj, "options", this::parseParamOption).ifPresent(result::addAllOption);
+        getObjects(obj, "options", LegacyJsonParser::parseParamOption).ifPresent(result::addAllOption);
         getString(obj, "optionsList").ifPresent(result::setOptionListKey);
-        getObjects(obj, "parts", this::parseParamPartSpec).ifPresent(result::addAllPart);
+        getObjects(obj, "parts", LegacyJsonParser::parseParamPartSpec).ifPresent(result::addAllPart);
         return result.build();
     }
 
-    public ModuleTypeSpec parseModuleTypeSpec(JsonObject obj) {
+    public static ModuleTypeSpec parseModuleTypeSpec(JsonObject obj) {
         ModuleTypeSpec.Builder result = ModuleTypeSpec.newBuilder()
                 .setKey(obj.getString("key"));
         getString(obj, "label").ifPresent(result::setLabel);
-        getObjects(obj, "paramGroups", this::parseGroupInfo).ifPresent(result::addAllParamGroup);
-        getObjects(obj, "params", this::parseParamSpec).ifPresent(result::addAllParam);
+        getObjects(obj, "paramGroups", LegacyJsonParser::parseGroupInfo).ifPresent(result::addAllParamGroup);
+        getObjects(obj, "params", LegacyJsonParser::parseParamSpec).ifPresent(result::addAllParam);
         return result.build();
     }
 
-    public ModuleSpec parseModuleSpec(JsonObject obj) {
+    public static ModuleSpec parseModuleSpec(JsonObject obj) {
         ModuleSpec.Builder result = ModuleSpec.newBuilder()
                 .setKey(obj.getString("key"))
                 .setPath(obj.getString("path"));
@@ -100,14 +100,14 @@ public final class LegacyJsonParser {
         getString(obj, "moduleType").ifPresent(result::setModuleType);
         getString(obj, "group").ifPresent(result::setGroup);
         getStrings(obj, "tags").ifPresent(result::addAllTag);
-        getObjects(obj, "paramGroups", this::parseGroupInfo).ifPresent(result::addAllParamGroup);
-        getObjects(obj, "params", this::parseParamSpec).ifPresent(result::addAllParam);
-        getObjects(obj, "childGroups", this::parseGroupInfo).ifPresent(result::addAllChildGroup);
-        getObjects(obj, "children", this::parseModuleSpec).ifPresent(result::addAllChildModule);
+        getObjects(obj, "paramGroups", LegacyJsonParser::parseGroupInfo).ifPresent(result::addAllParamGroup);
+        getObjects(obj, "params", LegacyJsonParser::parseParamSpec).ifPresent(result::addAllParam);
+        getObjects(obj, "childGroups", LegacyJsonParser::parseGroupInfo).ifPresent(result::addAllChildGroup);
+        getObjects(obj, "children", LegacyJsonParser::parseModuleSpec).ifPresent(result::addAllChildModule);
         return result.build();
     }
 
-    public ConnectionInfo parseConnectionInfo(JsonObject obj) {
+    public static ConnectionInfo parseConnectionInfo(JsonObject obj) {
         ConnectionInfo.Builder result = ConnectionInfo.newBuilder();
         getString(obj, "key").ifPresent(result::setKey);
         getString(obj, "label").ifPresent(result::setLabel);
@@ -117,7 +117,7 @@ public final class LegacyJsonParser {
         return result.build();
     }
 
-    public GroupInfo parseGroupInfo(JsonObject obj) {
+    public static GroupInfo parseGroupInfo(JsonObject obj) {
         GroupInfo.Builder result = GroupInfo.newBuilder()
                 .setKey(obj.getString("key"));
         getString(obj, "label").ifPresent(result::setLabel);
@@ -125,22 +125,22 @@ public final class LegacyJsonParser {
         return result.build();
     }
 
-    public AppSpec parseAppSpec(JsonObject obj) {
+    public static AppSpec parseAppSpec(JsonObject obj) {
         AppSpec.Builder result = AppSpec.newBuilder()
                 .setKey(obj.getString("key"));
         getString(obj, "label").ifPresent(result::setLabel);
         getStrings(obj, "tags").ifPresent(result::addAllTag);
         getString(obj, "description").ifPresent(result::setDescription);
-        getObjects(obj, "childGroups", this::parseGroupInfo).ifPresent(result::addAllChildGroup);
+        getObjects(obj, "childGroups", LegacyJsonParser::parseGroupInfo).ifPresent(result::addAllChildGroup);
         if (has(obj, "path")) {
             result.setPath(obj.getString("path"));
         } else {
             result.setPath("/" + result.getKey());
         }
-        getObjects(obj, "optionLists", this::parseOptionList).ifPresent(result::addAllOptionList);
-        getObjects(obj, "moduleTypes", this::parseModuleTypeSpec).ifPresent(result::addAllModuleType);
-        getObjects(obj, "children", this::parseModuleSpec).ifPresent(result::addAllChildModule);
-        getObjects(obj, "connections", this::parseConnectionInfo).ifPresent(result::addAllConnection);
+        getObjects(obj, "optionLists", LegacyJsonParser::parseOptionList).ifPresent(result::addAllOptionList);
+        getObjects(obj, "moduleTypes", LegacyJsonParser::parseModuleTypeSpec).ifPresent(result::addAllModuleType);
+        getObjects(obj, "children", LegacyJsonParser::parseModuleSpec).ifPresent(result::addAllChildModule);
+        getObjects(obj, "connections", LegacyJsonParser::parseConnectionInfo).ifPresent(result::addAllConnection);
         return result.build();
     }
 }
