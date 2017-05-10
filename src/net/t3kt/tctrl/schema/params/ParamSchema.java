@@ -2,13 +2,12 @@ package net.t3kt.tctrl.schema.params;
 
 import com.google.common.base.Preconditions;
 import com.google.protobuf.Value;
+import java.util.List;
+import java.util.Optional;
+import javax.annotation.Nullable;
 import net.t3kt.tctrl.schema.SchemaNode;
 import net.t3kt.tctrl.schema.TctrlSchemaProto.ParamSpec;
 import net.t3kt.tctrl.schema.TctrlSchemaProto.ParamType;
-
-import javax.annotation.Nullable;
-import java.util.List;
-import java.util.Optional;
 
 public abstract class ParamSchema extends SchemaNode<ParamSpec> {
     public static VectorParamSchema<Integer> forIntegerVector(ParamSpec spec) {

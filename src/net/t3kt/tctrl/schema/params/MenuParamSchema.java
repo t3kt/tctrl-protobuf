@@ -3,13 +3,12 @@ package net.t3kt.tctrl.schema.params;
 import com.google.common.base.Strings;
 import com.google.common.collect.ImmutableList;
 import com.google.protobuf.Value;
+import java.util.List;
+import java.util.Optional;
+import javax.annotation.Nullable;
 import net.t3kt.tctrl.schema.TctrlSchemaProto.OptionList;
 import net.t3kt.tctrl.schema.TctrlSchemaProto.ParamOption;
 import net.t3kt.tctrl.schema.TctrlSchemaProto.ParamSpec;
-
-import javax.annotation.Nullable;
-import java.util.List;
-import java.util.Optional;
 
 public class MenuParamSchema extends ScalarParamSchema<String> {
     private final List<ParamOption> options;

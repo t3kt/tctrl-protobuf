@@ -1,20 +1,18 @@
 package net.t3kt.tctrl.schema.json;
 
-import com.google.common.primitives.Ints;
+import static com.google.common.collect.ImmutableList.toImmutableList;
+
 import com.google.protobuf.Int32Value;
 import com.google.protobuf.Value;
-import net.t3kt.tctrl.schema.params.Values;
-
+import java.util.List;
+import java.util.Optional;
+import java.util.function.Function;
 import javax.json.JsonArray;
 import javax.json.JsonNumber;
 import javax.json.JsonObject;
 import javax.json.JsonString;
 import javax.json.JsonValue;
-import java.util.List;
-import java.util.Optional;
-import java.util.function.Function;
-
-import static com.google.common.collect.ImmutableList.toImmutableList;
+import net.t3kt.tctrl.schema.params.Values;
 
 final class ParserUtil {
     private ParserUtil() {

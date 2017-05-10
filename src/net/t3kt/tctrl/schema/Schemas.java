@@ -3,13 +3,13 @@ package net.t3kt.tctrl.schema;
 import com.google.protobuf.InvalidProtocolBufferException;
 import com.google.protobuf.MessageOrBuilder;
 import com.google.protobuf.util.JsonFormat;
-import net.t3kt.tctrl.schema.TctrlSchemaProto.AppSpec;
-
 import java.io.IOException;
 import java.io.Reader;
+import net.t3kt.tctrl.schema.TctrlSchemaProto.AppSpec;
 
 public final class Schemas {
-    private Schemas() {}
+    private Schemas() {
+    }
 
     public static AppSpec parseAppSpecJson(String json) throws IOException {
         AppSpec.Builder builder = AppSpec.newBuilder();

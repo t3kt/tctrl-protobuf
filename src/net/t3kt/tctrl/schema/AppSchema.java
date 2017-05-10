@@ -3,14 +3,13 @@ package net.t3kt.tctrl.schema;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.Maps;
+import java.util.List;
 import net.t3kt.tctrl.schema.TctrlSchemaProto.AppSpec;
 import net.t3kt.tctrl.schema.TctrlSchemaProto.ConnectionInfo;
 import net.t3kt.tctrl.schema.TctrlSchemaProto.ModuleTypeSpec;
 import net.t3kt.tctrl.schema.TctrlSchemaProto.OptionList;
 import net.t3kt.tctrl.schema.modules.ModuleSchema;
 import net.t3kt.tctrl.schema.params.OptionListProvider;
-
-import java.util.List;
 
 public final class AppSchema extends SchemaNode<AppSpec> implements OptionListProvider {
     private final ImmutableList<ModuleSchema> childModules;

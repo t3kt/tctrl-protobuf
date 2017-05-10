@@ -1,11 +1,11 @@
 package net.t3kt.tctrl.schema.params;
 
 import com.google.protobuf.Value;
-
 import java.util.Optional;
 
 public final class Values {
-    private Values() {}
+    private Values() {
+    }
 
     private static IllegalStateException unsupportedType(Value value) {
         return new IllegalStateException("Unsupported value format: " + value);

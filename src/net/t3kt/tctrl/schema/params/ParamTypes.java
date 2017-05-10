@@ -7,7 +7,8 @@ import com.google.common.collect.Sets;
 import net.t3kt.tctrl.schema.TctrlSchemaProto.ParamType;
 
 public final class ParamTypes {
-    private ParamTypes() {}
+    private ParamTypes() {
+    }
 
     private static final ImmutableSet<ParamType> NUMERIC_TYPES = Sets.immutableEnumSet(
             ParamType.INT,

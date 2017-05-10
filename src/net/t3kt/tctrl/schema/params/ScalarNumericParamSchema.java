@@ -1,8 +1,7 @@
 package net.t3kt.tctrl.schema.params;
 
-import net.t3kt.tctrl.schema.TctrlSchemaProto.ParamSpec;
-
 import java.util.Optional;
+import net.t3kt.tctrl.schema.TctrlSchemaProto.ParamSpec;
 
 public abstract class ScalarNumericParamSchema<T extends Number> extends ScalarParamSchema<T> {
 

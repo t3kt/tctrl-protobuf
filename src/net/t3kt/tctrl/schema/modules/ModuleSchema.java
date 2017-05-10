@@ -5,14 +5,13 @@ import com.google.common.collect.ImmutableListMultimap;
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.Maps;
 import com.google.common.collect.Multimaps;
+import java.util.List;
 import net.t3kt.tctrl.schema.AppSchema;
 import net.t3kt.tctrl.schema.SchemaGroupList;
 import net.t3kt.tctrl.schema.SchemaNode;
 import net.t3kt.tctrl.schema.TctrlSchemaProto.ModuleSpec;
 import net.t3kt.tctrl.schema.TctrlSchemaProto.ParamSpec;
 import net.t3kt.tctrl.schema.params.ParamSchema;
-
-import java.util.List;
 
 public final class ModuleSchema extends SchemaNode<ModuleSpec> {
     private final SchemaGroupList childGroups;

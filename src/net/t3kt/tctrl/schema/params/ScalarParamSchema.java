@@ -1,9 +1,8 @@
 package net.t3kt.tctrl.schema.params;
 
 import com.google.protobuf.Value;
-import net.t3kt.tctrl.schema.TctrlSchemaProto.ParamSpec;
-
 import java.util.Optional;
+import net.t3kt.tctrl.schema.TctrlSchemaProto.ParamSpec;
 
 public abstract class ScalarParamSchema<T> extends ParamSchema {
 

@@ -1,6 +1,15 @@
 package net.t3kt.tctrl.schema.json;
 
+import static net.t3kt.tctrl.schema.json.ParserUtil.getInt;
+import static net.t3kt.tctrl.schema.json.ParserUtil.getInt32Value;
+import static net.t3kt.tctrl.schema.json.ParserUtil.getObjects;
+import static net.t3kt.tctrl.schema.json.ParserUtil.getString;
+import static net.t3kt.tctrl.schema.json.ParserUtil.getStrings;
+import static net.t3kt.tctrl.schema.json.ParserUtil.getValue;
+import static net.t3kt.tctrl.schema.json.ParserUtil.has;
+
 import com.google.common.base.Enums;
+import javax.json.JsonObject;
 import net.t3kt.tctrl.schema.TctrlSchemaProto.AppSpec;
 import net.t3kt.tctrl.schema.TctrlSchemaProto.ConnectionInfo;
 import net.t3kt.tctrl.schema.TctrlSchemaProto.GroupInfo;
@@ -11,16 +20,6 @@ import net.t3kt.tctrl.schema.TctrlSchemaProto.ParamOption;
 import net.t3kt.tctrl.schema.TctrlSchemaProto.ParamPartSpec;
 import net.t3kt.tctrl.schema.TctrlSchemaProto.ParamSpec;
 import net.t3kt.tctrl.schema.TctrlSchemaProto.ParamType;
-
-import javax.json.JsonObject;
-
-import static net.t3kt.tctrl.schema.json.ParserUtil.getInt;
-import static net.t3kt.tctrl.schema.json.ParserUtil.getInt32Value;
-import static net.t3kt.tctrl.schema.json.ParserUtil.getObjects;
-import static net.t3kt.tctrl.schema.json.ParserUtil.getString;
-import static net.t3kt.tctrl.schema.json.ParserUtil.getStrings;
-import static net.t3kt.tctrl.schema.json.ParserUtil.getValue;
-import static net.t3kt.tctrl.schema.json.ParserUtil.has;
 
 public final class LegacyJsonParser {
 
@@ -65,7 +64,7 @@ public final class LegacyJsonParser {
         getString(obj, "offHelp").ifPresent(result::setOffHelp);
         getString(obj, "buttonText").ifPresent(result::setButtonText);
         getString(obj, "buttonOffText").ifPresent(result::setButtonOffText);
-        String typeStr = getString(obj,"type").orElse(null);
+        String typeStr = getString(obj, "type").orElse(null);
         ParamType type = typeStr == null ? ParamType.OTHER : Enums.getIfPresent(ParamType.class, typeStr).or(ParamType.OTHER);
         result.setType(type);
         if (type == ParamType.OTHER) {

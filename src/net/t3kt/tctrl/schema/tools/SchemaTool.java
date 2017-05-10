@@ -1,5 +1,9 @@
 package net.t3kt.tctrl.schema.tools;
 
+import java.io.File;
+import java.io.FileReader;
+import java.io.IOException;
+import java.io.Reader;
 import net.t3kt.tctrl.schema.AppSchema;
 import net.t3kt.tctrl.schema.Schemas;
 import net.t3kt.tctrl.schema.TctrlSchemaProto.AppSpec;
@@ -7,16 +11,11 @@ import org.kohsuke.args4j.CmdLineException;
 import org.kohsuke.args4j.CmdLineParser;
 import org.kohsuke.args4j.Option;
 
-import java.io.File;
-import java.io.FileReader;
-import java.io.IOException;
-import java.io.Reader;
-
 final class SchemaTool {
 
     private File schemaFile;
 
-    @Option(name="-schema", usage = "Sets the schema source json file", required = true)
+    @Option(name = "-schema", usage = "Sets the schema source json file", required = true)
     public void setSchemaFile(File file) {
         if (file.exists()) {
             this.schemaFile = file;

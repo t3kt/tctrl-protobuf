@@ -2,11 +2,10 @@ package net.t3kt.tctrl.schema.params;
 
 import com.google.common.collect.ImmutableList;
 import com.google.protobuf.Value;
-import net.t3kt.tctrl.schema.SchemaNode;
-import net.t3kt.tctrl.schema.TctrlSchemaProto.ParamPartSpec;
-
 import java.util.List;
 import java.util.Optional;
+import net.t3kt.tctrl.schema.SchemaNode;
+import net.t3kt.tctrl.schema.TctrlSchemaProto.ParamPartSpec;
 
 public abstract class NumericParamPartSchema<T extends Number> extends SchemaNode<ParamPartSpec> {
 

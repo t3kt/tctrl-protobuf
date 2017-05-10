@@ -1,7 +1,6 @@
 package net.t3kt.tctrl.schema;
 
 import com.google.protobuf.Message;
-
 import java.io.IOException;
 
 public abstract class SchemaNode<S extends Message> {

@@ -3,13 +3,12 @@ package net.t3kt.tctrl.schema;
 import com.google.common.base.Strings;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
-import net.t3kt.tctrl.schema.TctrlSchemaProto.GroupInfo;
-
-import javax.annotation.Nullable;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.stream.Stream;
+import javax.annotation.Nullable;
+import net.t3kt.tctrl.schema.TctrlSchemaProto.GroupInfo;
 
 public final class SchemaGroupList {
     private final ImmutableList<GroupInfo> groups;
