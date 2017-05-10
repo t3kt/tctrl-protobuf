@@ -107,6 +107,7 @@ message AppSpec {
     string label = 2;
     repeated string tag = 3;
     string description = 4;
+    string path = 10;
     repeated ModuleSpec childModule = 5;
     repeated GroupInfo childGroup = 6;
     repeated OptionList optionList = 7;

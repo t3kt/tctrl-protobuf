@@ -14033,6 +14033,16 @@ public final class TctrlSchemaProto {
         getDescriptionBytes();
 
     /**
+     * <code>optional string path = 10;</code>
+     */
+    java.lang.String getPath();
+    /**
+     * <code>optional string path = 10;</code>
+     */
+    com.google.protobuf.ByteString
+        getPathBytes();
+
+    /**
      * <code>repeated .tctrl.schema.ModuleSpec childModule = 5;</code>
      */
     java.util.List<net.t3kt.tctrl.schema.TctrlSchemaProto.ModuleSpec> 
@@ -14168,6 +14178,7 @@ public final class TctrlSchemaProto {
       label_ = "";
       tag_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       description_ = "";
+      path_ = "";
       childModule_ = java.util.Collections.emptyList();
       childGroup_ = java.util.Collections.emptyList();
       optionList_ = java.util.Collections.emptyList();
@@ -14228,48 +14239,54 @@ public final class TctrlSchemaProto {
               break;
             }
             case 42: {
-              if (!((mutable_bitField0_ & 0x00000010) == 0x00000010)) {
+              if (!((mutable_bitField0_ & 0x00000020) == 0x00000020)) {
                 childModule_ = new java.util.ArrayList<net.t3kt.tctrl.schema.TctrlSchemaProto.ModuleSpec>();
-                mutable_bitField0_ |= 0x00000010;
+                mutable_bitField0_ |= 0x00000020;
               }
               childModule_.add(
                   input.readMessage(net.t3kt.tctrl.schema.TctrlSchemaProto.ModuleSpec.parser(), extensionRegistry));
               break;
             }
             case 50: {
-              if (!((mutable_bitField0_ & 0x00000020) == 0x00000020)) {
+              if (!((mutable_bitField0_ & 0x00000040) == 0x00000040)) {
                 childGroup_ = new java.util.ArrayList<net.t3kt.tctrl.schema.TctrlSchemaProto.GroupInfo>();
-                mutable_bitField0_ |= 0x00000020;
+                mutable_bitField0_ |= 0x00000040;
               }
               childGroup_.add(
                   input.readMessage(net.t3kt.tctrl.schema.TctrlSchemaProto.GroupInfo.parser(), extensionRegistry));
               break;
             }
             case 58: {
-              if (!((mutable_bitField0_ & 0x00000040) == 0x00000040)) {
+              if (!((mutable_bitField0_ & 0x00000080) == 0x00000080)) {
                 optionList_ = new java.util.ArrayList<net.t3kt.tctrl.schema.TctrlSchemaProto.OptionList>();
-                mutable_bitField0_ |= 0x00000040;
+                mutable_bitField0_ |= 0x00000080;
               }
               optionList_.add(
                   input.readMessage(net.t3kt.tctrl.schema.TctrlSchemaProto.OptionList.parser(), extensionRegistry));
               break;
             }
             case 66: {
-              if (!((mutable_bitField0_ & 0x00000080) == 0x00000080)) {
+              if (!((mutable_bitField0_ & 0x00000100) == 0x00000100)) {
                 connection_ = new java.util.ArrayList<net.t3kt.tctrl.schema.TctrlSchemaProto.ConnectionInfo>();
-                mutable_bitField0_ |= 0x00000080;
+                mutable_bitField0_ |= 0x00000100;
               }
               connection_.add(
                   input.readMessage(net.t3kt.tctrl.schema.TctrlSchemaProto.ConnectionInfo.parser(), extensionRegistry));
               break;
             }
             case 74: {
-              if (!((mutable_bitField0_ & 0x00000100) == 0x00000100)) {
+              if (!((mutable_bitField0_ & 0x00000200) == 0x00000200)) {
                 moduleType_ = new java.util.ArrayList<net.t3kt.tctrl.schema.TctrlSchemaProto.ModuleTypeSpec>();
-                mutable_bitField0_ |= 0x00000100;
+                mutable_bitField0_ |= 0x00000200;
               }
               moduleType_.add(
                   input.readMessage(net.t3kt.tctrl.schema.TctrlSchemaProto.ModuleTypeSpec.parser(), extensionRegistry));
+              break;
+            }
+            case 82: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              path_ = s;
               break;
             }
           }
@@ -14283,19 +14300,19 @@ public final class TctrlSchemaProto {
         if (((mutable_bitField0_ & 0x00000004) == 0x00000004)) {
           tag_ = tag_.getUnmodifiableView();
         }
-        if (((mutable_bitField0_ & 0x00000010) == 0x00000010)) {
+        if (((mutable_bitField0_ & 0x00000020) == 0x00000020)) {
           childModule_ = java.util.Collections.unmodifiableList(childModule_);
         }
-        if (((mutable_bitField0_ & 0x00000020) == 0x00000020)) {
+        if (((mutable_bitField0_ & 0x00000040) == 0x00000040)) {
           childGroup_ = java.util.Collections.unmodifiableList(childGroup_);
         }
-        if (((mutable_bitField0_ & 0x00000040) == 0x00000040)) {
+        if (((mutable_bitField0_ & 0x00000080) == 0x00000080)) {
           optionList_ = java.util.Collections.unmodifiableList(optionList_);
         }
-        if (((mutable_bitField0_ & 0x00000080) == 0x00000080)) {
+        if (((mutable_bitField0_ & 0x00000100) == 0x00000100)) {
           connection_ = java.util.Collections.unmodifiableList(connection_);
         }
-        if (((mutable_bitField0_ & 0x00000100) == 0x00000100)) {
+        if (((mutable_bitField0_ & 0x00000200) == 0x00000200)) {
           moduleType_ = java.util.Collections.unmodifiableList(moduleType_);
         }
         makeExtensionsImmutable();
@@ -14439,6 +14456,40 @@ public final class TctrlSchemaProto {
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
         description_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int PATH_FIELD_NUMBER = 10;
+    private volatile java.lang.Object path_;
+    /**
+     * <code>optional string path = 10;</code>
+     */
+    public java.lang.String getPath() {
+      java.lang.Object ref = path_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        path_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>optional string path = 10;</code>
+     */
+    public com.google.protobuf.ByteString
+        getPathBytes() {
+      java.lang.Object ref = path_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        path_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
@@ -14659,6 +14710,9 @@ public final class TctrlSchemaProto {
       for (int i = 0; i < moduleType_.size(); i++) {
         output.writeMessage(9, moduleType_.get(i));
       }
+      if (!getPathBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 10, path_);
+      }
     }
 
     public int getSerializedSize() {
@@ -14703,6 +14757,9 @@ public final class TctrlSchemaProto {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(9, moduleType_.get(i));
       }
+      if (!getPathBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(10, path_);
+      }
       memoizedSize = size;
       return size;
     }
@@ -14727,6 +14784,8 @@ public final class TctrlSchemaProto {
           .equals(other.getTagList());
       result = result && getDescription()
           .equals(other.getDescription());
+      result = result && getPath()
+          .equals(other.getPath());
       result = result && getChildModuleList()
           .equals(other.getChildModuleList());
       result = result && getChildGroupList()
@@ -14757,6 +14816,8 @@ public final class TctrlSchemaProto {
       }
       hash = (37 * hash) + DESCRIPTION_FIELD_NUMBER;
       hash = (53 * hash) + getDescription().hashCode();
+      hash = (37 * hash) + PATH_FIELD_NUMBER;
+      hash = (53 * hash) + getPath().hashCode();
       if (getChildModuleCount() > 0) {
         hash = (37 * hash) + CHILDMODULE_FIELD_NUMBER;
         hash = (53 * hash) + getChildModuleList().hashCode();
@@ -14908,33 +14969,35 @@ public final class TctrlSchemaProto {
         bitField0_ = (bitField0_ & ~0x00000004);
         description_ = "";
 
+        path_ = "";
+
         if (childModuleBuilder_ == null) {
           childModule_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000010);
+          bitField0_ = (bitField0_ & ~0x00000020);
         } else {
           childModuleBuilder_.clear();
         }
         if (childGroupBuilder_ == null) {
           childGroup_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000020);
+          bitField0_ = (bitField0_ & ~0x00000040);
         } else {
           childGroupBuilder_.clear();
         }
         if (optionListBuilder_ == null) {
           optionList_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000040);
+          bitField0_ = (bitField0_ & ~0x00000080);
         } else {
           optionListBuilder_.clear();
         }
         if (connectionBuilder_ == null) {
           connection_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000080);
+          bitField0_ = (bitField0_ & ~0x00000100);
         } else {
           connectionBuilder_.clear();
         }
         if (moduleTypeBuilder_ == null) {
           moduleType_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000100);
+          bitField0_ = (bitField0_ & ~0x00000200);
         } else {
           moduleTypeBuilder_.clear();
         }
@@ -14970,46 +15033,47 @@ public final class TctrlSchemaProto {
         }
         result.tag_ = tag_;
         result.description_ = description_;
+        result.path_ = path_;
         if (childModuleBuilder_ == null) {
-          if (((bitField0_ & 0x00000010) == 0x00000010)) {
+          if (((bitField0_ & 0x00000020) == 0x00000020)) {
             childModule_ = java.util.Collections.unmodifiableList(childModule_);
-            bitField0_ = (bitField0_ & ~0x00000010);
+            bitField0_ = (bitField0_ & ~0x00000020);
           }
           result.childModule_ = childModule_;
         } else {
           result.childModule_ = childModuleBuilder_.build();
         }
         if (childGroupBuilder_ == null) {
-          if (((bitField0_ & 0x00000020) == 0x00000020)) {
+          if (((bitField0_ & 0x00000040) == 0x00000040)) {
             childGroup_ = java.util.Collections.unmodifiableList(childGroup_);
-            bitField0_ = (bitField0_ & ~0x00000020);
+            bitField0_ = (bitField0_ & ~0x00000040);
           }
           result.childGroup_ = childGroup_;
         } else {
           result.childGroup_ = childGroupBuilder_.build();
         }
         if (optionListBuilder_ == null) {
-          if (((bitField0_ & 0x00000040) == 0x00000040)) {
+          if (((bitField0_ & 0x00000080) == 0x00000080)) {
             optionList_ = java.util.Collections.unmodifiableList(optionList_);
-            bitField0_ = (bitField0_ & ~0x00000040);
+            bitField0_ = (bitField0_ & ~0x00000080);
           }
           result.optionList_ = optionList_;
         } else {
           result.optionList_ = optionListBuilder_.build();
         }
         if (connectionBuilder_ == null) {
-          if (((bitField0_ & 0x00000080) == 0x00000080)) {
+          if (((bitField0_ & 0x00000100) == 0x00000100)) {
             connection_ = java.util.Collections.unmodifiableList(connection_);
-            bitField0_ = (bitField0_ & ~0x00000080);
+            bitField0_ = (bitField0_ & ~0x00000100);
           }
           result.connection_ = connection_;
         } else {
           result.connection_ = connectionBuilder_.build();
         }
         if (moduleTypeBuilder_ == null) {
-          if (((bitField0_ & 0x00000100) == 0x00000100)) {
+          if (((bitField0_ & 0x00000200) == 0x00000200)) {
             moduleType_ = java.util.Collections.unmodifiableList(moduleType_);
-            bitField0_ = (bitField0_ & ~0x00000100);
+            bitField0_ = (bitField0_ & ~0x00000200);
           }
           result.moduleType_ = moduleType_;
         } else {
@@ -15079,11 +15143,15 @@ public final class TctrlSchemaProto {
           description_ = other.description_;
           onChanged();
         }
+        if (!other.getPath().isEmpty()) {
+          path_ = other.path_;
+          onChanged();
+        }
         if (childModuleBuilder_ == null) {
           if (!other.childModule_.isEmpty()) {
             if (childModule_.isEmpty()) {
               childModule_ = other.childModule_;
-              bitField0_ = (bitField0_ & ~0x00000010);
+              bitField0_ = (bitField0_ & ~0x00000020);
             } else {
               ensureChildModuleIsMutable();
               childModule_.addAll(other.childModule_);
@@ -15096,7 +15164,7 @@ public final class TctrlSchemaProto {
               childModuleBuilder_.dispose();
               childModuleBuilder_ = null;
               childModule_ = other.childModule_;
-              bitField0_ = (bitField0_ & ~0x00000010);
+              bitField0_ = (bitField0_ & ~0x00000020);
               childModuleBuilder_ = 
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                    getChildModuleFieldBuilder() : null;
@@ -15109,7 +15177,7 @@ public final class TctrlSchemaProto {
           if (!other.childGroup_.isEmpty()) {
             if (childGroup_.isEmpty()) {
               childGroup_ = other.childGroup_;
-              bitField0_ = (bitField0_ & ~0x00000020);
+              bitField0_ = (bitField0_ & ~0x00000040);
             } else {
               ensureChildGroupIsMutable();
               childGroup_.addAll(other.childGroup_);
@@ -15122,7 +15190,7 @@ public final class TctrlSchemaProto {
               childGroupBuilder_.dispose();
               childGroupBuilder_ = null;
               childGroup_ = other.childGroup_;
-              bitField0_ = (bitField0_ & ~0x00000020);
+              bitField0_ = (bitField0_ & ~0x00000040);
               childGroupBuilder_ = 
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                    getChildGroupFieldBuilder() : null;
@@ -15135,7 +15203,7 @@ public final class TctrlSchemaProto {
           if (!other.optionList_.isEmpty()) {
             if (optionList_.isEmpty()) {
               optionList_ = other.optionList_;
-              bitField0_ = (bitField0_ & ~0x00000040);
+              bitField0_ = (bitField0_ & ~0x00000080);
             } else {
               ensureOptionListIsMutable();
               optionList_.addAll(other.optionList_);
@@ -15148,7 +15216,7 @@ public final class TctrlSchemaProto {
               optionListBuilder_.dispose();
               optionListBuilder_ = null;
               optionList_ = other.optionList_;
-              bitField0_ = (bitField0_ & ~0x00000040);
+              bitField0_ = (bitField0_ & ~0x00000080);
               optionListBuilder_ = 
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                    getOptionListFieldBuilder() : null;
@@ -15161,7 +15229,7 @@ public final class TctrlSchemaProto {
           if (!other.connection_.isEmpty()) {
             if (connection_.isEmpty()) {
               connection_ = other.connection_;
-              bitField0_ = (bitField0_ & ~0x00000080);
+              bitField0_ = (bitField0_ & ~0x00000100);
             } else {
               ensureConnectionIsMutable();
               connection_.addAll(other.connection_);
@@ -15174,7 +15242,7 @@ public final class TctrlSchemaProto {
               connectionBuilder_.dispose();
               connectionBuilder_ = null;
               connection_ = other.connection_;
-              bitField0_ = (bitField0_ & ~0x00000080);
+              bitField0_ = (bitField0_ & ~0x00000100);
               connectionBuilder_ = 
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                    getConnectionFieldBuilder() : null;
@@ -15187,7 +15255,7 @@ public final class TctrlSchemaProto {
           if (!other.moduleType_.isEmpty()) {
             if (moduleType_.isEmpty()) {
               moduleType_ = other.moduleType_;
-              bitField0_ = (bitField0_ & ~0x00000100);
+              bitField0_ = (bitField0_ & ~0x00000200);
             } else {
               ensureModuleTypeIsMutable();
               moduleType_.addAll(other.moduleType_);
@@ -15200,7 +15268,7 @@ public final class TctrlSchemaProto {
               moduleTypeBuilder_.dispose();
               moduleTypeBuilder_ = null;
               moduleType_ = other.moduleType_;
-              bitField0_ = (bitField0_ & ~0x00000100);
+              bitField0_ = (bitField0_ & ~0x00000200);
               moduleTypeBuilder_ = 
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                    getModuleTypeFieldBuilder() : null;
@@ -15537,12 +15605,81 @@ public final class TctrlSchemaProto {
         return this;
       }
 
+      private java.lang.Object path_ = "";
+      /**
+       * <code>optional string path = 10;</code>
+       */
+      public java.lang.String getPath() {
+        java.lang.Object ref = path_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          path_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>optional string path = 10;</code>
+       */
+      public com.google.protobuf.ByteString
+          getPathBytes() {
+        java.lang.Object ref = path_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          path_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>optional string path = 10;</code>
+       */
+      public Builder setPath(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        path_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional string path = 10;</code>
+       */
+      public Builder clearPath() {
+        
+        path_ = getDefaultInstance().getPath();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional string path = 10;</code>
+       */
+      public Builder setPathBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        path_ = value;
+        onChanged();
+        return this;
+      }
+
       private java.util.List<net.t3kt.tctrl.schema.TctrlSchemaProto.ModuleSpec> childModule_ =
         java.util.Collections.emptyList();
       private void ensureChildModuleIsMutable() {
-        if (!((bitField0_ & 0x00000010) == 0x00000010)) {
+        if (!((bitField0_ & 0x00000020) == 0x00000020)) {
           childModule_ = new java.util.ArrayList<net.t3kt.tctrl.schema.TctrlSchemaProto.ModuleSpec>(childModule_);
-          bitField0_ |= 0x00000010;
+          bitField0_ |= 0x00000020;
          }
       }
 
@@ -15692,7 +15829,7 @@ public final class TctrlSchemaProto {
       public Builder clearChildModule() {
         if (childModuleBuilder_ == null) {
           childModule_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000010);
+          bitField0_ = (bitField0_ & ~0x00000020);
           onChanged();
         } else {
           childModuleBuilder_.clear();
@@ -15769,7 +15906,7 @@ public final class TctrlSchemaProto {
           childModuleBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
               net.t3kt.tctrl.schema.TctrlSchemaProto.ModuleSpec, net.t3kt.tctrl.schema.TctrlSchemaProto.ModuleSpec.Builder, net.t3kt.tctrl.schema.TctrlSchemaProto.ModuleSpecOrBuilder>(
                   childModule_,
-                  ((bitField0_ & 0x00000010) == 0x00000010),
+                  ((bitField0_ & 0x00000020) == 0x00000020),
                   getParentForChildren(),
                   isClean());
           childModule_ = null;
@@ -15780,9 +15917,9 @@ public final class TctrlSchemaProto {
       private java.util.List<net.t3kt.tctrl.schema.TctrlSchemaProto.GroupInfo> childGroup_ =
         java.util.Collections.emptyList();
       private void ensureChildGroupIsMutable() {
-        if (!((bitField0_ & 0x00000020) == 0x00000020)) {
+        if (!((bitField0_ & 0x00000040) == 0x00000040)) {
           childGroup_ = new java.util.ArrayList<net.t3kt.tctrl.schema.TctrlSchemaProto.GroupInfo>(childGroup_);
-          bitField0_ |= 0x00000020;
+          bitField0_ |= 0x00000040;
          }
       }
 
@@ -15932,7 +16069,7 @@ public final class TctrlSchemaProto {
       public Builder clearChildGroup() {
         if (childGroupBuilder_ == null) {
           childGroup_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000020);
+          bitField0_ = (bitField0_ & ~0x00000040);
           onChanged();
         } else {
           childGroupBuilder_.clear();
@@ -16009,7 +16146,7 @@ public final class TctrlSchemaProto {
           childGroupBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
               net.t3kt.tctrl.schema.TctrlSchemaProto.GroupInfo, net.t3kt.tctrl.schema.TctrlSchemaProto.GroupInfo.Builder, net.t3kt.tctrl.schema.TctrlSchemaProto.GroupInfoOrBuilder>(
                   childGroup_,
-                  ((bitField0_ & 0x00000020) == 0x00000020),
+                  ((bitField0_ & 0x00000040) == 0x00000040),
                   getParentForChildren(),
                   isClean());
           childGroup_ = null;
@@ -16020,9 +16157,9 @@ public final class TctrlSchemaProto {
       private java.util.List<net.t3kt.tctrl.schema.TctrlSchemaProto.OptionList> optionList_ =
         java.util.Collections.emptyList();
       private void ensureOptionListIsMutable() {
-        if (!((bitField0_ & 0x00000040) == 0x00000040)) {
+        if (!((bitField0_ & 0x00000080) == 0x00000080)) {
           optionList_ = new java.util.ArrayList<net.t3kt.tctrl.schema.TctrlSchemaProto.OptionList>(optionList_);
-          bitField0_ |= 0x00000040;
+          bitField0_ |= 0x00000080;
          }
       }
 
@@ -16172,7 +16309,7 @@ public final class TctrlSchemaProto {
       public Builder clearOptionList() {
         if (optionListBuilder_ == null) {
           optionList_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000040);
+          bitField0_ = (bitField0_ & ~0x00000080);
           onChanged();
         } else {
           optionListBuilder_.clear();
@@ -16249,7 +16386,7 @@ public final class TctrlSchemaProto {
           optionListBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
               net.t3kt.tctrl.schema.TctrlSchemaProto.OptionList, net.t3kt.tctrl.schema.TctrlSchemaProto.OptionList.Builder, net.t3kt.tctrl.schema.TctrlSchemaProto.OptionListOrBuilder>(
                   optionList_,
-                  ((bitField0_ & 0x00000040) == 0x00000040),
+                  ((bitField0_ & 0x00000080) == 0x00000080),
                   getParentForChildren(),
                   isClean());
           optionList_ = null;
@@ -16260,9 +16397,9 @@ public final class TctrlSchemaProto {
       private java.util.List<net.t3kt.tctrl.schema.TctrlSchemaProto.ConnectionInfo> connection_ =
         java.util.Collections.emptyList();
       private void ensureConnectionIsMutable() {
-        if (!((bitField0_ & 0x00000080) == 0x00000080)) {
+        if (!((bitField0_ & 0x00000100) == 0x00000100)) {
           connection_ = new java.util.ArrayList<net.t3kt.tctrl.schema.TctrlSchemaProto.ConnectionInfo>(connection_);
-          bitField0_ |= 0x00000080;
+          bitField0_ |= 0x00000100;
          }
       }
 
@@ -16412,7 +16549,7 @@ public final class TctrlSchemaProto {
       public Builder clearConnection() {
         if (connectionBuilder_ == null) {
           connection_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000080);
+          bitField0_ = (bitField0_ & ~0x00000100);
           onChanged();
         } else {
           connectionBuilder_.clear();
@@ -16489,7 +16626,7 @@ public final class TctrlSchemaProto {
           connectionBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
               net.t3kt.tctrl.schema.TctrlSchemaProto.ConnectionInfo, net.t3kt.tctrl.schema.TctrlSchemaProto.ConnectionInfo.Builder, net.t3kt.tctrl.schema.TctrlSchemaProto.ConnectionInfoOrBuilder>(
                   connection_,
-                  ((bitField0_ & 0x00000080) == 0x00000080),
+                  ((bitField0_ & 0x00000100) == 0x00000100),
                   getParentForChildren(),
                   isClean());
           connection_ = null;
@@ -16500,9 +16637,9 @@ public final class TctrlSchemaProto {
       private java.util.List<net.t3kt.tctrl.schema.TctrlSchemaProto.ModuleTypeSpec> moduleType_ =
         java.util.Collections.emptyList();
       private void ensureModuleTypeIsMutable() {
-        if (!((bitField0_ & 0x00000100) == 0x00000100)) {
+        if (!((bitField0_ & 0x00000200) == 0x00000200)) {
           moduleType_ = new java.util.ArrayList<net.t3kt.tctrl.schema.TctrlSchemaProto.ModuleTypeSpec>(moduleType_);
-          bitField0_ |= 0x00000100;
+          bitField0_ |= 0x00000200;
          }
       }
 
@@ -16652,7 +16789,7 @@ public final class TctrlSchemaProto {
       public Builder clearModuleType() {
         if (moduleTypeBuilder_ == null) {
           moduleType_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000100);
+          bitField0_ = (bitField0_ & ~0x00000200);
           onChanged();
         } else {
           moduleTypeBuilder_.clear();
@@ -16729,7 +16866,7 @@ public final class TctrlSchemaProto {
           moduleTypeBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
               net.t3kt.tctrl.schema.TctrlSchemaProto.ModuleTypeSpec, net.t3kt.tctrl.schema.TctrlSchemaProto.ModuleTypeSpec.Builder, net.t3kt.tctrl.schema.TctrlSchemaProto.ModuleTypeSpecOrBuilder>(
                   moduleType_,
-                  ((bitField0_ & 0x00000100) == 0x00000100),
+                  ((bitField0_ & 0x00000200) == 0x00000200),
                   getParentForChildren(),
                   isClean());
           moduleType_ = null;
@@ -16883,18 +17020,19 @@ public final class TctrlSchemaProto {
       "ey\030\001 \001(\t\022\r\n\005label\030\002 \001(\t\022\014\n\004type\030\003 \001(\t\022\014\n" +
       "\004host\030\004 \001(\t\022\014\n\004port\030\005 \001(\005\"4\n\tGroupInfo\022\013" +
       "\n\003key\030\001 \001(\t\022\r\n\005label\030\002 \001(\t\022\013\n\003tag\030\003 \003(\t\"" +
-      "\265\002\n\007AppSpec\022\013\n\003key\030\001 \001(\t\022\r\n\005label\030\002 \001(\t\022" +
-      "\013\n\003tag\030\003 \003(\t\022\023\n\013description\030\004 \001(\t\022-\n\013chi" +
-      "ldModule\030\005 \003(\0132\030.tctrl.schema.ModuleSpec" +
-      "\022+\n\nchildGroup\030\006 \003(\0132\027.tctrl.schema.Grou" +
-      "pInfo\022,\n\noptionList\030\007 \003(\0132\030.tctrl.schema" +
-      ".OptionList\0220\n\nconnection\030\010 \003(\0132\034.tctrl.",
-      "schema.ConnectionInfo\0220\n\nmoduleType\030\t \003(" +
-      "\0132\034.tctrl.schema.ModuleTypeSpec*k\n\tParam" +
-      "Type\022\t\n\005OTHER\020\000\022\010\n\004BOOL\020\003\022\n\n\006STRING\020\004\022\007\n" +
-      "\003INT\020\005\022\t\n\005FLOAT\020\006\022\010\n\004IVEC\020\007\022\010\n\004FVEC\020\010\022\010\n" +
-      "\004MENU\020\n\022\013\n\007TRIGGER\020\013B)\n\025net.t3kt.tctrl.s" +
-      "chemaB\020TctrlSchemaProtob\006proto3"
+      "\303\002\n\007AppSpec\022\013\n\003key\030\001 \001(\t\022\r\n\005label\030\002 \001(\t\022" +
+      "\013\n\003tag\030\003 \003(\t\022\023\n\013description\030\004 \001(\t\022\014\n\004pat" +
+      "h\030\n \001(\t\022-\n\013childModule\030\005 \003(\0132\030.tctrl.sch" +
+      "ema.ModuleSpec\022+\n\nchildGroup\030\006 \003(\0132\027.tct" +
+      "rl.schema.GroupInfo\022,\n\noptionList\030\007 \003(\0132" +
+      "\030.tctrl.schema.OptionList\0220\n\nconnection\030",
+      "\010 \003(\0132\034.tctrl.schema.ConnectionInfo\0220\n\nm" +
+      "oduleType\030\t \003(\0132\034.tctrl.schema.ModuleTyp" +
+      "eSpec*k\n\tParamType\022\t\n\005OTHER\020\000\022\010\n\004BOOL\020\003\022" +
+      "\n\n\006STRING\020\004\022\007\n\003INT\020\005\022\t\n\005FLOAT\020\006\022\010\n\004IVEC\020" +
+      "\007\022\010\n\004FVEC\020\010\022\010\n\004MENU\020\n\022\013\n\007TRIGGER\020\013B)\n\025ne" +
+      "t.t3kt.tctrl.schemaB\020TctrlSchemaProtob\006p" +
+      "roto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -16963,7 +17101,7 @@ public final class TctrlSchemaProto {
     internal_static_tctrl_schema_AppSpec_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_tctrl_schema_AppSpec_descriptor,
-        new java.lang.String[] { "Key", "Label", "Tag", "Description", "ChildModule", "ChildGroup", "OptionList", "Connection", "ModuleType", });
+        new java.lang.String[] { "Key", "Label", "Tag", "Description", "Path", "ChildModule", "ChildGroup", "OptionList", "Connection", "ModuleType", });
     com.google.protobuf.StructProto.getDescriptor();
     com.google.protobuf.WrappersProto.getDescriptor();
   }
