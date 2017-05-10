@@ -16,7 +16,7 @@ final class SchemaTool {
 
     private File schemaFile;
 
-    @Option(name="schema", usage = "Sets the schema source json file", required = true)
+    @Option(name="-schema", usage = "Sets the schema source json file", required = true)
     public void setSchemaFile(File file) {
         if (file.exists()) {
             this.schemaFile = file;
