@@ -9,6 +9,7 @@ import static net.t3kt.tctrl.schema.json.ParserUtil.getValue;
 import static net.t3kt.tctrl.schema.json.ParserUtil.has;
 
 import com.google.common.base.Enums;
+import com.google.common.base.Strings;
 import javax.json.JsonObject;
 import net.t3kt.tctrl.schema.TctrlSchemaProto.AppSpec;
 import net.t3kt.tctrl.schema.TctrlSchemaProto.ConnectionInfo;
@@ -22,6 +23,7 @@ import net.t3kt.tctrl.schema.TctrlSchemaProto.ParamSpec;
 import net.t3kt.tctrl.schema.TctrlSchemaProto.ParamType;
 
 public final class LegacyJsonParser {
+    private LegacyJsonParser() {}
 
     public static ParamOption parseParamOption(JsonObject obj) {
         ParamOption.Builder result = ParamOption.newBuilder()
@@ -52,6 +54,13 @@ public final class LegacyJsonParser {
         return result.build();
     }
 
+    public static ParamType parseParamType(String typeStr) {
+        if (Strings.isNullOrEmpty(typeStr)) {
+            return ParamType.OTHER;
+        }
+        return Enums.getIfPresent(ParamType.class, typeStr.toUpperCase()).or(ParamType.OTHER);
+    }
+
     public static ParamSpec parseParamSpec(JsonObject obj) {
         ParamSpec.Builder result = ParamSpec.newBuilder();
         result.setKey(obj.getString("key"));
@@ -65,7 +74,7 @@ public final class LegacyJsonParser {
         getString(obj, "buttonText").ifPresent(result::setButtonText);
         getString(obj, "buttonOffText").ifPresent(result::setButtonOffText);
         String typeStr = getString(obj, "type").orElse(null);
-        ParamType type = typeStr == null ? ParamType.OTHER : Enums.getIfPresent(ParamType.class, typeStr).or(ParamType.OTHER);
+        ParamType type = parseParamType(typeStr);
         result.setType(type);
         if (type == ParamType.OTHER) {
             result.setOtherType(obj.getString("otherType", typeStr));
@@ -131,7 +140,6 @@ public final class LegacyJsonParser {
         getString(obj, "label").ifPresent(result::setLabel);
         getStrings(obj, "tags").ifPresent(result::addAllTag);
         getString(obj, "description").ifPresent(result::setDescription);
-        getObjects(obj, "childGroups", LegacyJsonParser::parseGroupInfo).ifPresent(result::addAllChildGroup);
         if (has(obj, "path")) {
             result.setPath(obj.getString("path"));
         } else {
@@ -139,6 +147,7 @@ public final class LegacyJsonParser {
         }
         getObjects(obj, "optionLists", LegacyJsonParser::parseOptionList).ifPresent(result::addAllOptionList);
         getObjects(obj, "moduleTypes", LegacyJsonParser::parseModuleTypeSpec).ifPresent(result::addAllModuleType);
+        getObjects(obj, "childGroups", LegacyJsonParser::parseGroupInfo).ifPresent(result::addAllChildGroup);
         getObjects(obj, "children", LegacyJsonParser::parseModuleSpec).ifPresent(result::addAllChildModule);
         getObjects(obj, "connections", LegacyJsonParser::parseConnectionInfo).ifPresent(result::addAllConnection);
         return result.build();
