@@ -1852,6 +1852,16 @@ public final class TctrlSchemaProto {
         getLabelBytes();
 
     /**
+     * <code>optional string path = 9;</code>
+     */
+    java.lang.String getPath();
+    /**
+     * <code>optional string path = 9;</code>
+     */
+    com.google.protobuf.ByteString
+        getPathBytes();
+
+    /**
      * <code>optional .google.protobuf.Value minLimit = 3;</code>
      */
     boolean hasMinLimit();
@@ -1943,6 +1953,7 @@ public final class TctrlSchemaProto {
     private ParamPartSpec() {
       key_ = "";
       label_ = "";
+      path_ = "";
     }
 
     @java.lang.Override
@@ -2060,6 +2071,12 @@ public final class TctrlSchemaProto {
 
               break;
             }
+            case 74: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              path_ = s;
+              break;
+            }
           }
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
@@ -2145,6 +2162,40 @@ public final class TctrlSchemaProto {
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
         label_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int PATH_FIELD_NUMBER = 9;
+    private volatile java.lang.Object path_;
+    /**
+     * <code>optional string path = 9;</code>
+     */
+    public java.lang.String getPath() {
+      java.lang.Object ref = path_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        path_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>optional string path = 9;</code>
+     */
+    public com.google.protobuf.ByteString
+        getPathBytes() {
+      java.lang.Object ref = path_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        path_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
@@ -2313,6 +2364,9 @@ public final class TctrlSchemaProto {
       if (value_ != null) {
         output.writeMessage(8, getValue());
       }
+      if (!getPathBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 9, path_);
+      }
     }
 
     public int getSerializedSize() {
@@ -2350,6 +2404,9 @@ public final class TctrlSchemaProto {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(8, getValue());
       }
+      if (!getPathBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(9, path_);
+      }
       memoizedSize = size;
       return size;
     }
@@ -2370,6 +2427,8 @@ public final class TctrlSchemaProto {
           .equals(other.getKey());
       result = result && getLabel()
           .equals(other.getLabel());
+      result = result && getPath()
+          .equals(other.getPath());
       result = result && (hasMinLimit() == other.hasMinLimit());
       if (hasMinLimit()) {
         result = result && getMinLimit()
@@ -2414,6 +2473,8 @@ public final class TctrlSchemaProto {
       hash = (53 * hash) + getKey().hashCode();
       hash = (37 * hash) + LABEL_FIELD_NUMBER;
       hash = (53 * hash) + getLabel().hashCode();
+      hash = (37 * hash) + PATH_FIELD_NUMBER;
+      hash = (53 * hash) + getPath().hashCode();
       if (hasMinLimit()) {
         hash = (37 * hash) + MINLIMIT_FIELD_NUMBER;
         hash = (53 * hash) + getMinLimit().hashCode();
@@ -2560,6 +2621,8 @@ public final class TctrlSchemaProto {
 
         label_ = "";
 
+        path_ = "";
+
         if (minLimitBuilder_ == null) {
           minLimit_ = null;
         } else {
@@ -2620,6 +2683,7 @@ public final class TctrlSchemaProto {
         net.t3kt.tctrl.schema.TctrlSchemaProto.ParamPartSpec result = new net.t3kt.tctrl.schema.TctrlSchemaProto.ParamPartSpec(this);
         result.key_ = key_;
         result.label_ = label_;
+        result.path_ = path_;
         if (minLimitBuilder_ == null) {
           result.minLimit_ = minLimit_;
         } else {
@@ -2697,6 +2761,10 @@ public final class TctrlSchemaProto {
         }
         if (!other.getLabel().isEmpty()) {
           label_ = other.label_;
+          onChanged();
+        }
+        if (!other.getPath().isEmpty()) {
+          path_ = other.path_;
           onChanged();
         }
         if (other.hasMinLimit()) {
@@ -2877,6 +2945,75 @@ public final class TctrlSchemaProto {
   checkByteStringIsUtf8(value);
         
         label_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object path_ = "";
+      /**
+       * <code>optional string path = 9;</code>
+       */
+      public java.lang.String getPath() {
+        java.lang.Object ref = path_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          path_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>optional string path = 9;</code>
+       */
+      public com.google.protobuf.ByteString
+          getPathBytes() {
+        java.lang.Object ref = path_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          path_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>optional string path = 9;</code>
+       */
+      public Builder setPath(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        path_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional string path = 9;</code>
+       */
+      public Builder clearPath() {
+        
+        path_ = getDefaultInstance().getPath();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional string path = 9;</code>
+       */
+      public Builder setPathBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        path_ = value;
         onChanged();
         return this;
       }
@@ -16981,58 +17118,58 @@ public final class TctrlSchemaProto {
       "f/wrappers.proto\")\n\013ParamOption\022\013\n\003key\030\001" +
       " \001(\t\022\r\n\005label\030\002 \001(\t\"S\n\nOptionList\022\013\n\003key" +
       "\030\001 \001(\t\022\r\n\005label\030\002 \001(\t\022)\n\006option\030\003 \003(\0132\031." +
-      "tctrl.schema.ParamOption\"\244\002\n\rParamPartSp" +
-      "ec\022\013\n\003key\030\001 \001(\t\022\r\n\005label\030\002 \001(\t\022(\n\010minLim" +
-      "it\030\003 \001(\0132\026.google.protobuf.Value\022(\n\010maxL" +
-      "imit\030\004 \001(\0132\026.google.protobuf.Value\022\'\n\007mi" +
-      "nNorm\030\005 \001(\0132\026.google.protobuf.Value\022\'\n\007m",
-      "axNorm\030\006 \001(\0132\026.google.protobuf.Value\022*\n\n" +
-      "defaultVal\030\007 \001(\0132\026.google.protobuf.Value" +
-      "\022%\n\005value\030\010 \001(\0132\026.google.protobuf.Value\"" +
-      "\251\005\n\tParamSpec\022\013\n\003key\030\001 \001(\t\022\r\n\005label\030\002 \001(" +
-      "\t\022%\n\004type\030\003 \001(\0162\027.tctrl.schema.ParamType" +
-      "\022\014\n\004path\030\004 \001(\t\022\021\n\totherType\030\005 \001(\t\022(\n\010min" +
-      "Limit\030\006 \001(\0132\026.google.protobuf.Value\022(\n\010m" +
-      "axLimit\030\007 \001(\0132\026.google.protobuf.Value\022\'\n" +
-      "\007minNorm\030\010 \001(\0132\026.google.protobuf.Value\022\'" +
-      "\n\007maxNorm\030\t \001(\0132\026.google.protobuf.Value\022",
-      "*\n\ndefaultVal\030\n \001(\0132\026.google.protobuf.Va" +
-      "lue\022%\n\005value\030\013 \001(\0132\026.google.protobuf.Val" +
-      "ue\022/\n\nvalueIndex\030\014 \001(\0132\033.google.protobuf" +
-      ".Int32Value\022)\n\004part\030\r \003(\0132\033.tctrl.schema" +
-      ".ParamPartSpec\022\r\n\005style\030\016 \001(\t\022\r\n\005group\030\017" +
-      " \001(\t\022)\n\006option\030\020 \003(\0132\031.tctrl.schema.Para" +
-      "mOption\022\025\n\roptionListKey\030\021 \001(\t\022\013\n\003tag\030\022 " +
-      "\003(\t\022\014\n\004help\030\023 \001(\t\022\017\n\007offHelp\030\024 \001(\t\022\022\n\nbu" +
-      "ttonText\030\025 \001(\t\022\025\n\rbuttonOffText\030\026 \001(\t\022,\n" +
-      "\nproperties\030\350\007 \001(\0132\027.google.protobuf.Str",
-      "uct\"\201\001\n\016ModuleTypeSpec\022\013\n\003key\030\001 \001(\t\022\r\n\005l" +
-      "abel\030\002 \001(\t\022&\n\005param\030\007 \003(\0132\027.tctrl.schema" +
-      ".ParamSpec\022+\n\nparamGroup\030\t \003(\0132\027.tctrl.s" +
-      "chema.GroupInfo\"\227\002\n\nModuleSpec\022\013\n\003key\030\001 " +
-      "\001(\t\022\r\n\005label\030\002 \001(\t\022\014\n\004path\030\003 \001(\t\022\022\n\nmodu" +
-      "leType\030\004 \001(\t\022\r\n\005group\030\005 \001(\t\022\013\n\003tag\030\006 \003(\t" +
-      "\022&\n\005param\030\007 \003(\0132\027.tctrl.schema.ParamSpec" +
-      "\022-\n\013childModule\030\010 \003(\0132\030.tctrl.schema.Mod" +
-      "uleSpec\022+\n\nparamGroup\030\t \003(\0132\027.tctrl.sche" +
-      "ma.GroupInfo\022+\n\nchildGroup\030\n \003(\0132\027.tctrl",
-      ".schema.GroupInfo\"V\n\016ConnectionInfo\022\013\n\003k" +
-      "ey\030\001 \001(\t\022\r\n\005label\030\002 \001(\t\022\014\n\004type\030\003 \001(\t\022\014\n" +
-      "\004host\030\004 \001(\t\022\014\n\004port\030\005 \001(\005\"4\n\tGroupInfo\022\013" +
-      "\n\003key\030\001 \001(\t\022\r\n\005label\030\002 \001(\t\022\013\n\003tag\030\003 \003(\t\"" +
-      "\303\002\n\007AppSpec\022\013\n\003key\030\001 \001(\t\022\r\n\005label\030\002 \001(\t\022" +
-      "\013\n\003tag\030\003 \003(\t\022\023\n\013description\030\004 \001(\t\022\014\n\004pat" +
-      "h\030\n \001(\t\022-\n\013childModule\030\005 \003(\0132\030.tctrl.sch" +
-      "ema.ModuleSpec\022+\n\nchildGroup\030\006 \003(\0132\027.tct" +
-      "rl.schema.GroupInfo\022,\n\noptionList\030\007 \003(\0132" +
-      "\030.tctrl.schema.OptionList\0220\n\nconnection\030",
-      "\010 \003(\0132\034.tctrl.schema.ConnectionInfo\0220\n\nm" +
-      "oduleType\030\t \003(\0132\034.tctrl.schema.ModuleTyp" +
-      "eSpec*k\n\tParamType\022\t\n\005OTHER\020\000\022\010\n\004BOOL\020\003\022" +
-      "\n\n\006STRING\020\004\022\007\n\003INT\020\005\022\t\n\005FLOAT\020\006\022\010\n\004IVEC\020" +
-      "\007\022\010\n\004FVEC\020\010\022\010\n\004MENU\020\n\022\013\n\007TRIGGER\020\013B)\n\025ne" +
-      "t.t3kt.tctrl.schemaB\020TctrlSchemaProtob\006p" +
-      "roto3"
+      "tctrl.schema.ParamOption\"\262\002\n\rParamPartSp" +
+      "ec\022\013\n\003key\030\001 \001(\t\022\r\n\005label\030\002 \001(\t\022\014\n\004path\030\t" +
+      " \001(\t\022(\n\010minLimit\030\003 \001(\0132\026.google.protobuf" +
+      ".Value\022(\n\010maxLimit\030\004 \001(\0132\026.google.protob" +
+      "uf.Value\022\'\n\007minNorm\030\005 \001(\0132\026.google.proto",
+      "buf.Value\022\'\n\007maxNorm\030\006 \001(\0132\026.google.prot" +
+      "obuf.Value\022*\n\ndefaultVal\030\007 \001(\0132\026.google." +
+      "protobuf.Value\022%\n\005value\030\010 \001(\0132\026.google.p" +
+      "rotobuf.Value\"\251\005\n\tParamSpec\022\013\n\003key\030\001 \001(\t" +
+      "\022\r\n\005label\030\002 \001(\t\022%\n\004type\030\003 \001(\0162\027.tctrl.sc" +
+      "hema.ParamType\022\014\n\004path\030\004 \001(\t\022\021\n\totherTyp" +
+      "e\030\005 \001(\t\022(\n\010minLimit\030\006 \001(\0132\026.google.proto" +
+      "buf.Value\022(\n\010maxLimit\030\007 \001(\0132\026.google.pro" +
+      "tobuf.Value\022\'\n\007minNorm\030\010 \001(\0132\026.google.pr" +
+      "otobuf.Value\022\'\n\007maxNorm\030\t \001(\0132\026.google.p",
+      "rotobuf.Value\022*\n\ndefaultVal\030\n \001(\0132\026.goog" +
+      "le.protobuf.Value\022%\n\005value\030\013 \001(\0132\026.googl" +
+      "e.protobuf.Value\022/\n\nvalueIndex\030\014 \001(\0132\033.g" +
+      "oogle.protobuf.Int32Value\022)\n\004part\030\r \003(\0132" +
+      "\033.tctrl.schema.ParamPartSpec\022\r\n\005style\030\016 " +
+      "\001(\t\022\r\n\005group\030\017 \001(\t\022)\n\006option\030\020 \003(\0132\031.tct" +
+      "rl.schema.ParamOption\022\025\n\roptionListKey\030\021" +
+      " \001(\t\022\013\n\003tag\030\022 \003(\t\022\014\n\004help\030\023 \001(\t\022\017\n\007offHe" +
+      "lp\030\024 \001(\t\022\022\n\nbuttonText\030\025 \001(\t\022\025\n\rbuttonOf" +
+      "fText\030\026 \001(\t\022,\n\nproperties\030\350\007 \001(\0132\027.googl",
+      "e.protobuf.Struct\"\201\001\n\016ModuleTypeSpec\022\013\n\003" +
+      "key\030\001 \001(\t\022\r\n\005label\030\002 \001(\t\022&\n\005param\030\007 \003(\0132" +
+      "\027.tctrl.schema.ParamSpec\022+\n\nparamGroup\030\t" +
+      " \003(\0132\027.tctrl.schema.GroupInfo\"\227\002\n\nModule" +
+      "Spec\022\013\n\003key\030\001 \001(\t\022\r\n\005label\030\002 \001(\t\022\014\n\004path" +
+      "\030\003 \001(\t\022\022\n\nmoduleType\030\004 \001(\t\022\r\n\005group\030\005 \001(" +
+      "\t\022\013\n\003tag\030\006 \003(\t\022&\n\005param\030\007 \003(\0132\027.tctrl.sc" +
+      "hema.ParamSpec\022-\n\013childModule\030\010 \003(\0132\030.tc" +
+      "trl.schema.ModuleSpec\022+\n\nparamGroup\030\t \003(" +
+      "\0132\027.tctrl.schema.GroupInfo\022+\n\nchildGroup",
+      "\030\n \003(\0132\027.tctrl.schema.GroupInfo\"V\n\016Conne" +
+      "ctionInfo\022\013\n\003key\030\001 \001(\t\022\r\n\005label\030\002 \001(\t\022\014\n" +
+      "\004type\030\003 \001(\t\022\014\n\004host\030\004 \001(\t\022\014\n\004port\030\005 \001(\005\"" +
+      "4\n\tGroupInfo\022\013\n\003key\030\001 \001(\t\022\r\n\005label\030\002 \001(\t" +
+      "\022\013\n\003tag\030\003 \003(\t\"\303\002\n\007AppSpec\022\013\n\003key\030\001 \001(\t\022\r" +
+      "\n\005label\030\002 \001(\t\022\013\n\003tag\030\003 \003(\t\022\023\n\013descriptio" +
+      "n\030\004 \001(\t\022\014\n\004path\030\n \001(\t\022-\n\013childModule\030\005 \003" +
+      "(\0132\030.tctrl.schema.ModuleSpec\022+\n\nchildGro" +
+      "up\030\006 \003(\0132\027.tctrl.schema.GroupInfo\022,\n\nopt" +
+      "ionList\030\007 \003(\0132\030.tctrl.schema.OptionList\022",
+      "0\n\nconnection\030\010 \003(\0132\034.tctrl.schema.Conne" +
+      "ctionInfo\0220\n\nmoduleType\030\t \003(\0132\034.tctrl.sc" +
+      "hema.ModuleTypeSpec*k\n\tParamType\022\t\n\005OTHE" +
+      "R\020\000\022\010\n\004BOOL\020\003\022\n\n\006STRING\020\004\022\007\n\003INT\020\005\022\t\n\005FL" +
+      "OAT\020\006\022\010\n\004IVEC\020\007\022\010\n\004FVEC\020\010\022\010\n\004MENU\020\n\022\013\n\007T" +
+      "RIGGER\020\013B)\n\025net.t3kt.tctrl.schemaB\020Tctrl" +
+      "SchemaProtob\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -17065,7 +17202,7 @@ public final class TctrlSchemaProto {
     internal_static_tctrl_schema_ParamPartSpec_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_tctrl_schema_ParamPartSpec_descriptor,
-        new java.lang.String[] { "Key", "Label", "MinLimit", "MaxLimit", "MinNorm", "MaxNorm", "DefaultVal", "Value", });
+        new java.lang.String[] { "Key", "Label", "Path", "MinLimit", "MaxLimit", "MinNorm", "MaxNorm", "DefaultVal", "Value", });
     internal_static_tctrl_schema_ParamSpec_descriptor =
       getDescriptor().getMessageTypes().get(3);
     internal_static_tctrl_schema_ParamSpec_fieldAccessorTable = new

@@ -34,6 +34,7 @@ message OptionList {
 message ParamPartSpec {
     string key = 1;
     string label = 2;
+    string path = 9;
     google.protobuf.Value minLimit = 3;
     google.protobuf.Value maxLimit = 4;
     google.protobuf.Value minNorm = 5;
