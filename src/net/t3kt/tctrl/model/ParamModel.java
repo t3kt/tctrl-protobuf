@@ -9,4 +9,9 @@ public interface ParamModel extends ModelNode<ParamSchema>, Groupable {
     ParamType getType();
 
     void resetValue();
+
+    boolean isVector();
+    boolean isSingle();
+
+    ModuleModel getParentModule();
 }

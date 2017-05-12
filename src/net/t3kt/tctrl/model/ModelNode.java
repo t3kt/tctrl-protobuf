@@ -4,7 +4,7 @@ import net.t3kt.tctrl.schema.SchemaNode;
 
 public interface ModelNode<S extends SchemaNode<?>> {
 
-    S getSchemaNode();
+    S getSchema();
 
     String getKey();
 

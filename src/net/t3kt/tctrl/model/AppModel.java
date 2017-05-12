@@ -1,15 +1,17 @@
 package net.t3kt.tctrl.model;
 
-import com.google.common.collect.ImmutableList;
+import com.google.common.collect.ImmutableCollection;
 import net.t3kt.tctrl.schema.AppSchema;
 
 public interface AppModel extends ParentModelNode<AppSchema> {
 
-    ImmutableList<ModuleModel> getAllModules();
+    ImmutableCollection<ModuleModel> getAllModules();
 
     ModuleModel getModuleByPath(String path);
 
     ParamModel getParamByPath(String path);
 
-    ImmutableList<ParamModel> getAllParams();
+    ImmutableCollection<ParamModel> getAllParams();
+
+    ImmutableCollection<SingleParamModel> getAllFlatParams();
 }

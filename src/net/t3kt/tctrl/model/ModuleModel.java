@@ -1,6 +1,6 @@
 package net.t3kt.tctrl.model;
 
-import com.google.common.collect.ImmutableList;
+import com.google.common.collect.ImmutableCollection;
 import com.google.common.collect.ImmutableMap;
 import javax.annotation.Nullable;
 import net.t3kt.tctrl.schema.Groupable;
@@ -13,9 +13,9 @@ public interface ModuleModel extends ParentModelNode<ModuleSchema>, Groupable {
 
     ParamModel getParamByKey(String key);
 
-    ImmutableList<ParamModel> getParams();
+    ImmutableCollection<ParamModel> getParams();
 
-    ImmutableList<SingleParamModel> getFlatParams();
+    ImmutableCollection<SingleParamModel> getFlatParams();
 
     ImmutableMap<String, ModelNodeGroup<ParamModel>> getParamGroups();
 }
