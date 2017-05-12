@@ -24,12 +24,19 @@ public final class AppSchema extends SchemaNode<AppSpec> implements OptionListPr
         this.modulesByPath = Maps.uniqueIndex(childModules, ((ModuleSchema m) -> m.getKey()));
     }
 
+    @Override
     public String getKey() {
         return spec.getKey();
     }
 
+    @Override
     public String getLabel() {
         return spec.getLabel();
+    }
+
+    @Override
+    public String getPath() {
+        return spec.getPath();
     }
 
     public String getDescription() {

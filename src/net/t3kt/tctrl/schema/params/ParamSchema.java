@@ -93,14 +93,17 @@ public abstract class ParamSchema extends SchemaNode<ParamSpec> {
         super(spec);
     }
 
+    @Override
     public String getKey() {
         return spec.getKey();
     }
 
+    @Override
     public String getLabel() {
         return spec.getLabel();
     }
 
+    @Override
     public String getPath() {
         return spec.getPath();
     }

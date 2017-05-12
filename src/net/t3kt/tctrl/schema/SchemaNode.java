@@ -14,6 +14,12 @@ public abstract class SchemaNode<S extends Message> {
         return spec;
     }
 
+    public abstract String getKey();
+
+    public abstract String getLabel();
+
+    public abstract String getPath();
+
     public String toJson() {
         return Schemas.toJson(getSpec());
     }
