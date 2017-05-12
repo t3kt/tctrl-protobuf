@@ -7,13 +7,14 @@ import com.google.common.collect.Maps;
 import com.google.common.collect.Multimaps;
 import java.util.List;
 import net.t3kt.tctrl.schema.AppSchema;
+import net.t3kt.tctrl.schema.Groupable;
+import net.t3kt.tctrl.schema.ParentSchemaNode;
 import net.t3kt.tctrl.schema.SchemaGroupList;
-import net.t3kt.tctrl.schema.SchemaNode;
 import net.t3kt.tctrl.schema.TctrlSchemaProto.ModuleSpec;
 import net.t3kt.tctrl.schema.TctrlSchemaProto.ParamSpec;
 import net.t3kt.tctrl.schema.params.ParamSchema;
 
-public final class ModuleSchema extends SchemaNode<ModuleSpec> {
+public final class ModuleSchema extends ParentSchemaNode<ModuleSpec> implements Groupable {
     private final SchemaGroupList childGroups;
     private final SchemaGroupList paramGroups;
     private final ImmutableList<ModuleSchema> childModules;
@@ -57,6 +58,7 @@ public final class ModuleSchema extends SchemaNode<ModuleSpec> {
         return spec.getModuleType();
     }
 
+    @Override
     public String getGroup() {
         return spec.getGroup();
     }
@@ -77,6 +79,7 @@ public final class ModuleSchema extends SchemaNode<ModuleSpec> {
         return paramsByGroup.get(group);
     }
 
+    @Override
     public SchemaGroupList getChildGroups() {
         return childGroups;
     }
@@ -85,6 +88,7 @@ public final class ModuleSchema extends SchemaNode<ModuleSpec> {
         return paramGroups;
     }
 
+    @Override
     public ImmutableList<ModuleSchema> getChildModules() {
         return childModules;
     }

@@ -6,12 +6,14 @@ import com.google.common.collect.Maps;
 import java.util.List;
 import net.t3kt.tctrl.schema.TctrlSchemaProto.AppSpec;
 import net.t3kt.tctrl.schema.TctrlSchemaProto.ConnectionInfo;
+import net.t3kt.tctrl.schema.TctrlSchemaProto.ModuleSpec;
 import net.t3kt.tctrl.schema.TctrlSchemaProto.ModuleTypeSpec;
 import net.t3kt.tctrl.schema.TctrlSchemaProto.OptionList;
 import net.t3kt.tctrl.schema.modules.ModuleSchema;
 import net.t3kt.tctrl.schema.params.OptionListProvider;
 
-public final class AppSchema extends SchemaNode<AppSpec> implements OptionListProvider {
+public final class AppSchema extends ParentSchemaNode<AppSpec> implements OptionListProvider {
+    private final SchemaGroupList childGroups;
     private final ImmutableList<ModuleSchema> childModules;
     private final ImmutableMap<String, ModuleSchema> modulesByPath;
 
@@ -21,7 +23,13 @@ public final class AppSchema extends SchemaNode<AppSpec> implements OptionListPr
                 .stream()
                 .map(m -> new ModuleSchema(m, this))
                 .collect(ImmutableList.toImmutableList());
+        this.childGroups = new SchemaGroupList(spec.getChildGroupList(), spec.getChildModuleList().stream().map(ModuleSpec::getGroup));
         this.modulesByPath = Maps.uniqueIndex(childModules, ((ModuleSchema m) -> m.getKey()));
+    }
+
+    @Override
+    public SchemaGroupList getChildGroups() {
+        return null;
     }
 
     @Override
@@ -84,6 +92,7 @@ public final class AppSchema extends SchemaNode<AppSpec> implements OptionListPr
                 .orElse(null);
     }
 
+    @Override
     public ImmutableList<ModuleSchema> getChildModules() {
         return childModules;
     }

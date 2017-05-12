@@ -5,11 +5,12 @@ import com.google.protobuf.Value;
 import java.util.List;
 import java.util.Optional;
 import javax.annotation.Nullable;
+import net.t3kt.tctrl.schema.Groupable;
 import net.t3kt.tctrl.schema.SchemaNode;
 import net.t3kt.tctrl.schema.TctrlSchemaProto.ParamSpec;
 import net.t3kt.tctrl.schema.TctrlSchemaProto.ParamType;
 
-public abstract class ParamSchema extends SchemaNode<ParamSpec> {
+public abstract class ParamSchema extends SchemaNode<ParamSpec> implements Groupable {
     public static VectorParamSchema<Integer> forIntegerVector(ParamSpec spec) {
         Preconditions.checkArgument(spec.getType() == ParamType.IVEC);
         return new VectorParamSchema<>(spec, NumericParamPartSchema.forIntegers(spec.getPartList()));
@@ -116,6 +117,7 @@ public abstract class ParamSchema extends SchemaNode<ParamSpec> {
         return spec.getStyle();
     }
 
+    @Override
     public String getGroup() {
         return spec.getGroup();
     }
