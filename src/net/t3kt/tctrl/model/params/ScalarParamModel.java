@@ -1,8 +1,9 @@
 package net.t3kt.tctrl.model.params;
 
 import javax.annotation.Nullable;
+import net.t3kt.tctrl.schema.params.ScalarParamSchema;
 
-public interface ScalarParamModel<T> extends SingleParamModel {
+public interface ScalarParamModel<T, S extends ScalarParamSchema<T>> extends SingleParamModel<S> {
     T getValue();
     void setValue(T value);
 
@@ -11,5 +12,5 @@ public interface ScalarParamModel<T> extends SingleParamModel {
     boolean isValidValue(T value);
 
     @Nullable
-    VectorParamModel<T> getParentParam();
+    VectorParamModel<?> getParentParam();
 }

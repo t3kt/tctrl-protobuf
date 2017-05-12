@@ -2,6 +2,7 @@ package net.t3kt.tctrl.model.impl;
 
 import com.google.common.collect.ImmutableCollection;
 import com.google.common.collect.ImmutableMap;
+import net.t3kt.tctrl.model.params.NumericParamModel;
 import net.t3kt.tctrl.model.params.ParamModel;
 import net.t3kt.tctrl.model.params.ScalarParamModel;
 import net.t3kt.tctrl.model.params.SingleParamModel;
@@ -66,7 +67,7 @@ final class ParamModelCollection {
             if (param.isSingle()) {
                 flatParams.put(key, (SingleParamModel) param);
             } else {
-                for (ScalarParamModel<?> paramPart : ((VectorParamModel<?>) param).getParts()) {
+                for (NumericParamModel<?> paramPart : ((VectorParamModel<?>) param).getParts()) {
                     flatParams.put(getKey(paramPart), paramPart);
                 }
             }
