@@ -19,5 +19,7 @@ public interface ModuleModel extends ParentModelNode<ModuleSchema>, Groupable {
 
     ImmutableCollection<? extends SingleParamModel> getFlatParams();
 
-    ImmutableMap<String, ModelNodeGroup<? extends ParamModel>> getParamGroups();
+    ImmutableCollection<? extends ModelNodeGroup<? extends ParamModel<?>>> getParamGroups();
+
+    ModelNodeGroup<? extends ParamModel<?>> getParamGroup(String key);
 }

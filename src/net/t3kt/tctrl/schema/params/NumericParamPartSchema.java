@@ -4,15 +4,16 @@ import com.google.common.collect.ImmutableList;
 import com.google.protobuf.Value;
 import java.util.List;
 import java.util.Optional;
+import net.t3kt.tctrl.schema.Groupable;
 import net.t3kt.tctrl.schema.SchemaNode;
 import net.t3kt.tctrl.schema.TctrlSchemaProto.ParamPartSpec;
 import net.t3kt.tctrl.schema.TctrlSchemaProto.ParamSpec;
 import net.t3kt.tctrl.schema.TctrlSchemaProto.ParamType;
 
-public abstract class NumericParamPartSchema<T extends Number> extends SchemaNode<ParamPartSpec> {
+public abstract class NumericParamPartSchema<T extends Number> extends SchemaNode<ParamPartSpec> implements Groupable {
 
-    static NumericParamPartSchema<Integer> forInteger(ParamPartSpec spec) {
-        return new NumericParamPartSchema<Integer>(spec) {
+    static NumericParamPartSchema<Integer> forInteger(ParamPartSpec spec, ParamSpec parentSpec) {
+        return new NumericParamPartSchema<Integer>(spec, parentSpec) {
             @Override
             public ParamType getType() {
                 return ParamType.INT;
@@ -35,8 +36,8 @@ public abstract class NumericParamPartSchema<T extends Number> extends SchemaNod
         };
     }
 
-    static NumericParamPartSchema<Float> forFloat(ParamPartSpec spec) {
-        return new NumericParamPartSchema<Float>(spec) {
+    static NumericParamPartSchema<Float> forFloat(ParamPartSpec spec, ParamSpec parentSpec) {
+        return new NumericParamPartSchema<Float>(spec, parentSpec) {
             @Override
             public ParamType getType() {
                 return ParamType.FLOAT;
@@ -59,26 +60,29 @@ public abstract class NumericParamPartSchema<T extends Number> extends SchemaNod
         };
     }
 
-    static ImmutableList<NumericParamPartSchema<Integer>> forIntegers(List<ParamPartSpec> parts) {
-        if (parts.isEmpty()) {
+    static ImmutableList<NumericParamPartSchema<Integer>> forIntegers(ParamSpec parentSpec) {
+        if (parentSpec.getPartList().isEmpty()) {
             return ImmutableList.of();
         }
-        return parts.stream()
-                .map(NumericParamPartSchema::forInteger)
+        return parentSpec.getPartList().stream()
+                .map((ParamPartSpec p) -> forInteger(p, parentSpec))
                 .collect(ImmutableList.toImmutableList());
     }
 
-    static ImmutableList<NumericParamPartSchema<Float>> forFloats(List<ParamPartSpec> parts) {
-        if (parts.isEmpty()) {
+    static ImmutableList<NumericParamPartSchema<Float>> forFloats(ParamSpec parentSpec) {
+        if (parentSpec.getPartList().isEmpty()) {
             return ImmutableList.of();
         }
-        return parts.stream()
-                .map(NumericParamPartSchema::forFloat)
+        return parentSpec.getPartList().stream()
+                .map((ParamPartSpec p) -> forFloat(p, parentSpec))
                 .collect(ImmutableList.toImmutableList());
     }
 
-    private NumericParamPartSchema(ParamPartSpec spec) {
+    private final ParamSpec parentSpec;
+
+    private NumericParamPartSchema(ParamPartSpec spec, ParamSpec parentSpec) {
         super(spec);
+        this.parentSpec = parentSpec;
     }
 
     @Override
@@ -94,6 +98,11 @@ public abstract class NumericParamPartSchema<T extends Number> extends SchemaNod
     @Override
     public String getPath() {
         return spec.getPath();
+    }
+
+    @Override
+    public String getGroup() {
+        return parentSpec.getGroup();
     }
 
     public abstract ParamType getType();
@@ -135,6 +144,9 @@ public abstract class NumericParamPartSchema<T extends Number> extends SchemaNod
         }
         if (getPath() != null) {
             paramSpec.setPath(getPath());
+        }
+        if (getGroup() != null) {
+            paramSpec.setGroup(getGroup());
         }
         getValue().map(this::wrapValue).ifPresent(paramSpec::setValue);
         getDefaultValue().map(this::wrapValue).ifPresent(paramSpec::setDefaultVal);

@@ -10,5 +10,7 @@ public interface ParentModelNode<S extends ParentSchemaNode<?>> extends ModelNod
 
     ModuleModel getChildModuleByKey(String key);
 
-    ImmutableMap<String, ModelNodeGroup<ModuleModel>> getChildGroups();
+    ImmutableCollection<? extends ModelNodeGroup<? extends ModuleModel>> getChildGroups();
+
+    ModelNodeGroup<? extends ModuleModel> getChildGroup(String key);
 }

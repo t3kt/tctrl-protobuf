@@ -23,7 +23,6 @@ final class AppModelImpl extends ParentModelNodeImpl<AppSchema> implements AppMo
         this.allModules = allModules;
         this.allParams = allParams;
         setChildModules(childModules);
-        //TODO: child module groups
     }
 
     @Override
@@ -54,6 +53,7 @@ final class AppModelImpl extends ParentModelNodeImpl<AppSchema> implements AppMo
     static final class Builder {
         private final AppSchema schema;
         private final ImmutableMap.Builder<String, ModuleModel> allModules = ImmutableMap.builder();
+        private final ParamModelCollection.Builder allParams = ParamModelCollection.globalBuilder();
 
         private Builder(AppSchema schema) {
             this.schema = schema;
@@ -61,6 +61,7 @@ final class AppModelImpl extends ParentModelNodeImpl<AppSchema> implements AppMo
 
         private void registerModule(ModuleModelImpl module) {
             allModules.put(module.getPath(), module);
+            allParams.addParams(module.getParams());
         }
 
         AppModelImpl build() {

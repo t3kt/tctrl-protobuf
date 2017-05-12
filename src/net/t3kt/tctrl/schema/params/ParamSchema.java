@@ -13,12 +13,12 @@ import net.t3kt.tctrl.schema.TctrlSchemaProto.ParamType;
 public abstract class ParamSchema extends SchemaNode<ParamSpec> implements Groupable {
     public static VectorParamSchema<Integer> forIntegerVector(ParamSpec spec) {
         Preconditions.checkArgument(spec.getType() == ParamType.IVEC);
-        return new VectorParamSchema<>(spec, NumericParamPartSchema.forIntegers(spec.getPartList()));
+        return new VectorParamSchema<>(spec, NumericParamPartSchema.forIntegers(spec));
     }
 
     public static VectorParamSchema<Float> forFloatVector(ParamSpec spec) {
         Preconditions.checkArgument(spec.getType() == ParamType.FVEC);
-        return new VectorParamSchema<>(spec, NumericParamPartSchema.forFloats(spec.getPartList()));
+        return new VectorParamSchema<>(spec, NumericParamPartSchema.forFloats(spec));
     }
 
     public static NumericParamSchema<Integer> forInteger(ParamSpec spec) {

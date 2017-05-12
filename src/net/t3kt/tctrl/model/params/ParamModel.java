@@ -17,4 +17,6 @@ public interface ParamModel<S extends ParamSchema> extends ModelNode<S>, Groupab
     boolean isSingle();
 
     ModuleModel getParentModule();
+
+    boolean isUnsupported();
 }

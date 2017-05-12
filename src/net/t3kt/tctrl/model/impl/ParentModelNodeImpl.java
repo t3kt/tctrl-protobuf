@@ -10,7 +10,7 @@ import net.t3kt.tctrl.schema.ParentSchemaNode;
 
 abstract class ParentModelNodeImpl<S extends ParentSchemaNode<?>> extends ModelNodeImpl<S> implements ParentModelNode<S> {
     private ImmutableMap<String, ModuleModelImpl> childModules;
-    private ImmutableMap<String, ModelNodeGroup<ModuleModel>> childModuleGroups;
+    private ModelNodeGroupList<ModuleModelImpl> childModuleGroups;
 
     ParentModelNodeImpl(S schema) {
         super(schema);
@@ -18,10 +18,10 @@ abstract class ParentModelNodeImpl<S extends ParentSchemaNode<?>> extends ModelN
 
     void setChildModules(Iterable<ModuleModelImpl> childModules) {
         this.childModules = Maps.uniqueIndex(childModules, (ModuleModelImpl m) -> m.getKey());
-    }
-
-    void setChildModuleGroups(ImmutableMap<String, ModelNodeGroup<ModuleModel>> childModuleGroups) {
-        this.childModuleGroups = childModuleGroups;
+        ModelNodeGroupList.Builder<ModuleModelImpl> childGroups = ModelNodeGroupList.builder();
+        schema.getChildGroups().getGroups().forEach(childGroups::addGroup);
+        childModules.forEach(childGroups::addNode);
+        this.childModuleGroups = childGroups.build();
     }
 
     @Override
@@ -35,7 +35,12 @@ abstract class ParentModelNodeImpl<S extends ParentSchemaNode<?>> extends ModelN
     }
 
     @Override
-    public ImmutableMap<String, ModelNodeGroup<ModuleModel>> getChildGroups() {
-        return childModuleGroups;
+    public ImmutableCollection<? extends ModelNodeGroup<? extends ModuleModel>> getChildGroups() {
+        return childModuleGroups.getGroups();
+    }
+
+    @Override
+    public ModelNodeGroup<? extends ModuleModel> getChildGroup(String key) {
+        return childModuleGroups.getGroup(key);
     }
 }

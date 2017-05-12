@@ -6,7 +6,7 @@ import net.t3kt.tctrl.model.params.VectorParamModel;
 import net.t3kt.tctrl.schema.params.TriggerParamSchema;
 
 final class TriggerParamModelImpl extends SingleParamModelImpl<TriggerParamSchema> implements TriggerParamModel {
-    TriggerParamModelImpl(TriggerParamSchema schema, ModuleModelImpl parentModule) {
+    private TriggerParamModelImpl(TriggerParamSchema schema, ModuleModelImpl parentModule) {
         super(schema, parentModule);
     }
 
@@ -28,5 +28,9 @@ final class TriggerParamModelImpl extends SingleParamModelImpl<TriggerParamSchem
     @Override
     public Optional<VectorParamModel<?>> getParentParam() {
         return Optional.empty();
+    }
+
+    static TriggerParamModelImpl forTrigger(TriggerParamSchema schema, ModuleModelImpl parentModule) {
+        return new TriggerParamModelImpl(schema, parentModule);
     }
 }

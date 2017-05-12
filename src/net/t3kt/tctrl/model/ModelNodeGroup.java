@@ -36,30 +36,7 @@ public final class ModelNodeGroup<N extends ModelNode<?> & Groupable> {
         return nodes;
     }
 
-    static <N extends ModelNode<?> & Groupable> Builder<N> builder(GroupInfo spec) {
-        return new Builder<>(spec);
-    }
-
-    static final class Builder<N extends ModelNode<?> & Groupable> {
-        private final GroupInfo spec;
-        private final ImmutableList.Builder<N> nodes = ImmutableList.builder();
-
-        private Builder(GroupInfo spec) {
-            this.spec = spec;
-        }
-
-        public Builder<N> add(N node) {
-            nodes.add(node);
-            return this;
-        }
-
-        public Builder<N> addAll(Iterable<? extends N> nodes) {
-            this.nodes.addAll(nodes);
-            return this;
-        }
-
-        public ModelNodeGroup<N> build() {
-            return new ModelNodeGroup<>(spec, nodes.build());
-        }
+    public static <N extends ModelNode<?> & Groupable> ModelNodeGroup<N> create(GroupInfo spec, Iterable<N> nodes) {
+        return new ModelNodeGroup<>(spec, ImmutableList.copyOf(nodes));
     }
 }

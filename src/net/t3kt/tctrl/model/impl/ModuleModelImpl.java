@@ -1,33 +1,27 @@
 package net.t3kt.tctrl.model.impl;
 
 import com.google.common.collect.ImmutableCollection;
-import com.google.common.collect.ImmutableMap;
 import javax.annotation.Nullable;
 import net.t3kt.tctrl.model.ModelNodeGroup;
 import net.t3kt.tctrl.model.ModuleModel;
 import net.t3kt.tctrl.model.params.ParamModel;
 import net.t3kt.tctrl.model.params.SingleParamModel;
 import net.t3kt.tctrl.schema.ModuleSchema;
+import net.t3kt.tctrl.schema.params.ParamSchema;
 
 final class ModuleModelImpl extends ParentModelNodeImpl<ModuleSchema> implements ModuleModel {
-    private ModuleModelImpl parentModule;
+    private final ModuleModelImpl parentModule;
     private ParamModelCollection params;
-    private ImmutableMap<String, ModelNodeGroup<? extends ParamModel>> paramGroups;
 
-    ModuleModelImpl(Builder builder) {
-        super(builder.schema);
-    }
-
-    void setParentModule(ModuleModelImpl parentModule) {
+    ModuleModelImpl(
+            ModuleSchema schema,
+            ModuleModelImpl parentModule) {
+        super(schema);
         this.parentModule = parentModule;
     }
 
-    void setParams(ParamModelCollection params) {
+    private void setParams(ParamModelCollection params) {
         this.params = params;
-    }
-
-    void setParamGroups(ImmutableMap<String, ModelNodeGroup<? extends ParamModel>> paramGroups) {
-        this.paramGroups = paramGroups;
     }
 
     @Nullable
@@ -52,8 +46,13 @@ final class ModuleModelImpl extends ParentModelNodeImpl<ModuleSchema> implements
     }
 
     @Override
-    public ImmutableMap<String, ModelNodeGroup<? extends ParamModel>> getParamGroups() {
-        return paramGroups;
+    public ImmutableCollection<? extends ModelNodeGroup<? extends ParamModel<?>>> getParamGroups() {
+        return params.getParamGroups().getGroups();
+    }
+
+    @Override
+    public ModelNodeGroup<? extends ParamModel<?>> getParamGroup(String key) {
+        return params.getParamGroups().getGroup(key);
     }
 
     @Override
@@ -63,13 +62,26 @@ final class ModuleModelImpl extends ParentModelNodeImpl<ModuleSchema> implements
 
     static final class Builder {
         private final ModuleSchema schema;
+        private ModuleModelImpl parentModule;
 
         Builder(ModuleSchema schema) {
             this.schema = schema;
         }
 
+        Builder setParentModule(ModuleModelImpl parentModule) {
+            this.parentModule = parentModule;
+            return this;
+        }
+
         ModuleModelImpl build() {
-            return new ModuleModelImpl(this);
+            ModuleModelImpl module = new ModuleModelImpl(schema, parentModule);
+            ParamModelCollection.Builder params = ParamModelCollection.moduleLocalBuilder()
+                    .addGroups(schema.getParamGroups().getGroups());
+            for (ParamSchema paramSchema : schema.getParams()) {
+                ParamModelImpl param = ParamModelImpl.create(paramSchema, module);
+                params.addParam(param);
+            }
+            return module;
         }
     }
 }
