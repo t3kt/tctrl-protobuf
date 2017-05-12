@@ -18,11 +18,11 @@ final class ParamModelCollection {
         this.flatParams = flatParams;
     }
 
-    ImmutableCollection<ParamModel> getParams() {
+    ImmutableCollection<? extends ParamModel> getParams() {
         return params.values();
     }
 
-    ImmutableCollection<SingleParamModel> getFlatParams() {
+    ImmutableCollection<? extends SingleParamModel> getFlatParams() {
         return flatParams.values();
     }
 

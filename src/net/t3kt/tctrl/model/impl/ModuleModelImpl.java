@@ -42,12 +42,12 @@ final class ModuleModelImpl extends ParentModelNodeImpl<ModuleSchema> implements
     }
 
     @Override
-    public ImmutableCollection<ParamModel> getParams() {
+    public ImmutableCollection<? extends ParamModel> getParams() {
         return params.getParams();
     }
 
     @Override
-    public ImmutableCollection<SingleParamModel> getFlatParams() {
+    public ImmutableCollection<? extends SingleParamModel> getFlatParams() {
         return params.getFlatParams();
     }
 

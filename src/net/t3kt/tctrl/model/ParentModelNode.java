@@ -6,7 +6,7 @@ import net.t3kt.tctrl.schema.ParentSchemaNode;
 
 public interface ParentModelNode<S extends ParentSchemaNode<?>> extends ModelNode<S> {
 
-    ImmutableCollection<ModuleModel> getChildModules();
+    ImmutableCollection<? extends ModuleModel> getChildModules();
 
     ModuleModel getChildModuleByKey(String key);
 
