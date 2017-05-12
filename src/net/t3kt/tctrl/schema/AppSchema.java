@@ -9,7 +9,6 @@ import net.t3kt.tctrl.schema.TctrlSchemaProto.ConnectionInfo;
 import net.t3kt.tctrl.schema.TctrlSchemaProto.ModuleSpec;
 import net.t3kt.tctrl.schema.TctrlSchemaProto.ModuleTypeSpec;
 import net.t3kt.tctrl.schema.TctrlSchemaProto.OptionList;
-import net.t3kt.tctrl.schema.modules.ModuleSchema;
 import net.t3kt.tctrl.schema.params.OptionListProvider;
 
 public final class AppSchema extends ParentSchemaNode<AppSpec> implements OptionListProvider {

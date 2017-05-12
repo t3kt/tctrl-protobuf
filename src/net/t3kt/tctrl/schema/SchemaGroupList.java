@@ -14,7 +14,7 @@ public final class SchemaGroupList {
     private final ImmutableList<GroupInfo> groups;
     private final ImmutableMap<String, GroupInfo> groupsByKey;
 
-    public SchemaGroupList(List<GroupInfo> declaredGroups, @Nullable Stream<String> referencedGroupNames) {
+    SchemaGroupList(List<GroupInfo> declaredGroups, @Nullable Stream<String> referencedGroupNames) {
         ImmutableList.Builder<GroupInfo> groups = ImmutableList.builder();
         Map<String, GroupInfo> groupsByKey = new HashMap<>();
         for (GroupInfo group : declaredGroups) {
