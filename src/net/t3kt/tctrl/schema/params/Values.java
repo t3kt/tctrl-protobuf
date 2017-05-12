@@ -12,6 +12,9 @@ public final class Values {
     }
 
     static Optional<Integer> toInt(Value value) {
+        if (value == null) {
+            return Optional.empty();
+        }
         switch (value.getKindCase()) {
             case NUMBER_VALUE:
                 return Optional.of((int) value.getNumberValue());
@@ -26,6 +29,9 @@ public final class Values {
     }
 
     static Optional<Float> toFloat(Value value) {
+        if (value == null) {
+            return Optional.empty();
+        }
         switch (value.getKindCase()) {
             case NUMBER_VALUE:
                 return Optional.of((float) value.getNumberValue());
@@ -40,6 +46,9 @@ public final class Values {
     }
 
     static Optional<Boolean> toBool(Value value) {
+        if (value == null) {
+            return Optional.empty();
+        }
         switch (value.getKindCase()) {
             case NUMBER_VALUE:
                 return Optional.of(value.getNumberValue() != 0.0);
@@ -54,6 +63,9 @@ public final class Values {
     }
 
     static Optional<String> toString(Value value) {
+        if (value == null) {
+            return Optional.empty();
+        }
         switch (value.getKindCase()) {
             case STRING_VALUE:
                 return Optional.of(value.getStringValue());
@@ -73,6 +85,14 @@ public final class Values {
         return Value.newBuilder()
                 .setNumberValue(value)
                 .build();
+    }
+
+    public static Value fromInteger(int value) {
+        return fromDouble((double) value);
+    }
+
+    public static Value fromFloat(float value) {
+        return fromDouble((double) value);
     }
 
     public static Value fromBool(boolean value) {

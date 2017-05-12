@@ -1,6 +1,8 @@
 package net.t3kt.tctrl.model.impl;
 
+import java.util.Optional;
 import net.t3kt.tctrl.model.params.TriggerParamModel;
+import net.t3kt.tctrl.model.params.VectorParamModel;
 import net.t3kt.tctrl.schema.params.TriggerParamSchema;
 
 final class TriggerParamModelImpl extends SingleParamModelImpl<TriggerParamSchema> implements TriggerParamModel {
@@ -21,5 +23,10 @@ final class TriggerParamModelImpl extends SingleParamModelImpl<TriggerParamSchem
     @Override
     public boolean hasDefaultValue() {
         return false;
+    }
+
+    @Override
+    public Optional<VectorParamModel<?>> getParentParam() {
+        return Optional.empty();
     }
 }

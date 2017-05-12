@@ -1,7 +1,6 @@
 package net.t3kt.tctrl.model.impl;
 
 import java.util.Optional;
-import javax.annotation.Nullable;
 import net.t3kt.tctrl.model.params.ScalarParamModel;
 import net.t3kt.tctrl.model.params.VectorParamModel;
 import net.t3kt.tctrl.schema.params.BoolParamSchema;
@@ -10,10 +9,20 @@ import net.t3kt.tctrl.schema.params.ScalarParamSchema;
 abstract class ScalarParamModelImpl<T, S extends ScalarParamSchema<T>> extends SingleParamModelImpl<S> implements ScalarParamModel<T, S> {
     T value;
     final Optional<T> defaultValue;
+    VectorParamModel<?> parentParam;
 
     ScalarParamModelImpl(S schema, ModuleModelImpl parentModule) {
         super(schema, parentModule);
         defaultValue = schema.getDefaultValue();
+    }
+
+    void setParentParam(VectorParamModel<?> parentParam) {
+        this.parentParam = parentParam;
+    }
+
+    @Override
+    public Optional<VectorParamModel<?>> getParentParam() {
+        return Optional.ofNullable(parentParam);
     }
 
     @Override
@@ -43,12 +52,6 @@ abstract class ScalarParamModelImpl<T, S extends ScalarParamSchema<T>> extends S
     @Override
     public Optional<T> getDefaultValue() {
         return defaultValue;
-    }
-
-    @Nullable
-    @Override
-    public VectorParamModel<?> getParentParam() {
-        return null;
     }
 
     static ScalarParamModelImpl<Boolean, BoolParamSchema> forBoolean(

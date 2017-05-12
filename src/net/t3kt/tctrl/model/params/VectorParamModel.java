@@ -8,7 +8,7 @@ public interface VectorParamModel<T extends Number & Comparable> extends ParamMo
 
     ParamType getPartType();
 
-    ImmutableList<NumericParamModel<T>> getParts();
+    ImmutableList<? extends NumericParamModel<T>> getParts();
 
     int getPartCount();
 }
