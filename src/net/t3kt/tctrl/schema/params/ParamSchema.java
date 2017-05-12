@@ -21,9 +21,9 @@ public abstract class ParamSchema extends SchemaNode<ParamSpec> implements Group
         return new VectorParamSchema<>(spec, NumericParamPartSchema.forFloats(spec.getPartList()));
     }
 
-    public static ScalarNumericParamSchema<Integer> forInteger(ParamSpec spec) {
+    public static NumericParamSchema<Integer> forInteger(ParamSpec spec) {
         Preconditions.checkArgument(spec.getType() == ParamType.INT);
-        return new ScalarNumericParamSchema<Integer>(spec) {
+        return new NumericParamSchema<Integer>(spec) {
             @Override
             protected Optional<Integer> convert(Value value) {
                 return Values.toInt(value);
@@ -31,9 +31,9 @@ public abstract class ParamSchema extends SchemaNode<ParamSpec> implements Group
         };
     }
 
-    public static ScalarNumericParamSchema<Float> forFloat(ParamSpec spec) {
+    public static NumericParamSchema<Float> forFloat(ParamSpec spec) {
         Preconditions.checkArgument(spec.getType() == ParamType.FLOAT);
-        return new ScalarNumericParamSchema<Float>(spec) {
+        return new NumericParamSchema<Float>(spec) {
             @Override
             protected Optional<Float> convert(Value value) {
                 return Values.toFloat(value);

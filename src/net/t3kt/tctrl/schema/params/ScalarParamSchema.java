@@ -4,7 +4,7 @@ import com.google.protobuf.Value;
 import java.util.Optional;
 import net.t3kt.tctrl.schema.TctrlSchemaProto.ParamSpec;
 
-public abstract class ScalarParamSchema<T> extends ParamSchema {
+public abstract class ScalarParamSchema<T> extends SingleParamSchema {
 
     ScalarParamSchema(ParamSpec spec) {
         super(spec);
