@@ -6,7 +6,7 @@ import net.t3kt.tctrl.schema.params.NumericParamSchema;
 public interface NumericParamModel<T extends Number & Comparable> extends ScalarParamModel<T, NumericParamSchema<T>> {
 
     float getNormalizedValue();
-    void setNormalizedValue(float normValue);
+    boolean trySetNormalizedValue(float normValue);
 
     Range<T> getLimitRange();
     Range<T> getNormalizedRange();

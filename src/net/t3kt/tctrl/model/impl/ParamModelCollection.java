@@ -4,7 +4,6 @@ import com.google.common.collect.ImmutableCollection;
 import com.google.common.collect.ImmutableMap;
 import net.t3kt.tctrl.model.params.NumericParamModel;
 import net.t3kt.tctrl.model.params.ParamModel;
-import net.t3kt.tctrl.model.params.ScalarParamModel;
 import net.t3kt.tctrl.model.params.SingleParamModel;
 import net.t3kt.tctrl.model.params.VectorParamModel;
 

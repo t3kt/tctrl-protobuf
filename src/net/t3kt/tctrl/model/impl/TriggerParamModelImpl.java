@@ -1,0 +1,25 @@
+package net.t3kt.tctrl.model.impl;
+
+import net.t3kt.tctrl.model.params.TriggerParamModel;
+import net.t3kt.tctrl.schema.params.TriggerParamSchema;
+
+final class TriggerParamModelImpl extends SingleParamModelImpl<TriggerParamSchema> implements TriggerParamModel {
+    TriggerParamModelImpl(TriggerParamSchema schema, ModuleModelImpl parentModule) {
+        super(schema, parentModule);
+    }
+
+    @Override
+    public void trigger() {
+        throw new RuntimeException("NOT IMPLEMENTED");
+    }
+
+    @Override
+    public boolean tryResetValue() {
+        return false;
+    }
+
+    @Override
+    public boolean hasDefaultValue() {
+        return false;
+    }
+}

@@ -10,7 +10,8 @@ public interface ParamModel<S extends ParamSchema> extends ModelNode<S>, Groupab
 
     ParamType getType();
 
-    void resetValue();
+    boolean tryResetValue();
+    boolean hasDefaultValue();
 
     boolean isVector();
     boolean isSingle();
