@@ -4,12 +4,9 @@ import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
 import net.t3kt.tctrl.schema.ParentSchemaNode;
 
-public abstract class ParentModelNode<S extends ParentSchemaNode<?>> extends ModelNode<S> {
-    ParentModelNode(S schemaNode) {
-        super(schemaNode);
-    }
+public interface ParentModelNode<S extends ParentSchemaNode<?>> extends ModelNode<S> {
 
-    public abstract ImmutableList<ModuleModel> getChildModules();
+    ImmutableList<ModuleModel> getChildModules();
 
-    public abstract ImmutableMap<String, ModelNodeGroup<ModuleModel>> getChildGroups();
+    ImmutableMap<String, ModelNodeGroup<ModuleModel>> getChildGroups();
 }

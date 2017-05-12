@@ -1,16 +1,18 @@
 package net.t3kt.tctrl.model;
 
 import com.google.common.collect.ImmutableList;
-import java.util.List;
+import com.google.common.collect.ImmutableSet;
 import net.t3kt.tctrl.schema.Groupable;
 import net.t3kt.tctrl.schema.TctrlSchemaProto.GroupInfo;
 
-public class ModelNodeGroup<N extends ModelNode<?> & Groupable> {
+public final class ModelNodeGroup<N extends ModelNode<?> & Groupable> {
     private final GroupInfo spec;
+    private final ImmutableSet<String> tags;
     private final ImmutableList<N> nodes;
 
     private ModelNodeGroup(GroupInfo spec, ImmutableList<N> nodes) {
         this.spec = spec;
+        this.tags = ImmutableSet.copyOf(spec.getTagList());
         this.nodes = nodes;
     }
 
@@ -26,15 +28,15 @@ public class ModelNodeGroup<N extends ModelNode<?> & Groupable> {
         return spec.getLabel();
     }
 
-    public List<String> getTags() {
-        return spec.getTagList();
+    public ImmutableSet<String> getTags() {
+        return tags;
     }
 
     public ImmutableList<N> getNodes() {
         return nodes;
     }
 
-    public static <N extends ModelNode<?> & Groupable> Builder<N> builder(GroupInfo spec) {
+    static <N extends ModelNode<?> & Groupable> Builder<N> builder(GroupInfo spec) {
         return new Builder<>(spec);
     }
 
