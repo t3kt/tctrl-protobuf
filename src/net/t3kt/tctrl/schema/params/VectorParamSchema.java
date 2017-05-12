@@ -22,4 +22,9 @@ public final class VectorParamSchema<T extends Number> extends ParamSchema {
     public ParamType getPartType() {
         return partType;
     }
+
+    @Override
+    public boolean isVector() {
+        return true;
+    }
 }

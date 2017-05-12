@@ -6,4 +6,9 @@ public abstract class SingleParamSchema extends ParamSchema {
     SingleParamSchema(ParamSpec spec) {
         super(spec);
     }
+
+    @Override
+    public boolean isVector() {
+        return false;
+    }
 }

@@ -2,6 +2,8 @@ package net.t3kt.tctrl.model;
 
 import com.google.common.collect.ImmutableCollection;
 import net.t3kt.tctrl.model.impl.Impl;
+import net.t3kt.tctrl.model.params.ParamModel;
+import net.t3kt.tctrl.model.params.SingleParamModel;
 import net.t3kt.tctrl.schema.AppSchema;
 
 public interface AppModel extends ParentModelNode<AppSchema> {

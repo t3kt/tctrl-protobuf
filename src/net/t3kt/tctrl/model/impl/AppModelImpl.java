@@ -5,8 +5,8 @@ import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
 import net.t3kt.tctrl.model.AppModel;
 import net.t3kt.tctrl.model.ModuleModel;
-import net.t3kt.tctrl.model.ParamModel;
-import net.t3kt.tctrl.model.SingleParamModel;
+import net.t3kt.tctrl.model.params.ParamModel;
+import net.t3kt.tctrl.model.params.SingleParamModel;
 import net.t3kt.tctrl.schema.AppSchema;
 
 final class AppModelImpl extends ParentModelNodeImpl<AppSchema> implements AppModel {

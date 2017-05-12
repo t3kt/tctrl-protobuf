@@ -5,14 +5,14 @@ import com.google.common.collect.ImmutableMap;
 import javax.annotation.Nullable;
 import net.t3kt.tctrl.model.ModelNodeGroup;
 import net.t3kt.tctrl.model.ModuleModel;
-import net.t3kt.tctrl.model.ParamModel;
-import net.t3kt.tctrl.model.SingleParamModel;
+import net.t3kt.tctrl.model.params.ParamModel;
+import net.t3kt.tctrl.model.params.SingleParamModel;
 import net.t3kt.tctrl.schema.ModuleSchema;
 
 final class ModuleModelImpl extends ParentModelNodeImpl<ModuleSchema> implements ModuleModel {
     private ModuleModelImpl parentModule;
     private ParamModelCollection params;
-    private ImmutableMap<String, ModelNodeGroup<ParamModel>> paramGroups;
+    private ImmutableMap<String, ModelNodeGroup<? extends ParamModel>> paramGroups;
 
     ModuleModelImpl(Builder builder) {
         super(builder.schema);
@@ -26,7 +26,7 @@ final class ModuleModelImpl extends ParentModelNodeImpl<ModuleSchema> implements
         this.params = params;
     }
 
-    void setParamGroups(ImmutableMap<String, ModelNodeGroup<ParamModel>> paramGroups) {
+    void setParamGroups(ImmutableMap<String, ModelNodeGroup<? extends ParamModel>> paramGroups) {
         this.paramGroups = paramGroups;
     }
 
@@ -52,7 +52,7 @@ final class ModuleModelImpl extends ParentModelNodeImpl<ModuleSchema> implements
     }
 
     @Override
-    public ImmutableMap<String, ModelNodeGroup<ParamModel>> getParamGroups() {
+    public ImmutableMap<String, ModelNodeGroup<? extends ParamModel>> getParamGroups() {
         return paramGroups;
     }
 

@@ -109,6 +109,16 @@ public abstract class ParamSchema extends SchemaNode<ParamSpec> implements Group
         return spec.getPath();
     }
 
+    public ParamType getType() {
+        return spec.getType();
+    }
+
+    public abstract boolean isVector();
+
+    public boolean isSingle() {
+        return !isVector();
+    }
+
     public String getOtherType() {
         return spec.getOtherType();
     }

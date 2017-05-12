@@ -1,4 +1,4 @@
-package net.t3kt.tctrl.model;
+package net.t3kt.tctrl.model.params;
 
 import com.google.common.collect.Range;
 
