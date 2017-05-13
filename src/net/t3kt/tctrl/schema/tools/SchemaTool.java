@@ -11,21 +11,16 @@ import java.io.Writer;
 import javax.json.Json;
 import javax.json.JsonObject;
 import javax.json.stream.JsonGenerator;
-import net.t3kt.tctrl.schema.AppSchema;
+import net.t3kt.tctrl.schema.SchemaEncoding;
+import net.t3kt.tctrl.schema.SchemaLoader;
 import net.t3kt.tctrl.schema.Schemas;
 import net.t3kt.tctrl.schema.TctrlSchemaProto.AppSpec;
 import net.t3kt.tctrl.schema.json.LegacyJsonBuilder;
-import net.t3kt.tctrl.schema.json.LegacyJsonParser;
 import org.kohsuke.args4j.CmdLineException;
 import org.kohsuke.args4j.CmdLineParser;
 import org.kohsuke.args4j.Option;
 
 final class SchemaTool {
-
-    public enum SchemaEncoding {
-        json,
-        pbjson,
-    }
 
     private File schemaFile;
 
@@ -46,26 +41,14 @@ final class SchemaTool {
         dumpSchema();
     }
 
-    private AppSpec readAppSpec() throws IOException {
-        try (Reader reader = new FileReader(schemaFile)) {
-            switch (inputFormat) {
-                case pbjson:
-                    return Schemas.parseAppSpecJson(reader);
-                case json:
-                default:
-                    return LegacyJsonParser.parseAppSpec(reader);
-            }
-        }
-    }
-
     private void writeAppSpec(AppSpec appSpec, OutputStream output) throws IOException {
         switch (outputFormat) {
-            case pbjson:
+            case PROTO_JSON:
                 try (Writer writer = new OutputStreamWriter(output)) {
                     Schemas.writeJson(appSpec, writer);
                 }
                 break;
-            case json:
+            case JSON:
             default:
                 JsonObject obj = LegacyJsonBuilder.toJsonObject(appSpec);
                 Json.createWriterFactory(ImmutableMap.of(JsonGenerator.PRETTY_PRINTING, true)).createWriter(output).writeObject(obj);
@@ -74,9 +57,13 @@ final class SchemaTool {
     }
 
     private void dumpSchema() throws IOException {
-        AppSpec appSpec = readAppSpec();
-//        AppSchema appSchema = new AppSchema(appSpec);
-//        appSchema.writeJson(System.out);
+        SchemaLoader loader = SchemaLoader.create()
+                .withEncoding(inputFormat);
+
+        try (Reader reader = new FileReader(schemaFile)) {
+            loader.loadAppSpec(reader);
+        }
+        AppSpec appSpec = loader.getAppSpec();
         writeAppSpec(appSpec, System.out);
     }
 
