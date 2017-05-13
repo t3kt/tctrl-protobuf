@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<form xmlns="http://www.intellij.com/uidesigner/form/" version="1" bind-to-class="net.t3kt.tctrl.gui.SchemaInfoForm">
+  <grid id="27dc6" binding="root" layout-manager="BorderLayout" hgap="0" vgap="0">
+    <constraints>
+      <xy x="20" y="20" width="500" height="400"/>
+    </constraints>
+    <properties/>
+    <border type="none"/>
+    <children>
+      <toolbar id="73abe">
+        <constraints border-constraint="North"/>
+        <properties/>
+        <border type="none"/>
+        <children>
+          <component id="aeab1" class="javax.swing.JButton" binding="button1" default-binding="true">
+            <constraints/>
+            <properties>
+              <text value="Button"/>
+            </properties>
+          </component>
+        </children>
+      </toolbar>
+      <component id="e1d5" class="javax.swing.JTree" binding="schemaTree" custom-create="true">
+        <constraints border-constraint="Center"/>
+        <properties/>
+      </component>
+    </children>
+  </grid>
+</form>
