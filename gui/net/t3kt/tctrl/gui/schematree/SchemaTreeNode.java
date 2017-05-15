@@ -17,7 +17,7 @@ import net.t3kt.tctrl.schema.params.NumericParamPartSchema;
 import net.t3kt.tctrl.schema.params.ParamSchema;
 import net.t3kt.tctrl.schema.params.VectorParamSchema;
 
-abstract class SchemaTreeNode<S extends SchemaNode> implements TreeNode {
+public abstract class SchemaTreeNode<S extends SchemaNode> implements TreeNode {
     final S schema;
     private final List<SchemaTreeNode> childNodes;
     private SchemaTreeNode parentNode;
@@ -45,6 +45,12 @@ abstract class SchemaTreeNode<S extends SchemaNode> implements TreeNode {
     protected void addChildNodes(Iterable<? extends SchemaTreeNode> nodes) {
         nodes.forEach(this.childNodes::add);
     }
+
+    public S getSchema() {
+        return schema;
+    }
+
+    public abstract String getInfoText();
 
     @Override
     public TreeNode getChildAt(int childIndex) {
@@ -89,6 +95,7 @@ abstract class SchemaTreeNode<S extends SchemaNode> implements TreeNode {
         private final S schema;
         private SchemaTreeNode parentNode;
         private Formatter<S> formatter;
+        private Formatter<S> infoFormatter = SchemaNode::toJson;
         private boolean allowsChildren = true;
         private boolean isLeaf = false;
         private final ImmutableList.Builder<SchemaTreeNode> childNodes = ImmutableList.builder();
@@ -117,6 +124,11 @@ abstract class SchemaTreeNode<S extends SchemaNode> implements TreeNode {
             return this;
         }
 
+        Builder<S> setInfoFormatter(Formatter<S> formatter) {
+            this.infoFormatter = formatter;
+            return this;
+        }
+
         Builder<S> addChild(SchemaTreeNode node) {
             if (node != null) {
                 childNodes.add(node);
@@ -137,6 +149,11 @@ abstract class SchemaTreeNode<S extends SchemaNode> implements TreeNode {
 
         SchemaTreeNode<S> build() {
             SchemaTreeNode<S> node = new SchemaTreeNode<S>(schema, childNodes.build()) {
+                @Override
+                public String getInfoText() {
+                    return infoFormatter.format(schema);
+                }
+
                 @Override
                 public String toString() {
                     if (formatter == null) {
@@ -173,6 +190,7 @@ abstract class SchemaTreeNode<S extends SchemaNode> implements TreeNode {
                 .setFormatter(s -> MoreObjects.toStringHelper("(modules)")
                         .add("(count)", s.getChildModules().size())
                         .toString())
+                .setInfoFormatter(s -> "")
                 .addChildren(((ImmutableList<ModuleSchema>) schema.getChildModules())
                         .stream()
                         .map(SchemaTreeNode::forModule)
@@ -190,6 +208,7 @@ abstract class SchemaTreeNode<S extends SchemaNode> implements TreeNode {
                 .setFormatter(s -> MoreObjects.toStringHelper("(params)")
                         .add("(count)", s.getParams().size())
                         .toString())
+                .setInfoFormatter(s -> "")
                 .addChildren(schema.getParams()
                         .stream()
                         .map(SchemaTreeNode::forParameter)

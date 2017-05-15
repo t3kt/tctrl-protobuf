@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<form xmlns="http://www.intellij.com/uidesigner/form/" version="1" bind-to-class="net.t3kt.tctrl.gui.SchemaInfoDialog">
+  <grid id="cbd77" binding="contentPane" layout-manager="BorderLayout" hgap="0" vgap="0">
+    <constraints>
+      <xy x="48" y="54" width="436" height="297"/>
+    </constraints>
+    <properties/>
+    <border type="none"/>
+    <children>
+      <splitpane id="9022d">
+        <constraints border-constraint="Center"/>
+        <properties/>
+        <border type="none"/>
+        <children>
+          <component id="9acbd" class="javax.swing.JTree" binding="schemaTree" custom-create="true">
+            <constraints>
+              <splitpane position="left"/>
+            </constraints>
+            <properties/>
+          </component>
+          <component id="743c0" class="javax.swing.JTextPane" binding="nodeInfoPane">
+            <constraints>
+              <splitpane position="right"/>
+            </constraints>
+            <properties>
+              <editable value="false"/>
+            </properties>
+          </component>
+        </children>
+      </splitpane>
+    </children>
+  </grid>
+</form>

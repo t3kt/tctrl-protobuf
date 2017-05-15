@@ -63,7 +63,7 @@ public class TctrlGui {
         AppSpec appSpec = loader.getAppSpec();
         AppSchema appSchema = loader.buildSchema();
         writeAppSpec(appSpec, System.out);
-        SchemaInfoForm.showForSchema(appSchema);
+        SchemaInfoDialog.showForSchema(appSchema);
     }
 
     public static void main(String[] args) {
