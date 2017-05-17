@@ -3,35 +3,137 @@ import google.protobuf.struct_pb2 as struct_pb
 import google.protobuf.wrappers_pb2 as wrap_pb
 import google.protobuf.text_format as text_format
 
-class LegacyJsonParser:
+def ParseParamOption(obj: dict):
+    result = pb.ParamOption()
+    result.key = obj['key']
+    result.label = obj.get('label')
+    return result
 
-    def parseAppSpec(self, obj):
-        raise NotImplemented()
+def ParseOptionList(obj: dict):
+    result = pb.OptionList()
+    result.key = obj['key']
+    result.label = obj.get('label')
+    result.option.extend(_parseList(obj, 'options', ParseParamOption))
+    return result
 
-    @staticmethod
-    def parseParamOption(obj):
-        result = pb.ParamOption()
-        result.key = obj['key']
-        result.label = obj.get('label')
-        return result
+def ParseParamPartSpec(obj: dict):
+    result = pb.ParamPartSpec()
+    result.key = obj['key']
+    result.label = obj.get('label')
+    result.path = obj.get('path')
+    result.defaultVal = _valueToWrapper(obj.get('default'))
+    result.value = _valueToWrapper(obj.get('value'))
+    result.minLimit = _valueToWrapper(obj.get('minLimit'))
+    result.maxLimit = _valueToWrapper(obj.get('maxLimit'))
+    result.minNorm = _valueToWrapper(obj.get('minNorm'))
+    result.maxNorm = _valueToWrapper(obj.get('maxNorm'))
+    return result
 
-    def parseOptionList(self, obj):
-        result = pb.OptionList()
-        result.key = obj['key']
-        result.label = obj.get('label')
-        optobjs = obj.get('options')
-        if optobjs:
-            opts = [self.parseParamOption(o) for o in optobjs]
-            result.options.extend(opts)
-        return result
+def ParseParamType(val: str):
+    if not val:
+        return pb.OTHER, val
+    try:
+        return pb.ParamType.Value(val.upper()), None
+    except ValueError:
+        return pb.OTHER, val
 
-    @staticmethod
-    def parseParamPartSpec(obj):
-        result = pb.ParamPartSpec()
-        result.key = obj['key']
-        result.label = obj.get('label')
-        # TODO
-        return result
+def ParseParamSpec(obj: dict):
+    result = pb.ParamSpec()
+    result.key = obj['key']
+    result.path = obj.get('path')
+    result.label = obj.get('label')
+    result.style = obj.get('style')
+    result.group = obj.get('group')
+    result.tag.extend(obj.get('tags') or [])
+    result.help = obj.get('help')
+    result.offHelp = obj.get('offHelp')
+    result.buttonText = obj.get('buttonText')
+    result.buttonOffText = obj.get('buttonOffText')
+    result.type, result.otherType = ParseParamType(obj.get('type'))
+    result.defaultVal = _valueToWrapper(obj.get('default'))
+    result.value = _valueToWrapper(obj.get('value'))
+    result.valueIndex = _valueToInt32Wrapper(obj.get('valueIndex'))
+    result.minLimit = _valueToWrapper(obj.get('minLimit'))
+    result.maxLimit = _valueToWrapper(obj.get('maxLimit'))
+    result.minNorm = _valueToWrapper(obj.get('minNorm'))
+    result.maxNorm = _valueToWrapper(obj.get('maxNorm'))
+    result.option.extend(_parseList(obj, 'options', ParseParamOption))
+    result.optionListKey = obj.get('optionList')
+    result.part.extend(_parseList(obj, 'parts', ParseParamPartSpec))
+    return result
+
+def ParseModuleTypeSpec(obj: dict):
+    result = pb.ModuleTypeSpec()
+    result.key = obj['key']
+    result.label = obj.get('label')
+    result.paramGroup.extend(_parseList(obj, 'paramGroups', ParseGroupInfo))
+    result.param.extend(_parseList(obj, 'params', ParseParamSpec))
+    return result
+
+def ParseModuleSpec(obj: dict):
+    result = pb.ModuleSpec()
+    result.key = obj['key']
+    result.path = obj['path']
+    result.label = obj.get('label')
+    result.moduleType = obj.get('moduleType')
+    result.group = obj.get('group')
+    result.tag.extend(obj.get('tags') or [])
+    result.paramGroup.extend(_parseList(obj, 'paramGroups', ParseGroupInfo))
+    result.param.extend(_parseList(obj, 'params', ParseParamSpec))
+    result.childGroup.extend(_parseList(obj, 'childGroups', ParseGroupInfo))
+    result.childModule.extend(_parseList(obj, 'children', ParseModuleSpec))
+    return result
+
+def ParseConnectionInfo(obj: dict):
+    result = pb.ConnectionInfo()
+    result.key = obj.get('key')
+    result.label = obj.get('label')
+    result.type = obj.get('type')
+    result.host = obj.get('host')
+    result.port = obj.get('port', 0)
+    return result
+
+def ParseGroupInfo(obj: dict):
+    result = pb.GroupInfo()
+    result.key = obj['key']
+    result.label = obj.get('label')
+    result.tag.extend(obj.get('tags') or [])
+    return result
+
+def ParseAppSpec(obj: dict):
+    result = pb.AppSpec()
+    result.key = obj['key']
+    result.label = obj.get('label')
+    result.description = obj.get('description')
+    result.path = obj.get('path') or ('/' + result.key)
+    result.optionList.extend(_parseList(obj, 'optionLists', ParseOptionList))
+    result.moduleType.extend(_parseList(obj, 'moduleTypes', ParseModuleTypeSpec))
+    result.childGroup.extend(_parseList(obj, 'childGroups', ParseGroupInfo))
+    result.childModule.extend(_parseList(obj, 'children', ParseModuleSpec))
+    result.connection.extend(_parseList(obj, 'connections', ParseConnectionInfo))
+    return result
+
+def _valueToWrapper(rawval):
+    result = struct_pb.Value()
+    if rawval is None:
+        result.null_value = struct_pb.NULL_VALUE
+    elif isinstance(rawval, bool):
+        result.bool_value = rawval
+    elif isinstance(rawval, (int, float)):
+        result.number_value = rawval
+    elif isinstance(rawval, str):
+        result.string_value = rawval
+    else:
+        raise Exception('Unsupported value type: %r' % rawval)
+    return result
+
+def _valueToInt32Wrapper(rawval):
+    result = wrap_pb.Int32Value()
+    result.value = rawval
+    return result
+
+def _parseList(obj, key, parser):
+    return [parser(o) for o in (obj.get(key) or [])]
 
 # def _getValueObj(obj, key):
 #     val = obj.get(key)
@@ -160,9 +262,7 @@ class LegacyJsonBuilder:
 
     @staticmethod
     def convertValue(value: struct_pb.Value):
-        if value is None or value.WhichOneof('kind') is None:
-            return None
-        if value.HasField('null_value'):
+        if value is None or value.WhichOneof('kind') is None or value.HasField('null_value'):
             return None
         if value.HasField('bool_value'):
             return value.bool_value

@@ -21,7 +21,7 @@ def main():
         appspec = pbjson.Parse(rawinput, pb.AppSpec())
     elif infmt == 'json':
         inputdict = json.loads(rawinput)
-        appspec = tctrl.legacy_json.LegacyJsonParser().parseAppSpec(inputdict)
+        appspec = tctrl.legacy_json.ParseAppSpec(inputdict)
     else:
         parser.print_usage()
         raise Exception('Invalid input format: ' + infmt)
