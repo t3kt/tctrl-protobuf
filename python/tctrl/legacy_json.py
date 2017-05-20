@@ -1,8 +1,8 @@
-import tctrlgen.tctrl_schema_pb2 as pb
-import google.protobuf.struct_pb2 as struct_pb
-import google.protobuf.wrappers_pb2 as wrap_pb
-import google.protobuf.text_format as text_format
 import google.protobuf.message as proto_msg
+
+import tctrlgen.tctrl_schema_pb2 as pb
+from tctrl.messages import ValueToWrapper, ValueToInt32Wrapper, WrapperToValue, WrapperToInt32Value
+
 
 class _MessageMapping:
     def __init__(self, messagetype, *fields):
@@ -99,8 +99,8 @@ def _ValueFieldMapping(
         jsonkey=jsonkey,
         defaultval=defaultval,
         ismessage=True,
-        parser=_valueToWrapper,
-        builder=_wrapperToValue,
+        parser=ValueToWrapper,
+        builder=WrapperToValue,
     )
 
 _messageMappings = {}
@@ -146,47 +146,9 @@ def ParseAppSpec(obj: dict, message=None):
         result.path = '/' + result.key
     return result
 
-def _valueToWrapper(rawval, message=None):
-    result = message or struct_pb.Value()
-    if rawval is None:
-        result.null_value = struct_pb.NULL_VALUE
-    elif isinstance(rawval, bool):
-        result.bool_value = rawval
-    elif isinstance(rawval, (int, float)):
-        result.number_value = rawval
-    elif isinstance(rawval, str):
-        result.string_value = rawval
-    else:
-        raise Exception('Unsupported value type: %r' % rawval)
-    return result
 
-def _valueToInt32Wrapper(rawval, message=None):
-    result = message or wrap_pb.Int32Value()
-    result.value = rawval
-    return result
-
-def _parseList(obj, key, parser):
+def _ParseList(obj, key, parser):
     return [parser(o) for o in (obj.get(key) or [])]
-
-# def _getValueObj(obj, key):
-#     val = obj.get(key)
-#     if val is None:
-#         return None
-#     if isinstance(val, float):
-#         pass
-
-# def _getObjects(obj, key, parser):
-#     objs = obj.get(key)
-#     if not objs:
-#         return None
-
-
-# def _setOptionalProtoField(result, key, val):
-#     if val is None:
-#         result.ClearField(key)
-#     else:
-#         setattr(result, key, val)
-
 
 def ParamOptionToObj(spec: pb.ParamOption):
     return _CleanDict({
@@ -206,12 +168,12 @@ def ParamPartSpecToObj(spec: pb.ParamPartSpec):
         'key': spec.key,
         'label': spec.label,
         'path': spec.path,
-        'default': _wrapperToValue(spec.defaultVal),
-        'value': _wrapperToValue(spec.value),
-        'minLimit': _wrapperToValue(spec.minLimit),
-        'maxLimit': _wrapperToValue(spec.maxLimit),
-        'minNorm': _wrapperToValue(spec.minNorm),
-        'maxNorm': _wrapperToValue(spec.maxNorm),
+        'default': WrapperToValue(spec.defaultVal),
+        'value': WrapperToValue(spec.value),
+        'minLimit': WrapperToValue(spec.minLimit),
+        'maxLimit': WrapperToValue(spec.maxLimit),
+        'minNorm': WrapperToValue(spec.minNorm),
+        'maxNorm': WrapperToValue(spec.maxNorm),
     })
 
 def ParamToObj(spec: pb.ParamSpec):
@@ -228,13 +190,13 @@ def ParamToObj(spec: pb.ParamSpec):
         'buttonOffText': spec.buttonOffText,
         'type': _TypeToString(spec.type),
         'otherType': spec.otherType,
-        'default': _valueToWrapper(spec.defaultVal),
-        'value': _valueToWrapper(spec.value),
-        'valueIndex': _wrapperToInt32Value(spec.valueIndex),
-        'minLimit': _valueToWrapper(spec.minLimit),
-        'maxLimit': _valueToWrapper(spec.maxLimit),
-        'minNorm': _valueToWrapper(spec.minNorm),
-        'maxNorm': _valueToWrapper(spec.maxNorm),
+        'default': ValueToWrapper(spec.defaultVal),
+        'value': ValueToWrapper(spec.value),
+        'valueIndex': WrapperToInt32Value(spec.valueIndex),
+        'minLimit': ValueToWrapper(spec.minLimit),
+        'maxLimit': ValueToWrapper(spec.maxLimit),
+        'minNorm': ValueToWrapper(spec.minNorm),
+        'maxNorm': ValueToWrapper(spec.maxNorm),
         'options': [ParamOptionToObj(o) for o in spec.option] if spec.option else None,
         'optionsList': spec.optionListKey,
         'parts': [ParamPartSpecToObj(o) for o in spec.part] if spec.part else None,
@@ -292,21 +254,6 @@ def AppSpecToObj(spec: pb.AppSpec):
         'connections': [ConnectionInfoToObj(o) for o in spec.connection] if spec.connection else None,
     })
 
-def _wrapperToValue(value: struct_pb.Value):
-    if value is None or value.WhichOneof('kind') is None or value.HasField('null_value'):
-        return None
-    if value.HasField('bool_value'):
-        return value.bool_value
-    if value.HasField('number_value'):
-        return value.number_value
-    if value.HasField('string_value'):
-        return value.string_value
-    raise Exception('Unsupported value type: ' + text_format.MessageToString(value))
-
-def _wrapperToInt32Value(value: wrap_pb.Int32Value):
-    if value is None:
-        return None
-    return value.value
 
 def _TypeToString(paramtype: pb.ParamType):
     if paramtype is None:
@@ -377,7 +324,7 @@ _messageMappings['ParamSpec'] = _MessageMapping(
     'otherType',
     _ValueFieldMapping('defaultVal', jsonkey='default'),
     _ValueFieldMapping('value'),
-    _FieldMapping('valueIndex', ismessage=True, parser=_valueToInt32Wrapper, builder=_wrapperToInt32Value),
+    _FieldMapping('valueIndex', ismessage=True, parser=ValueToInt32Wrapper, builder=WrapperToInt32Value),
     _ValueFieldMapping('minLimit'),
     _ValueFieldMapping('maxLimit'),
     _ValueFieldMapping('minNorm'),
