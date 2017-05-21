@@ -16,15 +16,16 @@ _sym_db = _symbol_database.Default()
 
 from google.protobuf import struct_pb2 as google_dot_protobuf_dot_struct__pb2
 from google.protobuf import wrappers_pb2 as google_dot_protobuf_dot_wrappers__pb2
+import tctrl_annotations_pb2 as tctrl__annotations__pb2
 
 
 DESCRIPTOR = _descriptor.FileDescriptor(
   name='tctrl-schema.proto',
   package='tctrl.schema',
   syntax='proto3',
-  serialized_pb=_b('\n\x12tctrl-schema.proto\x12\x0ctctrl.schema\x1a\x1cgoogle/protobuf/struct.proto\x1a\x1egoogle/protobuf/wrappers.proto\")\n\x0bParamOption\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05label\x18\x02 \x01(\t\"S\n\nOptionList\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05label\x18\x02 \x01(\t\x12)\n\x06option\x18\x03 \x03(\x0b\x32\x19.tctrl.schema.ParamOption\"\xb2\x02\n\rParamPartSpec\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05label\x18\x02 \x01(\t\x12\x0c\n\x04path\x18\t \x01(\t\x12(\n\x08minLimit\x18\x03 \x01(\x0b\x32\x16.google.protobuf.Value\x12(\n\x08maxLimit\x18\x04 \x01(\x0b\x32\x16.google.protobuf.Value\x12\'\n\x07minNorm\x18\x05 \x01(\x0b\x32\x16.google.protobuf.Value\x12\'\n\x07maxNorm\x18\x06 \x01(\x0b\x32\x16.google.protobuf.Value\x12*\n\ndefaultVal\x18\x07 \x01(\x0b\x32\x16.google.protobuf.Value\x12%\n\x05value\x18\x08 \x01(\x0b\x32\x16.google.protobuf.Value\"\xa9\x05\n\tParamSpec\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05label\x18\x02 \x01(\t\x12%\n\x04type\x18\x03 \x01(\x0e\x32\x17.tctrl.schema.ParamType\x12\x0c\n\x04path\x18\x04 \x01(\t\x12\x11\n\totherType\x18\x05 \x01(\t\x12(\n\x08minLimit\x18\x06 \x01(\x0b\x32\x16.google.protobuf.Value\x12(\n\x08maxLimit\x18\x07 \x01(\x0b\x32\x16.google.protobuf.Value\x12\'\n\x07minNorm\x18\x08 \x01(\x0b\x32\x16.google.protobuf.Value\x12\'\n\x07maxNorm\x18\t \x01(\x0b\x32\x16.google.protobuf.Value\x12*\n\ndefaultVal\x18\n \x01(\x0b\x32\x16.google.protobuf.Value\x12%\n\x05value\x18\x0b \x01(\x0b\x32\x16.google.protobuf.Value\x12/\n\nvalueIndex\x18\x0c \x01(\x0b\x32\x1b.google.protobuf.Int32Value\x12)\n\x04part\x18\r \x03(\x0b\x32\x1b.tctrl.schema.ParamPartSpec\x12\r\n\x05style\x18\x0e \x01(\t\x12\r\n\x05group\x18\x0f \x01(\t\x12)\n\x06option\x18\x10 \x03(\x0b\x32\x19.tctrl.schema.ParamOption\x12\x15\n\roptionListKey\x18\x11 \x01(\t\x12\x0b\n\x03tag\x18\x12 \x03(\t\x12\x0c\n\x04help\x18\x13 \x01(\t\x12\x0f\n\x07offHelp\x18\x14 \x01(\t\x12\x12\n\nbuttonText\x18\x15 \x01(\t\x12\x15\n\rbuttonOffText\x18\x16 \x01(\t\x12,\n\nproperties\x18\xe8\x07 \x01(\x0b\x32\x17.google.protobuf.Struct\"\x81\x01\n\x0eModuleTypeSpec\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05label\x18\x02 \x01(\t\x12&\n\x05param\x18\x07 \x03(\x0b\x32\x17.tctrl.schema.ParamSpec\x12+\n\nparamGroup\x18\t \x03(\x0b\x32\x17.tctrl.schema.GroupInfo\"\x97\x02\n\nModuleSpec\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05label\x18\x02 \x01(\t\x12\x0c\n\x04path\x18\x03 \x01(\t\x12\x12\n\nmoduleType\x18\x04 \x01(\t\x12\r\n\x05group\x18\x05 \x01(\t\x12\x0b\n\x03tag\x18\x06 \x03(\t\x12&\n\x05param\x18\x07 \x03(\x0b\x32\x17.tctrl.schema.ParamSpec\x12-\n\x0b\x63hildModule\x18\x08 \x03(\x0b\x32\x18.tctrl.schema.ModuleSpec\x12+\n\nparamGroup\x18\t \x03(\x0b\x32\x17.tctrl.schema.GroupInfo\x12+\n\nchildGroup\x18\n \x03(\x0b\x32\x17.tctrl.schema.GroupInfo\"V\n\x0e\x43onnectionInfo\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05label\x18\x02 \x01(\t\x12\x0c\n\x04type\x18\x03 \x01(\t\x12\x0c\n\x04host\x18\x04 \x01(\t\x12\x0c\n\x04port\x18\x05 \x01(\x05\"4\n\tGroupInfo\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05label\x18\x02 \x01(\t\x12\x0b\n\x03tag\x18\x03 \x03(\t\"\xc3\x02\n\x07\x41ppSpec\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05label\x18\x02 \x01(\t\x12\x0b\n\x03tag\x18\x03 \x03(\t\x12\x13\n\x0b\x64\x65scription\x18\x04 \x01(\t\x12\x0c\n\x04path\x18\n \x01(\t\x12-\n\x0b\x63hildModule\x18\x05 \x03(\x0b\x32\x18.tctrl.schema.ModuleSpec\x12+\n\nchildGroup\x18\x06 \x03(\x0b\x32\x17.tctrl.schema.GroupInfo\x12,\n\noptionList\x18\x07 \x03(\x0b\x32\x18.tctrl.schema.OptionList\x12\x30\n\nconnection\x18\x08 \x03(\x0b\x32\x1c.tctrl.schema.ConnectionInfo\x12\x30\n\nmoduleType\x18\t \x03(\x0b\x32\x1c.tctrl.schema.ModuleTypeSpec*k\n\tParamType\x12\t\n\x05OTHER\x10\x00\x12\x08\n\x04\x42OOL\x10\x03\x12\n\n\x06STRING\x10\x04\x12\x07\n\x03INT\x10\x05\x12\t\n\x05\x46LOAT\x10\x06\x12\x08\n\x04IVEC\x10\x07\x12\x08\n\x04\x46VEC\x10\x08\x12\x08\n\x04MENU\x10\n\x12\x0b\n\x07TRIGGER\x10\x0b\x42)\n\x15net.t3kt.tctrl.schemaB\x10TctrlSchemaProtob\x06proto3')
+  serialized_pb=_b('\n\x12tctrl-schema.proto\x12\x0ctctrl.schema\x1a\x1cgoogle/protobuf/struct.proto\x1a\x1egoogle/protobuf/wrappers.proto\x1a\x17tctrl-annotations.proto\")\n\x0bParamOption\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05label\x18\x02 \x01(\t\"S\n\nOptionList\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05label\x18\x02 \x01(\t\x12)\n\x06option\x18\x03 \x03(\x0b\x32\x19.tctrl.schema.ParamOption\"\xb2\x02\n\rParamPartSpec\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05label\x18\x02 \x01(\t\x12\x0c\n\x04path\x18\t \x01(\t\x12(\n\x08minLimit\x18\x03 \x01(\x0b\x32\x16.google.protobuf.Value\x12(\n\x08maxLimit\x18\x04 \x01(\x0b\x32\x16.google.protobuf.Value\x12\'\n\x07minNorm\x18\x05 \x01(\x0b\x32\x16.google.protobuf.Value\x12\'\n\x07maxNorm\x18\x06 \x01(\x0b\x32\x16.google.protobuf.Value\x12*\n\ndefaultVal\x18\x07 \x01(\x0b\x32\x16.google.protobuf.Value\x12%\n\x05value\x18\x08 \x01(\x0b\x32\x16.google.protobuf.Value\"\xb6\x05\n\tParamSpec\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05label\x18\x02 \x01(\t\x12%\n\x04type\x18\x03 \x01(\x0e\x32\x17.tctrl.schema.ParamType\x12\x0c\n\x04path\x18\x04 \x01(\t\x12\x11\n\totherType\x18\x05 \x01(\t\x12(\n\x08minLimit\x18\x06 \x01(\x0b\x32\x16.google.protobuf.Value\x12(\n\x08maxLimit\x18\x07 \x01(\x0b\x32\x16.google.protobuf.Value\x12\'\n\x07minNorm\x18\x08 \x01(\x0b\x32\x16.google.protobuf.Value\x12\'\n\x07maxNorm\x18\t \x01(\x0b\x32\x16.google.protobuf.Value\x12\x37\n\ndefaultVal\x18\n \x01(\x0b\x32\x16.google.protobuf.ValueB\x0b\xc2\xf3\x18\x07\x64\x65\x66\x61ult\x12%\n\x05value\x18\x0b \x01(\x0b\x32\x16.google.protobuf.Value\x12/\n\nvalueIndex\x18\x0c \x01(\x0b\x32\x1b.google.protobuf.Int32Value\x12)\n\x04part\x18\r \x03(\x0b\x32\x1b.tctrl.schema.ParamPartSpec\x12\r\n\x05style\x18\x0e \x01(\t\x12\r\n\x05group\x18\x0f \x01(\t\x12)\n\x06option\x18\x10 \x03(\x0b\x32\x19.tctrl.schema.ParamOption\x12\x15\n\roptionListKey\x18\x11 \x01(\t\x12\x0b\n\x03tag\x18\x12 \x03(\t\x12\x0c\n\x04help\x18\x13 \x01(\t\x12\x0f\n\x07offHelp\x18\x14 \x01(\t\x12\x12\n\nbuttonText\x18\x15 \x01(\t\x12\x15\n\rbuttonOffText\x18\x16 \x01(\t\x12,\n\nproperties\x18\xe8\x07 \x01(\x0b\x32\x17.google.protobuf.Struct\"\x81\x01\n\x0eModuleTypeSpec\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05label\x18\x02 \x01(\t\x12&\n\x05param\x18\x07 \x03(\x0b\x32\x17.tctrl.schema.ParamSpec\x12+\n\nparamGroup\x18\t \x03(\x0b\x32\x17.tctrl.schema.GroupInfo\"\x97\x02\n\nModuleSpec\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05label\x18\x02 \x01(\t\x12\x0c\n\x04path\x18\x03 \x01(\t\x12\x12\n\nmoduleType\x18\x04 \x01(\t\x12\r\n\x05group\x18\x05 \x01(\t\x12\x0b\n\x03tag\x18\x06 \x03(\t\x12&\n\x05param\x18\x07 \x03(\x0b\x32\x17.tctrl.schema.ParamSpec\x12-\n\x0b\x63hildModule\x18\x08 \x03(\x0b\x32\x18.tctrl.schema.ModuleSpec\x12+\n\nparamGroup\x18\t \x03(\x0b\x32\x17.tctrl.schema.GroupInfo\x12+\n\nchildGroup\x18\n \x03(\x0b\x32\x17.tctrl.schema.GroupInfo\"V\n\x0e\x43onnectionInfo\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05label\x18\x02 \x01(\t\x12\x0c\n\x04type\x18\x03 \x01(\t\x12\x0c\n\x04host\x18\x04 \x01(\t\x12\x0c\n\x04port\x18\x05 \x01(\x05\"4\n\tGroupInfo\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05label\x18\x02 \x01(\t\x12\x0b\n\x03tag\x18\x03 \x03(\t\"\xc3\x02\n\x07\x41ppSpec\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05label\x18\x02 \x01(\t\x12\x0b\n\x03tag\x18\x03 \x03(\t\x12\x13\n\x0b\x64\x65scription\x18\x04 \x01(\t\x12\x0c\n\x04path\x18\n \x01(\t\x12-\n\x0b\x63hildModule\x18\x05 \x03(\x0b\x32\x18.tctrl.schema.ModuleSpec\x12+\n\nchildGroup\x18\x06 \x03(\x0b\x32\x17.tctrl.schema.GroupInfo\x12,\n\noptionList\x18\x07 \x03(\x0b\x32\x18.tctrl.schema.OptionList\x12\x30\n\nconnection\x18\x08 \x03(\x0b\x32\x1c.tctrl.schema.ConnectionInfo\x12\x30\n\nmoduleType\x18\t \x03(\x0b\x32\x1c.tctrl.schema.ModuleTypeSpec*k\n\tParamType\x12\t\n\x05OTHER\x10\x00\x12\x08\n\x04\x42OOL\x10\x03\x12\n\n\x06STRING\x10\x04\x12\x07\n\x03INT\x10\x05\x12\t\n\x05\x46LOAT\x10\x06\x12\x08\n\x04IVEC\x10\x07\x12\x08\n\x04\x46VEC\x10\x08\x12\x08\n\x04MENU\x10\n\x12\x0b\n\x07TRIGGER\x10\x0b\x42)\n\x15net.t3kt.tctrl.schemaB\x10TctrlSchemaProtob\x06proto3')
   ,
-  dependencies=[google_dot_protobuf_dot_struct__pb2.DESCRIPTOR,google_dot_protobuf_dot_wrappers__pb2.DESCRIPTOR,])
+  dependencies=[google_dot_protobuf_dot_struct__pb2.DESCRIPTOR,google_dot_protobuf_dot_wrappers__pb2.DESCRIPTOR,tctrl__annotations__pb2.DESCRIPTOR,])
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
 
 _PARAMTYPE = _descriptor.EnumDescriptor(
@@ -72,8 +73,8 @@ _PARAMTYPE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   options=None,
-  serialized_start=2101,
-  serialized_end=2208,
+  serialized_start=2139,
+  serialized_end=2246,
 )
 _sym_db.RegisterEnumDescriptor(_PARAMTYPE)
 
@@ -123,8 +124,8 @@ _PARAMOPTION = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=98,
-  serialized_end=139,
+  serialized_start=123,
+  serialized_end=164,
 )
 
 
@@ -168,8 +169,8 @@ _OPTIONLIST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=141,
-  serialized_end=224,
+  serialized_start=166,
+  serialized_end=249,
 )
 
 
@@ -255,8 +256,8 @@ _PARAMPARTSPEC = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=227,
-  serialized_end=533,
+  serialized_start=252,
+  serialized_end=558,
 )
 
 
@@ -336,7 +337,7 @@ _PARAMSPEC = _descriptor.Descriptor(
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\302\363\030\007default'))),
     _descriptor.FieldDescriptor(
       name='value', full_name='tctrl.schema.ParamSpec.value', index=10,
       number=11, type=11, cpp_type=10, label=1,
@@ -440,8 +441,8 @@ _PARAMSPEC = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=536,
-  serialized_end=1217,
+  serialized_start=561,
+  serialized_end=1255,
 )
 
 
@@ -492,8 +493,8 @@ _MODULETYPESPEC = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1220,
-  serialized_end=1349,
+  serialized_start=1258,
+  serialized_end=1387,
 )
 
 
@@ -586,8 +587,8 @@ _MODULESPEC = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1352,
-  serialized_end=1631,
+  serialized_start=1390,
+  serialized_end=1669,
 )
 
 
@@ -645,8 +646,8 @@ _CONNECTIONINFO = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1633,
-  serialized_end=1719,
+  serialized_start=1671,
+  serialized_end=1757,
 )
 
 
@@ -690,8 +691,8 @@ _GROUPINFO = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1721,
-  serialized_end=1773,
+  serialized_start=1759,
+  serialized_end=1811,
 )
 
 
@@ -784,8 +785,8 @@ _APPSPEC = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1776,
-  serialized_end=2099,
+  serialized_start=1814,
+  serialized_end=2137,
 )
 
 _OPTIONLIST.fields_by_name['option'].message_type = _PARAMOPTION
@@ -894,4 +895,6 @@ _sym_db.RegisterMessage(AppSpec)
 
 DESCRIPTOR.has_options = True
 DESCRIPTOR._options = _descriptor._ParseOptions(descriptor_pb2.FileOptions(), _b('\n\025net.t3kt.tctrl.schemaB\020TctrlSchemaProto'))
+_PARAMSPEC.fields_by_name['defaultVal'].has_options = True
+_PARAMSPEC.fields_by_name['defaultVal']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\302\363\030\007default'))
 # @@protoc_insertion_point(module_scope)

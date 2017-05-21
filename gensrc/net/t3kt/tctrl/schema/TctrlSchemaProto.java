@@ -17115,61 +17115,62 @@ public final class TctrlSchemaProto {
     java.lang.String[] descriptorData = {
       "\n\022tctrl-schema.proto\022\014tctrl.schema\032\034goog" +
       "le/protobuf/struct.proto\032\036google/protobu" +
-      "f/wrappers.proto\")\n\013ParamOption\022\013\n\003key\030\001" +
-      " \001(\t\022\r\n\005label\030\002 \001(\t\"S\n\nOptionList\022\013\n\003key" +
-      "\030\001 \001(\t\022\r\n\005label\030\002 \001(\t\022)\n\006option\030\003 \003(\0132\031." +
-      "tctrl.schema.ParamOption\"\262\002\n\rParamPartSp" +
-      "ec\022\013\n\003key\030\001 \001(\t\022\r\n\005label\030\002 \001(\t\022\014\n\004path\030\t" +
-      " \001(\t\022(\n\010minLimit\030\003 \001(\0132\026.google.protobuf" +
-      ".Value\022(\n\010maxLimit\030\004 \001(\0132\026.google.protob" +
-      "uf.Value\022\'\n\007minNorm\030\005 \001(\0132\026.google.proto",
-      "buf.Value\022\'\n\007maxNorm\030\006 \001(\0132\026.google.prot" +
-      "obuf.Value\022*\n\ndefaultVal\030\007 \001(\0132\026.google." +
-      "protobuf.Value\022%\n\005value\030\010 \001(\0132\026.google.p" +
-      "rotobuf.Value\"\251\005\n\tParamSpec\022\013\n\003key\030\001 \001(\t" +
-      "\022\r\n\005label\030\002 \001(\t\022%\n\004type\030\003 \001(\0162\027.tctrl.sc" +
-      "hema.ParamType\022\014\n\004path\030\004 \001(\t\022\021\n\totherTyp" +
-      "e\030\005 \001(\t\022(\n\010minLimit\030\006 \001(\0132\026.google.proto" +
-      "buf.Value\022(\n\010maxLimit\030\007 \001(\0132\026.google.pro" +
-      "tobuf.Value\022\'\n\007minNorm\030\010 \001(\0132\026.google.pr" +
-      "otobuf.Value\022\'\n\007maxNorm\030\t \001(\0132\026.google.p",
-      "rotobuf.Value\022*\n\ndefaultVal\030\n \001(\0132\026.goog" +
-      "le.protobuf.Value\022%\n\005value\030\013 \001(\0132\026.googl" +
-      "e.protobuf.Value\022/\n\nvalueIndex\030\014 \001(\0132\033.g" +
-      "oogle.protobuf.Int32Value\022)\n\004part\030\r \003(\0132" +
-      "\033.tctrl.schema.ParamPartSpec\022\r\n\005style\030\016 " +
-      "\001(\t\022\r\n\005group\030\017 \001(\t\022)\n\006option\030\020 \003(\0132\031.tct" +
-      "rl.schema.ParamOption\022\025\n\roptionListKey\030\021" +
-      " \001(\t\022\013\n\003tag\030\022 \003(\t\022\014\n\004help\030\023 \001(\t\022\017\n\007offHe" +
-      "lp\030\024 \001(\t\022\022\n\nbuttonText\030\025 \001(\t\022\025\n\rbuttonOf" +
-      "fText\030\026 \001(\t\022,\n\nproperties\030\350\007 \001(\0132\027.googl",
-      "e.protobuf.Struct\"\201\001\n\016ModuleTypeSpec\022\013\n\003" +
-      "key\030\001 \001(\t\022\r\n\005label\030\002 \001(\t\022&\n\005param\030\007 \003(\0132" +
-      "\027.tctrl.schema.ParamSpec\022+\n\nparamGroup\030\t" +
-      " \003(\0132\027.tctrl.schema.GroupInfo\"\227\002\n\nModule" +
-      "Spec\022\013\n\003key\030\001 \001(\t\022\r\n\005label\030\002 \001(\t\022\014\n\004path" +
-      "\030\003 \001(\t\022\022\n\nmoduleType\030\004 \001(\t\022\r\n\005group\030\005 \001(" +
-      "\t\022\013\n\003tag\030\006 \003(\t\022&\n\005param\030\007 \003(\0132\027.tctrl.sc" +
-      "hema.ParamSpec\022-\n\013childModule\030\010 \003(\0132\030.tc" +
-      "trl.schema.ModuleSpec\022+\n\nparamGroup\030\t \003(" +
-      "\0132\027.tctrl.schema.GroupInfo\022+\n\nchildGroup",
-      "\030\n \003(\0132\027.tctrl.schema.GroupInfo\"V\n\016Conne" +
-      "ctionInfo\022\013\n\003key\030\001 \001(\t\022\r\n\005label\030\002 \001(\t\022\014\n" +
-      "\004type\030\003 \001(\t\022\014\n\004host\030\004 \001(\t\022\014\n\004port\030\005 \001(\005\"" +
-      "4\n\tGroupInfo\022\013\n\003key\030\001 \001(\t\022\r\n\005label\030\002 \001(\t" +
-      "\022\013\n\003tag\030\003 \003(\t\"\303\002\n\007AppSpec\022\013\n\003key\030\001 \001(\t\022\r" +
-      "\n\005label\030\002 \001(\t\022\013\n\003tag\030\003 \003(\t\022\023\n\013descriptio" +
-      "n\030\004 \001(\t\022\014\n\004path\030\n \001(\t\022-\n\013childModule\030\005 \003" +
-      "(\0132\030.tctrl.schema.ModuleSpec\022+\n\nchildGro" +
-      "up\030\006 \003(\0132\027.tctrl.schema.GroupInfo\022,\n\nopt" +
-      "ionList\030\007 \003(\0132\030.tctrl.schema.OptionList\022",
-      "0\n\nconnection\030\010 \003(\0132\034.tctrl.schema.Conne" +
-      "ctionInfo\0220\n\nmoduleType\030\t \003(\0132\034.tctrl.sc" +
-      "hema.ModuleTypeSpec*k\n\tParamType\022\t\n\005OTHE" +
-      "R\020\000\022\010\n\004BOOL\020\003\022\n\n\006STRING\020\004\022\007\n\003INT\020\005\022\t\n\005FL" +
-      "OAT\020\006\022\010\n\004IVEC\020\007\022\010\n\004FVEC\020\010\022\010\n\004MENU\020\n\022\013\n\007T" +
-      "RIGGER\020\013B)\n\025net.t3kt.tctrl.schemaB\020Tctrl" +
-      "SchemaProtob\006proto3"
+      "f/wrappers.proto\032\027tctrl-annotations.prot" +
+      "o\")\n\013ParamOption\022\013\n\003key\030\001 \001(\t\022\r\n\005label\030\002" +
+      " \001(\t\"S\n\nOptionList\022\013\n\003key\030\001 \001(\t\022\r\n\005label" +
+      "\030\002 \001(\t\022)\n\006option\030\003 \003(\0132\031.tctrl.schema.Pa" +
+      "ramOption\"\262\002\n\rParamPartSpec\022\013\n\003key\030\001 \001(\t" +
+      "\022\r\n\005label\030\002 \001(\t\022\014\n\004path\030\t \001(\t\022(\n\010minLimi" +
+      "t\030\003 \001(\0132\026.google.protobuf.Value\022(\n\010maxLi" +
+      "mit\030\004 \001(\0132\026.google.protobuf.Value\022\'\n\007min",
+      "Norm\030\005 \001(\0132\026.google.protobuf.Value\022\'\n\007ma" +
+      "xNorm\030\006 \001(\0132\026.google.protobuf.Value\022*\n\nd" +
+      "efaultVal\030\007 \001(\0132\026.google.protobuf.Value\022" +
+      "%\n\005value\030\010 \001(\0132\026.google.protobuf.Value\"\266" +
+      "\005\n\tParamSpec\022\013\n\003key\030\001 \001(\t\022\r\n\005label\030\002 \001(\t" +
+      "\022%\n\004type\030\003 \001(\0162\027.tctrl.schema.ParamType\022" +
+      "\014\n\004path\030\004 \001(\t\022\021\n\totherType\030\005 \001(\t\022(\n\010minL" +
+      "imit\030\006 \001(\0132\026.google.protobuf.Value\022(\n\010ma" +
+      "xLimit\030\007 \001(\0132\026.google.protobuf.Value\022\'\n\007" +
+      "minNorm\030\010 \001(\0132\026.google.protobuf.Value\022\'\n",
+      "\007maxNorm\030\t \001(\0132\026.google.protobuf.Value\0227" +
+      "\n\ndefaultVal\030\n \001(\0132\026.google.protobuf.Val" +
+      "ueB\013\302\363\030\007default\022%\n\005value\030\013 \001(\0132\026.google." +
+      "protobuf.Value\022/\n\nvalueIndex\030\014 \001(\0132\033.goo" +
+      "gle.protobuf.Int32Value\022)\n\004part\030\r \003(\0132\033." +
+      "tctrl.schema.ParamPartSpec\022\r\n\005style\030\016 \001(" +
+      "\t\022\r\n\005group\030\017 \001(\t\022)\n\006option\030\020 \003(\0132\031.tctrl" +
+      ".schema.ParamOption\022\025\n\roptionListKey\030\021 \001" +
+      "(\t\022\013\n\003tag\030\022 \003(\t\022\014\n\004help\030\023 \001(\t\022\017\n\007offHelp" +
+      "\030\024 \001(\t\022\022\n\nbuttonText\030\025 \001(\t\022\025\n\rbuttonOffT",
+      "ext\030\026 \001(\t\022,\n\nproperties\030\350\007 \001(\0132\027.google." +
+      "protobuf.Struct\"\201\001\n\016ModuleTypeSpec\022\013\n\003ke" +
+      "y\030\001 \001(\t\022\r\n\005label\030\002 \001(\t\022&\n\005param\030\007 \003(\0132\027." +
+      "tctrl.schema.ParamSpec\022+\n\nparamGroup\030\t \003" +
+      "(\0132\027.tctrl.schema.GroupInfo\"\227\002\n\nModuleSp" +
+      "ec\022\013\n\003key\030\001 \001(\t\022\r\n\005label\030\002 \001(\t\022\014\n\004path\030\003" +
+      " \001(\t\022\022\n\nmoduleType\030\004 \001(\t\022\r\n\005group\030\005 \001(\t\022" +
+      "\013\n\003tag\030\006 \003(\t\022&\n\005param\030\007 \003(\0132\027.tctrl.sche" +
+      "ma.ParamSpec\022-\n\013childModule\030\010 \003(\0132\030.tctr" +
+      "l.schema.ModuleSpec\022+\n\nparamGroup\030\t \003(\0132",
+      "\027.tctrl.schema.GroupInfo\022+\n\nchildGroup\030\n" +
+      " \003(\0132\027.tctrl.schema.GroupInfo\"V\n\016Connect" +
+      "ionInfo\022\013\n\003key\030\001 \001(\t\022\r\n\005label\030\002 \001(\t\022\014\n\004t" +
+      "ype\030\003 \001(\t\022\014\n\004host\030\004 \001(\t\022\014\n\004port\030\005 \001(\005\"4\n" +
+      "\tGroupInfo\022\013\n\003key\030\001 \001(\t\022\r\n\005label\030\002 \001(\t\022\013" +
+      "\n\003tag\030\003 \003(\t\"\303\002\n\007AppSpec\022\013\n\003key\030\001 \001(\t\022\r\n\005" +
+      "label\030\002 \001(\t\022\013\n\003tag\030\003 \003(\t\022\023\n\013description\030" +
+      "\004 \001(\t\022\014\n\004path\030\n \001(\t\022-\n\013childModule\030\005 \003(\013" +
+      "2\030.tctrl.schema.ModuleSpec\022+\n\nchildGroup" +
+      "\030\006 \003(\0132\027.tctrl.schema.GroupInfo\022,\n\noptio",
+      "nList\030\007 \003(\0132\030.tctrl.schema.OptionList\0220\n" +
+      "\nconnection\030\010 \003(\0132\034.tctrl.schema.Connect" +
+      "ionInfo\0220\n\nmoduleType\030\t \003(\0132\034.tctrl.sche" +
+      "ma.ModuleTypeSpec*k\n\tParamType\022\t\n\005OTHER\020" +
+      "\000\022\010\n\004BOOL\020\003\022\n\n\006STRING\020\004\022\007\n\003INT\020\005\022\t\n\005FLOA" +
+      "T\020\006\022\010\n\004IVEC\020\007\022\010\n\004FVEC\020\010\022\010\n\004MENU\020\n\022\013\n\007TRI" +
+      "GGER\020\013B)\n\025net.t3kt.tctrl.schemaB\020TctrlSc" +
+      "hemaProtob\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -17184,6 +17185,7 @@ public final class TctrlSchemaProto {
         new com.google.protobuf.Descriptors.FileDescriptor[] {
           com.google.protobuf.StructProto.getDescriptor(),
           com.google.protobuf.WrappersProto.getDescriptor(),
+          .TctrlAnnotations.getDescriptor(),
         }, assigner);
     internal_static_tctrl_schema_ParamOption_descriptor =
       getDescriptor().getMessageTypes().get(0);
@@ -17239,8 +17241,14 @@ public final class TctrlSchemaProto {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_tctrl_schema_AppSpec_descriptor,
         new java.lang.String[] { "Key", "Label", "Tag", "Description", "Path", "ChildModule", "ChildGroup", "OptionList", "Connection", "ModuleType", });
+    com.google.protobuf.ExtensionRegistry registry =
+        com.google.protobuf.ExtensionRegistry.newInstance();
+    registry.add(TctrlAnnotations.jsonKey);
+    com.google.protobuf.Descriptors.FileDescriptor
+        .internalUpdateFileDescriptor(descriptor, registry);
     com.google.protobuf.StructProto.getDescriptor();
     com.google.protobuf.WrappersProto.getDescriptor();
+    TctrlAnnotations.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

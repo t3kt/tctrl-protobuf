@@ -1,6 +1,8 @@
 import google.protobuf.message as proto_msg
+import google.protobuf.descriptor as proto_descriptor
 
 import tctrlgen.tctrl_schema_pb2 as pb
+import tctrlgen.tctrl_annotations_pb2 as annotations_pb
 from tctrl.messages import ValueToWrapper, ValueToInt32Wrapper, WrapperToValue, WrapperToInt32Value
 
 
@@ -140,6 +142,25 @@ def _ValueFieldMapping(
         parser=ValueToWrapper,
         builder=WrapperToValue,
     )
+
+def _ValueFieldFromDescriptor(fielddesc: proto_descriptor.FieldDescriptor):
+    messagekey = fielddesc.camelcase_name
+    jsonkey = _GetProtoOption(fielddesc, annotations_pb.json_key) or fielddesc.json_name
+    return _FieldMapping(
+        messagekey,
+        jsonkey=jsonkey,
+    )
+
+def _GetProtoOption(
+        descriptor: proto_descriptor.FieldDescriptor,
+        name,
+        defaultval=None):
+    if not descriptor.has_options:
+        return defaultval
+    options = descriptor.GetOptions()
+    if not options.HasExtension(name):
+        return defaultval
+    return options.Extensions[name]
 
 _messageMappings = {}
 
