@@ -16,25 +16,27 @@ class _MessageMapping:
         return _MessageMapping._registered[messagetype]
 
     def __init__(
-            self, messagetype, *fields,
+            self, messagetype,
+            fields=None,
             postprocmessage=None,
             postprocdict=None):
         self.messagetype = messagetype
         self.postprocmessage = postprocmessage
         self.postprocdict = postprocdict
         self.fields = []
-        for field in fields:
-            if isinstance(field, str):
-                self.fields.append(_FieldMapping(field))
-            else:
-                self.fields.append(field)
+        if fields:
+            for field in fields:
+                if isinstance(field, str):
+                    self.fields.append(_FieldMapping(field))
+                else:
+                    self.fields.append(field)
 
     def DictToMessage(self, obj: dict, message=None):
         message = message or self.messagetype()
         for field in self.fields:
             field.DictToMessage(obj, message)
         if self.postprocmessage:
-            self.postprocmessage(message)
+            self.postprocmessage(message, obj=obj)
         return message
 
     def MessageToDict(self, message: proto_msg.Message, obj=None):
@@ -43,7 +45,7 @@ class _MessageMapping:
         for field in self.fields:
             field.MessageToDict(message, obj)
         if self.postprocdict:
-            self.postprocdict(obj)
+            self.postprocdict(obj, message=message)
         return obj
 
 class _FieldMapping:
@@ -73,10 +75,14 @@ class _FieldMapping:
         val = obj.get(self.jsonkey, self.defaultval)
         if self.islist:
             message.ClearField(self.messagekey)
-            if val is not None and self.parser:
+            if not val:
+                return
+            if self.parser:
                 val = [self.parser(v) for v in val]
-            if val:
-                getattr(message, self.messagekey).extend(val)
+            if self.messagetype:
+                mapping = _MessageMapping.GetMapping(self.messagetype)
+                val = [mapping.DictToMessage(v) for v in val]
+            getattr(message, self.messagekey).extend(val)
         elif self.ismessage:
             if val is None:
                 message.ClearField(self.messagekey)
@@ -132,15 +138,6 @@ def ParseDict(obj: dict, messagetype: type, message=None):
     return _MessageMapping.GetMapping(messagetype).DictToMessage(
         obj, message=message)
 
-def ParseParamOption(obj: dict, message=None):
-    return _messageMappings[pb.ParamOption].DictToMessage(obj, message=message)
-
-def ParseOptionList(obj: dict, message=None):
-    return _messageMappings[pb.OptionList].DictToMessage(obj, message=message)
-
-def ParseParamPartSpec(obj: dict, message=None):
-    return _messageMappings[pb.ParamPartSpec].DictToMessage(obj, message=message)
-
 def ParseParamType(val: str):
     if not val:
         return pb.OTHER
@@ -149,29 +146,12 @@ def ParseParamType(val: str):
     except ValueError:
         return pb.OTHER
 
-def ParseParamSpec(obj: dict, message=None):
-    result = _messageMappings[pb.ParamSpec].DictToMessage(obj, message=message)
-    if result.type == pb.OTHER and not result.otherType:
-        result.otherType = obj['type']
-    return result
-
-def ParseModuleTypeSpec(obj: dict, message=None):
-    return _messageMappings[pb.ModuleTypeSpec].DictToMessage(obj, message=message)
-
-def ParseModuleSpec(obj: dict, message=None):
-    return _messageMappings[pb.ModuleSpec].DictToMessage(obj, message=message)
-
-def ParseConnectionInfo(obj: dict, message=None):
-    return _messageMappings[pb.ConnectionInfo].DictToMessage(obj, message=message)
-
-def ParseGroupInfo(obj: dict, message=None):
-    return _messageMappings[pb.GroupInfo].DictToMessage(obj, message=message)
+def _FixParamType(message: pb.ParamSpec, obj: dict, **kwargs):
+    if message.type == pb.OTHER and not message.otherType:
+        message.otherType = obj['type']
 
 def ParseAppSpec(obj: dict, message=None):
-    result = _messageMappings[pb.AppSpec].DictToMessage(obj, message=message)
-    if not result.path and result.key:
-        result.path = '/' + result.key
-    return result
+    return ParseDict(obj, pb.AppSpec, message=message)
 
 def MessageToDict(message: proto_msg.Message, obj: dict):
     mapping = _MessageMapping.GetMapping(type(message))
@@ -298,123 +278,138 @@ def _CleanDict(d):
             del d[k]
     return d
 
-def _MergeDicts(*parts):
-    if parts is None:
-        return {}
-    d = {}
-    for part in parts:
-        if part:
-            d.update(part)
-    return d
-
-_messageMappings[pb.ParamOption] = _MessageMapping(
+_MessageMapping.Register(_MessageMapping(
     pb.ParamOption,
-    'key',
-    'label',
-)
+    fields=[
+        'key',
+        'label',
+    ],
+))
 
-_messageMappings[pb.OptionList] = _MessageMapping(
+_MessageMapping.Register(_MessageMapping(
     pb.OptionList,
-    'key',
-    'label',
-    _FieldMapping(
-        'option',
-        jsonkey='options',
-        islist=True,
-        messagetype=pb.ParamOption,
-        parser=ParseParamOption,
-        builder=ParamOptionToObj)
-)
+    fields=[
+        'key',
+        'label',
+        _FieldMapping(
+            'option',
+            jsonkey='options',
+            islist=True,
+            messagetype=pb.ParamOption,
+            builder=ParamOptionToObj),
+    ],
+))
 
-_messageMappings[pb.ParamPartSpec] = _MessageMapping(
+_MessageMapping.Register(_MessageMapping(
     pb.ParamPartSpec,
-    'key',
-    'label',
-    'path',
-    _ValueFieldMapping('defaultVal', jsonkey='default'),
-    _ValueFieldMapping('value'),
-    _ValueFieldMapping('minLimit'),
-    _ValueFieldMapping('maxLimit'),
-    _ValueFieldMapping('minNorm'),
-    _ValueFieldMapping('maxNorm'),
-)
+    fields=[
+        'key',
+        'label',
+        'path',
+        _ValueFieldMapping('defaultVal', jsonkey='default'),
+        _ValueFieldMapping('value'),
+        _ValueFieldMapping('minLimit'),
+        _ValueFieldMapping('maxLimit'),
+        _ValueFieldMapping('minNorm'),
+        _ValueFieldMapping('maxNorm'),
+    ],
+))
 
-_messageMappings[pb.ParamSpec] = _MessageMapping(
+_MessageMapping.Register(_MessageMapping(
     pb.ParamSpec,
-    'key',
-    'label',
-    'style',
-    'group',
-    _FieldMapping('tag', jsonkey='tags', islist=True),
-    'help',
-    'offHelp',
-    'buttonText',
-    'buttonOffText',
-    _FieldMapping('type', parser=ParseParamType, builder=_TypeToString),
-    'otherType',
-    _ValueFieldMapping('defaultVal', jsonkey='default'),
-    _ValueFieldMapping('value'),
-    _FieldMapping(
-        'valueIndex',
-        ismessage=True,
-        parser=ValueToInt32Wrapper,
-        builder=WrapperToInt32Value),
-    _ValueFieldMapping('minLimit'),
-    _ValueFieldMapping('maxLimit'),
-    _ValueFieldMapping('minNorm'),
-    _ValueFieldMapping('maxNorm'),
-    _FieldMapping('option', jsonkey='options', ismessage=True, islist=True, parser=ParseParamOption, builder=ParamOptionToObj),
-    _FieldMapping('optionListKey', jsonkey='optionList'),
-    _FieldMapping('part', jsonkey='parts', ismessage=True, islist=True, parser=ParseParamPartSpec, builder=ParamPartSpecToObj),
-)
+    fields=[
+        'key',
+        'label',
+        'style',
+        'group',
+        _FieldMapping('tag', jsonkey='tags', islist=True),
+        'help',
+        'offHelp',
+        'buttonText',
+        'buttonOffText',
+        _FieldMapping('type', parser=ParseParamType, builder=_TypeToString),
+        'otherType',
+        _ValueFieldMapping('defaultVal', jsonkey='default'),
+        _ValueFieldMapping('value'),
+        _FieldMapping(
+            'valueIndex',
+            ismessage=True,
+            parser=ValueToInt32Wrapper,
+            builder=WrapperToInt32Value),
+        _ValueFieldMapping('minLimit'),
+        _ValueFieldMapping('maxLimit'),
+        _ValueFieldMapping('minNorm'),
+        _ValueFieldMapping('maxNorm'),
+        _FieldMapping('option', jsonkey='options', islist=True, messagetype=pb.ParamOption, builder=ParamOptionToObj),
+        _FieldMapping('optionListKey', jsonkey='optionList'),
+        _FieldMapping('part', jsonkey='parts', islist=True, messagetype=pb.ParamPartSpec, builder=ParamPartSpecToObj),
+    ],
+    postprocmessage=_FixParamType,
+))
 
-_messageMappings[pb.ModuleTypeSpec] = _MessageMapping(
+_MessageMapping.Register(_MessageMapping(
     pb.ModuleTypeSpec,
-    'key',
-    'label',
-    _FieldMapping('paramGroup', jsonkey='paramGroups', ismessage=True, islist=True, parser=ParseGroupInfo, builder=GroupInfoToObj),
-    _FieldMapping('param', jsonkey='params', ismessage=True, islist=True, parser=ParseParamOption, builder=ParamOptionToObj),
-)
+    fields=[
+        'key',
+        'label',
+        _FieldMapping('paramGroup', jsonkey='paramGroups', islist=True, messagetype=pb.GroupInfo, builder=GroupInfoToObj),
+        _FieldMapping('param', jsonkey='params', islist=True, messagetype=pb.ParamSpec, builder=ParamPartSpecToObj),
+    ],
+))
 
-_messageMappings[pb.ModuleSpec] = _MessageMapping(
+_MessageMapping.Register(_MessageMapping(
     pb.ModuleSpec,
-    'key',
-    'path',
-    'label',
-    'moduleType',
-    'group',
-    _FieldMapping('tag', jsonkey='tags', islist=True),
-    _FieldMapping('paramGroup', jsonkey='paramGroups', ismessage=True, islist=True, parser=ParseGroupInfo, builder=GroupInfoToObj),
-    _FieldMapping('param', jsonkey='params', ismessage=True, islist=True, parser=ParseParamSpec, builder=ParamPartSpecToObj),
-    _FieldMapping('childGroup', jsonkey='childGroups', ismessage=True, islist=True, parser=ParseGroupInfo, builder=GroupInfoToObj),
-    _FieldMapping('childModule', jsonkey='children', ismessage=True, islist=True, parser=ParseModuleSpec, builder=ModuleSpecToObj),
-)
+    fields=[
+        'key',
+        'path',
+        'label',
+        'moduleType',
+        'group',
+        _FieldMapping('tag', jsonkey='tags', islist=True),
+        _FieldMapping('paramGroup', jsonkey='paramGroups', islist=True, messagetype=pb.GroupInfo, builder=GroupInfoToObj),
+        _FieldMapping('param', jsonkey='params', islist=True, messagetype=pb.ParamSpec, builder=ParamPartSpecToObj),
+        _FieldMapping('childGroup', jsonkey='childGroups', islist=True, messagetype=pb.GroupInfo, builder=GroupInfoToObj),
+        _FieldMapping('childModule', jsonkey='children', islist=True, messagetype=pb.ModuleSpec, builder=ModuleSpecToObj),
+    ],
+))
 
-_messageMappings[pb.ConnectionInfo] = _MessageMapping(
+_MessageMapping.Register(_MessageMapping(
     pb.ConnectionInfo,
-    'key',
-    'label',
-    'type',
-    'host',
-    'port',
-)
+    fields=[
+        'key',
+        'label',
+        'type',
+        'host',
+        'port',
+    ],
+))
 
-_messageMappings[pb.GroupInfo] = _MessageMapping(
+_MessageMapping.Register(_MessageMapping(
     pb.GroupInfo,
-    'key',
-    'label',
-    _FieldMapping('tag', jsonkey='tags', islist=True),
-)
+    fields=[
+        'key',
+        'label',
+        _FieldMapping('tag', jsonkey='tags', islist=True),
+    ],
+))
 
-_messageMappings[pb.AppSpec] = _MessageMapping(
+def _AddMissingAppSpecPath(message: pb.AppSpec, **kwargs):
+    if not message.path and message.key:
+        message.path = '/' + message.key
+    return message
+
+_MessageMapping.Register(_MessageMapping(
     pb.AppSpec,
-    'key',
-    'label',
-    'description',
-    'path',
-    _FieldMapping('optionList', jsonkey='optionLists', ismessage=True, islist=True, parser=ParseOptionList, builder=OptionListToObj),
-    _FieldMapping('moduleType', jsonkey='moduleTypes', ismessage=True, islist=True, parser=ParseModuleTypeSpec, builder=ModuleTypeSpecToObj),
-    _FieldMapping('childGroup', jsonkey='childGroups', ismessage=True, islist=True, parser=ParseGroupInfo, builder=GroupInfoToObj),
-    _FieldMapping('childModule', jsonkey='children', ismessage=True, islist=True, parser=ParseModuleSpec, builder=ModuleSpecToObj),
-    _FieldMapping('connection', jsonkey='connections', ismessage=True, islist=True, parser=ParseConnectionInfo, builder=ConnectionInfoToObj),
-)
+    fields=[
+        'key',
+        'label',
+        'description',
+        'path',
+        _FieldMapping('optionList', jsonkey='optionLists', islist=True, messagetype=pb.OptionList, builder=OptionListToObj),
+        _FieldMapping('moduleType', jsonkey='moduleTypes', islist=True, messagetype=pb.ModuleTypeSpec, builder=ModuleTypeSpecToObj),
+        _FieldMapping('childGroup', jsonkey='childGroups', islist=True, messagetype=pb.GroupInfo, builder=GroupInfoToObj),
+        _FieldMapping('childModule', jsonkey='children', islist=True, messagetype=pb.ModuleSpec, builder=ModuleSpecToObj),
+        _FieldMapping('connection', jsonkey='connections', islist=True, messagetype=pb.ConnectionInfo, builder=ConnectionInfoToObj),
+    ],
+    postprocmessage=_AddMissingAppSpecPath,
+))
