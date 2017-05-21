@@ -5,6 +5,16 @@ from tctrl.messages import ValueToWrapper, ValueToInt32Wrapper, WrapperToValue, 
 
 
 class _MessageMapping:
+    _registered = {}
+
+    @staticmethod
+    def Register(mapping):
+        _MessageMapping._registered[mapping.messagetype] = mapping
+
+    @staticmethod
+    def GetMapping(messagetype) -> '_MessageMapping':
+        return _MessageMapping._registered[messagetype]
+
     def __init__(
             self, messagetype, *fields,
             postprocmessage=None,
@@ -44,17 +54,17 @@ class _FieldMapping:
             defaultval=None,
             islist=False,
             ismessage=False,
+            messagetype=None,
             parser=None,
             builder=None):
         self.messagekey = messagekey
         self.jsonkey = jsonkey or messagekey
         self.defaultval = defaultval
         self.islist = islist
-        self.ismessage = ismessage
+        self.messagetype = messagetype
+        self.ismessage = ismessage if ismessage is not None else bool(messagetype)
         self.parser = parser
         self.builder = builder
-        if ismessage and not parser:
-            raise Exception('Sub-message fields must have a parser')
 
     def DictToMessage(
             self,
@@ -72,7 +82,11 @@ class _FieldMapping:
                 message.ClearField(self.messagekey)
             else:
                 submessage = getattr(message, self.messagekey)
-                self.parser(val, message=submessage)
+                if self.parser:
+                    self.parser(val, message=submessage)
+                elif self.messagetype:
+                    mapping = _MessageMapping.GetMapping(self.messagetype)
+                    mapping.DictToMessage(val, submessage)
         else:
             if val is not None and self.parser:
                 val = self.parser(val)
@@ -113,6 +127,10 @@ def _ValueFieldMapping(
     )
 
 _messageMappings = {}
+
+def ParseDict(obj: dict, messagetype: type, message=None):
+    return _MessageMapping.GetMapping(messagetype).DictToMessage(
+        obj, message=message)
 
 def ParseParamOption(obj: dict, message=None):
     return _messageMappings[pb.ParamOption].DictToMessage(obj, message=message)
@@ -155,6 +173,9 @@ def ParseAppSpec(obj: dict, message=None):
         result.path = '/' + result.key
     return result
 
+def MessageToDict(message: proto_msg.Message, obj: dict):
+    mapping = _MessageMapping.GetMapping(type(message))
+    return mapping.MessageToDict(message, obj=obj)
 
 def _ParseList(obj, key, parser):
     return [parser(o) for o in (obj.get(key) or [])]
@@ -300,7 +321,7 @@ _messageMappings[pb.OptionList] = _MessageMapping(
         'option',
         jsonkey='options',
         islist=True,
-        ismessage=True,
+        messagetype=pb.ParamOption,
         parser=ParseParamOption,
         builder=ParamOptionToObj)
 )
@@ -333,7 +354,11 @@ _messageMappings[pb.ParamSpec] = _MessageMapping(
     'otherType',
     _ValueFieldMapping('defaultVal', jsonkey='default'),
     _ValueFieldMapping('value'),
-    _FieldMapping('valueIndex', ismessage=True, parser=ValueToInt32Wrapper, builder=WrapperToInt32Value),
+    _FieldMapping(
+        'valueIndex',
+        ismessage=True,
+        parser=ValueToInt32Wrapper,
+        builder=WrapperToInt32Value),
     _ValueFieldMapping('minLimit'),
     _ValueFieldMapping('maxLimit'),
     _ValueFieldMapping('minNorm'),
