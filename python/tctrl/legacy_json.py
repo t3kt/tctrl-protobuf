@@ -110,7 +110,7 @@ class _FieldMapping:
         if self.jsonkey in obj:
             del obj[self.jsonkey]
         if self.islist:
-            val = getattr(message, self.messagekey)
+            val = list(getattr(message, self.messagekey))
             if self.builder:
                 val = [self.builder(v) for v in val]
             obj[self.jsonkey] = val
@@ -126,7 +126,7 @@ class _FieldMapping:
                 val = self.builder(val)
             if val is not None:
                 obj[self.jsonkey] = val
-        return obj
+        return _CleanDict(obj)
 
 def _ValueFieldMapping(
         messagekey,
@@ -155,124 +155,13 @@ def ParseParamType(val: str):
     except ValueError:
         return pb.OTHER
 
-def _FixParamType(message: pb.ParamSpec, obj: dict, **kwargs):
-    if message.type == pb.OTHER and not message.otherType:
-        message.otherType = obj['type']
-
 def ParseAppSpec(obj: dict, message=None):
     return ParseDict(obj, pb.AppSpec, message=message)
 
-def MessageToDict(message: proto_msg.Message, obj: dict=None):
+def MessageToDict(message: proto_msg.Message):
     mapping = _MessageMapping.GetMapping(type(message))
-    return mapping.MessageToDict(message, obj=obj)
-
-def _ParseList(obj, key, parser):
-    return [parser(o) for o in (obj.get(key) or [])]
-
-def ParamOptionToObj(spec: pb.ParamOption):
-    return _CleanDict({
-        'key': spec.key,
-        'label': spec.label,
-    })
-
-def OptionListToObj(spec: pb.OptionList):
-    return _CleanDict({
-        'key': spec.key,
-        'label': spec.label,
-        'options': [ParamOptionToObj(o) for o in spec.option],
-    })
-
-def ParamPartSpecToObj(spec: pb.ParamPartSpec):
-    return _CleanDict({
-        'key': spec.key,
-        'label': spec.label,
-        'path': spec.path,
-        'default': WrapperToValue(spec.defaultVal),
-        'value': WrapperToValue(spec.value),
-        'minLimit': WrapperToValue(spec.minLimit),
-        'maxLimit': WrapperToValue(spec.maxLimit),
-        'minNorm': WrapperToValue(spec.minNorm),
-        'maxNorm': WrapperToValue(spec.maxNorm),
-    })
-
-def ParamToObj(spec: pb.ParamSpec):
-    return _CleanDict({
-        'key': spec.key,
-        'label': spec.label,
-        'path': spec.path,
-        'style': spec.style,
-        'group': spec.group,
-        'tags': spec.tag[:] if spec.tag else None,
-        'help': spec.help,
-        'offHelp': spec.offHelp,
-        'buttonText': spec.buttonText,
-        'buttonOffText': spec.buttonOffText,
-        'type': _TypeToString(spec.type),
-        'otherType': spec.otherType,
-        'default': WrapperToValue(spec.defaultVal),
-        'value': WrapperToValue(spec.value),
-        'valueIndex': WrapperToInt32Value(spec.valueIndex),
-        'minLimit': WrapperToValue(spec.minLimit),
-        'maxLimit': WrapperToValue(spec.maxLimit),
-        'minNorm': WrapperToValue(spec.minNorm),
-        'maxNorm': WrapperToValue(spec.maxNorm),
-        'options': [ParamOptionToObj(o) for o in spec.option] if spec.option else None,
-        'optionsList': spec.optionListKey,
-        'parts': [ParamPartSpecToObj(o) for o in spec.part] if spec.part else None,
-    })
-
-def ModuleTypeSpecToObj(spec: pb.ModuleTypeSpec):
-    return _CleanDict({
-        'key': spec.key,
-        'label': spec.label,
-        'paramGroups': [GroupInfoToObj(o) for o in spec.paramGroup] if spec.paramGroup else None,
-        'params': [ParamToObj(o) for o in spec.param] if spec.param else None,
-    })
-
-def ModuleSpecToObj(spec: pb.ModuleSpec):
-    return _CleanDict({
-        'key': spec.key,
-        'label': spec.label,
-        'path': spec.path,
-        'moduleType': spec.moduleType,
-        'group': spec.group,
-        'tags': spec.tag[:] if spec.tag else None,
-        'paramGroups': [GroupInfoToObj(o) for o in spec.paramGroup] if spec.paramGroup else None,
-        'params': [ParamToObj(o) for o in spec.param] if spec.param else None,
-        'childGroups': [GroupInfoToObj(o) for o in spec.childGroup] if spec.childGroup else None,
-        'children': [ModuleSpecToObj(o) for o in spec.childModule] if spec.childModule else None,
-    })
-
-def ConnectionInfoToObj(spec: pb.ConnectionInfo):
-    return _CleanDict({
-        'key': spec.key,
-        'label': spec.label,
-        'type': spec.type,
-        'host': spec.host,
-        'port': spec.port,
-    })
-
-def GroupInfoToObj(spec: pb.GroupInfo):
-    return _CleanDict({
-        'key': spec.key,
-        'label': spec.label,
-        'tags': spec.tag[:] if spec.tag else None,
-    })
-
-def AppSpecToObj(spec: pb.AppSpec):
-    return _CleanDict({
-        'key': spec.key,
-        'label': spec.label,
-        'path': spec.path,
-        'tags': spec.tag[:] if spec.tag else None,
-        'description': spec.description,
-        'moduleTypes': [ModuleTypeSpecToObj(o) for o in spec.moduleType] if spec.moduleType else None,
-        'optionLists': [OptionListToObj(o) for o in spec.optionList] if spec.optionList else None,
-        'childGroups': [GroupInfoToObj(o) for o in spec.childGroup] if spec.childGroup else None,
-        'children': [ModuleSpecToObj(o) for o in spec.childModule] if spec.childModule else None,
-        'connections': [ConnectionInfoToObj(o) for o in spec.connection] if spec.connection else None,
-    })
-
+    obj = mapping.MessageToDict(message)
+    return _CleanDict(obj)
 
 def _TypeToString(paramtype: pb.ParamType):
     if paramtype is None:
@@ -304,8 +193,7 @@ _MessageMapping.Register(_MessageMapping(
             'option',
             jsonkey='options',
             islist=True,
-            messagetype=pb.ParamOption,
-            builder=ParamOptionToObj),
+            messagetype=pb.ParamOption),
     ],
 ))
 
@@ -324,10 +212,16 @@ _MessageMapping.Register(_MessageMapping(
     ],
 ))
 
+# noinspection PyUnusedLocal
+def _FixParamType(message: pb.ParamSpec, obj: dict, **kwargs):
+    if message.type == pb.OTHER and not message.otherType:
+        message.otherType = obj['type']
+
 _MessageMapping.Register(_MessageMapping(
     pb.ParamSpec,
     fields=[
         'key',
+        'path',
         'label',
         'style',
         'group',
@@ -349,9 +243,9 @@ _MessageMapping.Register(_MessageMapping(
         _ValueFieldMapping('maxLimit'),
         _ValueFieldMapping('minNorm'),
         _ValueFieldMapping('maxNorm'),
-        _FieldMapping('option', jsonkey='options', islist=True, messagetype=pb.ParamOption, builder=ParamOptionToObj),
+        _FieldMapping('option', jsonkey='options', islist=True, messagetype=pb.ParamOption),
         _FieldMapping('optionListKey', jsonkey='optionList'),
-        _FieldMapping('part', jsonkey='parts', islist=True, messagetype=pb.ParamPartSpec, builder=ParamPartSpecToObj),
+        _FieldMapping('part', jsonkey='parts', islist=True, messagetype=pb.ParamPartSpec),
     ],
     postprocmessage=_FixParamType,
 ))
@@ -361,8 +255,8 @@ _MessageMapping.Register(_MessageMapping(
     fields=[
         'key',
         'label',
-        _FieldMapping('paramGroup', jsonkey='paramGroups', islist=True, messagetype=pb.GroupInfo, builder=GroupInfoToObj),
-        _FieldMapping('param', jsonkey='params', islist=True, messagetype=pb.ParamSpec, builder=ParamPartSpecToObj),
+        _FieldMapping('paramGroup', jsonkey='paramGroups', islist=True, messagetype=pb.GroupInfo),
+        _FieldMapping('param', jsonkey='params', islist=True, messagetype=pb.ParamSpec),
     ],
 ))
 
@@ -375,10 +269,10 @@ _MessageMapping.Register(_MessageMapping(
         'moduleType',
         'group',
         _FieldMapping('tag', jsonkey='tags', islist=True),
-        _FieldMapping('paramGroup', jsonkey='paramGroups', islist=True, messagetype=pb.GroupInfo, builder=GroupInfoToObj),
-        _FieldMapping('param', jsonkey='params', islist=True, messagetype=pb.ParamSpec, builder=ParamPartSpecToObj),
-        _FieldMapping('childGroup', jsonkey='childGroups', islist=True, messagetype=pb.GroupInfo, builder=GroupInfoToObj),
-        _FieldMapping('childModule', jsonkey='children', islist=True, messagetype=pb.ModuleSpec, builder=ModuleSpecToObj),
+        _FieldMapping('paramGroup', jsonkey='paramGroups', islist=True, messagetype=pb.GroupInfo),
+        _FieldMapping('param', jsonkey='params', islist=True, messagetype=pb.ParamSpec),
+        _FieldMapping('childGroup', jsonkey='childGroups', islist=True, messagetype=pb.GroupInfo),
+        _FieldMapping('childModule', jsonkey='children', islist=True, messagetype=pb.ModuleSpec),
     ],
 ))
 
@@ -402,6 +296,7 @@ _MessageMapping.Register(_MessageMapping(
     ],
 ))
 
+# noinspection PyUnusedLocal
 def _AddMissingAppSpecPath(message: pb.AppSpec, **kwargs):
     if not message.path and message.key:
         message.path = '/' + message.key
@@ -414,11 +309,11 @@ _MessageMapping.Register(_MessageMapping(
         'label',
         'description',
         'path',
-        _FieldMapping('optionList', jsonkey='optionLists', islist=True, messagetype=pb.OptionList, builder=OptionListToObj),
-        _FieldMapping('moduleType', jsonkey='moduleTypes', islist=True, messagetype=pb.ModuleTypeSpec, builder=ModuleTypeSpecToObj),
-        _FieldMapping('childGroup', jsonkey='childGroups', islist=True, messagetype=pb.GroupInfo, builder=GroupInfoToObj),
-        _FieldMapping('childModule', jsonkey='children', islist=True, messagetype=pb.ModuleSpec, builder=ModuleSpecToObj),
-        _FieldMapping('connection', jsonkey='connections', islist=True, messagetype=pb.ConnectionInfo, builder=ConnectionInfoToObj),
+        _FieldMapping('optionList', jsonkey='optionLists', islist=True, messagetype=pb.OptionList),
+        _FieldMapping('moduleType', jsonkey='moduleTypes', islist=True, messagetype=pb.ModuleTypeSpec),
+        _FieldMapping('childGroup', jsonkey='childGroups', islist=True, messagetype=pb.GroupInfo),
+        _FieldMapping('childModule', jsonkey='children', islist=True, messagetype=pb.ModuleSpec),
+        _FieldMapping('connection', jsonkey='connections', islist=True, messagetype=pb.ConnectionInfo),
     ],
     postprocmessage=_AddMissingAppSpecPath,
 ))
