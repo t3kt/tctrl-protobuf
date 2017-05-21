@@ -64,9 +64,17 @@ class _FieldMapping:
         self.defaultval = defaultval
         self.islist = islist
         self.messagetype = messagetype
-        self.ismessage = ismessage if ismessage is not None else bool(messagetype)
+        self.ismessage = bool(ismessage or messagetype)
         self.parser = parser
         self.builder = builder
+        if messagetype and not parser:
+            def _messageParser(val, message=None):
+                return _MessageMapping.GetMapping(messagetype).DictToMessage(val, message=message)
+            self.parser = _messageParser
+        if messagetype and not builder:
+            def _messageBuilder(message, obj=None):
+                return _MessageMapping.GetMapping(messagetype).MessageToDict(message, obj=obj)
+            self.builder = _messageBuilder
 
     def DictToMessage(
             self,
@@ -79,9 +87,6 @@ class _FieldMapping:
                 return
             if self.parser:
                 val = [self.parser(v) for v in val]
-            if self.messagetype:
-                mapping = _MessageMapping.GetMapping(self.messagetype)
-                val = [mapping.DictToMessage(v) for v in val]
             getattr(message, self.messagekey).extend(val)
         elif self.ismessage:
             if val is None:
@@ -90,9 +95,6 @@ class _FieldMapping:
                 submessage = getattr(message, self.messagekey)
                 if self.parser:
                     self.parser(val, message=submessage)
-                elif self.messagetype:
-                    mapping = _MessageMapping.GetMapping(self.messagetype)
-                    mapping.DictToMessage(val, submessage)
         else:
             if val is not None and self.parser:
                 val = self.parser(val)
@@ -105,19 +107,26 @@ class _FieldMapping:
             self,
             message: proto_msg.Message,
             obj: dict):
-        if not message.HasField(self.messagekey):
-            if self.jsonkey in obj:
-                del obj[self.jsonkey]
-        elif self.islist:
-            raise NotImplemented()
+        if self.jsonkey in obj:
+            del obj[self.jsonkey]
+        if self.islist:
+            val = getattr(message, self.messagekey)
+            if self.builder:
+                val = [self.builder(v) for v in val]
+            obj[self.jsonkey] = val
+        elif self.ismessage:
+            if message.HasField(self.messagekey):
+                val = getattr(message, self.messagekey)
+                if self.builder:
+                    val = self.builder(val)
+                    obj[self.jsonkey] = val
         else:
             val = getattr(message, self.messagekey)
             if val is not None and self.builder:
                 val = self.builder(val)
             if val is not None:
                 obj[self.jsonkey] = val
-            elif self.jsonkey in obj:
-                del obj[self.jsonkey]
+        return obj
 
 def _ValueFieldMapping(
         messagekey,
@@ -153,7 +162,7 @@ def _FixParamType(message: pb.ParamSpec, obj: dict, **kwargs):
 def ParseAppSpec(obj: dict, message=None):
     return ParseDict(obj, pb.AppSpec, message=message)
 
-def MessageToDict(message: proto_msg.Message, obj: dict):
+def MessageToDict(message: proto_msg.Message, obj: dict=None):
     mapping = _MessageMapping.GetMapping(type(message))
     return mapping.MessageToDict(message, obj=obj)
 
@@ -200,13 +209,13 @@ def ParamToObj(spec: pb.ParamSpec):
         'buttonOffText': spec.buttonOffText,
         'type': _TypeToString(spec.type),
         'otherType': spec.otherType,
-        'default': ValueToWrapper(spec.defaultVal),
-        'value': ValueToWrapper(spec.value),
+        'default': WrapperToValue(spec.defaultVal),
+        'value': WrapperToValue(spec.value),
         'valueIndex': WrapperToInt32Value(spec.valueIndex),
-        'minLimit': ValueToWrapper(spec.minLimit),
-        'maxLimit': ValueToWrapper(spec.maxLimit),
-        'minNorm': ValueToWrapper(spec.minNorm),
-        'maxNorm': ValueToWrapper(spec.maxNorm),
+        'minLimit': WrapperToValue(spec.minLimit),
+        'maxLimit': WrapperToValue(spec.maxLimit),
+        'minNorm': WrapperToValue(spec.minNorm),
+        'maxNorm': WrapperToValue(spec.maxNorm),
         'options': [ParamOptionToObj(o) for o in spec.option] if spec.option else None,
         'optionsList': spec.optionListKey,
         'parts': [ParamPartSpecToObj(o) for o in spec.part] if spec.part else None,

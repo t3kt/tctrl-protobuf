@@ -30,7 +30,7 @@ def main():
     if outfmt == 'pbjson':
         outdict = pbjson.MessageToDict(appspec)
     elif outfmt == 'json':
-        outdict = tctrl.legacy_json.AppSpecToObj(appspec)
+        outdict = tctrl.legacy_json.MessageToDict(appspec)
     else:
         parser.print_usage()
         raise Exception('Invalid output format: ' + outfmt)
