@@ -10,15 +10,21 @@ option java_outer_classname = "TctrlStateProto";
 
 message ParamState {
     string key = 1;
-    google.protobuf.Value value = 2;
-    google.protobuf.Int32Value valueIndex = 3;
+    string path = 2;
+    google.protobuf.Value value = 3;
+    google.protobuf.Int32Value valueIndex = 4;
 }
 
 message ModuleState {
     string key = 1;
     string path = 2;
-    repeated ParamState param = 3;
+    ParamStatePackage param = 3;
     repeated ModuleState childModule = 4;
+}
+
+message ParamStatePackage {
+    string basePath = 1;
+    repeated ParamState param = 2;
 }
 
 message ModuleStatePackage {
