@@ -5,8 +5,13 @@ from tctrl.messages import ValueToWrapper, ValueToInt32Wrapper, WrapperToValue, 
 
 
 class _MessageMapping:
-    def __init__(self, messagetype, *fields):
+    def __init__(
+            self, messagetype, *fields,
+            postprocmessage=None,
+            postprocdict=None):
         self.messagetype = messagetype
+        self.postprocmessage = postprocmessage
+        self.postprocdict = postprocdict
         self.fields = []
         for field in fields:
             if isinstance(field, str):
@@ -18,6 +23,8 @@ class _MessageMapping:
         message = message or self.messagetype()
         for field in self.fields:
             field.DictToMessage(obj, message)
+        if self.postprocmessage:
+            self.postprocmessage(message)
         return message
 
     def MessageToDict(self, message: proto_msg.Message, obj=None):
@@ -25,6 +32,8 @@ class _MessageMapping:
             obj = {}
         for field in self.fields:
             field.MessageToDict(message, obj)
+        if self.postprocdict:
+            self.postprocdict(obj)
         return obj
 
 class _FieldMapping:
@@ -106,13 +115,13 @@ def _ValueFieldMapping(
 _messageMappings = {}
 
 def ParseParamOption(obj: dict, message=None):
-    return _messageMappings['ParamOption'].DictToMessage(obj, message=message)
+    return _messageMappings[pb.ParamOption].DictToMessage(obj, message=message)
 
 def ParseOptionList(obj: dict, message=None):
-    return _messageMappings['OptionList'].DictToMessage(obj, message=message)
+    return _messageMappings[pb.OptionList].DictToMessage(obj, message=message)
 
 def ParseParamPartSpec(obj: dict, message=None):
-    return _messageMappings['ParamPartSpec'].DictToMessage(obj, message=message)
+    return _messageMappings[pb.ParamPartSpec].DictToMessage(obj, message=message)
 
 def ParseParamType(val: str):
     if not val:
@@ -123,25 +132,25 @@ def ParseParamType(val: str):
         return pb.OTHER
 
 def ParseParamSpec(obj: dict, message=None):
-    result = _messageMappings['ParamSpec'].DictToMessage(obj, message=message)
+    result = _messageMappings[pb.ParamSpec].DictToMessage(obj, message=message)
     if result.type == pb.OTHER and not result.otherType:
         result.otherType = obj['type']
     return result
 
 def ParseModuleTypeSpec(obj: dict, message=None):
-    return _messageMappings['ModuleTypeSpec'].DictToMessage(obj, message=message)
+    return _messageMappings[pb.ModuleTypeSpec].DictToMessage(obj, message=message)
 
 def ParseModuleSpec(obj: dict, message=None):
-    return _messageMappings['ModuleSpec'].DictToMessage(obj, message=message)
+    return _messageMappings[pb.ModuleSpec].DictToMessage(obj, message=message)
 
 def ParseConnectionInfo(obj: dict, message=None):
-    return _messageMappings['ConnectionInfo'].DictToMessage(obj, message=message)
+    return _messageMappings[pb.ConnectionInfo].DictToMessage(obj, message=message)
 
 def ParseGroupInfo(obj: dict, message=None):
-    return _messageMappings['GroupInfo'].DictToMessage(obj, message=message)
+    return _messageMappings[pb.GroupInfo].DictToMessage(obj, message=message)
 
 def ParseAppSpec(obj: dict, message=None):
-    result = _messageMappings['AppSpec'].DictToMessage(obj, message=message)
+    result = _messageMappings[pb.AppSpec].DictToMessage(obj, message=message)
     if not result.path and result.key:
         result.path = '/' + result.key
     return result
@@ -277,13 +286,13 @@ def _MergeDicts(*parts):
             d.update(part)
     return d
 
-_messageMappings['ParamOption'] = _MessageMapping(
+_messageMappings[pb.ParamOption] = _MessageMapping(
     pb.ParamOption,
     'key',
     'label',
 )
 
-_messageMappings['OptionList'] = _MessageMapping(
+_messageMappings[pb.OptionList] = _MessageMapping(
     pb.OptionList,
     'key',
     'label',
@@ -296,7 +305,7 @@ _messageMappings['OptionList'] = _MessageMapping(
         builder=ParamOptionToObj)
 )
 
-_messageMappings['ParamPartSpec'] = _MessageMapping(
+_messageMappings[pb.ParamPartSpec] = _MessageMapping(
     pb.ParamPartSpec,
     'key',
     'label',
@@ -309,7 +318,7 @@ _messageMappings['ParamPartSpec'] = _MessageMapping(
     _ValueFieldMapping('maxNorm'),
 )
 
-_messageMappings['ParamSpec'] = _MessageMapping(
+_messageMappings[pb.ParamSpec] = _MessageMapping(
     pb.ParamSpec,
     'key',
     'label',
@@ -334,7 +343,7 @@ _messageMappings['ParamSpec'] = _MessageMapping(
     _FieldMapping('part', jsonkey='parts', ismessage=True, islist=True, parser=ParseParamPartSpec, builder=ParamPartSpecToObj),
 )
 
-_messageMappings['ModuleTypeSpec'] = _MessageMapping(
+_messageMappings[pb.ModuleTypeSpec] = _MessageMapping(
     pb.ModuleTypeSpec,
     'key',
     'label',
@@ -342,7 +351,7 @@ _messageMappings['ModuleTypeSpec'] = _MessageMapping(
     _FieldMapping('param', jsonkey='params', ismessage=True, islist=True, parser=ParseParamOption, builder=ParamOptionToObj),
 )
 
-_messageMappings['ModuleSpec'] = _MessageMapping(
+_messageMappings[pb.ModuleSpec] = _MessageMapping(
     pb.ModuleSpec,
     'key',
     'path',
@@ -356,7 +365,7 @@ _messageMappings['ModuleSpec'] = _MessageMapping(
     _FieldMapping('childModule', jsonkey='children', ismessage=True, islist=True, parser=ParseModuleSpec, builder=ModuleSpecToObj),
 )
 
-_messageMappings['ConnectionInfo'] = _MessageMapping(
+_messageMappings[pb.ConnectionInfo] = _MessageMapping(
     pb.ConnectionInfo,
     'key',
     'label',
@@ -365,14 +374,14 @@ _messageMappings['ConnectionInfo'] = _MessageMapping(
     'port',
 )
 
-_messageMappings['GroupInfo'] = _MessageMapping(
+_messageMappings[pb.GroupInfo] = _MessageMapping(
     pb.GroupInfo,
     'key',
     'label',
     _FieldMapping('tag', jsonkey='tags', islist=True),
 )
 
-_messageMappings['AppSpec'] = _MessageMapping(
+_messageMappings[pb.AppSpec] = _MessageMapping(
     pb.AppSpec,
     'key',
     'label',
