@@ -19,9 +19,4 @@ public abstract class ScalarParamSchema<T> extends SingleParamSchema {
     }
 
     protected abstract Optional<T> convert(Value value);
-
-    @Override
-    public boolean isVector() {
-        return false;
-    }
 }

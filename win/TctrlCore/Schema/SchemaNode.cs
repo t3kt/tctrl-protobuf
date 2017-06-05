@@ -3,16 +3,19 @@ using Google.Protobuf;
 
 namespace Tctrl.Core.Schema
 {
-    abstract class SchemaNode<S> where S : IMessage
+    public abstract class SchemaNode<S> where S : IMessage
     {
-        public SchemaNode(S spec) => this.Spec = spec;
+        protected SchemaNode(S spec)
+        {
+            Spec = spec;
+        }
 
-        public S Spec { get; private set; }
+        public S Spec { get; }
 
-        public abstract String getKey();
+        public abstract String Key { get; }
 
-        public abstract String getLabel();
+        public abstract String Label { get; }
 
-        public abstract String getPath();
+        public abstract String Path { get; }
     }
 }
