@@ -180,21 +180,21 @@ public final class TctrlSchemaProto {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>optional string key = 1;</code>
+     * <code>string key = 1;</code>
      */
     java.lang.String getKey();
     /**
-     * <code>optional string key = 1;</code>
+     * <code>string key = 1;</code>
      */
     com.google.protobuf.ByteString
         getKeyBytes();
 
     /**
-     * <code>optional string label = 2;</code>
+     * <code>string label = 2;</code>
      */
     java.lang.String getLabel();
     /**
-     * <code>optional string label = 2;</code>
+     * <code>string label = 2;</code>
      */
     com.google.protobuf.ByteString
         getLabelBytes();
@@ -278,7 +278,7 @@ public final class TctrlSchemaProto {
     public static final int KEY_FIELD_NUMBER = 1;
     private volatile java.lang.Object key_;
     /**
-     * <code>optional string key = 1;</code>
+     * <code>string key = 1;</code>
      */
     public java.lang.String getKey() {
       java.lang.Object ref = key_;
@@ -293,7 +293,7 @@ public final class TctrlSchemaProto {
       }
     }
     /**
-     * <code>optional string key = 1;</code>
+     * <code>string key = 1;</code>
      */
     public com.google.protobuf.ByteString
         getKeyBytes() {
@@ -312,7 +312,7 @@ public final class TctrlSchemaProto {
     public static final int LABEL_FIELD_NUMBER = 2;
     private volatile java.lang.Object label_;
     /**
-     * <code>optional string label = 2;</code>
+     * <code>string label = 2;</code>
      */
     public java.lang.String getLabel() {
       java.lang.Object ref = label_;
@@ -327,7 +327,7 @@ public final class TctrlSchemaProto {
       }
     }
     /**
-     * <code>optional string label = 2;</code>
+     * <code>string label = 2;</code>
      */
     public com.google.protobuf.ByteString
         getLabelBytes() {
@@ -403,7 +403,7 @@ public final class TctrlSchemaProto {
         return memoizedHashCode;
       }
       int hash = 41;
-      hash = (19 * hash) + getDescriptorForType().hashCode();
+      hash = (19 * hash) + getDescriptor().hashCode();
       hash = (37 * hash) + KEY_FIELD_NUMBER;
       hash = (53 * hash) + getKey().hashCode();
       hash = (37 * hash) + LABEL_FIELD_NUMBER;
@@ -413,6 +413,17 @@ public final class TctrlSchemaProto {
       return hash;
     }
 
+    public static net.t3kt.tctrl.schema.TctrlSchemaProto.ParamOption parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static net.t3kt.tctrl.schema.TctrlSchemaProto.ParamOption parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
     public static net.t3kt.tctrl.schema.TctrlSchemaProto.ParamOption parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -631,7 +642,7 @@ public final class TctrlSchemaProto {
 
       private java.lang.Object key_ = "";
       /**
-       * <code>optional string key = 1;</code>
+       * <code>string key = 1;</code>
        */
       public java.lang.String getKey() {
         java.lang.Object ref = key_;
@@ -646,7 +657,7 @@ public final class TctrlSchemaProto {
         }
       }
       /**
-       * <code>optional string key = 1;</code>
+       * <code>string key = 1;</code>
        */
       public com.google.protobuf.ByteString
           getKeyBytes() {
@@ -662,7 +673,7 @@ public final class TctrlSchemaProto {
         }
       }
       /**
-       * <code>optional string key = 1;</code>
+       * <code>string key = 1;</code>
        */
       public Builder setKey(
           java.lang.String value) {
@@ -675,7 +686,7 @@ public final class TctrlSchemaProto {
         return this;
       }
       /**
-       * <code>optional string key = 1;</code>
+       * <code>string key = 1;</code>
        */
       public Builder clearKey() {
         
@@ -684,7 +695,7 @@ public final class TctrlSchemaProto {
         return this;
       }
       /**
-       * <code>optional string key = 1;</code>
+       * <code>string key = 1;</code>
        */
       public Builder setKeyBytes(
           com.google.protobuf.ByteString value) {
@@ -700,7 +711,7 @@ public final class TctrlSchemaProto {
 
       private java.lang.Object label_ = "";
       /**
-       * <code>optional string label = 2;</code>
+       * <code>string label = 2;</code>
        */
       public java.lang.String getLabel() {
         java.lang.Object ref = label_;
@@ -715,7 +726,7 @@ public final class TctrlSchemaProto {
         }
       }
       /**
-       * <code>optional string label = 2;</code>
+       * <code>string label = 2;</code>
        */
       public com.google.protobuf.ByteString
           getLabelBytes() {
@@ -731,7 +742,7 @@ public final class TctrlSchemaProto {
         }
       }
       /**
-       * <code>optional string label = 2;</code>
+       * <code>string label = 2;</code>
        */
       public Builder setLabel(
           java.lang.String value) {
@@ -744,7 +755,7 @@ public final class TctrlSchemaProto {
         return this;
       }
       /**
-       * <code>optional string label = 2;</code>
+       * <code>string label = 2;</code>
        */
       public Builder clearLabel() {
         
@@ -753,7 +764,7 @@ public final class TctrlSchemaProto {
         return this;
       }
       /**
-       * <code>optional string label = 2;</code>
+       * <code>string label = 2;</code>
        */
       public Builder setLabelBytes(
           com.google.protobuf.ByteString value) {
@@ -820,21 +831,21 @@ public final class TctrlSchemaProto {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>optional string key = 1;</code>
+     * <code>string key = 1;</code>
      */
     java.lang.String getKey();
     /**
-     * <code>optional string key = 1;</code>
+     * <code>string key = 1;</code>
      */
     com.google.protobuf.ByteString
         getKeyBytes();
 
     /**
-     * <code>optional string label = 2;</code>
+     * <code>string label = 2;</code>
      */
     java.lang.String getLabel();
     /**
-     * <code>optional string label = 2;</code>
+     * <code>string label = 2;</code>
      */
     com.google.protobuf.ByteString
         getLabelBytes();
@@ -956,7 +967,7 @@ public final class TctrlSchemaProto {
     public static final int KEY_FIELD_NUMBER = 1;
     private volatile java.lang.Object key_;
     /**
-     * <code>optional string key = 1;</code>
+     * <code>string key = 1;</code>
      */
     public java.lang.String getKey() {
       java.lang.Object ref = key_;
@@ -971,7 +982,7 @@ public final class TctrlSchemaProto {
       }
     }
     /**
-     * <code>optional string key = 1;</code>
+     * <code>string key = 1;</code>
      */
     public com.google.protobuf.ByteString
         getKeyBytes() {
@@ -990,7 +1001,7 @@ public final class TctrlSchemaProto {
     public static final int LABEL_FIELD_NUMBER = 2;
     private volatile java.lang.Object label_;
     /**
-     * <code>optional string label = 2;</code>
+     * <code>string label = 2;</code>
      */
     public java.lang.String getLabel() {
       java.lang.Object ref = label_;
@@ -1005,7 +1016,7 @@ public final class TctrlSchemaProto {
       }
     }
     /**
-     * <code>optional string label = 2;</code>
+     * <code>string label = 2;</code>
      */
     public com.google.protobuf.ByteString
         getLabelBytes() {
@@ -1125,7 +1136,7 @@ public final class TctrlSchemaProto {
         return memoizedHashCode;
       }
       int hash = 41;
-      hash = (19 * hash) + getDescriptorForType().hashCode();
+      hash = (19 * hash) + getDescriptor().hashCode();
       hash = (37 * hash) + KEY_FIELD_NUMBER;
       hash = (53 * hash) + getKey().hashCode();
       hash = (37 * hash) + LABEL_FIELD_NUMBER;
@@ -1139,6 +1150,17 @@ public final class TctrlSchemaProto {
       return hash;
     }
 
+    public static net.t3kt.tctrl.schema.TctrlSchemaProto.OptionList parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static net.t3kt.tctrl.schema.TctrlSchemaProto.OptionList parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
     public static net.t3kt.tctrl.schema.TctrlSchemaProto.OptionList parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -1403,7 +1425,7 @@ public final class TctrlSchemaProto {
 
       private java.lang.Object key_ = "";
       /**
-       * <code>optional string key = 1;</code>
+       * <code>string key = 1;</code>
        */
       public java.lang.String getKey() {
         java.lang.Object ref = key_;
@@ -1418,7 +1440,7 @@ public final class TctrlSchemaProto {
         }
       }
       /**
-       * <code>optional string key = 1;</code>
+       * <code>string key = 1;</code>
        */
       public com.google.protobuf.ByteString
           getKeyBytes() {
@@ -1434,7 +1456,7 @@ public final class TctrlSchemaProto {
         }
       }
       /**
-       * <code>optional string key = 1;</code>
+       * <code>string key = 1;</code>
        */
       public Builder setKey(
           java.lang.String value) {
@@ -1447,7 +1469,7 @@ public final class TctrlSchemaProto {
         return this;
       }
       /**
-       * <code>optional string key = 1;</code>
+       * <code>string key = 1;</code>
        */
       public Builder clearKey() {
         
@@ -1456,7 +1478,7 @@ public final class TctrlSchemaProto {
         return this;
       }
       /**
-       * <code>optional string key = 1;</code>
+       * <code>string key = 1;</code>
        */
       public Builder setKeyBytes(
           com.google.protobuf.ByteString value) {
@@ -1472,7 +1494,7 @@ public final class TctrlSchemaProto {
 
       private java.lang.Object label_ = "";
       /**
-       * <code>optional string label = 2;</code>
+       * <code>string label = 2;</code>
        */
       public java.lang.String getLabel() {
         java.lang.Object ref = label_;
@@ -1487,7 +1509,7 @@ public final class TctrlSchemaProto {
         }
       }
       /**
-       * <code>optional string label = 2;</code>
+       * <code>string label = 2;</code>
        */
       public com.google.protobuf.ByteString
           getLabelBytes() {
@@ -1503,7 +1525,7 @@ public final class TctrlSchemaProto {
         }
       }
       /**
-       * <code>optional string label = 2;</code>
+       * <code>string label = 2;</code>
        */
       public Builder setLabel(
           java.lang.String value) {
@@ -1516,7 +1538,7 @@ public final class TctrlSchemaProto {
         return this;
       }
       /**
-       * <code>optional string label = 2;</code>
+       * <code>string label = 2;</code>
        */
       public Builder clearLabel() {
         
@@ -1525,7 +1547,7 @@ public final class TctrlSchemaProto {
         return this;
       }
       /**
-       * <code>optional string label = 2;</code>
+       * <code>string label = 2;</code>
        */
       public Builder setLabelBytes(
           com.google.protobuf.ByteString value) {
@@ -1832,110 +1854,110 @@ public final class TctrlSchemaProto {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>optional string key = 1;</code>
+     * <code>string key = 1;</code>
      */
     java.lang.String getKey();
     /**
-     * <code>optional string key = 1;</code>
+     * <code>string key = 1;</code>
      */
     com.google.protobuf.ByteString
         getKeyBytes();
 
     /**
-     * <code>optional string label = 2;</code>
+     * <code>string label = 2;</code>
      */
     java.lang.String getLabel();
     /**
-     * <code>optional string label = 2;</code>
+     * <code>string label = 2;</code>
      */
     com.google.protobuf.ByteString
         getLabelBytes();
 
     /**
-     * <code>optional string path = 9;</code>
+     * <code>string path = 9;</code>
      */
     java.lang.String getPath();
     /**
-     * <code>optional string path = 9;</code>
+     * <code>string path = 9;</code>
      */
     com.google.protobuf.ByteString
         getPathBytes();
 
     /**
-     * <code>optional .google.protobuf.Value minLimit = 3;</code>
+     * <code>.google.protobuf.Value minLimit = 3;</code>
      */
     boolean hasMinLimit();
     /**
-     * <code>optional .google.protobuf.Value minLimit = 3;</code>
+     * <code>.google.protobuf.Value minLimit = 3;</code>
      */
     com.google.protobuf.Value getMinLimit();
     /**
-     * <code>optional .google.protobuf.Value minLimit = 3;</code>
+     * <code>.google.protobuf.Value minLimit = 3;</code>
      */
     com.google.protobuf.ValueOrBuilder getMinLimitOrBuilder();
 
     /**
-     * <code>optional .google.protobuf.Value maxLimit = 4;</code>
+     * <code>.google.protobuf.Value maxLimit = 4;</code>
      */
     boolean hasMaxLimit();
     /**
-     * <code>optional .google.protobuf.Value maxLimit = 4;</code>
+     * <code>.google.protobuf.Value maxLimit = 4;</code>
      */
     com.google.protobuf.Value getMaxLimit();
     /**
-     * <code>optional .google.protobuf.Value maxLimit = 4;</code>
+     * <code>.google.protobuf.Value maxLimit = 4;</code>
      */
     com.google.protobuf.ValueOrBuilder getMaxLimitOrBuilder();
 
     /**
-     * <code>optional .google.protobuf.Value minNorm = 5;</code>
+     * <code>.google.protobuf.Value minNorm = 5;</code>
      */
     boolean hasMinNorm();
     /**
-     * <code>optional .google.protobuf.Value minNorm = 5;</code>
+     * <code>.google.protobuf.Value minNorm = 5;</code>
      */
     com.google.protobuf.Value getMinNorm();
     /**
-     * <code>optional .google.protobuf.Value minNorm = 5;</code>
+     * <code>.google.protobuf.Value minNorm = 5;</code>
      */
     com.google.protobuf.ValueOrBuilder getMinNormOrBuilder();
 
     /**
-     * <code>optional .google.protobuf.Value maxNorm = 6;</code>
+     * <code>.google.protobuf.Value maxNorm = 6;</code>
      */
     boolean hasMaxNorm();
     /**
-     * <code>optional .google.protobuf.Value maxNorm = 6;</code>
+     * <code>.google.protobuf.Value maxNorm = 6;</code>
      */
     com.google.protobuf.Value getMaxNorm();
     /**
-     * <code>optional .google.protobuf.Value maxNorm = 6;</code>
+     * <code>.google.protobuf.Value maxNorm = 6;</code>
      */
     com.google.protobuf.ValueOrBuilder getMaxNormOrBuilder();
 
     /**
-     * <code>optional .google.protobuf.Value defaultVal = 7;</code>
+     * <code>.google.protobuf.Value defaultVal = 7;</code>
      */
     boolean hasDefaultVal();
     /**
-     * <code>optional .google.protobuf.Value defaultVal = 7;</code>
+     * <code>.google.protobuf.Value defaultVal = 7;</code>
      */
     com.google.protobuf.Value getDefaultVal();
     /**
-     * <code>optional .google.protobuf.Value defaultVal = 7;</code>
+     * <code>.google.protobuf.Value defaultVal = 7;</code>
      */
     com.google.protobuf.ValueOrBuilder getDefaultValOrBuilder();
 
     /**
-     * <code>optional .google.protobuf.Value value = 8;</code>
+     * <code>.google.protobuf.Value value = 8;</code>
      */
     boolean hasValue();
     /**
-     * <code>optional .google.protobuf.Value value = 8;</code>
+     * <code>.google.protobuf.Value value = 8;</code>
      */
     com.google.protobuf.Value getValue();
     /**
-     * <code>optional .google.protobuf.Value value = 8;</code>
+     * <code>.google.protobuf.Value value = 8;</code>
      */
     com.google.protobuf.ValueOrBuilder getValueOrBuilder();
   }
@@ -2103,7 +2125,7 @@ public final class TctrlSchemaProto {
     public static final int KEY_FIELD_NUMBER = 1;
     private volatile java.lang.Object key_;
     /**
-     * <code>optional string key = 1;</code>
+     * <code>string key = 1;</code>
      */
     public java.lang.String getKey() {
       java.lang.Object ref = key_;
@@ -2118,7 +2140,7 @@ public final class TctrlSchemaProto {
       }
     }
     /**
-     * <code>optional string key = 1;</code>
+     * <code>string key = 1;</code>
      */
     public com.google.protobuf.ByteString
         getKeyBytes() {
@@ -2137,7 +2159,7 @@ public final class TctrlSchemaProto {
     public static final int LABEL_FIELD_NUMBER = 2;
     private volatile java.lang.Object label_;
     /**
-     * <code>optional string label = 2;</code>
+     * <code>string label = 2;</code>
      */
     public java.lang.String getLabel() {
       java.lang.Object ref = label_;
@@ -2152,7 +2174,7 @@ public final class TctrlSchemaProto {
       }
     }
     /**
-     * <code>optional string label = 2;</code>
+     * <code>string label = 2;</code>
      */
     public com.google.protobuf.ByteString
         getLabelBytes() {
@@ -2171,7 +2193,7 @@ public final class TctrlSchemaProto {
     public static final int PATH_FIELD_NUMBER = 9;
     private volatile java.lang.Object path_;
     /**
-     * <code>optional string path = 9;</code>
+     * <code>string path = 9;</code>
      */
     public java.lang.String getPath() {
       java.lang.Object ref = path_;
@@ -2186,7 +2208,7 @@ public final class TctrlSchemaProto {
       }
     }
     /**
-     * <code>optional string path = 9;</code>
+     * <code>string path = 9;</code>
      */
     public com.google.protobuf.ByteString
         getPathBytes() {
@@ -2205,19 +2227,19 @@ public final class TctrlSchemaProto {
     public static final int MINLIMIT_FIELD_NUMBER = 3;
     private com.google.protobuf.Value minLimit_;
     /**
-     * <code>optional .google.protobuf.Value minLimit = 3;</code>
+     * <code>.google.protobuf.Value minLimit = 3;</code>
      */
     public boolean hasMinLimit() {
       return minLimit_ != null;
     }
     /**
-     * <code>optional .google.protobuf.Value minLimit = 3;</code>
+     * <code>.google.protobuf.Value minLimit = 3;</code>
      */
     public com.google.protobuf.Value getMinLimit() {
       return minLimit_ == null ? com.google.protobuf.Value.getDefaultInstance() : minLimit_;
     }
     /**
-     * <code>optional .google.protobuf.Value minLimit = 3;</code>
+     * <code>.google.protobuf.Value minLimit = 3;</code>
      */
     public com.google.protobuf.ValueOrBuilder getMinLimitOrBuilder() {
       return getMinLimit();
@@ -2226,19 +2248,19 @@ public final class TctrlSchemaProto {
     public static final int MAXLIMIT_FIELD_NUMBER = 4;
     private com.google.protobuf.Value maxLimit_;
     /**
-     * <code>optional .google.protobuf.Value maxLimit = 4;</code>
+     * <code>.google.protobuf.Value maxLimit = 4;</code>
      */
     public boolean hasMaxLimit() {
       return maxLimit_ != null;
     }
     /**
-     * <code>optional .google.protobuf.Value maxLimit = 4;</code>
+     * <code>.google.protobuf.Value maxLimit = 4;</code>
      */
     public com.google.protobuf.Value getMaxLimit() {
       return maxLimit_ == null ? com.google.protobuf.Value.getDefaultInstance() : maxLimit_;
     }
     /**
-     * <code>optional .google.protobuf.Value maxLimit = 4;</code>
+     * <code>.google.protobuf.Value maxLimit = 4;</code>
      */
     public com.google.protobuf.ValueOrBuilder getMaxLimitOrBuilder() {
       return getMaxLimit();
@@ -2247,19 +2269,19 @@ public final class TctrlSchemaProto {
     public static final int MINNORM_FIELD_NUMBER = 5;
     private com.google.protobuf.Value minNorm_;
     /**
-     * <code>optional .google.protobuf.Value minNorm = 5;</code>
+     * <code>.google.protobuf.Value minNorm = 5;</code>
      */
     public boolean hasMinNorm() {
       return minNorm_ != null;
     }
     /**
-     * <code>optional .google.protobuf.Value minNorm = 5;</code>
+     * <code>.google.protobuf.Value minNorm = 5;</code>
      */
     public com.google.protobuf.Value getMinNorm() {
       return minNorm_ == null ? com.google.protobuf.Value.getDefaultInstance() : minNorm_;
     }
     /**
-     * <code>optional .google.protobuf.Value minNorm = 5;</code>
+     * <code>.google.protobuf.Value minNorm = 5;</code>
      */
     public com.google.protobuf.ValueOrBuilder getMinNormOrBuilder() {
       return getMinNorm();
@@ -2268,19 +2290,19 @@ public final class TctrlSchemaProto {
     public static final int MAXNORM_FIELD_NUMBER = 6;
     private com.google.protobuf.Value maxNorm_;
     /**
-     * <code>optional .google.protobuf.Value maxNorm = 6;</code>
+     * <code>.google.protobuf.Value maxNorm = 6;</code>
      */
     public boolean hasMaxNorm() {
       return maxNorm_ != null;
     }
     /**
-     * <code>optional .google.protobuf.Value maxNorm = 6;</code>
+     * <code>.google.protobuf.Value maxNorm = 6;</code>
      */
     public com.google.protobuf.Value getMaxNorm() {
       return maxNorm_ == null ? com.google.protobuf.Value.getDefaultInstance() : maxNorm_;
     }
     /**
-     * <code>optional .google.protobuf.Value maxNorm = 6;</code>
+     * <code>.google.protobuf.Value maxNorm = 6;</code>
      */
     public com.google.protobuf.ValueOrBuilder getMaxNormOrBuilder() {
       return getMaxNorm();
@@ -2289,19 +2311,19 @@ public final class TctrlSchemaProto {
     public static final int DEFAULTVAL_FIELD_NUMBER = 7;
     private com.google.protobuf.Value defaultVal_;
     /**
-     * <code>optional .google.protobuf.Value defaultVal = 7;</code>
+     * <code>.google.protobuf.Value defaultVal = 7;</code>
      */
     public boolean hasDefaultVal() {
       return defaultVal_ != null;
     }
     /**
-     * <code>optional .google.protobuf.Value defaultVal = 7;</code>
+     * <code>.google.protobuf.Value defaultVal = 7;</code>
      */
     public com.google.protobuf.Value getDefaultVal() {
       return defaultVal_ == null ? com.google.protobuf.Value.getDefaultInstance() : defaultVal_;
     }
     /**
-     * <code>optional .google.protobuf.Value defaultVal = 7;</code>
+     * <code>.google.protobuf.Value defaultVal = 7;</code>
      */
     public com.google.protobuf.ValueOrBuilder getDefaultValOrBuilder() {
       return getDefaultVal();
@@ -2310,19 +2332,19 @@ public final class TctrlSchemaProto {
     public static final int VALUE_FIELD_NUMBER = 8;
     private com.google.protobuf.Value value_;
     /**
-     * <code>optional .google.protobuf.Value value = 8;</code>
+     * <code>.google.protobuf.Value value = 8;</code>
      */
     public boolean hasValue() {
       return value_ != null;
     }
     /**
-     * <code>optional .google.protobuf.Value value = 8;</code>
+     * <code>.google.protobuf.Value value = 8;</code>
      */
     public com.google.protobuf.Value getValue() {
       return value_ == null ? com.google.protobuf.Value.getDefaultInstance() : value_;
     }
     /**
-     * <code>optional .google.protobuf.Value value = 8;</code>
+     * <code>.google.protobuf.Value value = 8;</code>
      */
     public com.google.protobuf.ValueOrBuilder getValueOrBuilder() {
       return getValue();
@@ -2468,7 +2490,7 @@ public final class TctrlSchemaProto {
         return memoizedHashCode;
       }
       int hash = 41;
-      hash = (19 * hash) + getDescriptorForType().hashCode();
+      hash = (19 * hash) + getDescriptor().hashCode();
       hash = (37 * hash) + KEY_FIELD_NUMBER;
       hash = (53 * hash) + getKey().hashCode();
       hash = (37 * hash) + LABEL_FIELD_NUMBER;
@@ -2504,6 +2526,17 @@ public final class TctrlSchemaProto {
       return hash;
     }
 
+    public static net.t3kt.tctrl.schema.TctrlSchemaProto.ParamPartSpec parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static net.t3kt.tctrl.schema.TctrlSchemaProto.ParamPartSpec parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
     public static net.t3kt.tctrl.schema.TctrlSchemaProto.ParamPartSpec parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -2813,7 +2846,7 @@ public final class TctrlSchemaProto {
 
       private java.lang.Object key_ = "";
       /**
-       * <code>optional string key = 1;</code>
+       * <code>string key = 1;</code>
        */
       public java.lang.String getKey() {
         java.lang.Object ref = key_;
@@ -2828,7 +2861,7 @@ public final class TctrlSchemaProto {
         }
       }
       /**
-       * <code>optional string key = 1;</code>
+       * <code>string key = 1;</code>
        */
       public com.google.protobuf.ByteString
           getKeyBytes() {
@@ -2844,7 +2877,7 @@ public final class TctrlSchemaProto {
         }
       }
       /**
-       * <code>optional string key = 1;</code>
+       * <code>string key = 1;</code>
        */
       public Builder setKey(
           java.lang.String value) {
@@ -2857,7 +2890,7 @@ public final class TctrlSchemaProto {
         return this;
       }
       /**
-       * <code>optional string key = 1;</code>
+       * <code>string key = 1;</code>
        */
       public Builder clearKey() {
         
@@ -2866,7 +2899,7 @@ public final class TctrlSchemaProto {
         return this;
       }
       /**
-       * <code>optional string key = 1;</code>
+       * <code>string key = 1;</code>
        */
       public Builder setKeyBytes(
           com.google.protobuf.ByteString value) {
@@ -2882,7 +2915,7 @@ public final class TctrlSchemaProto {
 
       private java.lang.Object label_ = "";
       /**
-       * <code>optional string label = 2;</code>
+       * <code>string label = 2;</code>
        */
       public java.lang.String getLabel() {
         java.lang.Object ref = label_;
@@ -2897,7 +2930,7 @@ public final class TctrlSchemaProto {
         }
       }
       /**
-       * <code>optional string label = 2;</code>
+       * <code>string label = 2;</code>
        */
       public com.google.protobuf.ByteString
           getLabelBytes() {
@@ -2913,7 +2946,7 @@ public final class TctrlSchemaProto {
         }
       }
       /**
-       * <code>optional string label = 2;</code>
+       * <code>string label = 2;</code>
        */
       public Builder setLabel(
           java.lang.String value) {
@@ -2926,7 +2959,7 @@ public final class TctrlSchemaProto {
         return this;
       }
       /**
-       * <code>optional string label = 2;</code>
+       * <code>string label = 2;</code>
        */
       public Builder clearLabel() {
         
@@ -2935,7 +2968,7 @@ public final class TctrlSchemaProto {
         return this;
       }
       /**
-       * <code>optional string label = 2;</code>
+       * <code>string label = 2;</code>
        */
       public Builder setLabelBytes(
           com.google.protobuf.ByteString value) {
@@ -2951,7 +2984,7 @@ public final class TctrlSchemaProto {
 
       private java.lang.Object path_ = "";
       /**
-       * <code>optional string path = 9;</code>
+       * <code>string path = 9;</code>
        */
       public java.lang.String getPath() {
         java.lang.Object ref = path_;
@@ -2966,7 +2999,7 @@ public final class TctrlSchemaProto {
         }
       }
       /**
-       * <code>optional string path = 9;</code>
+       * <code>string path = 9;</code>
        */
       public com.google.protobuf.ByteString
           getPathBytes() {
@@ -2982,7 +3015,7 @@ public final class TctrlSchemaProto {
         }
       }
       /**
-       * <code>optional string path = 9;</code>
+       * <code>string path = 9;</code>
        */
       public Builder setPath(
           java.lang.String value) {
@@ -2995,7 +3028,7 @@ public final class TctrlSchemaProto {
         return this;
       }
       /**
-       * <code>optional string path = 9;</code>
+       * <code>string path = 9;</code>
        */
       public Builder clearPath() {
         
@@ -3004,7 +3037,7 @@ public final class TctrlSchemaProto {
         return this;
       }
       /**
-       * <code>optional string path = 9;</code>
+       * <code>string path = 9;</code>
        */
       public Builder setPathBytes(
           com.google.protobuf.ByteString value) {
@@ -3022,13 +3055,13 @@ public final class TctrlSchemaProto {
       private com.google.protobuf.SingleFieldBuilderV3<
           com.google.protobuf.Value, com.google.protobuf.Value.Builder, com.google.protobuf.ValueOrBuilder> minLimitBuilder_;
       /**
-       * <code>optional .google.protobuf.Value minLimit = 3;</code>
+       * <code>.google.protobuf.Value minLimit = 3;</code>
        */
       public boolean hasMinLimit() {
         return minLimitBuilder_ != null || minLimit_ != null;
       }
       /**
-       * <code>optional .google.protobuf.Value minLimit = 3;</code>
+       * <code>.google.protobuf.Value minLimit = 3;</code>
        */
       public com.google.protobuf.Value getMinLimit() {
         if (minLimitBuilder_ == null) {
@@ -3038,7 +3071,7 @@ public final class TctrlSchemaProto {
         }
       }
       /**
-       * <code>optional .google.protobuf.Value minLimit = 3;</code>
+       * <code>.google.protobuf.Value minLimit = 3;</code>
        */
       public Builder setMinLimit(com.google.protobuf.Value value) {
         if (minLimitBuilder_ == null) {
@@ -3054,7 +3087,7 @@ public final class TctrlSchemaProto {
         return this;
       }
       /**
-       * <code>optional .google.protobuf.Value minLimit = 3;</code>
+       * <code>.google.protobuf.Value minLimit = 3;</code>
        */
       public Builder setMinLimit(
           com.google.protobuf.Value.Builder builderForValue) {
@@ -3068,7 +3101,7 @@ public final class TctrlSchemaProto {
         return this;
       }
       /**
-       * <code>optional .google.protobuf.Value minLimit = 3;</code>
+       * <code>.google.protobuf.Value minLimit = 3;</code>
        */
       public Builder mergeMinLimit(com.google.protobuf.Value value) {
         if (minLimitBuilder_ == null) {
@@ -3086,7 +3119,7 @@ public final class TctrlSchemaProto {
         return this;
       }
       /**
-       * <code>optional .google.protobuf.Value minLimit = 3;</code>
+       * <code>.google.protobuf.Value minLimit = 3;</code>
        */
       public Builder clearMinLimit() {
         if (minLimitBuilder_ == null) {
@@ -3100,7 +3133,7 @@ public final class TctrlSchemaProto {
         return this;
       }
       /**
-       * <code>optional .google.protobuf.Value minLimit = 3;</code>
+       * <code>.google.protobuf.Value minLimit = 3;</code>
        */
       public com.google.protobuf.Value.Builder getMinLimitBuilder() {
         
@@ -3108,7 +3141,7 @@ public final class TctrlSchemaProto {
         return getMinLimitFieldBuilder().getBuilder();
       }
       /**
-       * <code>optional .google.protobuf.Value minLimit = 3;</code>
+       * <code>.google.protobuf.Value minLimit = 3;</code>
        */
       public com.google.protobuf.ValueOrBuilder getMinLimitOrBuilder() {
         if (minLimitBuilder_ != null) {
@@ -3119,7 +3152,7 @@ public final class TctrlSchemaProto {
         }
       }
       /**
-       * <code>optional .google.protobuf.Value minLimit = 3;</code>
+       * <code>.google.protobuf.Value minLimit = 3;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           com.google.protobuf.Value, com.google.protobuf.Value.Builder, com.google.protobuf.ValueOrBuilder> 
@@ -3139,13 +3172,13 @@ public final class TctrlSchemaProto {
       private com.google.protobuf.SingleFieldBuilderV3<
           com.google.protobuf.Value, com.google.protobuf.Value.Builder, com.google.protobuf.ValueOrBuilder> maxLimitBuilder_;
       /**
-       * <code>optional .google.protobuf.Value maxLimit = 4;</code>
+       * <code>.google.protobuf.Value maxLimit = 4;</code>
        */
       public boolean hasMaxLimit() {
         return maxLimitBuilder_ != null || maxLimit_ != null;
       }
       /**
-       * <code>optional .google.protobuf.Value maxLimit = 4;</code>
+       * <code>.google.protobuf.Value maxLimit = 4;</code>
        */
       public com.google.protobuf.Value getMaxLimit() {
         if (maxLimitBuilder_ == null) {
@@ -3155,7 +3188,7 @@ public final class TctrlSchemaProto {
         }
       }
       /**
-       * <code>optional .google.protobuf.Value maxLimit = 4;</code>
+       * <code>.google.protobuf.Value maxLimit = 4;</code>
        */
       public Builder setMaxLimit(com.google.protobuf.Value value) {
         if (maxLimitBuilder_ == null) {
@@ -3171,7 +3204,7 @@ public final class TctrlSchemaProto {
         return this;
       }
       /**
-       * <code>optional .google.protobuf.Value maxLimit = 4;</code>
+       * <code>.google.protobuf.Value maxLimit = 4;</code>
        */
       public Builder setMaxLimit(
           com.google.protobuf.Value.Builder builderForValue) {
@@ -3185,7 +3218,7 @@ public final class TctrlSchemaProto {
         return this;
       }
       /**
-       * <code>optional .google.protobuf.Value maxLimit = 4;</code>
+       * <code>.google.protobuf.Value maxLimit = 4;</code>
        */
       public Builder mergeMaxLimit(com.google.protobuf.Value value) {
         if (maxLimitBuilder_ == null) {
@@ -3203,7 +3236,7 @@ public final class TctrlSchemaProto {
         return this;
       }
       /**
-       * <code>optional .google.protobuf.Value maxLimit = 4;</code>
+       * <code>.google.protobuf.Value maxLimit = 4;</code>
        */
       public Builder clearMaxLimit() {
         if (maxLimitBuilder_ == null) {
@@ -3217,7 +3250,7 @@ public final class TctrlSchemaProto {
         return this;
       }
       /**
-       * <code>optional .google.protobuf.Value maxLimit = 4;</code>
+       * <code>.google.protobuf.Value maxLimit = 4;</code>
        */
       public com.google.protobuf.Value.Builder getMaxLimitBuilder() {
         
@@ -3225,7 +3258,7 @@ public final class TctrlSchemaProto {
         return getMaxLimitFieldBuilder().getBuilder();
       }
       /**
-       * <code>optional .google.protobuf.Value maxLimit = 4;</code>
+       * <code>.google.protobuf.Value maxLimit = 4;</code>
        */
       public com.google.protobuf.ValueOrBuilder getMaxLimitOrBuilder() {
         if (maxLimitBuilder_ != null) {
@@ -3236,7 +3269,7 @@ public final class TctrlSchemaProto {
         }
       }
       /**
-       * <code>optional .google.protobuf.Value maxLimit = 4;</code>
+       * <code>.google.protobuf.Value maxLimit = 4;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           com.google.protobuf.Value, com.google.protobuf.Value.Builder, com.google.protobuf.ValueOrBuilder> 
@@ -3256,13 +3289,13 @@ public final class TctrlSchemaProto {
       private com.google.protobuf.SingleFieldBuilderV3<
           com.google.protobuf.Value, com.google.protobuf.Value.Builder, com.google.protobuf.ValueOrBuilder> minNormBuilder_;
       /**
-       * <code>optional .google.protobuf.Value minNorm = 5;</code>
+       * <code>.google.protobuf.Value minNorm = 5;</code>
        */
       public boolean hasMinNorm() {
         return minNormBuilder_ != null || minNorm_ != null;
       }
       /**
-       * <code>optional .google.protobuf.Value minNorm = 5;</code>
+       * <code>.google.protobuf.Value minNorm = 5;</code>
        */
       public com.google.protobuf.Value getMinNorm() {
         if (minNormBuilder_ == null) {
@@ -3272,7 +3305,7 @@ public final class TctrlSchemaProto {
         }
       }
       /**
-       * <code>optional .google.protobuf.Value minNorm = 5;</code>
+       * <code>.google.protobuf.Value minNorm = 5;</code>
        */
       public Builder setMinNorm(com.google.protobuf.Value value) {
         if (minNormBuilder_ == null) {
@@ -3288,7 +3321,7 @@ public final class TctrlSchemaProto {
         return this;
       }
       /**
-       * <code>optional .google.protobuf.Value minNorm = 5;</code>
+       * <code>.google.protobuf.Value minNorm = 5;</code>
        */
       public Builder setMinNorm(
           com.google.protobuf.Value.Builder builderForValue) {
@@ -3302,7 +3335,7 @@ public final class TctrlSchemaProto {
         return this;
       }
       /**
-       * <code>optional .google.protobuf.Value minNorm = 5;</code>
+       * <code>.google.protobuf.Value minNorm = 5;</code>
        */
       public Builder mergeMinNorm(com.google.protobuf.Value value) {
         if (minNormBuilder_ == null) {
@@ -3320,7 +3353,7 @@ public final class TctrlSchemaProto {
         return this;
       }
       /**
-       * <code>optional .google.protobuf.Value minNorm = 5;</code>
+       * <code>.google.protobuf.Value minNorm = 5;</code>
        */
       public Builder clearMinNorm() {
         if (minNormBuilder_ == null) {
@@ -3334,7 +3367,7 @@ public final class TctrlSchemaProto {
         return this;
       }
       /**
-       * <code>optional .google.protobuf.Value minNorm = 5;</code>
+       * <code>.google.protobuf.Value minNorm = 5;</code>
        */
       public com.google.protobuf.Value.Builder getMinNormBuilder() {
         
@@ -3342,7 +3375,7 @@ public final class TctrlSchemaProto {
         return getMinNormFieldBuilder().getBuilder();
       }
       /**
-       * <code>optional .google.protobuf.Value minNorm = 5;</code>
+       * <code>.google.protobuf.Value minNorm = 5;</code>
        */
       public com.google.protobuf.ValueOrBuilder getMinNormOrBuilder() {
         if (minNormBuilder_ != null) {
@@ -3353,7 +3386,7 @@ public final class TctrlSchemaProto {
         }
       }
       /**
-       * <code>optional .google.protobuf.Value minNorm = 5;</code>
+       * <code>.google.protobuf.Value minNorm = 5;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           com.google.protobuf.Value, com.google.protobuf.Value.Builder, com.google.protobuf.ValueOrBuilder> 
@@ -3373,13 +3406,13 @@ public final class TctrlSchemaProto {
       private com.google.protobuf.SingleFieldBuilderV3<
           com.google.protobuf.Value, com.google.protobuf.Value.Builder, com.google.protobuf.ValueOrBuilder> maxNormBuilder_;
       /**
-       * <code>optional .google.protobuf.Value maxNorm = 6;</code>
+       * <code>.google.protobuf.Value maxNorm = 6;</code>
        */
       public boolean hasMaxNorm() {
         return maxNormBuilder_ != null || maxNorm_ != null;
       }
       /**
-       * <code>optional .google.protobuf.Value maxNorm = 6;</code>
+       * <code>.google.protobuf.Value maxNorm = 6;</code>
        */
       public com.google.protobuf.Value getMaxNorm() {
         if (maxNormBuilder_ == null) {
@@ -3389,7 +3422,7 @@ public final class TctrlSchemaProto {
         }
       }
       /**
-       * <code>optional .google.protobuf.Value maxNorm = 6;</code>
+       * <code>.google.protobuf.Value maxNorm = 6;</code>
        */
       public Builder setMaxNorm(com.google.protobuf.Value value) {
         if (maxNormBuilder_ == null) {
@@ -3405,7 +3438,7 @@ public final class TctrlSchemaProto {
         return this;
       }
       /**
-       * <code>optional .google.protobuf.Value maxNorm = 6;</code>
+       * <code>.google.protobuf.Value maxNorm = 6;</code>
        */
       public Builder setMaxNorm(
           com.google.protobuf.Value.Builder builderForValue) {
@@ -3419,7 +3452,7 @@ public final class TctrlSchemaProto {
         return this;
       }
       /**
-       * <code>optional .google.protobuf.Value maxNorm = 6;</code>
+       * <code>.google.protobuf.Value maxNorm = 6;</code>
        */
       public Builder mergeMaxNorm(com.google.protobuf.Value value) {
         if (maxNormBuilder_ == null) {
@@ -3437,7 +3470,7 @@ public final class TctrlSchemaProto {
         return this;
       }
       /**
-       * <code>optional .google.protobuf.Value maxNorm = 6;</code>
+       * <code>.google.protobuf.Value maxNorm = 6;</code>
        */
       public Builder clearMaxNorm() {
         if (maxNormBuilder_ == null) {
@@ -3451,7 +3484,7 @@ public final class TctrlSchemaProto {
         return this;
       }
       /**
-       * <code>optional .google.protobuf.Value maxNorm = 6;</code>
+       * <code>.google.protobuf.Value maxNorm = 6;</code>
        */
       public com.google.protobuf.Value.Builder getMaxNormBuilder() {
         
@@ -3459,7 +3492,7 @@ public final class TctrlSchemaProto {
         return getMaxNormFieldBuilder().getBuilder();
       }
       /**
-       * <code>optional .google.protobuf.Value maxNorm = 6;</code>
+       * <code>.google.protobuf.Value maxNorm = 6;</code>
        */
       public com.google.protobuf.ValueOrBuilder getMaxNormOrBuilder() {
         if (maxNormBuilder_ != null) {
@@ -3470,7 +3503,7 @@ public final class TctrlSchemaProto {
         }
       }
       /**
-       * <code>optional .google.protobuf.Value maxNorm = 6;</code>
+       * <code>.google.protobuf.Value maxNorm = 6;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           com.google.protobuf.Value, com.google.protobuf.Value.Builder, com.google.protobuf.ValueOrBuilder> 
@@ -3490,13 +3523,13 @@ public final class TctrlSchemaProto {
       private com.google.protobuf.SingleFieldBuilderV3<
           com.google.protobuf.Value, com.google.protobuf.Value.Builder, com.google.protobuf.ValueOrBuilder> defaultValBuilder_;
       /**
-       * <code>optional .google.protobuf.Value defaultVal = 7;</code>
+       * <code>.google.protobuf.Value defaultVal = 7;</code>
        */
       public boolean hasDefaultVal() {
         return defaultValBuilder_ != null || defaultVal_ != null;
       }
       /**
-       * <code>optional .google.protobuf.Value defaultVal = 7;</code>
+       * <code>.google.protobuf.Value defaultVal = 7;</code>
        */
       public com.google.protobuf.Value getDefaultVal() {
         if (defaultValBuilder_ == null) {
@@ -3506,7 +3539,7 @@ public final class TctrlSchemaProto {
         }
       }
       /**
-       * <code>optional .google.protobuf.Value defaultVal = 7;</code>
+       * <code>.google.protobuf.Value defaultVal = 7;</code>
        */
       public Builder setDefaultVal(com.google.protobuf.Value value) {
         if (defaultValBuilder_ == null) {
@@ -3522,7 +3555,7 @@ public final class TctrlSchemaProto {
         return this;
       }
       /**
-       * <code>optional .google.protobuf.Value defaultVal = 7;</code>
+       * <code>.google.protobuf.Value defaultVal = 7;</code>
        */
       public Builder setDefaultVal(
           com.google.protobuf.Value.Builder builderForValue) {
@@ -3536,7 +3569,7 @@ public final class TctrlSchemaProto {
         return this;
       }
       /**
-       * <code>optional .google.protobuf.Value defaultVal = 7;</code>
+       * <code>.google.protobuf.Value defaultVal = 7;</code>
        */
       public Builder mergeDefaultVal(com.google.protobuf.Value value) {
         if (defaultValBuilder_ == null) {
@@ -3554,7 +3587,7 @@ public final class TctrlSchemaProto {
         return this;
       }
       /**
-       * <code>optional .google.protobuf.Value defaultVal = 7;</code>
+       * <code>.google.protobuf.Value defaultVal = 7;</code>
        */
       public Builder clearDefaultVal() {
         if (defaultValBuilder_ == null) {
@@ -3568,7 +3601,7 @@ public final class TctrlSchemaProto {
         return this;
       }
       /**
-       * <code>optional .google.protobuf.Value defaultVal = 7;</code>
+       * <code>.google.protobuf.Value defaultVal = 7;</code>
        */
       public com.google.protobuf.Value.Builder getDefaultValBuilder() {
         
@@ -3576,7 +3609,7 @@ public final class TctrlSchemaProto {
         return getDefaultValFieldBuilder().getBuilder();
       }
       /**
-       * <code>optional .google.protobuf.Value defaultVal = 7;</code>
+       * <code>.google.protobuf.Value defaultVal = 7;</code>
        */
       public com.google.protobuf.ValueOrBuilder getDefaultValOrBuilder() {
         if (defaultValBuilder_ != null) {
@@ -3587,7 +3620,7 @@ public final class TctrlSchemaProto {
         }
       }
       /**
-       * <code>optional .google.protobuf.Value defaultVal = 7;</code>
+       * <code>.google.protobuf.Value defaultVal = 7;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           com.google.protobuf.Value, com.google.protobuf.Value.Builder, com.google.protobuf.ValueOrBuilder> 
@@ -3607,13 +3640,13 @@ public final class TctrlSchemaProto {
       private com.google.protobuf.SingleFieldBuilderV3<
           com.google.protobuf.Value, com.google.protobuf.Value.Builder, com.google.protobuf.ValueOrBuilder> valueBuilder_;
       /**
-       * <code>optional .google.protobuf.Value value = 8;</code>
+       * <code>.google.protobuf.Value value = 8;</code>
        */
       public boolean hasValue() {
         return valueBuilder_ != null || value_ != null;
       }
       /**
-       * <code>optional .google.protobuf.Value value = 8;</code>
+       * <code>.google.protobuf.Value value = 8;</code>
        */
       public com.google.protobuf.Value getValue() {
         if (valueBuilder_ == null) {
@@ -3623,7 +3656,7 @@ public final class TctrlSchemaProto {
         }
       }
       /**
-       * <code>optional .google.protobuf.Value value = 8;</code>
+       * <code>.google.protobuf.Value value = 8;</code>
        */
       public Builder setValue(com.google.protobuf.Value value) {
         if (valueBuilder_ == null) {
@@ -3639,7 +3672,7 @@ public final class TctrlSchemaProto {
         return this;
       }
       /**
-       * <code>optional .google.protobuf.Value value = 8;</code>
+       * <code>.google.protobuf.Value value = 8;</code>
        */
       public Builder setValue(
           com.google.protobuf.Value.Builder builderForValue) {
@@ -3653,7 +3686,7 @@ public final class TctrlSchemaProto {
         return this;
       }
       /**
-       * <code>optional .google.protobuf.Value value = 8;</code>
+       * <code>.google.protobuf.Value value = 8;</code>
        */
       public Builder mergeValue(com.google.protobuf.Value value) {
         if (valueBuilder_ == null) {
@@ -3671,7 +3704,7 @@ public final class TctrlSchemaProto {
         return this;
       }
       /**
-       * <code>optional .google.protobuf.Value value = 8;</code>
+       * <code>.google.protobuf.Value value = 8;</code>
        */
       public Builder clearValue() {
         if (valueBuilder_ == null) {
@@ -3685,7 +3718,7 @@ public final class TctrlSchemaProto {
         return this;
       }
       /**
-       * <code>optional .google.protobuf.Value value = 8;</code>
+       * <code>.google.protobuf.Value value = 8;</code>
        */
       public com.google.protobuf.Value.Builder getValueBuilder() {
         
@@ -3693,7 +3726,7 @@ public final class TctrlSchemaProto {
         return getValueFieldBuilder().getBuilder();
       }
       /**
-       * <code>optional .google.protobuf.Value value = 8;</code>
+       * <code>.google.protobuf.Value value = 8;</code>
        */
       public com.google.protobuf.ValueOrBuilder getValueOrBuilder() {
         if (valueBuilder_ != null) {
@@ -3704,7 +3737,7 @@ public final class TctrlSchemaProto {
         }
       }
       /**
-       * <code>optional .google.protobuf.Value value = 8;</code>
+       * <code>.google.protobuf.Value value = 8;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           com.google.protobuf.Value, com.google.protobuf.Value.Builder, com.google.protobuf.ValueOrBuilder> 
@@ -3773,142 +3806,142 @@ public final class TctrlSchemaProto {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>optional string key = 1;</code>
+     * <code>string key = 1;</code>
      */
     java.lang.String getKey();
     /**
-     * <code>optional string key = 1;</code>
+     * <code>string key = 1;</code>
      */
     com.google.protobuf.ByteString
         getKeyBytes();
 
     /**
-     * <code>optional string label = 2;</code>
+     * <code>string label = 2;</code>
      */
     java.lang.String getLabel();
     /**
-     * <code>optional string label = 2;</code>
+     * <code>string label = 2;</code>
      */
     com.google.protobuf.ByteString
         getLabelBytes();
 
     /**
-     * <code>optional .tctrl.schema.ParamType type = 3;</code>
+     * <code>.tctrl.schema.ParamType type = 3;</code>
      */
     int getTypeValue();
     /**
-     * <code>optional .tctrl.schema.ParamType type = 3;</code>
+     * <code>.tctrl.schema.ParamType type = 3;</code>
      */
     net.t3kt.tctrl.schema.TctrlSchemaProto.ParamType getType();
 
     /**
-     * <code>optional string path = 4;</code>
+     * <code>string path = 4;</code>
      */
     java.lang.String getPath();
     /**
-     * <code>optional string path = 4;</code>
+     * <code>string path = 4;</code>
      */
     com.google.protobuf.ByteString
         getPathBytes();
 
     /**
-     * <code>optional string otherType = 5;</code>
+     * <code>string otherType = 5;</code>
      */
     java.lang.String getOtherType();
     /**
-     * <code>optional string otherType = 5;</code>
+     * <code>string otherType = 5;</code>
      */
     com.google.protobuf.ByteString
         getOtherTypeBytes();
 
     /**
-     * <code>optional .google.protobuf.Value minLimit = 6;</code>
+     * <code>.google.protobuf.Value minLimit = 6;</code>
      */
     boolean hasMinLimit();
     /**
-     * <code>optional .google.protobuf.Value minLimit = 6;</code>
+     * <code>.google.protobuf.Value minLimit = 6;</code>
      */
     com.google.protobuf.Value getMinLimit();
     /**
-     * <code>optional .google.protobuf.Value minLimit = 6;</code>
+     * <code>.google.protobuf.Value minLimit = 6;</code>
      */
     com.google.protobuf.ValueOrBuilder getMinLimitOrBuilder();
 
     /**
-     * <code>optional .google.protobuf.Value maxLimit = 7;</code>
+     * <code>.google.protobuf.Value maxLimit = 7;</code>
      */
     boolean hasMaxLimit();
     /**
-     * <code>optional .google.protobuf.Value maxLimit = 7;</code>
+     * <code>.google.protobuf.Value maxLimit = 7;</code>
      */
     com.google.protobuf.Value getMaxLimit();
     /**
-     * <code>optional .google.protobuf.Value maxLimit = 7;</code>
+     * <code>.google.protobuf.Value maxLimit = 7;</code>
      */
     com.google.protobuf.ValueOrBuilder getMaxLimitOrBuilder();
 
     /**
-     * <code>optional .google.protobuf.Value minNorm = 8;</code>
+     * <code>.google.protobuf.Value minNorm = 8;</code>
      */
     boolean hasMinNorm();
     /**
-     * <code>optional .google.protobuf.Value minNorm = 8;</code>
+     * <code>.google.protobuf.Value minNorm = 8;</code>
      */
     com.google.protobuf.Value getMinNorm();
     /**
-     * <code>optional .google.protobuf.Value minNorm = 8;</code>
+     * <code>.google.protobuf.Value minNorm = 8;</code>
      */
     com.google.protobuf.ValueOrBuilder getMinNormOrBuilder();
 
     /**
-     * <code>optional .google.protobuf.Value maxNorm = 9;</code>
+     * <code>.google.protobuf.Value maxNorm = 9;</code>
      */
     boolean hasMaxNorm();
     /**
-     * <code>optional .google.protobuf.Value maxNorm = 9;</code>
+     * <code>.google.protobuf.Value maxNorm = 9;</code>
      */
     com.google.protobuf.Value getMaxNorm();
     /**
-     * <code>optional .google.protobuf.Value maxNorm = 9;</code>
+     * <code>.google.protobuf.Value maxNorm = 9;</code>
      */
     com.google.protobuf.ValueOrBuilder getMaxNormOrBuilder();
 
     /**
-     * <code>optional .google.protobuf.Value defaultVal = 10;</code>
+     * <code>.google.protobuf.Value defaultVal = 10;</code>
      */
     boolean hasDefaultVal();
     /**
-     * <code>optional .google.protobuf.Value defaultVal = 10;</code>
+     * <code>.google.protobuf.Value defaultVal = 10;</code>
      */
     com.google.protobuf.Value getDefaultVal();
     /**
-     * <code>optional .google.protobuf.Value defaultVal = 10;</code>
+     * <code>.google.protobuf.Value defaultVal = 10;</code>
      */
     com.google.protobuf.ValueOrBuilder getDefaultValOrBuilder();
 
     /**
-     * <code>optional .google.protobuf.Value value = 11;</code>
+     * <code>.google.protobuf.Value value = 11;</code>
      */
     boolean hasValue();
     /**
-     * <code>optional .google.protobuf.Value value = 11;</code>
+     * <code>.google.protobuf.Value value = 11;</code>
      */
     com.google.protobuf.Value getValue();
     /**
-     * <code>optional .google.protobuf.Value value = 11;</code>
+     * <code>.google.protobuf.Value value = 11;</code>
      */
     com.google.protobuf.ValueOrBuilder getValueOrBuilder();
 
     /**
-     * <code>optional .google.protobuf.Int32Value valueIndex = 12;</code>
+     * <code>.google.protobuf.Int32Value valueIndex = 12;</code>
      */
     boolean hasValueIndex();
     /**
-     * <code>optional .google.protobuf.Int32Value valueIndex = 12;</code>
+     * <code>.google.protobuf.Int32Value valueIndex = 12;</code>
      */
     com.google.protobuf.Int32Value getValueIndex();
     /**
-     * <code>optional .google.protobuf.Int32Value valueIndex = 12;</code>
+     * <code>.google.protobuf.Int32Value valueIndex = 12;</code>
      */
     com.google.protobuf.Int32ValueOrBuilder getValueIndexOrBuilder();
 
@@ -3937,21 +3970,21 @@ public final class TctrlSchemaProto {
         int index);
 
     /**
-     * <code>optional string style = 14;</code>
+     * <code>string style = 14;</code>
      */
     java.lang.String getStyle();
     /**
-     * <code>optional string style = 14;</code>
+     * <code>string style = 14;</code>
      */
     com.google.protobuf.ByteString
         getStyleBytes();
 
     /**
-     * <code>optional string group = 15;</code>
+     * <code>string group = 15;</code>
      */
     java.lang.String getGroup();
     /**
-     * <code>optional string group = 15;</code>
+     * <code>string group = 15;</code>
      */
     com.google.protobuf.ByteString
         getGroupBytes();
@@ -3981,11 +4014,11 @@ public final class TctrlSchemaProto {
         int index);
 
     /**
-     * <code>optional string optionListKey = 17;</code>
+     * <code>string optionListKey = 17;</code>
      */
     java.lang.String getOptionListKey();
     /**
-     * <code>optional string optionListKey = 17;</code>
+     * <code>string optionListKey = 17;</code>
      */
     com.google.protobuf.ByteString
         getOptionListKeyBytes();
@@ -4010,55 +4043,55 @@ public final class TctrlSchemaProto {
         getTagBytes(int index);
 
     /**
-     * <code>optional string help = 19;</code>
+     * <code>string help = 19;</code>
      */
     java.lang.String getHelp();
     /**
-     * <code>optional string help = 19;</code>
+     * <code>string help = 19;</code>
      */
     com.google.protobuf.ByteString
         getHelpBytes();
 
     /**
-     * <code>optional string offHelp = 20;</code>
+     * <code>string offHelp = 20;</code>
      */
     java.lang.String getOffHelp();
     /**
-     * <code>optional string offHelp = 20;</code>
+     * <code>string offHelp = 20;</code>
      */
     com.google.protobuf.ByteString
         getOffHelpBytes();
 
     /**
-     * <code>optional string buttonText = 21;</code>
+     * <code>string buttonText = 21;</code>
      */
     java.lang.String getButtonText();
     /**
-     * <code>optional string buttonText = 21;</code>
+     * <code>string buttonText = 21;</code>
      */
     com.google.protobuf.ByteString
         getButtonTextBytes();
 
     /**
-     * <code>optional string buttonOffText = 22;</code>
+     * <code>string buttonOffText = 22;</code>
      */
     java.lang.String getButtonOffText();
     /**
-     * <code>optional string buttonOffText = 22;</code>
+     * <code>string buttonOffText = 22;</code>
      */
     com.google.protobuf.ByteString
         getButtonOffTextBytes();
 
     /**
-     * <code>optional .google.protobuf.Struct properties = 1000;</code>
+     * <code>.google.protobuf.Struct properties = 1000;</code>
      */
     boolean hasProperties();
     /**
-     * <code>optional .google.protobuf.Struct properties = 1000;</code>
+     * <code>.google.protobuf.Struct properties = 1000;</code>
      */
     com.google.protobuf.Struct getProperties();
     /**
-     * <code>optional .google.protobuf.Struct properties = 1000;</code>
+     * <code>.google.protobuf.Struct properties = 1000;</code>
      */
     com.google.protobuf.StructOrBuilder getPropertiesOrBuilder();
   }
@@ -4355,7 +4388,7 @@ public final class TctrlSchemaProto {
     public static final int KEY_FIELD_NUMBER = 1;
     private volatile java.lang.Object key_;
     /**
-     * <code>optional string key = 1;</code>
+     * <code>string key = 1;</code>
      */
     public java.lang.String getKey() {
       java.lang.Object ref = key_;
@@ -4370,7 +4403,7 @@ public final class TctrlSchemaProto {
       }
     }
     /**
-     * <code>optional string key = 1;</code>
+     * <code>string key = 1;</code>
      */
     public com.google.protobuf.ByteString
         getKeyBytes() {
@@ -4389,7 +4422,7 @@ public final class TctrlSchemaProto {
     public static final int LABEL_FIELD_NUMBER = 2;
     private volatile java.lang.Object label_;
     /**
-     * <code>optional string label = 2;</code>
+     * <code>string label = 2;</code>
      */
     public java.lang.String getLabel() {
       java.lang.Object ref = label_;
@@ -4404,7 +4437,7 @@ public final class TctrlSchemaProto {
       }
     }
     /**
-     * <code>optional string label = 2;</code>
+     * <code>string label = 2;</code>
      */
     public com.google.protobuf.ByteString
         getLabelBytes() {
@@ -4423,13 +4456,13 @@ public final class TctrlSchemaProto {
     public static final int TYPE_FIELD_NUMBER = 3;
     private int type_;
     /**
-     * <code>optional .tctrl.schema.ParamType type = 3;</code>
+     * <code>.tctrl.schema.ParamType type = 3;</code>
      */
     public int getTypeValue() {
       return type_;
     }
     /**
-     * <code>optional .tctrl.schema.ParamType type = 3;</code>
+     * <code>.tctrl.schema.ParamType type = 3;</code>
      */
     public net.t3kt.tctrl.schema.TctrlSchemaProto.ParamType getType() {
       net.t3kt.tctrl.schema.TctrlSchemaProto.ParamType result = net.t3kt.tctrl.schema.TctrlSchemaProto.ParamType.valueOf(type_);
@@ -4439,7 +4472,7 @@ public final class TctrlSchemaProto {
     public static final int PATH_FIELD_NUMBER = 4;
     private volatile java.lang.Object path_;
     /**
-     * <code>optional string path = 4;</code>
+     * <code>string path = 4;</code>
      */
     public java.lang.String getPath() {
       java.lang.Object ref = path_;
@@ -4454,7 +4487,7 @@ public final class TctrlSchemaProto {
       }
     }
     /**
-     * <code>optional string path = 4;</code>
+     * <code>string path = 4;</code>
      */
     public com.google.protobuf.ByteString
         getPathBytes() {
@@ -4473,7 +4506,7 @@ public final class TctrlSchemaProto {
     public static final int OTHERTYPE_FIELD_NUMBER = 5;
     private volatile java.lang.Object otherType_;
     /**
-     * <code>optional string otherType = 5;</code>
+     * <code>string otherType = 5;</code>
      */
     public java.lang.String getOtherType() {
       java.lang.Object ref = otherType_;
@@ -4488,7 +4521,7 @@ public final class TctrlSchemaProto {
       }
     }
     /**
-     * <code>optional string otherType = 5;</code>
+     * <code>string otherType = 5;</code>
      */
     public com.google.protobuf.ByteString
         getOtherTypeBytes() {
@@ -4507,19 +4540,19 @@ public final class TctrlSchemaProto {
     public static final int MINLIMIT_FIELD_NUMBER = 6;
     private com.google.protobuf.Value minLimit_;
     /**
-     * <code>optional .google.protobuf.Value minLimit = 6;</code>
+     * <code>.google.protobuf.Value minLimit = 6;</code>
      */
     public boolean hasMinLimit() {
       return minLimit_ != null;
     }
     /**
-     * <code>optional .google.protobuf.Value minLimit = 6;</code>
+     * <code>.google.protobuf.Value minLimit = 6;</code>
      */
     public com.google.protobuf.Value getMinLimit() {
       return minLimit_ == null ? com.google.protobuf.Value.getDefaultInstance() : minLimit_;
     }
     /**
-     * <code>optional .google.protobuf.Value minLimit = 6;</code>
+     * <code>.google.protobuf.Value minLimit = 6;</code>
      */
     public com.google.protobuf.ValueOrBuilder getMinLimitOrBuilder() {
       return getMinLimit();
@@ -4528,19 +4561,19 @@ public final class TctrlSchemaProto {
     public static final int MAXLIMIT_FIELD_NUMBER = 7;
     private com.google.protobuf.Value maxLimit_;
     /**
-     * <code>optional .google.protobuf.Value maxLimit = 7;</code>
+     * <code>.google.protobuf.Value maxLimit = 7;</code>
      */
     public boolean hasMaxLimit() {
       return maxLimit_ != null;
     }
     /**
-     * <code>optional .google.protobuf.Value maxLimit = 7;</code>
+     * <code>.google.protobuf.Value maxLimit = 7;</code>
      */
     public com.google.protobuf.Value getMaxLimit() {
       return maxLimit_ == null ? com.google.protobuf.Value.getDefaultInstance() : maxLimit_;
     }
     /**
-     * <code>optional .google.protobuf.Value maxLimit = 7;</code>
+     * <code>.google.protobuf.Value maxLimit = 7;</code>
      */
     public com.google.protobuf.ValueOrBuilder getMaxLimitOrBuilder() {
       return getMaxLimit();
@@ -4549,19 +4582,19 @@ public final class TctrlSchemaProto {
     public static final int MINNORM_FIELD_NUMBER = 8;
     private com.google.protobuf.Value minNorm_;
     /**
-     * <code>optional .google.protobuf.Value minNorm = 8;</code>
+     * <code>.google.protobuf.Value minNorm = 8;</code>
      */
     public boolean hasMinNorm() {
       return minNorm_ != null;
     }
     /**
-     * <code>optional .google.protobuf.Value minNorm = 8;</code>
+     * <code>.google.protobuf.Value minNorm = 8;</code>
      */
     public com.google.protobuf.Value getMinNorm() {
       return minNorm_ == null ? com.google.protobuf.Value.getDefaultInstance() : minNorm_;
     }
     /**
-     * <code>optional .google.protobuf.Value minNorm = 8;</code>
+     * <code>.google.protobuf.Value minNorm = 8;</code>
      */
     public com.google.protobuf.ValueOrBuilder getMinNormOrBuilder() {
       return getMinNorm();
@@ -4570,19 +4603,19 @@ public final class TctrlSchemaProto {
     public static final int MAXNORM_FIELD_NUMBER = 9;
     private com.google.protobuf.Value maxNorm_;
     /**
-     * <code>optional .google.protobuf.Value maxNorm = 9;</code>
+     * <code>.google.protobuf.Value maxNorm = 9;</code>
      */
     public boolean hasMaxNorm() {
       return maxNorm_ != null;
     }
     /**
-     * <code>optional .google.protobuf.Value maxNorm = 9;</code>
+     * <code>.google.protobuf.Value maxNorm = 9;</code>
      */
     public com.google.protobuf.Value getMaxNorm() {
       return maxNorm_ == null ? com.google.protobuf.Value.getDefaultInstance() : maxNorm_;
     }
     /**
-     * <code>optional .google.protobuf.Value maxNorm = 9;</code>
+     * <code>.google.protobuf.Value maxNorm = 9;</code>
      */
     public com.google.protobuf.ValueOrBuilder getMaxNormOrBuilder() {
       return getMaxNorm();
@@ -4591,19 +4624,19 @@ public final class TctrlSchemaProto {
     public static final int DEFAULTVAL_FIELD_NUMBER = 10;
     private com.google.protobuf.Value defaultVal_;
     /**
-     * <code>optional .google.protobuf.Value defaultVal = 10;</code>
+     * <code>.google.protobuf.Value defaultVal = 10;</code>
      */
     public boolean hasDefaultVal() {
       return defaultVal_ != null;
     }
     /**
-     * <code>optional .google.protobuf.Value defaultVal = 10;</code>
+     * <code>.google.protobuf.Value defaultVal = 10;</code>
      */
     public com.google.protobuf.Value getDefaultVal() {
       return defaultVal_ == null ? com.google.protobuf.Value.getDefaultInstance() : defaultVal_;
     }
     /**
-     * <code>optional .google.protobuf.Value defaultVal = 10;</code>
+     * <code>.google.protobuf.Value defaultVal = 10;</code>
      */
     public com.google.protobuf.ValueOrBuilder getDefaultValOrBuilder() {
       return getDefaultVal();
@@ -4612,19 +4645,19 @@ public final class TctrlSchemaProto {
     public static final int VALUE_FIELD_NUMBER = 11;
     private com.google.protobuf.Value value_;
     /**
-     * <code>optional .google.protobuf.Value value = 11;</code>
+     * <code>.google.protobuf.Value value = 11;</code>
      */
     public boolean hasValue() {
       return value_ != null;
     }
     /**
-     * <code>optional .google.protobuf.Value value = 11;</code>
+     * <code>.google.protobuf.Value value = 11;</code>
      */
     public com.google.protobuf.Value getValue() {
       return value_ == null ? com.google.protobuf.Value.getDefaultInstance() : value_;
     }
     /**
-     * <code>optional .google.protobuf.Value value = 11;</code>
+     * <code>.google.protobuf.Value value = 11;</code>
      */
     public com.google.protobuf.ValueOrBuilder getValueOrBuilder() {
       return getValue();
@@ -4633,19 +4666,19 @@ public final class TctrlSchemaProto {
     public static final int VALUEINDEX_FIELD_NUMBER = 12;
     private com.google.protobuf.Int32Value valueIndex_;
     /**
-     * <code>optional .google.protobuf.Int32Value valueIndex = 12;</code>
+     * <code>.google.protobuf.Int32Value valueIndex = 12;</code>
      */
     public boolean hasValueIndex() {
       return valueIndex_ != null;
     }
     /**
-     * <code>optional .google.protobuf.Int32Value valueIndex = 12;</code>
+     * <code>.google.protobuf.Int32Value valueIndex = 12;</code>
      */
     public com.google.protobuf.Int32Value getValueIndex() {
       return valueIndex_ == null ? com.google.protobuf.Int32Value.getDefaultInstance() : valueIndex_;
     }
     /**
-     * <code>optional .google.protobuf.Int32Value valueIndex = 12;</code>
+     * <code>.google.protobuf.Int32Value valueIndex = 12;</code>
      */
     public com.google.protobuf.Int32ValueOrBuilder getValueIndexOrBuilder() {
       return getValueIndex();
@@ -4689,7 +4722,7 @@ public final class TctrlSchemaProto {
     public static final int STYLE_FIELD_NUMBER = 14;
     private volatile java.lang.Object style_;
     /**
-     * <code>optional string style = 14;</code>
+     * <code>string style = 14;</code>
      */
     public java.lang.String getStyle() {
       java.lang.Object ref = style_;
@@ -4704,7 +4737,7 @@ public final class TctrlSchemaProto {
       }
     }
     /**
-     * <code>optional string style = 14;</code>
+     * <code>string style = 14;</code>
      */
     public com.google.protobuf.ByteString
         getStyleBytes() {
@@ -4723,7 +4756,7 @@ public final class TctrlSchemaProto {
     public static final int GROUP_FIELD_NUMBER = 15;
     private volatile java.lang.Object group_;
     /**
-     * <code>optional string group = 15;</code>
+     * <code>string group = 15;</code>
      */
     public java.lang.String getGroup() {
       java.lang.Object ref = group_;
@@ -4738,7 +4771,7 @@ public final class TctrlSchemaProto {
       }
     }
     /**
-     * <code>optional string group = 15;</code>
+     * <code>string group = 15;</code>
      */
     public com.google.protobuf.ByteString
         getGroupBytes() {
@@ -4792,7 +4825,7 @@ public final class TctrlSchemaProto {
     public static final int OPTIONLISTKEY_FIELD_NUMBER = 17;
     private volatile java.lang.Object optionListKey_;
     /**
-     * <code>optional string optionListKey = 17;</code>
+     * <code>string optionListKey = 17;</code>
      */
     public java.lang.String getOptionListKey() {
       java.lang.Object ref = optionListKey_;
@@ -4807,7 +4840,7 @@ public final class TctrlSchemaProto {
       }
     }
     /**
-     * <code>optional string optionListKey = 17;</code>
+     * <code>string optionListKey = 17;</code>
      */
     public com.google.protobuf.ByteString
         getOptionListKeyBytes() {
@@ -4855,7 +4888,7 @@ public final class TctrlSchemaProto {
     public static final int HELP_FIELD_NUMBER = 19;
     private volatile java.lang.Object help_;
     /**
-     * <code>optional string help = 19;</code>
+     * <code>string help = 19;</code>
      */
     public java.lang.String getHelp() {
       java.lang.Object ref = help_;
@@ -4870,7 +4903,7 @@ public final class TctrlSchemaProto {
       }
     }
     /**
-     * <code>optional string help = 19;</code>
+     * <code>string help = 19;</code>
      */
     public com.google.protobuf.ByteString
         getHelpBytes() {
@@ -4889,7 +4922,7 @@ public final class TctrlSchemaProto {
     public static final int OFFHELP_FIELD_NUMBER = 20;
     private volatile java.lang.Object offHelp_;
     /**
-     * <code>optional string offHelp = 20;</code>
+     * <code>string offHelp = 20;</code>
      */
     public java.lang.String getOffHelp() {
       java.lang.Object ref = offHelp_;
@@ -4904,7 +4937,7 @@ public final class TctrlSchemaProto {
       }
     }
     /**
-     * <code>optional string offHelp = 20;</code>
+     * <code>string offHelp = 20;</code>
      */
     public com.google.protobuf.ByteString
         getOffHelpBytes() {
@@ -4923,7 +4956,7 @@ public final class TctrlSchemaProto {
     public static final int BUTTONTEXT_FIELD_NUMBER = 21;
     private volatile java.lang.Object buttonText_;
     /**
-     * <code>optional string buttonText = 21;</code>
+     * <code>string buttonText = 21;</code>
      */
     public java.lang.String getButtonText() {
       java.lang.Object ref = buttonText_;
@@ -4938,7 +4971,7 @@ public final class TctrlSchemaProto {
       }
     }
     /**
-     * <code>optional string buttonText = 21;</code>
+     * <code>string buttonText = 21;</code>
      */
     public com.google.protobuf.ByteString
         getButtonTextBytes() {
@@ -4957,7 +4990,7 @@ public final class TctrlSchemaProto {
     public static final int BUTTONOFFTEXT_FIELD_NUMBER = 22;
     private volatile java.lang.Object buttonOffText_;
     /**
-     * <code>optional string buttonOffText = 22;</code>
+     * <code>string buttonOffText = 22;</code>
      */
     public java.lang.String getButtonOffText() {
       java.lang.Object ref = buttonOffText_;
@@ -4972,7 +5005,7 @@ public final class TctrlSchemaProto {
       }
     }
     /**
-     * <code>optional string buttonOffText = 22;</code>
+     * <code>string buttonOffText = 22;</code>
      */
     public com.google.protobuf.ByteString
         getButtonOffTextBytes() {
@@ -4991,19 +5024,19 @@ public final class TctrlSchemaProto {
     public static final int PROPERTIES_FIELD_NUMBER = 1000;
     private com.google.protobuf.Struct properties_;
     /**
-     * <code>optional .google.protobuf.Struct properties = 1000;</code>
+     * <code>.google.protobuf.Struct properties = 1000;</code>
      */
     public boolean hasProperties() {
       return properties_ != null;
     }
     /**
-     * <code>optional .google.protobuf.Struct properties = 1000;</code>
+     * <code>.google.protobuf.Struct properties = 1000;</code>
      */
     public com.google.protobuf.Struct getProperties() {
       return properties_ == null ? com.google.protobuf.Struct.getDefaultInstance() : properties_;
     }
     /**
-     * <code>optional .google.protobuf.Struct properties = 1000;</code>
+     * <code>.google.protobuf.Struct properties = 1000;</code>
      */
     public com.google.protobuf.StructOrBuilder getPropertiesOrBuilder() {
       return getProperties();
@@ -5276,7 +5309,7 @@ public final class TctrlSchemaProto {
         return memoizedHashCode;
       }
       int hash = 41;
-      hash = (19 * hash) + getDescriptorForType().hashCode();
+      hash = (19 * hash) + getDescriptor().hashCode();
       hash = (37 * hash) + KEY_FIELD_NUMBER;
       hash = (53 * hash) + getKey().hashCode();
       hash = (37 * hash) + LABEL_FIELD_NUMBER;
@@ -5350,6 +5383,17 @@ public final class TctrlSchemaProto {
       return hash;
     }
 
+    public static net.t3kt.tctrl.schema.TctrlSchemaProto.ParamSpec parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static net.t3kt.tctrl.schema.TctrlSchemaProto.ParamSpec parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
     public static net.t3kt.tctrl.schema.TctrlSchemaProto.ParamSpec parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -5854,7 +5898,7 @@ public final class TctrlSchemaProto {
 
       private java.lang.Object key_ = "";
       /**
-       * <code>optional string key = 1;</code>
+       * <code>string key = 1;</code>
        */
       public java.lang.String getKey() {
         java.lang.Object ref = key_;
@@ -5869,7 +5913,7 @@ public final class TctrlSchemaProto {
         }
       }
       /**
-       * <code>optional string key = 1;</code>
+       * <code>string key = 1;</code>
        */
       public com.google.protobuf.ByteString
           getKeyBytes() {
@@ -5885,7 +5929,7 @@ public final class TctrlSchemaProto {
         }
       }
       /**
-       * <code>optional string key = 1;</code>
+       * <code>string key = 1;</code>
        */
       public Builder setKey(
           java.lang.String value) {
@@ -5898,7 +5942,7 @@ public final class TctrlSchemaProto {
         return this;
       }
       /**
-       * <code>optional string key = 1;</code>
+       * <code>string key = 1;</code>
        */
       public Builder clearKey() {
         
@@ -5907,7 +5951,7 @@ public final class TctrlSchemaProto {
         return this;
       }
       /**
-       * <code>optional string key = 1;</code>
+       * <code>string key = 1;</code>
        */
       public Builder setKeyBytes(
           com.google.protobuf.ByteString value) {
@@ -5923,7 +5967,7 @@ public final class TctrlSchemaProto {
 
       private java.lang.Object label_ = "";
       /**
-       * <code>optional string label = 2;</code>
+       * <code>string label = 2;</code>
        */
       public java.lang.String getLabel() {
         java.lang.Object ref = label_;
@@ -5938,7 +5982,7 @@ public final class TctrlSchemaProto {
         }
       }
       /**
-       * <code>optional string label = 2;</code>
+       * <code>string label = 2;</code>
        */
       public com.google.protobuf.ByteString
           getLabelBytes() {
@@ -5954,7 +5998,7 @@ public final class TctrlSchemaProto {
         }
       }
       /**
-       * <code>optional string label = 2;</code>
+       * <code>string label = 2;</code>
        */
       public Builder setLabel(
           java.lang.String value) {
@@ -5967,7 +6011,7 @@ public final class TctrlSchemaProto {
         return this;
       }
       /**
-       * <code>optional string label = 2;</code>
+       * <code>string label = 2;</code>
        */
       public Builder clearLabel() {
         
@@ -5976,7 +6020,7 @@ public final class TctrlSchemaProto {
         return this;
       }
       /**
-       * <code>optional string label = 2;</code>
+       * <code>string label = 2;</code>
        */
       public Builder setLabelBytes(
           com.google.protobuf.ByteString value) {
@@ -5992,13 +6036,13 @@ public final class TctrlSchemaProto {
 
       private int type_ = 0;
       /**
-       * <code>optional .tctrl.schema.ParamType type = 3;</code>
+       * <code>.tctrl.schema.ParamType type = 3;</code>
        */
       public int getTypeValue() {
         return type_;
       }
       /**
-       * <code>optional .tctrl.schema.ParamType type = 3;</code>
+       * <code>.tctrl.schema.ParamType type = 3;</code>
        */
       public Builder setTypeValue(int value) {
         type_ = value;
@@ -6006,14 +6050,14 @@ public final class TctrlSchemaProto {
         return this;
       }
       /**
-       * <code>optional .tctrl.schema.ParamType type = 3;</code>
+       * <code>.tctrl.schema.ParamType type = 3;</code>
        */
       public net.t3kt.tctrl.schema.TctrlSchemaProto.ParamType getType() {
         net.t3kt.tctrl.schema.TctrlSchemaProto.ParamType result = net.t3kt.tctrl.schema.TctrlSchemaProto.ParamType.valueOf(type_);
         return result == null ? net.t3kt.tctrl.schema.TctrlSchemaProto.ParamType.UNRECOGNIZED : result;
       }
       /**
-       * <code>optional .tctrl.schema.ParamType type = 3;</code>
+       * <code>.tctrl.schema.ParamType type = 3;</code>
        */
       public Builder setType(net.t3kt.tctrl.schema.TctrlSchemaProto.ParamType value) {
         if (value == null) {
@@ -6025,7 +6069,7 @@ public final class TctrlSchemaProto {
         return this;
       }
       /**
-       * <code>optional .tctrl.schema.ParamType type = 3;</code>
+       * <code>.tctrl.schema.ParamType type = 3;</code>
        */
       public Builder clearType() {
         
@@ -6036,7 +6080,7 @@ public final class TctrlSchemaProto {
 
       private java.lang.Object path_ = "";
       /**
-       * <code>optional string path = 4;</code>
+       * <code>string path = 4;</code>
        */
       public java.lang.String getPath() {
         java.lang.Object ref = path_;
@@ -6051,7 +6095,7 @@ public final class TctrlSchemaProto {
         }
       }
       /**
-       * <code>optional string path = 4;</code>
+       * <code>string path = 4;</code>
        */
       public com.google.protobuf.ByteString
           getPathBytes() {
@@ -6067,7 +6111,7 @@ public final class TctrlSchemaProto {
         }
       }
       /**
-       * <code>optional string path = 4;</code>
+       * <code>string path = 4;</code>
        */
       public Builder setPath(
           java.lang.String value) {
@@ -6080,7 +6124,7 @@ public final class TctrlSchemaProto {
         return this;
       }
       /**
-       * <code>optional string path = 4;</code>
+       * <code>string path = 4;</code>
        */
       public Builder clearPath() {
         
@@ -6089,7 +6133,7 @@ public final class TctrlSchemaProto {
         return this;
       }
       /**
-       * <code>optional string path = 4;</code>
+       * <code>string path = 4;</code>
        */
       public Builder setPathBytes(
           com.google.protobuf.ByteString value) {
@@ -6105,7 +6149,7 @@ public final class TctrlSchemaProto {
 
       private java.lang.Object otherType_ = "";
       /**
-       * <code>optional string otherType = 5;</code>
+       * <code>string otherType = 5;</code>
        */
       public java.lang.String getOtherType() {
         java.lang.Object ref = otherType_;
@@ -6120,7 +6164,7 @@ public final class TctrlSchemaProto {
         }
       }
       /**
-       * <code>optional string otherType = 5;</code>
+       * <code>string otherType = 5;</code>
        */
       public com.google.protobuf.ByteString
           getOtherTypeBytes() {
@@ -6136,7 +6180,7 @@ public final class TctrlSchemaProto {
         }
       }
       /**
-       * <code>optional string otherType = 5;</code>
+       * <code>string otherType = 5;</code>
        */
       public Builder setOtherType(
           java.lang.String value) {
@@ -6149,7 +6193,7 @@ public final class TctrlSchemaProto {
         return this;
       }
       /**
-       * <code>optional string otherType = 5;</code>
+       * <code>string otherType = 5;</code>
        */
       public Builder clearOtherType() {
         
@@ -6158,7 +6202,7 @@ public final class TctrlSchemaProto {
         return this;
       }
       /**
-       * <code>optional string otherType = 5;</code>
+       * <code>string otherType = 5;</code>
        */
       public Builder setOtherTypeBytes(
           com.google.protobuf.ByteString value) {
@@ -6176,13 +6220,13 @@ public final class TctrlSchemaProto {
       private com.google.protobuf.SingleFieldBuilderV3<
           com.google.protobuf.Value, com.google.protobuf.Value.Builder, com.google.protobuf.ValueOrBuilder> minLimitBuilder_;
       /**
-       * <code>optional .google.protobuf.Value minLimit = 6;</code>
+       * <code>.google.protobuf.Value minLimit = 6;</code>
        */
       public boolean hasMinLimit() {
         return minLimitBuilder_ != null || minLimit_ != null;
       }
       /**
-       * <code>optional .google.protobuf.Value minLimit = 6;</code>
+       * <code>.google.protobuf.Value minLimit = 6;</code>
        */
       public com.google.protobuf.Value getMinLimit() {
         if (minLimitBuilder_ == null) {
@@ -6192,7 +6236,7 @@ public final class TctrlSchemaProto {
         }
       }
       /**
-       * <code>optional .google.protobuf.Value minLimit = 6;</code>
+       * <code>.google.protobuf.Value minLimit = 6;</code>
        */
       public Builder setMinLimit(com.google.protobuf.Value value) {
         if (minLimitBuilder_ == null) {
@@ -6208,7 +6252,7 @@ public final class TctrlSchemaProto {
         return this;
       }
       /**
-       * <code>optional .google.protobuf.Value minLimit = 6;</code>
+       * <code>.google.protobuf.Value minLimit = 6;</code>
        */
       public Builder setMinLimit(
           com.google.protobuf.Value.Builder builderForValue) {
@@ -6222,7 +6266,7 @@ public final class TctrlSchemaProto {
         return this;
       }
       /**
-       * <code>optional .google.protobuf.Value minLimit = 6;</code>
+       * <code>.google.protobuf.Value minLimit = 6;</code>
        */
       public Builder mergeMinLimit(com.google.protobuf.Value value) {
         if (minLimitBuilder_ == null) {
@@ -6240,7 +6284,7 @@ public final class TctrlSchemaProto {
         return this;
       }
       /**
-       * <code>optional .google.protobuf.Value minLimit = 6;</code>
+       * <code>.google.protobuf.Value minLimit = 6;</code>
        */
       public Builder clearMinLimit() {
         if (minLimitBuilder_ == null) {
@@ -6254,7 +6298,7 @@ public final class TctrlSchemaProto {
         return this;
       }
       /**
-       * <code>optional .google.protobuf.Value minLimit = 6;</code>
+       * <code>.google.protobuf.Value minLimit = 6;</code>
        */
       public com.google.protobuf.Value.Builder getMinLimitBuilder() {
         
@@ -6262,7 +6306,7 @@ public final class TctrlSchemaProto {
         return getMinLimitFieldBuilder().getBuilder();
       }
       /**
-       * <code>optional .google.protobuf.Value minLimit = 6;</code>
+       * <code>.google.protobuf.Value minLimit = 6;</code>
        */
       public com.google.protobuf.ValueOrBuilder getMinLimitOrBuilder() {
         if (minLimitBuilder_ != null) {
@@ -6273,7 +6317,7 @@ public final class TctrlSchemaProto {
         }
       }
       /**
-       * <code>optional .google.protobuf.Value minLimit = 6;</code>
+       * <code>.google.protobuf.Value minLimit = 6;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           com.google.protobuf.Value, com.google.protobuf.Value.Builder, com.google.protobuf.ValueOrBuilder> 
@@ -6293,13 +6337,13 @@ public final class TctrlSchemaProto {
       private com.google.protobuf.SingleFieldBuilderV3<
           com.google.protobuf.Value, com.google.protobuf.Value.Builder, com.google.protobuf.ValueOrBuilder> maxLimitBuilder_;
       /**
-       * <code>optional .google.protobuf.Value maxLimit = 7;</code>
+       * <code>.google.protobuf.Value maxLimit = 7;</code>
        */
       public boolean hasMaxLimit() {
         return maxLimitBuilder_ != null || maxLimit_ != null;
       }
       /**
-       * <code>optional .google.protobuf.Value maxLimit = 7;</code>
+       * <code>.google.protobuf.Value maxLimit = 7;</code>
        */
       public com.google.protobuf.Value getMaxLimit() {
         if (maxLimitBuilder_ == null) {
@@ -6309,7 +6353,7 @@ public final class TctrlSchemaProto {
         }
       }
       /**
-       * <code>optional .google.protobuf.Value maxLimit = 7;</code>
+       * <code>.google.protobuf.Value maxLimit = 7;</code>
        */
       public Builder setMaxLimit(com.google.protobuf.Value value) {
         if (maxLimitBuilder_ == null) {
@@ -6325,7 +6369,7 @@ public final class TctrlSchemaProto {
         return this;
       }
       /**
-       * <code>optional .google.protobuf.Value maxLimit = 7;</code>
+       * <code>.google.protobuf.Value maxLimit = 7;</code>
        */
       public Builder setMaxLimit(
           com.google.protobuf.Value.Builder builderForValue) {
@@ -6339,7 +6383,7 @@ public final class TctrlSchemaProto {
         return this;
       }
       /**
-       * <code>optional .google.protobuf.Value maxLimit = 7;</code>
+       * <code>.google.protobuf.Value maxLimit = 7;</code>
        */
       public Builder mergeMaxLimit(com.google.protobuf.Value value) {
         if (maxLimitBuilder_ == null) {
@@ -6357,7 +6401,7 @@ public final class TctrlSchemaProto {
         return this;
       }
       /**
-       * <code>optional .google.protobuf.Value maxLimit = 7;</code>
+       * <code>.google.protobuf.Value maxLimit = 7;</code>
        */
       public Builder clearMaxLimit() {
         if (maxLimitBuilder_ == null) {
@@ -6371,7 +6415,7 @@ public final class TctrlSchemaProto {
         return this;
       }
       /**
-       * <code>optional .google.protobuf.Value maxLimit = 7;</code>
+       * <code>.google.protobuf.Value maxLimit = 7;</code>
        */
       public com.google.protobuf.Value.Builder getMaxLimitBuilder() {
         
@@ -6379,7 +6423,7 @@ public final class TctrlSchemaProto {
         return getMaxLimitFieldBuilder().getBuilder();
       }
       /**
-       * <code>optional .google.protobuf.Value maxLimit = 7;</code>
+       * <code>.google.protobuf.Value maxLimit = 7;</code>
        */
       public com.google.protobuf.ValueOrBuilder getMaxLimitOrBuilder() {
         if (maxLimitBuilder_ != null) {
@@ -6390,7 +6434,7 @@ public final class TctrlSchemaProto {
         }
       }
       /**
-       * <code>optional .google.protobuf.Value maxLimit = 7;</code>
+       * <code>.google.protobuf.Value maxLimit = 7;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           com.google.protobuf.Value, com.google.protobuf.Value.Builder, com.google.protobuf.ValueOrBuilder> 
@@ -6410,13 +6454,13 @@ public final class TctrlSchemaProto {
       private com.google.protobuf.SingleFieldBuilderV3<
           com.google.protobuf.Value, com.google.protobuf.Value.Builder, com.google.protobuf.ValueOrBuilder> minNormBuilder_;
       /**
-       * <code>optional .google.protobuf.Value minNorm = 8;</code>
+       * <code>.google.protobuf.Value minNorm = 8;</code>
        */
       public boolean hasMinNorm() {
         return minNormBuilder_ != null || minNorm_ != null;
       }
       /**
-       * <code>optional .google.protobuf.Value minNorm = 8;</code>
+       * <code>.google.protobuf.Value minNorm = 8;</code>
        */
       public com.google.protobuf.Value getMinNorm() {
         if (minNormBuilder_ == null) {
@@ -6426,7 +6470,7 @@ public final class TctrlSchemaProto {
         }
       }
       /**
-       * <code>optional .google.protobuf.Value minNorm = 8;</code>
+       * <code>.google.protobuf.Value minNorm = 8;</code>
        */
       public Builder setMinNorm(com.google.protobuf.Value value) {
         if (minNormBuilder_ == null) {
@@ -6442,7 +6486,7 @@ public final class TctrlSchemaProto {
         return this;
       }
       /**
-       * <code>optional .google.protobuf.Value minNorm = 8;</code>
+       * <code>.google.protobuf.Value minNorm = 8;</code>
        */
       public Builder setMinNorm(
           com.google.protobuf.Value.Builder builderForValue) {
@@ -6456,7 +6500,7 @@ public final class TctrlSchemaProto {
         return this;
       }
       /**
-       * <code>optional .google.protobuf.Value minNorm = 8;</code>
+       * <code>.google.protobuf.Value minNorm = 8;</code>
        */
       public Builder mergeMinNorm(com.google.protobuf.Value value) {
         if (minNormBuilder_ == null) {
@@ -6474,7 +6518,7 @@ public final class TctrlSchemaProto {
         return this;
       }
       /**
-       * <code>optional .google.protobuf.Value minNorm = 8;</code>
+       * <code>.google.protobuf.Value minNorm = 8;</code>
        */
       public Builder clearMinNorm() {
         if (minNormBuilder_ == null) {
@@ -6488,7 +6532,7 @@ public final class TctrlSchemaProto {
         return this;
       }
       /**
-       * <code>optional .google.protobuf.Value minNorm = 8;</code>
+       * <code>.google.protobuf.Value minNorm = 8;</code>
        */
       public com.google.protobuf.Value.Builder getMinNormBuilder() {
         
@@ -6496,7 +6540,7 @@ public final class TctrlSchemaProto {
         return getMinNormFieldBuilder().getBuilder();
       }
       /**
-       * <code>optional .google.protobuf.Value minNorm = 8;</code>
+       * <code>.google.protobuf.Value minNorm = 8;</code>
        */
       public com.google.protobuf.ValueOrBuilder getMinNormOrBuilder() {
         if (minNormBuilder_ != null) {
@@ -6507,7 +6551,7 @@ public final class TctrlSchemaProto {
         }
       }
       /**
-       * <code>optional .google.protobuf.Value minNorm = 8;</code>
+       * <code>.google.protobuf.Value minNorm = 8;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           com.google.protobuf.Value, com.google.protobuf.Value.Builder, com.google.protobuf.ValueOrBuilder> 
@@ -6527,13 +6571,13 @@ public final class TctrlSchemaProto {
       private com.google.protobuf.SingleFieldBuilderV3<
           com.google.protobuf.Value, com.google.protobuf.Value.Builder, com.google.protobuf.ValueOrBuilder> maxNormBuilder_;
       /**
-       * <code>optional .google.protobuf.Value maxNorm = 9;</code>
+       * <code>.google.protobuf.Value maxNorm = 9;</code>
        */
       public boolean hasMaxNorm() {
         return maxNormBuilder_ != null || maxNorm_ != null;
       }
       /**
-       * <code>optional .google.protobuf.Value maxNorm = 9;</code>
+       * <code>.google.protobuf.Value maxNorm = 9;</code>
        */
       public com.google.protobuf.Value getMaxNorm() {
         if (maxNormBuilder_ == null) {
@@ -6543,7 +6587,7 @@ public final class TctrlSchemaProto {
         }
       }
       /**
-       * <code>optional .google.protobuf.Value maxNorm = 9;</code>
+       * <code>.google.protobuf.Value maxNorm = 9;</code>
        */
       public Builder setMaxNorm(com.google.protobuf.Value value) {
         if (maxNormBuilder_ == null) {
@@ -6559,7 +6603,7 @@ public final class TctrlSchemaProto {
         return this;
       }
       /**
-       * <code>optional .google.protobuf.Value maxNorm = 9;</code>
+       * <code>.google.protobuf.Value maxNorm = 9;</code>
        */
       public Builder setMaxNorm(
           com.google.protobuf.Value.Builder builderForValue) {
@@ -6573,7 +6617,7 @@ public final class TctrlSchemaProto {
         return this;
       }
       /**
-       * <code>optional .google.protobuf.Value maxNorm = 9;</code>
+       * <code>.google.protobuf.Value maxNorm = 9;</code>
        */
       public Builder mergeMaxNorm(com.google.protobuf.Value value) {
         if (maxNormBuilder_ == null) {
@@ -6591,7 +6635,7 @@ public final class TctrlSchemaProto {
         return this;
       }
       /**
-       * <code>optional .google.protobuf.Value maxNorm = 9;</code>
+       * <code>.google.protobuf.Value maxNorm = 9;</code>
        */
       public Builder clearMaxNorm() {
         if (maxNormBuilder_ == null) {
@@ -6605,7 +6649,7 @@ public final class TctrlSchemaProto {
         return this;
       }
       /**
-       * <code>optional .google.protobuf.Value maxNorm = 9;</code>
+       * <code>.google.protobuf.Value maxNorm = 9;</code>
        */
       public com.google.protobuf.Value.Builder getMaxNormBuilder() {
         
@@ -6613,7 +6657,7 @@ public final class TctrlSchemaProto {
         return getMaxNormFieldBuilder().getBuilder();
       }
       /**
-       * <code>optional .google.protobuf.Value maxNorm = 9;</code>
+       * <code>.google.protobuf.Value maxNorm = 9;</code>
        */
       public com.google.protobuf.ValueOrBuilder getMaxNormOrBuilder() {
         if (maxNormBuilder_ != null) {
@@ -6624,7 +6668,7 @@ public final class TctrlSchemaProto {
         }
       }
       /**
-       * <code>optional .google.protobuf.Value maxNorm = 9;</code>
+       * <code>.google.protobuf.Value maxNorm = 9;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           com.google.protobuf.Value, com.google.protobuf.Value.Builder, com.google.protobuf.ValueOrBuilder> 
@@ -6644,13 +6688,13 @@ public final class TctrlSchemaProto {
       private com.google.protobuf.SingleFieldBuilderV3<
           com.google.protobuf.Value, com.google.protobuf.Value.Builder, com.google.protobuf.ValueOrBuilder> defaultValBuilder_;
       /**
-       * <code>optional .google.protobuf.Value defaultVal = 10;</code>
+       * <code>.google.protobuf.Value defaultVal = 10;</code>
        */
       public boolean hasDefaultVal() {
         return defaultValBuilder_ != null || defaultVal_ != null;
       }
       /**
-       * <code>optional .google.protobuf.Value defaultVal = 10;</code>
+       * <code>.google.protobuf.Value defaultVal = 10;</code>
        */
       public com.google.protobuf.Value getDefaultVal() {
         if (defaultValBuilder_ == null) {
@@ -6660,7 +6704,7 @@ public final class TctrlSchemaProto {
         }
       }
       /**
-       * <code>optional .google.protobuf.Value defaultVal = 10;</code>
+       * <code>.google.protobuf.Value defaultVal = 10;</code>
        */
       public Builder setDefaultVal(com.google.protobuf.Value value) {
         if (defaultValBuilder_ == null) {
@@ -6676,7 +6720,7 @@ public final class TctrlSchemaProto {
         return this;
       }
       /**
-       * <code>optional .google.protobuf.Value defaultVal = 10;</code>
+       * <code>.google.protobuf.Value defaultVal = 10;</code>
        */
       public Builder setDefaultVal(
           com.google.protobuf.Value.Builder builderForValue) {
@@ -6690,7 +6734,7 @@ public final class TctrlSchemaProto {
         return this;
       }
       /**
-       * <code>optional .google.protobuf.Value defaultVal = 10;</code>
+       * <code>.google.protobuf.Value defaultVal = 10;</code>
        */
       public Builder mergeDefaultVal(com.google.protobuf.Value value) {
         if (defaultValBuilder_ == null) {
@@ -6708,7 +6752,7 @@ public final class TctrlSchemaProto {
         return this;
       }
       /**
-       * <code>optional .google.protobuf.Value defaultVal = 10;</code>
+       * <code>.google.protobuf.Value defaultVal = 10;</code>
        */
       public Builder clearDefaultVal() {
         if (defaultValBuilder_ == null) {
@@ -6722,7 +6766,7 @@ public final class TctrlSchemaProto {
         return this;
       }
       /**
-       * <code>optional .google.protobuf.Value defaultVal = 10;</code>
+       * <code>.google.protobuf.Value defaultVal = 10;</code>
        */
       public com.google.protobuf.Value.Builder getDefaultValBuilder() {
         
@@ -6730,7 +6774,7 @@ public final class TctrlSchemaProto {
         return getDefaultValFieldBuilder().getBuilder();
       }
       /**
-       * <code>optional .google.protobuf.Value defaultVal = 10;</code>
+       * <code>.google.protobuf.Value defaultVal = 10;</code>
        */
       public com.google.protobuf.ValueOrBuilder getDefaultValOrBuilder() {
         if (defaultValBuilder_ != null) {
@@ -6741,7 +6785,7 @@ public final class TctrlSchemaProto {
         }
       }
       /**
-       * <code>optional .google.protobuf.Value defaultVal = 10;</code>
+       * <code>.google.protobuf.Value defaultVal = 10;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           com.google.protobuf.Value, com.google.protobuf.Value.Builder, com.google.protobuf.ValueOrBuilder> 
@@ -6761,13 +6805,13 @@ public final class TctrlSchemaProto {
       private com.google.protobuf.SingleFieldBuilderV3<
           com.google.protobuf.Value, com.google.protobuf.Value.Builder, com.google.protobuf.ValueOrBuilder> valueBuilder_;
       /**
-       * <code>optional .google.protobuf.Value value = 11;</code>
+       * <code>.google.protobuf.Value value = 11;</code>
        */
       public boolean hasValue() {
         return valueBuilder_ != null || value_ != null;
       }
       /**
-       * <code>optional .google.protobuf.Value value = 11;</code>
+       * <code>.google.protobuf.Value value = 11;</code>
        */
       public com.google.protobuf.Value getValue() {
         if (valueBuilder_ == null) {
@@ -6777,7 +6821,7 @@ public final class TctrlSchemaProto {
         }
       }
       /**
-       * <code>optional .google.protobuf.Value value = 11;</code>
+       * <code>.google.protobuf.Value value = 11;</code>
        */
       public Builder setValue(com.google.protobuf.Value value) {
         if (valueBuilder_ == null) {
@@ -6793,7 +6837,7 @@ public final class TctrlSchemaProto {
         return this;
       }
       /**
-       * <code>optional .google.protobuf.Value value = 11;</code>
+       * <code>.google.protobuf.Value value = 11;</code>
        */
       public Builder setValue(
           com.google.protobuf.Value.Builder builderForValue) {
@@ -6807,7 +6851,7 @@ public final class TctrlSchemaProto {
         return this;
       }
       /**
-       * <code>optional .google.protobuf.Value value = 11;</code>
+       * <code>.google.protobuf.Value value = 11;</code>
        */
       public Builder mergeValue(com.google.protobuf.Value value) {
         if (valueBuilder_ == null) {
@@ -6825,7 +6869,7 @@ public final class TctrlSchemaProto {
         return this;
       }
       /**
-       * <code>optional .google.protobuf.Value value = 11;</code>
+       * <code>.google.protobuf.Value value = 11;</code>
        */
       public Builder clearValue() {
         if (valueBuilder_ == null) {
@@ -6839,7 +6883,7 @@ public final class TctrlSchemaProto {
         return this;
       }
       /**
-       * <code>optional .google.protobuf.Value value = 11;</code>
+       * <code>.google.protobuf.Value value = 11;</code>
        */
       public com.google.protobuf.Value.Builder getValueBuilder() {
         
@@ -6847,7 +6891,7 @@ public final class TctrlSchemaProto {
         return getValueFieldBuilder().getBuilder();
       }
       /**
-       * <code>optional .google.protobuf.Value value = 11;</code>
+       * <code>.google.protobuf.Value value = 11;</code>
        */
       public com.google.protobuf.ValueOrBuilder getValueOrBuilder() {
         if (valueBuilder_ != null) {
@@ -6858,7 +6902,7 @@ public final class TctrlSchemaProto {
         }
       }
       /**
-       * <code>optional .google.protobuf.Value value = 11;</code>
+       * <code>.google.protobuf.Value value = 11;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           com.google.protobuf.Value, com.google.protobuf.Value.Builder, com.google.protobuf.ValueOrBuilder> 
@@ -6878,13 +6922,13 @@ public final class TctrlSchemaProto {
       private com.google.protobuf.SingleFieldBuilderV3<
           com.google.protobuf.Int32Value, com.google.protobuf.Int32Value.Builder, com.google.protobuf.Int32ValueOrBuilder> valueIndexBuilder_;
       /**
-       * <code>optional .google.protobuf.Int32Value valueIndex = 12;</code>
+       * <code>.google.protobuf.Int32Value valueIndex = 12;</code>
        */
       public boolean hasValueIndex() {
         return valueIndexBuilder_ != null || valueIndex_ != null;
       }
       /**
-       * <code>optional .google.protobuf.Int32Value valueIndex = 12;</code>
+       * <code>.google.protobuf.Int32Value valueIndex = 12;</code>
        */
       public com.google.protobuf.Int32Value getValueIndex() {
         if (valueIndexBuilder_ == null) {
@@ -6894,7 +6938,7 @@ public final class TctrlSchemaProto {
         }
       }
       /**
-       * <code>optional .google.protobuf.Int32Value valueIndex = 12;</code>
+       * <code>.google.protobuf.Int32Value valueIndex = 12;</code>
        */
       public Builder setValueIndex(com.google.protobuf.Int32Value value) {
         if (valueIndexBuilder_ == null) {
@@ -6910,7 +6954,7 @@ public final class TctrlSchemaProto {
         return this;
       }
       /**
-       * <code>optional .google.protobuf.Int32Value valueIndex = 12;</code>
+       * <code>.google.protobuf.Int32Value valueIndex = 12;</code>
        */
       public Builder setValueIndex(
           com.google.protobuf.Int32Value.Builder builderForValue) {
@@ -6924,7 +6968,7 @@ public final class TctrlSchemaProto {
         return this;
       }
       /**
-       * <code>optional .google.protobuf.Int32Value valueIndex = 12;</code>
+       * <code>.google.protobuf.Int32Value valueIndex = 12;</code>
        */
       public Builder mergeValueIndex(com.google.protobuf.Int32Value value) {
         if (valueIndexBuilder_ == null) {
@@ -6942,7 +6986,7 @@ public final class TctrlSchemaProto {
         return this;
       }
       /**
-       * <code>optional .google.protobuf.Int32Value valueIndex = 12;</code>
+       * <code>.google.protobuf.Int32Value valueIndex = 12;</code>
        */
       public Builder clearValueIndex() {
         if (valueIndexBuilder_ == null) {
@@ -6956,7 +7000,7 @@ public final class TctrlSchemaProto {
         return this;
       }
       /**
-       * <code>optional .google.protobuf.Int32Value valueIndex = 12;</code>
+       * <code>.google.protobuf.Int32Value valueIndex = 12;</code>
        */
       public com.google.protobuf.Int32Value.Builder getValueIndexBuilder() {
         
@@ -6964,7 +7008,7 @@ public final class TctrlSchemaProto {
         return getValueIndexFieldBuilder().getBuilder();
       }
       /**
-       * <code>optional .google.protobuf.Int32Value valueIndex = 12;</code>
+       * <code>.google.protobuf.Int32Value valueIndex = 12;</code>
        */
       public com.google.protobuf.Int32ValueOrBuilder getValueIndexOrBuilder() {
         if (valueIndexBuilder_ != null) {
@@ -6975,7 +7019,7 @@ public final class TctrlSchemaProto {
         }
       }
       /**
-       * <code>optional .google.protobuf.Int32Value valueIndex = 12;</code>
+       * <code>.google.protobuf.Int32Value valueIndex = 12;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           com.google.protobuf.Int32Value, com.google.protobuf.Int32Value.Builder, com.google.protobuf.Int32ValueOrBuilder> 
@@ -7233,7 +7277,7 @@ public final class TctrlSchemaProto {
 
       private java.lang.Object style_ = "";
       /**
-       * <code>optional string style = 14;</code>
+       * <code>string style = 14;</code>
        */
       public java.lang.String getStyle() {
         java.lang.Object ref = style_;
@@ -7248,7 +7292,7 @@ public final class TctrlSchemaProto {
         }
       }
       /**
-       * <code>optional string style = 14;</code>
+       * <code>string style = 14;</code>
        */
       public com.google.protobuf.ByteString
           getStyleBytes() {
@@ -7264,7 +7308,7 @@ public final class TctrlSchemaProto {
         }
       }
       /**
-       * <code>optional string style = 14;</code>
+       * <code>string style = 14;</code>
        */
       public Builder setStyle(
           java.lang.String value) {
@@ -7277,7 +7321,7 @@ public final class TctrlSchemaProto {
         return this;
       }
       /**
-       * <code>optional string style = 14;</code>
+       * <code>string style = 14;</code>
        */
       public Builder clearStyle() {
         
@@ -7286,7 +7330,7 @@ public final class TctrlSchemaProto {
         return this;
       }
       /**
-       * <code>optional string style = 14;</code>
+       * <code>string style = 14;</code>
        */
       public Builder setStyleBytes(
           com.google.protobuf.ByteString value) {
@@ -7302,7 +7346,7 @@ public final class TctrlSchemaProto {
 
       private java.lang.Object group_ = "";
       /**
-       * <code>optional string group = 15;</code>
+       * <code>string group = 15;</code>
        */
       public java.lang.String getGroup() {
         java.lang.Object ref = group_;
@@ -7317,7 +7361,7 @@ public final class TctrlSchemaProto {
         }
       }
       /**
-       * <code>optional string group = 15;</code>
+       * <code>string group = 15;</code>
        */
       public com.google.protobuf.ByteString
           getGroupBytes() {
@@ -7333,7 +7377,7 @@ public final class TctrlSchemaProto {
         }
       }
       /**
-       * <code>optional string group = 15;</code>
+       * <code>string group = 15;</code>
        */
       public Builder setGroup(
           java.lang.String value) {
@@ -7346,7 +7390,7 @@ public final class TctrlSchemaProto {
         return this;
       }
       /**
-       * <code>optional string group = 15;</code>
+       * <code>string group = 15;</code>
        */
       public Builder clearGroup() {
         
@@ -7355,7 +7399,7 @@ public final class TctrlSchemaProto {
         return this;
       }
       /**
-       * <code>optional string group = 15;</code>
+       * <code>string group = 15;</code>
        */
       public Builder setGroupBytes(
           com.google.protobuf.ByteString value) {
@@ -7611,7 +7655,7 @@ public final class TctrlSchemaProto {
 
       private java.lang.Object optionListKey_ = "";
       /**
-       * <code>optional string optionListKey = 17;</code>
+       * <code>string optionListKey = 17;</code>
        */
       public java.lang.String getOptionListKey() {
         java.lang.Object ref = optionListKey_;
@@ -7626,7 +7670,7 @@ public final class TctrlSchemaProto {
         }
       }
       /**
-       * <code>optional string optionListKey = 17;</code>
+       * <code>string optionListKey = 17;</code>
        */
       public com.google.protobuf.ByteString
           getOptionListKeyBytes() {
@@ -7642,7 +7686,7 @@ public final class TctrlSchemaProto {
         }
       }
       /**
-       * <code>optional string optionListKey = 17;</code>
+       * <code>string optionListKey = 17;</code>
        */
       public Builder setOptionListKey(
           java.lang.String value) {
@@ -7655,7 +7699,7 @@ public final class TctrlSchemaProto {
         return this;
       }
       /**
-       * <code>optional string optionListKey = 17;</code>
+       * <code>string optionListKey = 17;</code>
        */
       public Builder clearOptionListKey() {
         
@@ -7664,7 +7708,7 @@ public final class TctrlSchemaProto {
         return this;
       }
       /**
-       * <code>optional string optionListKey = 17;</code>
+       * <code>string optionListKey = 17;</code>
        */
       public Builder setOptionListKeyBytes(
           com.google.protobuf.ByteString value) {
@@ -7774,7 +7818,7 @@ public final class TctrlSchemaProto {
 
       private java.lang.Object help_ = "";
       /**
-       * <code>optional string help = 19;</code>
+       * <code>string help = 19;</code>
        */
       public java.lang.String getHelp() {
         java.lang.Object ref = help_;
@@ -7789,7 +7833,7 @@ public final class TctrlSchemaProto {
         }
       }
       /**
-       * <code>optional string help = 19;</code>
+       * <code>string help = 19;</code>
        */
       public com.google.protobuf.ByteString
           getHelpBytes() {
@@ -7805,7 +7849,7 @@ public final class TctrlSchemaProto {
         }
       }
       /**
-       * <code>optional string help = 19;</code>
+       * <code>string help = 19;</code>
        */
       public Builder setHelp(
           java.lang.String value) {
@@ -7818,7 +7862,7 @@ public final class TctrlSchemaProto {
         return this;
       }
       /**
-       * <code>optional string help = 19;</code>
+       * <code>string help = 19;</code>
        */
       public Builder clearHelp() {
         
@@ -7827,7 +7871,7 @@ public final class TctrlSchemaProto {
         return this;
       }
       /**
-       * <code>optional string help = 19;</code>
+       * <code>string help = 19;</code>
        */
       public Builder setHelpBytes(
           com.google.protobuf.ByteString value) {
@@ -7843,7 +7887,7 @@ public final class TctrlSchemaProto {
 
       private java.lang.Object offHelp_ = "";
       /**
-       * <code>optional string offHelp = 20;</code>
+       * <code>string offHelp = 20;</code>
        */
       public java.lang.String getOffHelp() {
         java.lang.Object ref = offHelp_;
@@ -7858,7 +7902,7 @@ public final class TctrlSchemaProto {
         }
       }
       /**
-       * <code>optional string offHelp = 20;</code>
+       * <code>string offHelp = 20;</code>
        */
       public com.google.protobuf.ByteString
           getOffHelpBytes() {
@@ -7874,7 +7918,7 @@ public final class TctrlSchemaProto {
         }
       }
       /**
-       * <code>optional string offHelp = 20;</code>
+       * <code>string offHelp = 20;</code>
        */
       public Builder setOffHelp(
           java.lang.String value) {
@@ -7887,7 +7931,7 @@ public final class TctrlSchemaProto {
         return this;
       }
       /**
-       * <code>optional string offHelp = 20;</code>
+       * <code>string offHelp = 20;</code>
        */
       public Builder clearOffHelp() {
         
@@ -7896,7 +7940,7 @@ public final class TctrlSchemaProto {
         return this;
       }
       /**
-       * <code>optional string offHelp = 20;</code>
+       * <code>string offHelp = 20;</code>
        */
       public Builder setOffHelpBytes(
           com.google.protobuf.ByteString value) {
@@ -7912,7 +7956,7 @@ public final class TctrlSchemaProto {
 
       private java.lang.Object buttonText_ = "";
       /**
-       * <code>optional string buttonText = 21;</code>
+       * <code>string buttonText = 21;</code>
        */
       public java.lang.String getButtonText() {
         java.lang.Object ref = buttonText_;
@@ -7927,7 +7971,7 @@ public final class TctrlSchemaProto {
         }
       }
       /**
-       * <code>optional string buttonText = 21;</code>
+       * <code>string buttonText = 21;</code>
        */
       public com.google.protobuf.ByteString
           getButtonTextBytes() {
@@ -7943,7 +7987,7 @@ public final class TctrlSchemaProto {
         }
       }
       /**
-       * <code>optional string buttonText = 21;</code>
+       * <code>string buttonText = 21;</code>
        */
       public Builder setButtonText(
           java.lang.String value) {
@@ -7956,7 +8000,7 @@ public final class TctrlSchemaProto {
         return this;
       }
       /**
-       * <code>optional string buttonText = 21;</code>
+       * <code>string buttonText = 21;</code>
        */
       public Builder clearButtonText() {
         
@@ -7965,7 +8009,7 @@ public final class TctrlSchemaProto {
         return this;
       }
       /**
-       * <code>optional string buttonText = 21;</code>
+       * <code>string buttonText = 21;</code>
        */
       public Builder setButtonTextBytes(
           com.google.protobuf.ByteString value) {
@@ -7981,7 +8025,7 @@ public final class TctrlSchemaProto {
 
       private java.lang.Object buttonOffText_ = "";
       /**
-       * <code>optional string buttonOffText = 22;</code>
+       * <code>string buttonOffText = 22;</code>
        */
       public java.lang.String getButtonOffText() {
         java.lang.Object ref = buttonOffText_;
@@ -7996,7 +8040,7 @@ public final class TctrlSchemaProto {
         }
       }
       /**
-       * <code>optional string buttonOffText = 22;</code>
+       * <code>string buttonOffText = 22;</code>
        */
       public com.google.protobuf.ByteString
           getButtonOffTextBytes() {
@@ -8012,7 +8056,7 @@ public final class TctrlSchemaProto {
         }
       }
       /**
-       * <code>optional string buttonOffText = 22;</code>
+       * <code>string buttonOffText = 22;</code>
        */
       public Builder setButtonOffText(
           java.lang.String value) {
@@ -8025,7 +8069,7 @@ public final class TctrlSchemaProto {
         return this;
       }
       /**
-       * <code>optional string buttonOffText = 22;</code>
+       * <code>string buttonOffText = 22;</code>
        */
       public Builder clearButtonOffText() {
         
@@ -8034,7 +8078,7 @@ public final class TctrlSchemaProto {
         return this;
       }
       /**
-       * <code>optional string buttonOffText = 22;</code>
+       * <code>string buttonOffText = 22;</code>
        */
       public Builder setButtonOffTextBytes(
           com.google.protobuf.ByteString value) {
@@ -8052,13 +8096,13 @@ public final class TctrlSchemaProto {
       private com.google.protobuf.SingleFieldBuilderV3<
           com.google.protobuf.Struct, com.google.protobuf.Struct.Builder, com.google.protobuf.StructOrBuilder> propertiesBuilder_;
       /**
-       * <code>optional .google.protobuf.Struct properties = 1000;</code>
+       * <code>.google.protobuf.Struct properties = 1000;</code>
        */
       public boolean hasProperties() {
         return propertiesBuilder_ != null || properties_ != null;
       }
       /**
-       * <code>optional .google.protobuf.Struct properties = 1000;</code>
+       * <code>.google.protobuf.Struct properties = 1000;</code>
        */
       public com.google.protobuf.Struct getProperties() {
         if (propertiesBuilder_ == null) {
@@ -8068,7 +8112,7 @@ public final class TctrlSchemaProto {
         }
       }
       /**
-       * <code>optional .google.protobuf.Struct properties = 1000;</code>
+       * <code>.google.protobuf.Struct properties = 1000;</code>
        */
       public Builder setProperties(com.google.protobuf.Struct value) {
         if (propertiesBuilder_ == null) {
@@ -8084,7 +8128,7 @@ public final class TctrlSchemaProto {
         return this;
       }
       /**
-       * <code>optional .google.protobuf.Struct properties = 1000;</code>
+       * <code>.google.protobuf.Struct properties = 1000;</code>
        */
       public Builder setProperties(
           com.google.protobuf.Struct.Builder builderForValue) {
@@ -8098,7 +8142,7 @@ public final class TctrlSchemaProto {
         return this;
       }
       /**
-       * <code>optional .google.protobuf.Struct properties = 1000;</code>
+       * <code>.google.protobuf.Struct properties = 1000;</code>
        */
       public Builder mergeProperties(com.google.protobuf.Struct value) {
         if (propertiesBuilder_ == null) {
@@ -8116,7 +8160,7 @@ public final class TctrlSchemaProto {
         return this;
       }
       /**
-       * <code>optional .google.protobuf.Struct properties = 1000;</code>
+       * <code>.google.protobuf.Struct properties = 1000;</code>
        */
       public Builder clearProperties() {
         if (propertiesBuilder_ == null) {
@@ -8130,7 +8174,7 @@ public final class TctrlSchemaProto {
         return this;
       }
       /**
-       * <code>optional .google.protobuf.Struct properties = 1000;</code>
+       * <code>.google.protobuf.Struct properties = 1000;</code>
        */
       public com.google.protobuf.Struct.Builder getPropertiesBuilder() {
         
@@ -8138,7 +8182,7 @@ public final class TctrlSchemaProto {
         return getPropertiesFieldBuilder().getBuilder();
       }
       /**
-       * <code>optional .google.protobuf.Struct properties = 1000;</code>
+       * <code>.google.protobuf.Struct properties = 1000;</code>
        */
       public com.google.protobuf.StructOrBuilder getPropertiesOrBuilder() {
         if (propertiesBuilder_ != null) {
@@ -8149,7 +8193,7 @@ public final class TctrlSchemaProto {
         }
       }
       /**
-       * <code>optional .google.protobuf.Struct properties = 1000;</code>
+       * <code>.google.protobuf.Struct properties = 1000;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           com.google.protobuf.Struct, com.google.protobuf.Struct.Builder, com.google.protobuf.StructOrBuilder> 
@@ -8218,21 +8262,21 @@ public final class TctrlSchemaProto {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>optional string key = 1;</code>
+     * <code>string key = 1;</code>
      */
     java.lang.String getKey();
     /**
-     * <code>optional string key = 1;</code>
+     * <code>string key = 1;</code>
      */
     com.google.protobuf.ByteString
         getKeyBytes();
 
     /**
-     * <code>optional string label = 2;</code>
+     * <code>string label = 2;</code>
      */
     java.lang.String getLabel();
     /**
-     * <code>optional string label = 2;</code>
+     * <code>string label = 2;</code>
      */
     com.google.protobuf.ByteString
         getLabelBytes();
@@ -8391,7 +8435,7 @@ public final class TctrlSchemaProto {
     public static final int KEY_FIELD_NUMBER = 1;
     private volatile java.lang.Object key_;
     /**
-     * <code>optional string key = 1;</code>
+     * <code>string key = 1;</code>
      */
     public java.lang.String getKey() {
       java.lang.Object ref = key_;
@@ -8406,7 +8450,7 @@ public final class TctrlSchemaProto {
       }
     }
     /**
-     * <code>optional string key = 1;</code>
+     * <code>string key = 1;</code>
      */
     public com.google.protobuf.ByteString
         getKeyBytes() {
@@ -8425,7 +8469,7 @@ public final class TctrlSchemaProto {
     public static final int LABEL_FIELD_NUMBER = 2;
     private volatile java.lang.Object label_;
     /**
-     * <code>optional string label = 2;</code>
+     * <code>string label = 2;</code>
      */
     public java.lang.String getLabel() {
       java.lang.Object ref = label_;
@@ -8440,7 +8484,7 @@ public final class TctrlSchemaProto {
       }
     }
     /**
-     * <code>optional string label = 2;</code>
+     * <code>string label = 2;</code>
      */
     public com.google.protobuf.ByteString
         getLabelBytes() {
@@ -8604,7 +8648,7 @@ public final class TctrlSchemaProto {
         return memoizedHashCode;
       }
       int hash = 41;
-      hash = (19 * hash) + getDescriptorForType().hashCode();
+      hash = (19 * hash) + getDescriptor().hashCode();
       hash = (37 * hash) + KEY_FIELD_NUMBER;
       hash = (53 * hash) + getKey().hashCode();
       hash = (37 * hash) + LABEL_FIELD_NUMBER;
@@ -8622,6 +8666,17 @@ public final class TctrlSchemaProto {
       return hash;
     }
 
+    public static net.t3kt.tctrl.schema.TctrlSchemaProto.ModuleTypeSpec parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static net.t3kt.tctrl.schema.TctrlSchemaProto.ModuleTypeSpec parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
     public static net.t3kt.tctrl.schema.TctrlSchemaProto.ModuleTypeSpec parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -8928,7 +8983,7 @@ public final class TctrlSchemaProto {
 
       private java.lang.Object key_ = "";
       /**
-       * <code>optional string key = 1;</code>
+       * <code>string key = 1;</code>
        */
       public java.lang.String getKey() {
         java.lang.Object ref = key_;
@@ -8943,7 +8998,7 @@ public final class TctrlSchemaProto {
         }
       }
       /**
-       * <code>optional string key = 1;</code>
+       * <code>string key = 1;</code>
        */
       public com.google.protobuf.ByteString
           getKeyBytes() {
@@ -8959,7 +9014,7 @@ public final class TctrlSchemaProto {
         }
       }
       /**
-       * <code>optional string key = 1;</code>
+       * <code>string key = 1;</code>
        */
       public Builder setKey(
           java.lang.String value) {
@@ -8972,7 +9027,7 @@ public final class TctrlSchemaProto {
         return this;
       }
       /**
-       * <code>optional string key = 1;</code>
+       * <code>string key = 1;</code>
        */
       public Builder clearKey() {
         
@@ -8981,7 +9036,7 @@ public final class TctrlSchemaProto {
         return this;
       }
       /**
-       * <code>optional string key = 1;</code>
+       * <code>string key = 1;</code>
        */
       public Builder setKeyBytes(
           com.google.protobuf.ByteString value) {
@@ -8997,7 +9052,7 @@ public final class TctrlSchemaProto {
 
       private java.lang.Object label_ = "";
       /**
-       * <code>optional string label = 2;</code>
+       * <code>string label = 2;</code>
        */
       public java.lang.String getLabel() {
         java.lang.Object ref = label_;
@@ -9012,7 +9067,7 @@ public final class TctrlSchemaProto {
         }
       }
       /**
-       * <code>optional string label = 2;</code>
+       * <code>string label = 2;</code>
        */
       public com.google.protobuf.ByteString
           getLabelBytes() {
@@ -9028,7 +9083,7 @@ public final class TctrlSchemaProto {
         }
       }
       /**
-       * <code>optional string label = 2;</code>
+       * <code>string label = 2;</code>
        */
       public Builder setLabel(
           java.lang.String value) {
@@ -9041,7 +9096,7 @@ public final class TctrlSchemaProto {
         return this;
       }
       /**
-       * <code>optional string label = 2;</code>
+       * <code>string label = 2;</code>
        */
       public Builder clearLabel() {
         
@@ -9050,7 +9105,7 @@ public final class TctrlSchemaProto {
         return this;
       }
       /**
-       * <code>optional string label = 2;</code>
+       * <code>string label = 2;</code>
        */
       public Builder setLabelBytes(
           com.google.protobuf.ByteString value) {
@@ -9597,51 +9652,51 @@ public final class TctrlSchemaProto {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>optional string key = 1;</code>
+     * <code>string key = 1;</code>
      */
     java.lang.String getKey();
     /**
-     * <code>optional string key = 1;</code>
+     * <code>string key = 1;</code>
      */
     com.google.protobuf.ByteString
         getKeyBytes();
 
     /**
-     * <code>optional string label = 2;</code>
+     * <code>string label = 2;</code>
      */
     java.lang.String getLabel();
     /**
-     * <code>optional string label = 2;</code>
+     * <code>string label = 2;</code>
      */
     com.google.protobuf.ByteString
         getLabelBytes();
 
     /**
-     * <code>optional string path = 3;</code>
+     * <code>string path = 3;</code>
      */
     java.lang.String getPath();
     /**
-     * <code>optional string path = 3;</code>
+     * <code>string path = 3;</code>
      */
     com.google.protobuf.ByteString
         getPathBytes();
 
     /**
-     * <code>optional string moduleType = 4;</code>
+     * <code>string moduleType = 4;</code>
      */
     java.lang.String getModuleType();
     /**
-     * <code>optional string moduleType = 4;</code>
+     * <code>string moduleType = 4;</code>
      */
     com.google.protobuf.ByteString
         getModuleTypeBytes();
 
     /**
-     * <code>optional string group = 5;</code>
+     * <code>string group = 5;</code>
      */
     java.lang.String getGroup();
     /**
-     * <code>optional string group = 5;</code>
+     * <code>string group = 5;</code>
      */
     com.google.protobuf.ByteString
         getGroupBytes();
@@ -9927,7 +9982,7 @@ public final class TctrlSchemaProto {
     public static final int KEY_FIELD_NUMBER = 1;
     private volatile java.lang.Object key_;
     /**
-     * <code>optional string key = 1;</code>
+     * <code>string key = 1;</code>
      */
     public java.lang.String getKey() {
       java.lang.Object ref = key_;
@@ -9942,7 +9997,7 @@ public final class TctrlSchemaProto {
       }
     }
     /**
-     * <code>optional string key = 1;</code>
+     * <code>string key = 1;</code>
      */
     public com.google.protobuf.ByteString
         getKeyBytes() {
@@ -9961,7 +10016,7 @@ public final class TctrlSchemaProto {
     public static final int LABEL_FIELD_NUMBER = 2;
     private volatile java.lang.Object label_;
     /**
-     * <code>optional string label = 2;</code>
+     * <code>string label = 2;</code>
      */
     public java.lang.String getLabel() {
       java.lang.Object ref = label_;
@@ -9976,7 +10031,7 @@ public final class TctrlSchemaProto {
       }
     }
     /**
-     * <code>optional string label = 2;</code>
+     * <code>string label = 2;</code>
      */
     public com.google.protobuf.ByteString
         getLabelBytes() {
@@ -9995,7 +10050,7 @@ public final class TctrlSchemaProto {
     public static final int PATH_FIELD_NUMBER = 3;
     private volatile java.lang.Object path_;
     /**
-     * <code>optional string path = 3;</code>
+     * <code>string path = 3;</code>
      */
     public java.lang.String getPath() {
       java.lang.Object ref = path_;
@@ -10010,7 +10065,7 @@ public final class TctrlSchemaProto {
       }
     }
     /**
-     * <code>optional string path = 3;</code>
+     * <code>string path = 3;</code>
      */
     public com.google.protobuf.ByteString
         getPathBytes() {
@@ -10029,7 +10084,7 @@ public final class TctrlSchemaProto {
     public static final int MODULETYPE_FIELD_NUMBER = 4;
     private volatile java.lang.Object moduleType_;
     /**
-     * <code>optional string moduleType = 4;</code>
+     * <code>string moduleType = 4;</code>
      */
     public java.lang.String getModuleType() {
       java.lang.Object ref = moduleType_;
@@ -10044,7 +10099,7 @@ public final class TctrlSchemaProto {
       }
     }
     /**
-     * <code>optional string moduleType = 4;</code>
+     * <code>string moduleType = 4;</code>
      */
     public com.google.protobuf.ByteString
         getModuleTypeBytes() {
@@ -10063,7 +10118,7 @@ public final class TctrlSchemaProto {
     public static final int GROUP_FIELD_NUMBER = 5;
     private volatile java.lang.Object group_;
     /**
-     * <code>optional string group = 5;</code>
+     * <code>string group = 5;</code>
      */
     public java.lang.String getGroup() {
       java.lang.Object ref = group_;
@@ -10078,7 +10133,7 @@ public final class TctrlSchemaProto {
       }
     }
     /**
-     * <code>optional string group = 5;</code>
+     * <code>string group = 5;</code>
      */
     public com.google.protobuf.ByteString
         getGroupBytes() {
@@ -10396,7 +10451,7 @@ public final class TctrlSchemaProto {
         return memoizedHashCode;
       }
       int hash = 41;
-      hash = (19 * hash) + getDescriptorForType().hashCode();
+      hash = (19 * hash) + getDescriptor().hashCode();
       hash = (37 * hash) + KEY_FIELD_NUMBER;
       hash = (53 * hash) + getKey().hashCode();
       hash = (37 * hash) + LABEL_FIELD_NUMBER;
@@ -10432,6 +10487,17 @@ public final class TctrlSchemaProto {
       return hash;
     }
 
+    public static net.t3kt.tctrl.schema.TctrlSchemaProto.ModuleSpec parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static net.t3kt.tctrl.schema.TctrlSchemaProto.ModuleSpec parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
     public static net.t3kt.tctrl.schema.TctrlSchemaProto.ModuleSpec parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -10860,7 +10926,7 @@ public final class TctrlSchemaProto {
 
       private java.lang.Object key_ = "";
       /**
-       * <code>optional string key = 1;</code>
+       * <code>string key = 1;</code>
        */
       public java.lang.String getKey() {
         java.lang.Object ref = key_;
@@ -10875,7 +10941,7 @@ public final class TctrlSchemaProto {
         }
       }
       /**
-       * <code>optional string key = 1;</code>
+       * <code>string key = 1;</code>
        */
       public com.google.protobuf.ByteString
           getKeyBytes() {
@@ -10891,7 +10957,7 @@ public final class TctrlSchemaProto {
         }
       }
       /**
-       * <code>optional string key = 1;</code>
+       * <code>string key = 1;</code>
        */
       public Builder setKey(
           java.lang.String value) {
@@ -10904,7 +10970,7 @@ public final class TctrlSchemaProto {
         return this;
       }
       /**
-       * <code>optional string key = 1;</code>
+       * <code>string key = 1;</code>
        */
       public Builder clearKey() {
         
@@ -10913,7 +10979,7 @@ public final class TctrlSchemaProto {
         return this;
       }
       /**
-       * <code>optional string key = 1;</code>
+       * <code>string key = 1;</code>
        */
       public Builder setKeyBytes(
           com.google.protobuf.ByteString value) {
@@ -10929,7 +10995,7 @@ public final class TctrlSchemaProto {
 
       private java.lang.Object label_ = "";
       /**
-       * <code>optional string label = 2;</code>
+       * <code>string label = 2;</code>
        */
       public java.lang.String getLabel() {
         java.lang.Object ref = label_;
@@ -10944,7 +11010,7 @@ public final class TctrlSchemaProto {
         }
       }
       /**
-       * <code>optional string label = 2;</code>
+       * <code>string label = 2;</code>
        */
       public com.google.protobuf.ByteString
           getLabelBytes() {
@@ -10960,7 +11026,7 @@ public final class TctrlSchemaProto {
         }
       }
       /**
-       * <code>optional string label = 2;</code>
+       * <code>string label = 2;</code>
        */
       public Builder setLabel(
           java.lang.String value) {
@@ -10973,7 +11039,7 @@ public final class TctrlSchemaProto {
         return this;
       }
       /**
-       * <code>optional string label = 2;</code>
+       * <code>string label = 2;</code>
        */
       public Builder clearLabel() {
         
@@ -10982,7 +11048,7 @@ public final class TctrlSchemaProto {
         return this;
       }
       /**
-       * <code>optional string label = 2;</code>
+       * <code>string label = 2;</code>
        */
       public Builder setLabelBytes(
           com.google.protobuf.ByteString value) {
@@ -10998,7 +11064,7 @@ public final class TctrlSchemaProto {
 
       private java.lang.Object path_ = "";
       /**
-       * <code>optional string path = 3;</code>
+       * <code>string path = 3;</code>
        */
       public java.lang.String getPath() {
         java.lang.Object ref = path_;
@@ -11013,7 +11079,7 @@ public final class TctrlSchemaProto {
         }
       }
       /**
-       * <code>optional string path = 3;</code>
+       * <code>string path = 3;</code>
        */
       public com.google.protobuf.ByteString
           getPathBytes() {
@@ -11029,7 +11095,7 @@ public final class TctrlSchemaProto {
         }
       }
       /**
-       * <code>optional string path = 3;</code>
+       * <code>string path = 3;</code>
        */
       public Builder setPath(
           java.lang.String value) {
@@ -11042,7 +11108,7 @@ public final class TctrlSchemaProto {
         return this;
       }
       /**
-       * <code>optional string path = 3;</code>
+       * <code>string path = 3;</code>
        */
       public Builder clearPath() {
         
@@ -11051,7 +11117,7 @@ public final class TctrlSchemaProto {
         return this;
       }
       /**
-       * <code>optional string path = 3;</code>
+       * <code>string path = 3;</code>
        */
       public Builder setPathBytes(
           com.google.protobuf.ByteString value) {
@@ -11067,7 +11133,7 @@ public final class TctrlSchemaProto {
 
       private java.lang.Object moduleType_ = "";
       /**
-       * <code>optional string moduleType = 4;</code>
+       * <code>string moduleType = 4;</code>
        */
       public java.lang.String getModuleType() {
         java.lang.Object ref = moduleType_;
@@ -11082,7 +11148,7 @@ public final class TctrlSchemaProto {
         }
       }
       /**
-       * <code>optional string moduleType = 4;</code>
+       * <code>string moduleType = 4;</code>
        */
       public com.google.protobuf.ByteString
           getModuleTypeBytes() {
@@ -11098,7 +11164,7 @@ public final class TctrlSchemaProto {
         }
       }
       /**
-       * <code>optional string moduleType = 4;</code>
+       * <code>string moduleType = 4;</code>
        */
       public Builder setModuleType(
           java.lang.String value) {
@@ -11111,7 +11177,7 @@ public final class TctrlSchemaProto {
         return this;
       }
       /**
-       * <code>optional string moduleType = 4;</code>
+       * <code>string moduleType = 4;</code>
        */
       public Builder clearModuleType() {
         
@@ -11120,7 +11186,7 @@ public final class TctrlSchemaProto {
         return this;
       }
       /**
-       * <code>optional string moduleType = 4;</code>
+       * <code>string moduleType = 4;</code>
        */
       public Builder setModuleTypeBytes(
           com.google.protobuf.ByteString value) {
@@ -11136,7 +11202,7 @@ public final class TctrlSchemaProto {
 
       private java.lang.Object group_ = "";
       /**
-       * <code>optional string group = 5;</code>
+       * <code>string group = 5;</code>
        */
       public java.lang.String getGroup() {
         java.lang.Object ref = group_;
@@ -11151,7 +11217,7 @@ public final class TctrlSchemaProto {
         }
       }
       /**
-       * <code>optional string group = 5;</code>
+       * <code>string group = 5;</code>
        */
       public com.google.protobuf.ByteString
           getGroupBytes() {
@@ -11167,7 +11233,7 @@ public final class TctrlSchemaProto {
         }
       }
       /**
-       * <code>optional string group = 5;</code>
+       * <code>string group = 5;</code>
        */
       public Builder setGroup(
           java.lang.String value) {
@@ -11180,7 +11246,7 @@ public final class TctrlSchemaProto {
         return this;
       }
       /**
-       * <code>optional string group = 5;</code>
+       * <code>string group = 5;</code>
        */
       public Builder clearGroup() {
         
@@ -11189,7 +11255,7 @@ public final class TctrlSchemaProto {
         return this;
       }
       /**
-       * <code>optional string group = 5;</code>
+       * <code>string group = 5;</code>
        */
       public Builder setGroupBytes(
           com.google.protobuf.ByteString value) {
@@ -12310,47 +12376,47 @@ public final class TctrlSchemaProto {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>optional string key = 1;</code>
+     * <code>string key = 1;</code>
      */
     java.lang.String getKey();
     /**
-     * <code>optional string key = 1;</code>
+     * <code>string key = 1;</code>
      */
     com.google.protobuf.ByteString
         getKeyBytes();
 
     /**
-     * <code>optional string label = 2;</code>
+     * <code>string label = 2;</code>
      */
     java.lang.String getLabel();
     /**
-     * <code>optional string label = 2;</code>
+     * <code>string label = 2;</code>
      */
     com.google.protobuf.ByteString
         getLabelBytes();
 
     /**
-     * <code>optional string type = 3;</code>
+     * <code>string type = 3;</code>
      */
     java.lang.String getType();
     /**
-     * <code>optional string type = 3;</code>
+     * <code>string type = 3;</code>
      */
     com.google.protobuf.ByteString
         getTypeBytes();
 
     /**
-     * <code>optional string host = 4;</code>
+     * <code>string host = 4;</code>
      */
     java.lang.String getHost();
     /**
-     * <code>optional string host = 4;</code>
+     * <code>string host = 4;</code>
      */
     com.google.protobuf.ByteString
         getHostBytes();
 
     /**
-     * <code>optional int32 port = 5;</code>
+     * <code>int32 port = 5;</code>
      */
     int getPort();
   }
@@ -12453,7 +12519,7 @@ public final class TctrlSchemaProto {
     public static final int KEY_FIELD_NUMBER = 1;
     private volatile java.lang.Object key_;
     /**
-     * <code>optional string key = 1;</code>
+     * <code>string key = 1;</code>
      */
     public java.lang.String getKey() {
       java.lang.Object ref = key_;
@@ -12468,7 +12534,7 @@ public final class TctrlSchemaProto {
       }
     }
     /**
-     * <code>optional string key = 1;</code>
+     * <code>string key = 1;</code>
      */
     public com.google.protobuf.ByteString
         getKeyBytes() {
@@ -12487,7 +12553,7 @@ public final class TctrlSchemaProto {
     public static final int LABEL_FIELD_NUMBER = 2;
     private volatile java.lang.Object label_;
     /**
-     * <code>optional string label = 2;</code>
+     * <code>string label = 2;</code>
      */
     public java.lang.String getLabel() {
       java.lang.Object ref = label_;
@@ -12502,7 +12568,7 @@ public final class TctrlSchemaProto {
       }
     }
     /**
-     * <code>optional string label = 2;</code>
+     * <code>string label = 2;</code>
      */
     public com.google.protobuf.ByteString
         getLabelBytes() {
@@ -12521,7 +12587,7 @@ public final class TctrlSchemaProto {
     public static final int TYPE_FIELD_NUMBER = 3;
     private volatile java.lang.Object type_;
     /**
-     * <code>optional string type = 3;</code>
+     * <code>string type = 3;</code>
      */
     public java.lang.String getType() {
       java.lang.Object ref = type_;
@@ -12536,7 +12602,7 @@ public final class TctrlSchemaProto {
       }
     }
     /**
-     * <code>optional string type = 3;</code>
+     * <code>string type = 3;</code>
      */
     public com.google.protobuf.ByteString
         getTypeBytes() {
@@ -12555,7 +12621,7 @@ public final class TctrlSchemaProto {
     public static final int HOST_FIELD_NUMBER = 4;
     private volatile java.lang.Object host_;
     /**
-     * <code>optional string host = 4;</code>
+     * <code>string host = 4;</code>
      */
     public java.lang.String getHost() {
       java.lang.Object ref = host_;
@@ -12570,7 +12636,7 @@ public final class TctrlSchemaProto {
       }
     }
     /**
-     * <code>optional string host = 4;</code>
+     * <code>string host = 4;</code>
      */
     public com.google.protobuf.ByteString
         getHostBytes() {
@@ -12589,7 +12655,7 @@ public final class TctrlSchemaProto {
     public static final int PORT_FIELD_NUMBER = 5;
     private int port_;
     /**
-     * <code>optional int32 port = 5;</code>
+     * <code>int32 port = 5;</code>
      */
     public int getPort() {
       return port_;
@@ -12680,7 +12746,7 @@ public final class TctrlSchemaProto {
         return memoizedHashCode;
       }
       int hash = 41;
-      hash = (19 * hash) + getDescriptorForType().hashCode();
+      hash = (19 * hash) + getDescriptor().hashCode();
       hash = (37 * hash) + KEY_FIELD_NUMBER;
       hash = (53 * hash) + getKey().hashCode();
       hash = (37 * hash) + LABEL_FIELD_NUMBER;
@@ -12696,6 +12762,17 @@ public final class TctrlSchemaProto {
       return hash;
     }
 
+    public static net.t3kt.tctrl.schema.TctrlSchemaProto.ConnectionInfo parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static net.t3kt.tctrl.schema.TctrlSchemaProto.ConnectionInfo parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
     public static net.t3kt.tctrl.schema.TctrlSchemaProto.ConnectionInfo parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -12934,7 +13011,7 @@ public final class TctrlSchemaProto {
 
       private java.lang.Object key_ = "";
       /**
-       * <code>optional string key = 1;</code>
+       * <code>string key = 1;</code>
        */
       public java.lang.String getKey() {
         java.lang.Object ref = key_;
@@ -12949,7 +13026,7 @@ public final class TctrlSchemaProto {
         }
       }
       /**
-       * <code>optional string key = 1;</code>
+       * <code>string key = 1;</code>
        */
       public com.google.protobuf.ByteString
           getKeyBytes() {
@@ -12965,7 +13042,7 @@ public final class TctrlSchemaProto {
         }
       }
       /**
-       * <code>optional string key = 1;</code>
+       * <code>string key = 1;</code>
        */
       public Builder setKey(
           java.lang.String value) {
@@ -12978,7 +13055,7 @@ public final class TctrlSchemaProto {
         return this;
       }
       /**
-       * <code>optional string key = 1;</code>
+       * <code>string key = 1;</code>
        */
       public Builder clearKey() {
         
@@ -12987,7 +13064,7 @@ public final class TctrlSchemaProto {
         return this;
       }
       /**
-       * <code>optional string key = 1;</code>
+       * <code>string key = 1;</code>
        */
       public Builder setKeyBytes(
           com.google.protobuf.ByteString value) {
@@ -13003,7 +13080,7 @@ public final class TctrlSchemaProto {
 
       private java.lang.Object label_ = "";
       /**
-       * <code>optional string label = 2;</code>
+       * <code>string label = 2;</code>
        */
       public java.lang.String getLabel() {
         java.lang.Object ref = label_;
@@ -13018,7 +13095,7 @@ public final class TctrlSchemaProto {
         }
       }
       /**
-       * <code>optional string label = 2;</code>
+       * <code>string label = 2;</code>
        */
       public com.google.protobuf.ByteString
           getLabelBytes() {
@@ -13034,7 +13111,7 @@ public final class TctrlSchemaProto {
         }
       }
       /**
-       * <code>optional string label = 2;</code>
+       * <code>string label = 2;</code>
        */
       public Builder setLabel(
           java.lang.String value) {
@@ -13047,7 +13124,7 @@ public final class TctrlSchemaProto {
         return this;
       }
       /**
-       * <code>optional string label = 2;</code>
+       * <code>string label = 2;</code>
        */
       public Builder clearLabel() {
         
@@ -13056,7 +13133,7 @@ public final class TctrlSchemaProto {
         return this;
       }
       /**
-       * <code>optional string label = 2;</code>
+       * <code>string label = 2;</code>
        */
       public Builder setLabelBytes(
           com.google.protobuf.ByteString value) {
@@ -13072,7 +13149,7 @@ public final class TctrlSchemaProto {
 
       private java.lang.Object type_ = "";
       /**
-       * <code>optional string type = 3;</code>
+       * <code>string type = 3;</code>
        */
       public java.lang.String getType() {
         java.lang.Object ref = type_;
@@ -13087,7 +13164,7 @@ public final class TctrlSchemaProto {
         }
       }
       /**
-       * <code>optional string type = 3;</code>
+       * <code>string type = 3;</code>
        */
       public com.google.protobuf.ByteString
           getTypeBytes() {
@@ -13103,7 +13180,7 @@ public final class TctrlSchemaProto {
         }
       }
       /**
-       * <code>optional string type = 3;</code>
+       * <code>string type = 3;</code>
        */
       public Builder setType(
           java.lang.String value) {
@@ -13116,7 +13193,7 @@ public final class TctrlSchemaProto {
         return this;
       }
       /**
-       * <code>optional string type = 3;</code>
+       * <code>string type = 3;</code>
        */
       public Builder clearType() {
         
@@ -13125,7 +13202,7 @@ public final class TctrlSchemaProto {
         return this;
       }
       /**
-       * <code>optional string type = 3;</code>
+       * <code>string type = 3;</code>
        */
       public Builder setTypeBytes(
           com.google.protobuf.ByteString value) {
@@ -13141,7 +13218,7 @@ public final class TctrlSchemaProto {
 
       private java.lang.Object host_ = "";
       /**
-       * <code>optional string host = 4;</code>
+       * <code>string host = 4;</code>
        */
       public java.lang.String getHost() {
         java.lang.Object ref = host_;
@@ -13156,7 +13233,7 @@ public final class TctrlSchemaProto {
         }
       }
       /**
-       * <code>optional string host = 4;</code>
+       * <code>string host = 4;</code>
        */
       public com.google.protobuf.ByteString
           getHostBytes() {
@@ -13172,7 +13249,7 @@ public final class TctrlSchemaProto {
         }
       }
       /**
-       * <code>optional string host = 4;</code>
+       * <code>string host = 4;</code>
        */
       public Builder setHost(
           java.lang.String value) {
@@ -13185,7 +13262,7 @@ public final class TctrlSchemaProto {
         return this;
       }
       /**
-       * <code>optional string host = 4;</code>
+       * <code>string host = 4;</code>
        */
       public Builder clearHost() {
         
@@ -13194,7 +13271,7 @@ public final class TctrlSchemaProto {
         return this;
       }
       /**
-       * <code>optional string host = 4;</code>
+       * <code>string host = 4;</code>
        */
       public Builder setHostBytes(
           com.google.protobuf.ByteString value) {
@@ -13210,13 +13287,13 @@ public final class TctrlSchemaProto {
 
       private int port_ ;
       /**
-       * <code>optional int32 port = 5;</code>
+       * <code>int32 port = 5;</code>
        */
       public int getPort() {
         return port_;
       }
       /**
-       * <code>optional int32 port = 5;</code>
+       * <code>int32 port = 5;</code>
        */
       public Builder setPort(int value) {
         
@@ -13225,7 +13302,7 @@ public final class TctrlSchemaProto {
         return this;
       }
       /**
-       * <code>optional int32 port = 5;</code>
+       * <code>int32 port = 5;</code>
        */
       public Builder clearPort() {
         
@@ -13287,21 +13364,21 @@ public final class TctrlSchemaProto {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>optional string key = 1;</code>
+     * <code>string key = 1;</code>
      */
     java.lang.String getKey();
     /**
-     * <code>optional string key = 1;</code>
+     * <code>string key = 1;</code>
      */
     com.google.protobuf.ByteString
         getKeyBytes();
 
     /**
-     * <code>optional string label = 2;</code>
+     * <code>string label = 2;</code>
      */
     java.lang.String getLabel();
     /**
-     * <code>optional string label = 2;</code>
+     * <code>string label = 2;</code>
      */
     com.google.protobuf.ByteString
         getLabelBytes();
@@ -13418,7 +13495,7 @@ public final class TctrlSchemaProto {
     public static final int KEY_FIELD_NUMBER = 1;
     private volatile java.lang.Object key_;
     /**
-     * <code>optional string key = 1;</code>
+     * <code>string key = 1;</code>
      */
     public java.lang.String getKey() {
       java.lang.Object ref = key_;
@@ -13433,7 +13510,7 @@ public final class TctrlSchemaProto {
       }
     }
     /**
-     * <code>optional string key = 1;</code>
+     * <code>string key = 1;</code>
      */
     public com.google.protobuf.ByteString
         getKeyBytes() {
@@ -13452,7 +13529,7 @@ public final class TctrlSchemaProto {
     public static final int LABEL_FIELD_NUMBER = 2;
     private volatile java.lang.Object label_;
     /**
-     * <code>optional string label = 2;</code>
+     * <code>string label = 2;</code>
      */
     public java.lang.String getLabel() {
       java.lang.Object ref = label_;
@@ -13467,7 +13544,7 @@ public final class TctrlSchemaProto {
       }
     }
     /**
-     * <code>optional string label = 2;</code>
+     * <code>string label = 2;</code>
      */
     public com.google.protobuf.ByteString
         getLabelBytes() {
@@ -13585,7 +13662,7 @@ public final class TctrlSchemaProto {
         return memoizedHashCode;
       }
       int hash = 41;
-      hash = (19 * hash) + getDescriptorForType().hashCode();
+      hash = (19 * hash) + getDescriptor().hashCode();
       hash = (37 * hash) + KEY_FIELD_NUMBER;
       hash = (53 * hash) + getKey().hashCode();
       hash = (37 * hash) + LABEL_FIELD_NUMBER;
@@ -13599,6 +13676,17 @@ public final class TctrlSchemaProto {
       return hash;
     }
 
+    public static net.t3kt.tctrl.schema.TctrlSchemaProto.GroupInfo parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static net.t3kt.tctrl.schema.TctrlSchemaProto.GroupInfo parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
     public static net.t3kt.tctrl.schema.TctrlSchemaProto.GroupInfo parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -13838,7 +13926,7 @@ public final class TctrlSchemaProto {
 
       private java.lang.Object key_ = "";
       /**
-       * <code>optional string key = 1;</code>
+       * <code>string key = 1;</code>
        */
       public java.lang.String getKey() {
         java.lang.Object ref = key_;
@@ -13853,7 +13941,7 @@ public final class TctrlSchemaProto {
         }
       }
       /**
-       * <code>optional string key = 1;</code>
+       * <code>string key = 1;</code>
        */
       public com.google.protobuf.ByteString
           getKeyBytes() {
@@ -13869,7 +13957,7 @@ public final class TctrlSchemaProto {
         }
       }
       /**
-       * <code>optional string key = 1;</code>
+       * <code>string key = 1;</code>
        */
       public Builder setKey(
           java.lang.String value) {
@@ -13882,7 +13970,7 @@ public final class TctrlSchemaProto {
         return this;
       }
       /**
-       * <code>optional string key = 1;</code>
+       * <code>string key = 1;</code>
        */
       public Builder clearKey() {
         
@@ -13891,7 +13979,7 @@ public final class TctrlSchemaProto {
         return this;
       }
       /**
-       * <code>optional string key = 1;</code>
+       * <code>string key = 1;</code>
        */
       public Builder setKeyBytes(
           com.google.protobuf.ByteString value) {
@@ -13907,7 +13995,7 @@ public final class TctrlSchemaProto {
 
       private java.lang.Object label_ = "";
       /**
-       * <code>optional string label = 2;</code>
+       * <code>string label = 2;</code>
        */
       public java.lang.String getLabel() {
         java.lang.Object ref = label_;
@@ -13922,7 +14010,7 @@ public final class TctrlSchemaProto {
         }
       }
       /**
-       * <code>optional string label = 2;</code>
+       * <code>string label = 2;</code>
        */
       public com.google.protobuf.ByteString
           getLabelBytes() {
@@ -13938,7 +14026,7 @@ public final class TctrlSchemaProto {
         }
       }
       /**
-       * <code>optional string label = 2;</code>
+       * <code>string label = 2;</code>
        */
       public Builder setLabel(
           java.lang.String value) {
@@ -13951,7 +14039,7 @@ public final class TctrlSchemaProto {
         return this;
       }
       /**
-       * <code>optional string label = 2;</code>
+       * <code>string label = 2;</code>
        */
       public Builder clearLabel() {
         
@@ -13960,7 +14048,7 @@ public final class TctrlSchemaProto {
         return this;
       }
       /**
-       * <code>optional string label = 2;</code>
+       * <code>string label = 2;</code>
        */
       public Builder setLabelBytes(
           com.google.protobuf.ByteString value) {
@@ -14121,21 +14209,21 @@ public final class TctrlSchemaProto {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>optional string key = 1;</code>
+     * <code>string key = 1;</code>
      */
     java.lang.String getKey();
     /**
-     * <code>optional string key = 1;</code>
+     * <code>string key = 1;</code>
      */
     com.google.protobuf.ByteString
         getKeyBytes();
 
     /**
-     * <code>optional string label = 2;</code>
+     * <code>string label = 2;</code>
      */
     java.lang.String getLabel();
     /**
-     * <code>optional string label = 2;</code>
+     * <code>string label = 2;</code>
      */
     com.google.protobuf.ByteString
         getLabelBytes();
@@ -14160,21 +14248,21 @@ public final class TctrlSchemaProto {
         getTagBytes(int index);
 
     /**
-     * <code>optional string description = 4;</code>
+     * <code>string description = 4;</code>
      */
     java.lang.String getDescription();
     /**
-     * <code>optional string description = 4;</code>
+     * <code>string description = 4;</code>
      */
     com.google.protobuf.ByteString
         getDescriptionBytes();
 
     /**
-     * <code>optional string path = 10;</code>
+     * <code>string path = 10;</code>
      */
     java.lang.String getPath();
     /**
-     * <code>optional string path = 10;</code>
+     * <code>string path = 10;</code>
      */
     com.google.protobuf.ByteString
         getPathBytes();
@@ -14471,7 +14559,7 @@ public final class TctrlSchemaProto {
     public static final int KEY_FIELD_NUMBER = 1;
     private volatile java.lang.Object key_;
     /**
-     * <code>optional string key = 1;</code>
+     * <code>string key = 1;</code>
      */
     public java.lang.String getKey() {
       java.lang.Object ref = key_;
@@ -14486,7 +14574,7 @@ public final class TctrlSchemaProto {
       }
     }
     /**
-     * <code>optional string key = 1;</code>
+     * <code>string key = 1;</code>
      */
     public com.google.protobuf.ByteString
         getKeyBytes() {
@@ -14505,7 +14593,7 @@ public final class TctrlSchemaProto {
     public static final int LABEL_FIELD_NUMBER = 2;
     private volatile java.lang.Object label_;
     /**
-     * <code>optional string label = 2;</code>
+     * <code>string label = 2;</code>
      */
     public java.lang.String getLabel() {
       java.lang.Object ref = label_;
@@ -14520,7 +14608,7 @@ public final class TctrlSchemaProto {
       }
     }
     /**
-     * <code>optional string label = 2;</code>
+     * <code>string label = 2;</code>
      */
     public com.google.protobuf.ByteString
         getLabelBytes() {
@@ -14568,7 +14656,7 @@ public final class TctrlSchemaProto {
     public static final int DESCRIPTION_FIELD_NUMBER = 4;
     private volatile java.lang.Object description_;
     /**
-     * <code>optional string description = 4;</code>
+     * <code>string description = 4;</code>
      */
     public java.lang.String getDescription() {
       java.lang.Object ref = description_;
@@ -14583,7 +14671,7 @@ public final class TctrlSchemaProto {
       }
     }
     /**
-     * <code>optional string description = 4;</code>
+     * <code>string description = 4;</code>
      */
     public com.google.protobuf.ByteString
         getDescriptionBytes() {
@@ -14602,7 +14690,7 @@ public final class TctrlSchemaProto {
     public static final int PATH_FIELD_NUMBER = 10;
     private volatile java.lang.Object path_;
     /**
-     * <code>optional string path = 10;</code>
+     * <code>string path = 10;</code>
      */
     public java.lang.String getPath() {
       java.lang.Object ref = path_;
@@ -14617,7 +14705,7 @@ public final class TctrlSchemaProto {
       }
     }
     /**
-     * <code>optional string path = 10;</code>
+     * <code>string path = 10;</code>
      */
     public com.google.protobuf.ByteString
         getPathBytes() {
@@ -14942,7 +15030,7 @@ public final class TctrlSchemaProto {
         return memoizedHashCode;
       }
       int hash = 41;
-      hash = (19 * hash) + getDescriptorForType().hashCode();
+      hash = (19 * hash) + getDescriptor().hashCode();
       hash = (37 * hash) + KEY_FIELD_NUMBER;
       hash = (53 * hash) + getKey().hashCode();
       hash = (37 * hash) + LABEL_FIELD_NUMBER;
@@ -14980,6 +15068,17 @@ public final class TctrlSchemaProto {
       return hash;
     }
 
+    public static net.t3kt.tctrl.schema.TctrlSchemaProto.AppSpec parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static net.t3kt.tctrl.schema.TctrlSchemaProto.AppSpec parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
     public static net.t3kt.tctrl.schema.TctrlSchemaProto.AppSpec parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -15443,7 +15542,7 @@ public final class TctrlSchemaProto {
 
       private java.lang.Object key_ = "";
       /**
-       * <code>optional string key = 1;</code>
+       * <code>string key = 1;</code>
        */
       public java.lang.String getKey() {
         java.lang.Object ref = key_;
@@ -15458,7 +15557,7 @@ public final class TctrlSchemaProto {
         }
       }
       /**
-       * <code>optional string key = 1;</code>
+       * <code>string key = 1;</code>
        */
       public com.google.protobuf.ByteString
           getKeyBytes() {
@@ -15474,7 +15573,7 @@ public final class TctrlSchemaProto {
         }
       }
       /**
-       * <code>optional string key = 1;</code>
+       * <code>string key = 1;</code>
        */
       public Builder setKey(
           java.lang.String value) {
@@ -15487,7 +15586,7 @@ public final class TctrlSchemaProto {
         return this;
       }
       /**
-       * <code>optional string key = 1;</code>
+       * <code>string key = 1;</code>
        */
       public Builder clearKey() {
         
@@ -15496,7 +15595,7 @@ public final class TctrlSchemaProto {
         return this;
       }
       /**
-       * <code>optional string key = 1;</code>
+       * <code>string key = 1;</code>
        */
       public Builder setKeyBytes(
           com.google.protobuf.ByteString value) {
@@ -15512,7 +15611,7 @@ public final class TctrlSchemaProto {
 
       private java.lang.Object label_ = "";
       /**
-       * <code>optional string label = 2;</code>
+       * <code>string label = 2;</code>
        */
       public java.lang.String getLabel() {
         java.lang.Object ref = label_;
@@ -15527,7 +15626,7 @@ public final class TctrlSchemaProto {
         }
       }
       /**
-       * <code>optional string label = 2;</code>
+       * <code>string label = 2;</code>
        */
       public com.google.protobuf.ByteString
           getLabelBytes() {
@@ -15543,7 +15642,7 @@ public final class TctrlSchemaProto {
         }
       }
       /**
-       * <code>optional string label = 2;</code>
+       * <code>string label = 2;</code>
        */
       public Builder setLabel(
           java.lang.String value) {
@@ -15556,7 +15655,7 @@ public final class TctrlSchemaProto {
         return this;
       }
       /**
-       * <code>optional string label = 2;</code>
+       * <code>string label = 2;</code>
        */
       public Builder clearLabel() {
         
@@ -15565,7 +15664,7 @@ public final class TctrlSchemaProto {
         return this;
       }
       /**
-       * <code>optional string label = 2;</code>
+       * <code>string label = 2;</code>
        */
       public Builder setLabelBytes(
           com.google.protobuf.ByteString value) {
@@ -15675,7 +15774,7 @@ public final class TctrlSchemaProto {
 
       private java.lang.Object description_ = "";
       /**
-       * <code>optional string description = 4;</code>
+       * <code>string description = 4;</code>
        */
       public java.lang.String getDescription() {
         java.lang.Object ref = description_;
@@ -15690,7 +15789,7 @@ public final class TctrlSchemaProto {
         }
       }
       /**
-       * <code>optional string description = 4;</code>
+       * <code>string description = 4;</code>
        */
       public com.google.protobuf.ByteString
           getDescriptionBytes() {
@@ -15706,7 +15805,7 @@ public final class TctrlSchemaProto {
         }
       }
       /**
-       * <code>optional string description = 4;</code>
+       * <code>string description = 4;</code>
        */
       public Builder setDescription(
           java.lang.String value) {
@@ -15719,7 +15818,7 @@ public final class TctrlSchemaProto {
         return this;
       }
       /**
-       * <code>optional string description = 4;</code>
+       * <code>string description = 4;</code>
        */
       public Builder clearDescription() {
         
@@ -15728,7 +15827,7 @@ public final class TctrlSchemaProto {
         return this;
       }
       /**
-       * <code>optional string description = 4;</code>
+       * <code>string description = 4;</code>
        */
       public Builder setDescriptionBytes(
           com.google.protobuf.ByteString value) {
@@ -15744,7 +15843,7 @@ public final class TctrlSchemaProto {
 
       private java.lang.Object path_ = "";
       /**
-       * <code>optional string path = 10;</code>
+       * <code>string path = 10;</code>
        */
       public java.lang.String getPath() {
         java.lang.Object ref = path_;
@@ -15759,7 +15858,7 @@ public final class TctrlSchemaProto {
         }
       }
       /**
-       * <code>optional string path = 10;</code>
+       * <code>string path = 10;</code>
        */
       public com.google.protobuf.ByteString
           getPathBytes() {
@@ -15775,7 +15874,7 @@ public final class TctrlSchemaProto {
         }
       }
       /**
-       * <code>optional string path = 10;</code>
+       * <code>string path = 10;</code>
        */
       public Builder setPath(
           java.lang.String value) {
@@ -15788,7 +15887,7 @@ public final class TctrlSchemaProto {
         return this;
       }
       /**
-       * <code>optional string path = 10;</code>
+       * <code>string path = 10;</code>
        */
       public Builder clearPath() {
         
@@ -15797,7 +15896,7 @@ public final class TctrlSchemaProto {
         return this;
       }
       /**
-       * <code>optional string path = 10;</code>
+       * <code>string path = 10;</code>
        */
       public Builder setPathBytes(
           com.google.protobuf.ByteString value) {
