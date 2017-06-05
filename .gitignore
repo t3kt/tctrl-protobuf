@@ -2,3 +2,10 @@
 *.iml
 out/
 *.pyc
+csharp/bin/
+csharp/obj/
+win/*/bin/
+win/*/obj/
+win/packages/
+*.suo
+win/TctrlApp/bin/Debug/TctrlApp.exe
