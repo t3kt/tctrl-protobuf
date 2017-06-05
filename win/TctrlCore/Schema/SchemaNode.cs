@@ -3,7 +3,13 @@ using Google.Protobuf;
 
 namespace Tctrl.Core.Schema
 {
-    public abstract class SchemaNode<S> where S : IMessage
+    public interface ISchemaNode {
+        string Key { get; }
+        string Label { get; }
+        string Path { get; }
+    }
+    
+    public abstract class SchemaNode<S> : ISchemaNode where S : IMessage
     {
         protected SchemaNode(S spec)
         {
@@ -12,10 +18,10 @@ namespace Tctrl.Core.Schema
 
         public S Spec { get; }
 
-        public abstract String Key { get; }
+        public abstract string Key { get; }
 
-        public abstract String Label { get; }
+        public abstract string Label { get; }
 
-        public abstract String Path { get; }
+        public abstract string Path { get; }
     }
 }
