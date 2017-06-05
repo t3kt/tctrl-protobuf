@@ -46,11 +46,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Common\ValueRange.cs" />
     <Compile Include="Model\AppModel.cs" />
     <Compile Include="Model\IModelNode.cs" />
     <Compile Include="Model\ModelNode.cs" />
     <Compile Include="Model\ModelNodeCollection.cs" />
     <Compile Include="Model\ModuleModel.cs" />
+    <Compile Include="Model\Params\IParamModel.cs" />
+    <Compile Include="Model\Params\NumericParamModel.cs" />
+    <Compile Include="Model\Params\ParamModel.cs" />
+    <Compile Include="Model\Params\ScalarParamModel.cs" />
+    <Compile Include="Model\Params\SingleParamModel.cs" />
     <Compile Include="Model\ParentModelNode.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Schema\AppSchema.cs" />

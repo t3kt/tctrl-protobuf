@@ -5,12 +5,11 @@ using Tctrl.Schema;
 namespace Tctrl.Core.Schema.Params {
     public abstract class ParamSchema : SchemaNode<ParamSpec> {
         protected ParamSchema(ParamSpec spec) : base(spec) { }
-
-        public ParamSpec Spec { get; private set; }
         
         public override string Key => Spec.Key;
         public override string Label => Spec.Key;
         public override string Path => Spec.Path;
+        public ParamType ParamType => Spec.Type;
 
         public static ParamSchema forParam(ParamSpec spec) {
             throw new NotImplementedException();
