@@ -7,7 +7,5 @@ namespace Tctrl.Core.Schema.Params
         protected SingleParamSchema(ParamSpec spec) : base(spec)
         {
         }
-
-        public override bool IsVector => false;
     }
 }

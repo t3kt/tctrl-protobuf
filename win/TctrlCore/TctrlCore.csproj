@@ -30,8 +30,11 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Google.Protobuf, Version=3.3.0.0, Culture=neutral, PublicKeyToken=a7d26565bac4d604, processorArchitecture=MSIL">
+    <Reference Include="Google.Protobuf, Version=3.3.0.0, Culture=neutral, PublicKeyToken=a7d26565bac4d604">
       <HintPath>..\packages\Google.Protobuf.3.3.0\lib\net45\Google.Protobuf.dll</HintPath>
+    </Reference>
+    <Reference Include="Google.Protobuf, Version=3.3.0.0, Culture=neutral, PublicKeyToken=a7d26565bac4d604, processorArchitecture=MSIL">
+      <HintPath>../packages/Google.Protobuf.3.3.0/lib/net45/Google.Protobuf.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -44,11 +47,16 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Schema\AppSchema.cs" />
+    <Compile Include="Schema\ModuleSchema.cs" />
+    <Compile Include="Schema\Params\BoolParamSchema.cs" />
     <Compile Include="Schema\Params\OtherParamSchema.cs" />
     <Compile Include="Schema\Params\ParamSchema.cs" />
     <Compile Include="Schema\Params\ScalarParamSchema.cs" />
     <Compile Include="Schema\Params\SingleParamSchema.cs" />
     <Compile Include="Schema\Params\TriggerParamSchema.cs" />
+    <Compile Include="Schema\Params\Values.cs" />
+    <Compile Include="Schema\ParentSchemaNode.cs" />
     <Compile Include="Schema\SchemaNode.cs" />
   </ItemGroup>
   <ItemGroup>
