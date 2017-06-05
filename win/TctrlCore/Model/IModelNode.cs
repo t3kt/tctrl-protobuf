@@ -1,7 +1,6 @@
-using System;
-using Google.Protobuf;
+using Tctrl.Core.Schema;
 
-namespace Tctrl.Core.Schema.Model {
+namespace Tctrl.Core.Model {
     public interface IModelNode {
         string Key { get; }
         string Label { get; }

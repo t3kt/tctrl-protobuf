@@ -1,4 +1,6 @@
-namespace Tctrl.Core.Schema.Model {
+using Tctrl.Core.Schema;
+
+namespace Tctrl.Core.Model {
     public abstract class ModelNode<S> : IModelNode<S> where S : ISchemaNode {
         protected ModelNode(S schema) {
             Schema = schema;

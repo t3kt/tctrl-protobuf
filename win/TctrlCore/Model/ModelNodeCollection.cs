@@ -1,9 +1,8 @@
-using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace Tctrl.Core.Schema.Model {
+namespace Tctrl.Core.Model {
     public class ModelNodeCollection<TNode> : IReadOnlyList<TNode> where TNode : IModelNode {
         private readonly IReadOnlyList<TNode> _nodes;
         private readonly IReadOnlyDictionary<string, TNode> _nodesByKey;

@@ -46,14 +46,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Model\AppModel.cs" />
+    <Compile Include="Model\IModelNode.cs" />
+    <Compile Include="Model\ModelNode.cs" />
+    <Compile Include="Model\ModelNodeCollection.cs" />
+    <Compile Include="Model\ModuleModel.cs" />
+    <Compile Include="Model\ParentModelNode.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Schema\AppSchema.cs" />
-    <Compile Include="Schema\Model\AppModel.cs" />
-    <Compile Include="Schema\Model\IModelNode.cs" />
-    <Compile Include="Schema\Model\ModelNode.cs" />
-    <Compile Include="Schema\Model\ModelNodeCollection.cs" />
-    <Compile Include="Schema\Model\ModuleModel.cs" />
-    <Compile Include="Schema\Model\ParentModelNode.cs" />
     <Compile Include="Schema\ModuleSchema.cs" />
     <Compile Include="Schema\Params\BoolParamSchema.cs" />
     <Compile Include="Schema\Params\OtherParamSchema.cs" />
