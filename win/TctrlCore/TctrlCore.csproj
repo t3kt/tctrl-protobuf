@@ -58,6 +58,7 @@
     <Compile Include="Model\Params\ParamOption.cs" />
     <Compile Include="Model\Params\ScalarParamModel.cs" />
     <Compile Include="Model\Params\SingleParamModel.cs" />
+    <Compile Include="Model\Params\VectorParamModel.cs" />
     <Compile Include="Model\ParentModelNode.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Schema\AppSchema.cs" />

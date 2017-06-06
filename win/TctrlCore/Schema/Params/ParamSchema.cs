@@ -4,8 +4,9 @@ using Tctrl.Schema;
 
 namespace Tctrl.Core.Schema.Params {
     public abstract class ParamSchema : SchemaNode<ParamSpec> {
+
         protected ParamSchema(ParamSpec spec) : base(spec) { }
-        
+
         public override string Key => Spec.Key;
         public override string Label => Spec.Key;
         public override string Path => Spec.Path;
@@ -27,16 +28,23 @@ namespace Tctrl.Core.Schema.Params {
             return new BasicSingleParamSchema<double>(spec, Values.AsFloat);
         }
 
-        private delegate T? ValueConverter<T>(Value value) where T : struct;
+        private delegate T? ValueConverter<T>(Value value)
+            where T : struct;
 
-        private sealed class BasicSingleParamSchema<T> : ScalarParamSchema<T> where T : struct {
+        private sealed class BasicSingleParamSchema<T> : ScalarParamSchema<T>
+            where T : struct {
+
             private readonly ValueConverter<T> _converter;
+
             public BasicSingleParamSchema(ParamSpec spec, ValueConverter<T> converter) : base(spec) {
                 this._converter = converter;
             }
+
             protected override T? Convert(Value value) {
                 return this._converter(value);
             }
+
         }
+
     }
 }

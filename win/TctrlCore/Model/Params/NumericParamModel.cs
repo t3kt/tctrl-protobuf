@@ -3,8 +3,9 @@ using Tctrl.Core.Common;
 using Tctrl.Core.Schema.Params;
 
 namespace Tctrl.Core.Model.Params {
-    internal class NumericParamModel<TValue> : ScalarParamModel<TValue, ScalarParamSchema<TValue>>,
-        INumericParamModel<TValue>
+    internal class NumericParamModel<TValue>
+        : ScalarParamModel<TValue, ScalarParamSchema<TValue>>,
+            INumericParamModel<TValue>
         where TValue : struct, IComparable<TValue> {
 
         internal NumericParamModel(ScalarParamSchema<TValue> schema) : base(schema) { }

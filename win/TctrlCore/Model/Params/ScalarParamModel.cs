@@ -3,7 +3,8 @@ using Tctrl.Core.Schema.Params;
 
 namespace Tctrl.Core.Model.Params {
     internal abstract class ScalarParamModel<TValue, TSchema> : SingleParamModel<TSchema>, IScalarParamModel<TValue>
-        where TSchema : ScalarParamSchema<TValue> where TValue : struct, IComparable<TValue> {
+        where TSchema : ScalarParamSchema<TValue>
+        where TValue : struct, IComparable<TValue> {
 
         protected ScalarParamModel(TSchema schema) : base(schema) { }
 
