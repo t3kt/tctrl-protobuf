@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 
 namespace Tctrl.Core.Model {
-    public class ModelNodeCollection<TNode> : IReadOnlyList<TNode>
+    internal class ModelNodeCollection<TNode> : IModelNodeCollection<TNode>
         where TNode : IModelNode {
 
         private readonly IReadOnlyList<TNode> _nodes;
@@ -22,7 +22,7 @@ namespace Tctrl.Core.Model {
 
         public TNode this[int index] => _nodes[index];
 
-        public TNode GetByKey(string key) => _nodesByKey[key];
+        public TNode this[string key] => _nodesByKey[key];
 
     }
 }

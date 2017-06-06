@@ -1,12 +1,16 @@
 using System.Collections.Generic;
-using Tctrl.Core.Schema;
+using Google.Protobuf;
 
 namespace Tctrl.Core.Model {
-    public abstract class ParentModelNode<S> : ModelNode<S> where S : ISchemaNode {
-        protected ParentModelNode(S schema, IEnumerable<ModuleModel> childModules) : base(schema) {
-            ChildModules = new ModelNodeCollection<ModuleModel>(childModules);
+    public abstract class ParentModelNode<TSchema> : ModelNode<TSchema>, IParentModelNode<TSchema>
+    
+        where TSchema : IMessage {
+
+        protected ParentModelNode(TSchema schema, IEnumerable<IModuleModel> childModules) : base(schema) {
+            ChildModules = ModelImpl.CreateGroupedModelCollection(childModules);
         }
-        
-        public ModelNodeCollection<ModuleModel> ChildModules { get; private set; }
+
+        public IGroupedModelNodeCollection<IModuleModel> ChildModules { get; }
+
     }
 }

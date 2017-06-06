@@ -4,7 +4,7 @@ using Tctrl.Core.Common;
 using Tctrl.Schema;
 
 namespace Tctrl.Core.Model.Params {
-    public interface IParamModel : IModelNode {
+    public interface IParamModel : IGroupableNode {
 
         ParamType ParamType { get; }
 
@@ -15,7 +15,7 @@ namespace Tctrl.Core.Model.Params {
         bool IsVector { get; }
         bool IsUnsupported { get; }
 
-        ModuleModel ParentModule { get; }
+        IModuleModel ParentModule { get; }
 
     }
 

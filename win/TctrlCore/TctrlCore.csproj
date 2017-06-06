@@ -49,6 +49,7 @@
     <Compile Include="Common\ValueRange.cs" />
     <Compile Include="Model\AppModel.cs" />
     <Compile Include="Model\IModelNode.cs" />
+    <Compile Include="Model\ModelImpl.cs" />
     <Compile Include="Model\ModelNode.cs" />
     <Compile Include="Model\ModelNodeCollection.cs" />
     <Compile Include="Model\ModuleModel.cs" />

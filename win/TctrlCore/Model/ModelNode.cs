@@ -1,15 +1,18 @@
-using Tctrl.Core.Schema;
+using Google.Protobuf;
 
 namespace Tctrl.Core.Model {
     public abstract class ModelNode<S> : IModelNode<S>
-        where S : ISchemaNode {
+        where S : IMessage {
 
-        protected ModelNode(S schema) => Schema = schema;
+        protected ModelNode(S schema) {
+            Schema = schema;
+        }
 
         public S Schema { get; }
-        public string Key => Schema.Key;
-        public string Label => Schema.Label;
-        public string Path => Schema.Path;
+
+        public abstract string Key { get; }
+        public abstract string Label { get; }
+        public abstract string Path { get; }
 
     }
 }
