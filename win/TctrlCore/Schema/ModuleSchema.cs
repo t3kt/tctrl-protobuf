@@ -7,7 +7,7 @@ namespace Tctrl.Core.Schema {
     public class ModuleSchema : ParentSchemaNode<ModuleSpec> {
 
         public ModuleSchema(ModuleSpec spec) : base(spec, spec.ChildModule) {
-            Params = spec.Param.Select(ParamSchema.forParam).ToList().AsReadOnly();
+            Params = spec.Param.Select(ParamSchema.ForParam).ToList().AsReadOnly();
         }
         
         public override string Key => Spec.Key;

@@ -12,19 +12,19 @@ namespace Tctrl.Core.Schema.Params {
         public override string Path => Spec.Path;
         public ParamType ParamType => Spec.Type;
 
-        public static ParamSchema forParam(ParamSpec spec) {
+        public static ParamSchema ForParam(ParamSpec spec) {
             throw new NotImplementedException();
         }
 
-        public static BoolParamSchema forBool(ParamSpec spec) {
+        public static BoolParamSchema ForBool(ParamSpec spec) {
             return new BoolParamSchema(spec);
         }
 
-        public static ScalarParamSchema<int> forInt(ParamSpec spec) {
+        public static ScalarParamSchema<int> ForInt(ParamSpec spec) {
             return new BasicSingleParamSchema<int>(spec, Values.AsInt);
         }
 
-        public static ScalarParamSchema<double> forFloat(ParamSpec spec) {
+        public static ScalarParamSchema<double> ForFloat(ParamSpec spec) {
             return new BasicSingleParamSchema<double>(spec, Values.AsFloat);
         }
 
