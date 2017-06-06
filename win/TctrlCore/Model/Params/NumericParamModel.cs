@@ -1,17 +1,27 @@
 using System;
+using Tctrl.Core.Common;
 using Tctrl.Core.Schema.Params;
 
 namespace Tctrl.Core.Model.Params {
-    public class NumericParamModel<TValue> : ScalarParamModel<TValue, ScalarParamSchema<TValue>>
+    internal class NumericParamModel<TValue> : ScalarParamModel<TValue, ScalarParamSchema<TValue>>,
+        INumericParamModel<TValue>
         where TValue : struct, IComparable<TValue> {
+
         internal NumericParamModel(ScalarParamSchema<TValue> schema) : base(schema) { }
 
-        public override bool TrySetNormalizedValue(double value) {
+        public ValueRange<TValue> NormalizedRange { get; protected set; }
+
+        public ValueRange<TValue> LimitRange { get; protected set; }
+
+        public override bool IsValidValue(TValue value) => LimitRange.Contains(value);
+
+        public bool TrySetNormalizedValue(double value) {
             return TrySetValue(NormalizedRange.DenormalizeValue(value));
         }
 
-        public override double? NormalizedValue => Value == null
+        public double? NormalizedValue => Value == null
             ? (double?) null
             : NormalizedRange.NormalizedValue(Value.Value);
+
     }
 }

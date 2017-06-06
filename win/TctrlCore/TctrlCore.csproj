@@ -55,6 +55,7 @@
     <Compile Include="Model\Params\IParamModel.cs" />
     <Compile Include="Model\Params\NumericParamModel.cs" />
     <Compile Include="Model\Params\ParamModel.cs" />
+    <Compile Include="Model\Params\ParamOption.cs" />
     <Compile Include="Model\Params\ScalarParamModel.cs" />
     <Compile Include="Model\Params\SingleParamModel.cs" />
     <Compile Include="Model\ParentModelNode.cs" />

@@ -1,16 +1,13 @@
 using System;
-using Tctrl.Core.Common;
 using Tctrl.Core.Schema.Params;
 
 namespace Tctrl.Core.Model.Params {
-    public abstract class ScalarParamModel<TValue, TSchema> : SingleParamModel<TSchema> where TSchema : ScalarParamSchema<TValue> where TValue : struct, IComparable<TValue> {
+    internal abstract class ScalarParamModel<TValue, TSchema> : SingleParamModel<TSchema>, IScalarParamModel<TValue>
+        where TSchema : ScalarParamSchema<TValue> where TValue : struct, IComparable<TValue> {
+
         protected ScalarParamModel(TSchema schema) : base(schema) { }
 
         public TValue? Value { get; internal set; }
-        
-        public ValueRange<TValue> NormalizedRange { get; protected set; }
-        
-        public ValueRange<TValue> LimitRange { get; protected set; }
 
         public bool TrySetValue(TValue value) {
             if (!CanSetValue || !IsValidValue(value)) {
@@ -20,12 +17,18 @@ namespace Tctrl.Core.Model.Params {
             return true;
         }
 
-        public bool IsValidValue(TValue value) => LimitRange.Contains(value);
+        public abstract bool IsValidValue(TValue value);
 
         public TValue? DefaultValue => Schema.DefaultValue;
         public bool CanSetValue { get; internal set; } = true;
 
-        public abstract bool TrySetNormalizedValue(double value);
-        public abstract double? NormalizedValue { get; }
+    }
+
+    internal sealed class BoolParamModel : ScalarParamModel<bool, BoolParamSchema> {
+
+        internal BoolParamModel(BoolParamSchema schema) : base(schema) { }
+
+        public override bool IsValidValue(bool value) => true;
+
     }
 }
