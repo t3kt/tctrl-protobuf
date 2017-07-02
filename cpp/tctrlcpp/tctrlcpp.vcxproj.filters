@@ -21,6 +21,15 @@
     <ClCompile Include="..\gensrc\tctrl-schema.pb.cc">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="src\schema\ModuleSchema.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\schema\ParamSchema.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\schema\SchemaUtil.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\gensrc\tctrl-schema.pb.h">
@@ -30,6 +39,12 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="src\schema\ModuleSchema.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\schema\SchemaUtil.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\schema\ParamSchema.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

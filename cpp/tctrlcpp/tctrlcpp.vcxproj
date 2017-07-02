@@ -79,6 +79,7 @@
       <Optimization>Disabled</Optimization>
       <PreprocessorDefinitions>WIN32;_DEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <AdditionalIncludeDirectories>C:\Users\tekt\creations\etc\protobuf-3.3.0\src;C:\Users\tekt\creations\tctrl\tctrl-protobuf\cpp\gensrc;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <LanguageStandard>stdcpplatest</LanguageStandard>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
@@ -139,11 +140,16 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\gensrc\tctrl-schema.pb.cc" />
+    <ClCompile Include="src\schema\ModuleSchema.cpp" />
+    <ClCompile Include="src\schema\ParamSchema.cpp" />
+    <ClCompile Include="src\schema\SchemaUtil.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\gensrc\tctrl-schema.pb.h" />
     <ClInclude Include="src\schema\ModuleSchema.h" />
+    <ClInclude Include="src\schema\ParamSchema.h" />
     <ClInclude Include="src\schema\SchemaNode.h" />
+    <ClInclude Include="src\schema\SchemaUtil.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
