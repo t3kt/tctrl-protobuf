@@ -2,3 +2,5 @@
 *.iml
 out/
 *.pyc
+cpp/tctrlcpp/Debug/
+cpp/tctrlcpp/.vs/
