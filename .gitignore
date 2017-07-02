@@ -4,3 +4,4 @@ out/
 *.pyc
 cpp/tctrlcpp/Debug/
 cpp/tctrlcpp/.vs/
+build-qtctrl-Desktop_Qt_5_9_1_MSVC2017_64bit-Debug/
