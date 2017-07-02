@@ -54,71 +54,6 @@ private:
 	bool _isDefault;
 };
 
-class SchemaGroupInfoCollection {
-public:
-	using GroupList = std::vector<SchemaGroupInfo>;
-	using GroupMap = std::unordered_map<std::string, SchemaGroupInfo>;
-
-	SchemaGroupInfoCollection(GroupList groupList, GroupMap groupMap)
-		: _groupList(groupList)
-		, _groupMap(groupMap) {}
-
-	const GroupList& groups() const { return _groupList; }
-
-	const GroupMap& groupsByKey() const { return _groupMap; }
-
-	bool containsGroup(const std::string& key) { return _groupMap.find(key) != _groupMap.end();  }
-
-	const SchemaGroupInfo& getGroup(const std::string& key) { return _groupMap[key]; }
-private:
-	GroupList _groupList;
-	GroupMap _groupMap;
-public:
-	class Builder {
-	public:
-		void addDeclaredGroups(const ::google::protobuf::RepeatedPtrField< ::tctrl::schema::GroupInfo>& groups) {
-			for (const auto& groupInfo : groups) {
-				_declaredGroups.push_back(SchemaGroupInfo(groupInfo));
-			}
-		}
-		void addReferencedKey(const std::string& key) {
-			if (!key.empty()) {
-				_referencedKeys.insert(key);
-			}
-		}
-
-		template<typename S>
-		void addReferencesFromNodes(const ::google::protobuf::RepeatedPtrField<S>& specs) {
-			for (const auto& spec : specs) {
-				addReferencedKey(spec.group());
-			}
-		}
-		
-		SchemaGroupInfoCollection build() {
-			GroupList groupList;
-			GroupMap groupMap;
-			for (const auto& group : _declaredGroups) {
-				if (groupMap.find(group.key()) != groupMap.end()) {
-					throw std::exception(std::string("Duplicate group: " + group.key()).c_str());
-				}
-				groupMap.insert(std::make_pair(group.key(), group));
-				groupList.push_back(group);
-			}
-			for (const auto& key : _referencedKeys) {
-				if (groupMap.find(key) == groupMap.end()) {
-					SchemaGroupInfo group(key);
-					groupMap.insert(std::make_pair(key, group));
-					groupList.push_back(group);
-				}
-			}
-			return SchemaGroupInfoCollection(groupList, groupMap);
-		}
-	private:
-		std::unordered_set<std::string> _referencedKeys;
-		GroupList _declaredGroups;
-	};
-};
-
 template<typename N>
 class SchemaNodeGroup : public SchemaGroupInfo {
 public:
@@ -152,9 +87,6 @@ using SchemaNodeGroupMap = std::unordered_map<std::string, SchemaNodeGroupPtr<N>
 template<typename N>
 class SchemaNodeGroupCollection {
 public:
-	using GroupInfoList = SchemaGroupInfoCollection::GroupList;
-	using GroupInfoMap = SchemaGroupInfoCollection::GroupMap;
-
 	using NodeGroup = SchemaNodeGroup<N>;
 	using NodeGroupPtr = SchemaNodeGroupPtr<N>;
 	using NodeGroupList = SchemaNodeGroupList<N>;
@@ -235,10 +167,12 @@ using ModuleSchemaPtr = std::shared_ptr<ModuleSchema>;
 using ModuleSchemaList = std::vector<ModuleSchemaPtr>;
 using ModuleGroupCollection = SchemaNodeGroupCollection<ModuleSchema>;
 
+class OptionListProvider;
+
 template<typename S>
 class ParentSchemaNode : public TypedSchemaNode<S> {
 public:
-	ParentSchemaNode(const S& spec) : TypedSchemaNode(spec) {
+	ParentSchemaNode(const Spec& spec, const OptionListProvider* optionListProvider = nullptr) : TypedSchemaNode(spec) {
 		_key = spec.key();
 		_label = spec.label();
 		_path = spec.path();
@@ -248,15 +182,15 @@ public:
 		childGroupBuilder.addDeclaredGroups(spec.childgroup());
 
 		for (const auto& childSpec : spec.childmodule()) {
-			auto childModule = std::make_shared<ModuleSchema>(childSpec);
+			auto childModule = std::make_shared<ModuleSchema>(childSpec, optionListProvider);
 			_childModules.push_back(childModule);
 			childGroupBuilder.addNode(childModule);
 		}
 		_childModuleGroups = childGroupBuilder.build();
 	}
 
-	ModuleSchemaList& childModules() { return _childModules; }
 	const ModuleSchemaList& childModules() const { return _childModules; }
+	const ModuleGroupCollection& childModuleGroups() const { return _childModuleGroups; }
 
 protected:
 	ModuleSchemaList _childModules;

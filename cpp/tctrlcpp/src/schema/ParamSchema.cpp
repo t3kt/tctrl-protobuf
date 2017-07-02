@@ -1,6 +1,9 @@
 #include "ParamSchema.h"
 
-ParamSchemaPtr ParamSchema::createParamSchema(const Spec& spec, const OptionListProvider* optionListProvider) {
+ParamSchemaPtr ParamSchema::createParamSchema(
+	const Spec& spec,
+	const OptionListProvider* optionListProvider) {
+
 	switch (spec.type()) {
 	case ParamType::BOOL:
 		return std::make_shared<BoolParamSchema>(spec);

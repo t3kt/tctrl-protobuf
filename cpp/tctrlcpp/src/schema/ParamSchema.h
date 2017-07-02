@@ -13,7 +13,9 @@ class OptionListProvider;
 
 class ParamSchema : public TypedSchemaNode<tctrl::schema::ParamSpec> {
 public:
-	std::shared_ptr<ParamSchema> createParamSchema(const Spec& spec, const OptionListProvider* optionListProvider = nullptr);
+	static std::shared_ptr<ParamSchema> createParamSchema(
+		const Spec& spec,
+		const OptionListProvider* optionListProvider = nullptr);
 
 	ParamSchema(const Spec& spec) : TypedSchemaNode(spec) {
 		_key = spec.key();
@@ -39,6 +41,7 @@ protected:
 };
 
 using ParamSchemaPtr = std::shared_ptr<ParamSchema>;
+using ParamSchemaList = std::vector<ParamSchemaPtr>;
 
 template<typename T>
 class ScalarParamSchema : public ParamSchema {
