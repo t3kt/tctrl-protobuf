@@ -30,6 +30,9 @@
     <ClCompile Include="src\schema\SchemaUtil.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="src\schema\SchemaNode.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\gensrc\tctrl-schema.pb.h">

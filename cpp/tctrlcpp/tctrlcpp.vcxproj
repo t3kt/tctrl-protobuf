@@ -142,6 +142,7 @@
     <ClCompile Include="..\gensrc\tctrl-schema.pb.cc" />
     <ClCompile Include="src\schema\ModuleSchema.cpp" />
     <ClCompile Include="src\schema\ParamSchema.cpp" />
+    <ClCompile Include="src\schema\SchemaNode.cpp" />
     <ClCompile Include="src\schema\SchemaUtil.cpp" />
   </ItemGroup>
   <ItemGroup>

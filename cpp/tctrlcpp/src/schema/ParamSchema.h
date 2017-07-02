@@ -10,7 +10,11 @@ using ParamType = tctrl::schema::ParamType;
 
 class ParamSchema : public TypedSchemaNode<tctrl::schema::ParamSpec> {
 public:
-	ParamSchema(const Spec& spec) : TypedSchemaNode(spec) {}
+	ParamSchema(const Spec& spec) : TypedSchemaNode(spec) {
+		_key = spec.key();
+		_label = spec.label();
+		_path = spec.path();
+	}
 
 	const ParamType& type() const { return spec().type(); }
 	const std::string& otherType() const { return spec().othertype(); }
