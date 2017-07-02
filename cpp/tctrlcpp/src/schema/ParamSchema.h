@@ -3,16 +3,24 @@
 #include "SchemaUtil.h"
 #include <iterator>
 #include <tctrl-schema.pb.h>
+#include <memory>
 #include <optional>
 #include <vector>
 
-using ParamType = tctrl::schema::ParamType;
+using tctrl::schema::ParamType;
+
+class OptionListProvider;
 
 class ParamSchema : public TypedSchemaNode<tctrl::schema::ParamSpec> {
 public:
+	std::shared_ptr<ParamSchema> createParamSchema(const Spec& spec, const OptionListProvider* optionListProvider = nullptr);
+
 	ParamSchema(const Spec& spec) : TypedSchemaNode(spec) {
 		_key = spec.key();
 		_label = spec.label();
+		if (_label.empty()) {
+			_label = _key;
+		}
 		_path = spec.path();
 	}
 
@@ -29,6 +37,8 @@ protected:
 
 	bool _isSingle = true;
 };
+
+using ParamSchemaPtr = std::shared_ptr<ParamSchema>;
 
 template<typename T>
 class ScalarParamSchema : public ParamSchema {
@@ -100,7 +110,7 @@ public:
 
 class MenuParamSchema : public ScalarParamSchema<std::string> {
 public:
-	MenuParamSchema(const Spec& spec, OptionListProvider* optionListProvider = nullptr)
+	MenuParamSchema(const Spec& spec, const OptionListProvider* optionListProvider = nullptr)
 		: ScalarParamSchema(spec)
 		, _valueIndex(spec.has_valueindex() ? std::optional<int>(spec.valueindex().value()) : std::optional<int>()) {
 		if (spec.option_size() > 0) {
@@ -132,7 +142,7 @@ public:
 
 	NumericParamPartSchema(const Spec& spec, const ParentSchema& parentSchema)
 		: TypedSchemaNode(spec)
-		, _parentSpec(parentSpec)
+		, _parentSchema(parentSchema)
 		, _value(spec.has_value() ? convertOptionalValue<T>(spec.value()) : std::optional<T>())
 		, _defaultValue(spec.has_defaultval() ? convertOptionalValue<T>(spec.defaultval()) : std::optional<T>())
 		, _minLimit(spec.has_minlimit() ? convertOptionalValue<T>(spec.minlimit()) : std::optional<T>())
