@@ -25,16 +25,18 @@ protected:
 template<typename S>
 class TypedSchemaNode : public SchemaNode {
 public:
-	TypedSchemaNode(const S& node) : _node(node) {}
+	using Spec = S;
 
-	const S& spec() const { return _node; }
+	TypedSchemaNode(const Spec& node) : _node(node) {}
+
+	const Spec& spec() const { return _node; }
 
 	const std::string& key() const override { return _node.key(); }
 	const std::string& label() const override { return _node.label(); }
 	const std::string& path() const override { return _node.path(); }
 
 private:
-	const S& _node;
+	const Spec& _node;
 };
 
 class ModuleSchema;

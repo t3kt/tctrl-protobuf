@@ -10,7 +10,6 @@ using ParamType = tctrl::schema::ParamType;
 
 class ParamSchema : public TypedSchemaNode<tctrl::schema::ParamSpec> {
 public:
-	using Spec = tctrl::schema::ParamSpec;
 	ParamSchema(const Spec& spec) : TypedSchemaNode(spec) {}
 
 	const ParamType& type() const { return spec().type(); }
@@ -115,3 +114,77 @@ private:
 };
 
 using StringParamSchema = MenuParamSchema;
+
+template<typename T>
+class VectorParamSchema;
+
+template<typename T>
+class NumericParamPartSchema : public TypedSchemaNode<tctrl::schema::ParamPartSpec> {
+public:
+	using ParentSpec = tctrl::schema::ParamSpec;
+	using ParentSchema = VectorParamSchema<T>;
+	using ValT = T;
+	using OptionalVal = std::optional<ValT>;
+
+	NumericParamPartSchema(const Spec& spec, const ParentSchema& parentSchema)
+		: TypedSchemaNode(spec)
+		, _parentSpec(parentSpec)
+		, _value(spec.has_value() ? convertOptionalValue<T>(spec.value()) : std::optional<T>())
+		, _defaultValue(spec.has_defaultval() ? convertOptionalValue<T>(spec.defaultval()) : std::optional<T>())
+		, _minLimit(spec.has_minlimit() ? convertOptionalValue<T>(spec.minlimit()) : std::optional<T>())
+		, _maxLimit(spec.has_maxlimit() ? convertOptionalValue<T>(spec.maxlimit()) : std::optional<T>())
+		, _minNorm(spec.has_minnorm() ? convertOptionalValue<T>(spec.minnorm()) : std::optional<T>())
+		, _maxNorm(spec.has_maxnorm() ? convertOptionalValue<T>(spec.maxnorm()) : std::optional<T>()) {}
+
+	const ParentSchema& parentSchema() const { return _parentSchema; }
+	const ParentSpec& parentSpec() const { return _parentSchema.spec(); }
+
+	const ParamType& type() const { return _parentSchema.type(); }
+	const std::string& group() const { return _parentSchema.group(); }
+
+	const OptionalVal& value() const { return _value; }
+	const OptionalVal& defaultValue() const { return _defaultValue; }
+
+	const OptionalVal& minLimit() const { return _minLimit; }
+	const OptionalVal& maxLimit() const { return _maxLimit; }
+	const OptionalVal& minNorm() const { return _minNorm; }
+	const OptionalVal& maxNorm() const { return _maxNorm; }
+private:
+	const ParentSchema& _parentSchema;
+
+	OptionalVal _value;
+	OptionalVal _defaultValue;
+	OptionalVal _minLimit;
+	OptionalVal _maxLimit;
+	OptionalVal _minNorm;
+	OptionalVal _maxNorm;
+};
+
+template<typename T>
+using NumericParamPartSchemaPtr = std::shared_ptr<NumericParamPartSchema<T>>;
+template<typename T>
+using NumericParamPartSchemaList = std::vector<NumericParamPartSchemaPtr<T>>;
+
+template<typename T>
+class VectorParamSchema : public ParamSchema {
+public:
+	using ValT = T;
+	using PartSchema = NumericParamPartSchema<T>;
+	using PartSchemaPtr = NumericParamPartSchemaPtr<T>;
+	using PartSchemaList = NumericParamPartSchemaList<T>;
+
+	VectorParamSchema(const Spec& spec)
+		: ParamSchema(spec) {
+		for (const auto& partSpec : spec.part()) {
+			_parts.push_back(std::make_unique<PartSchema>(partSpec, *this));
+		}
+	}
+
+	const PartSchemaList& parts() const { return _parts; }
+
+private:
+	PartSchemaList _parts;
+};
+
+using IntVectorParamSchema = VectorParamSchema<int>;
+using FloatVectorParamSchema = VectorParamSchema<double>;
