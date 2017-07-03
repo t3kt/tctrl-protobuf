@@ -1,12 +1,9 @@
-#ifndef QTCTRLCORE_H
-#define QTCTRLCORE_H
+#pragma once
 
+#include "qtctrlcore_global.h"
 
-class QTctrlCore
+class QTCTRLCORE_EXPORT qtctrlcore
 {
-
 public:
-    QTctrlCore();
+    qtctrlcore();
 };
-
-#endif // QTCTRLCORE_H

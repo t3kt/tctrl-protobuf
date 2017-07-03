@@ -11,3 +11,4 @@ build-qtctrl-Desktop_Qt_5_9_1_MSVC2017_64bit-Debug/
 cpp/tctrlcpp/x64/
 *.VC.db
 cpp/tctrlcpp/tctrlcpp.VC.VC.opendb
+qtctrl/qtctrlcore/x64/

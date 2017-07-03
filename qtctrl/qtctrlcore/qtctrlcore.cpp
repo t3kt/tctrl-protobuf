@@ -1,6 +1,5 @@
 #include "qtctrlcore.h"
 
-
-QTctrlCore::QTctrlCore()
+qtctrlcore::qtctrlcore()
 {
 }
