@@ -45,8 +45,10 @@ unix {
     INSTALLS += target
 }
 
-INCLUDEPATH += ../../cpp/tctrlcpp/src/schema
-INCLUDEPATH += ../../cpp/gensrc
+INCLUDEPATH += \
+    ../../cpp/tctrlcpp/src/schema \
+    ../../cpp/gensrc \
+    ../../cpp/lib
 
 win32:CONFIG(release, debug|release): LIBS += -L$$PWD/../../../../etc/protobuf-3.3.0/cmake/build/release/ -llibprotobufd
 else:win32:CONFIG(debug, debug|release): LIBS += -L$$PWD/../../../../etc/protobuf-3.3.0/cmake/build/debug/ -llibprotobufd
