@@ -60,10 +60,6 @@ public:
 	using NodePtr = std::shared_ptr<N>;
 	using NodeList = std::vector<NodePtr>;
 
-	SchemaNodeGroup(const SchemaGroupInfo& group)
-		: SchemaGroupInfo(group) {}
-
-
 	SchemaNodeGroup(std::string key) : SchemaGroupInfo(key) {}
 	SchemaNodeGroup(const tctrl::schema::GroupInfo& spec) : SchemaGroupInfo(spec) {}
 	SchemaNodeGroup() : SchemaGroupInfo() {}
@@ -93,7 +89,6 @@ public:
 	using NodeGroupMap = SchemaNodeGroupMap<N>;
 
 	using NodePtr = typename NodeGroup::NodePtr;
-	using NodeList = typename NodeGroup::NodeList;
 
 	SchemaNodeGroupCollection() {}
 
@@ -165,6 +160,7 @@ private:
 class ModuleSchema;
 using ModuleSchemaPtr = std::shared_ptr<ModuleSchema>;
 using ModuleSchemaList = std::vector<ModuleSchemaPtr>;
+using ModuleSchemaMap = std::unordered_map<std::string, ModuleSchemaPtr>;
 using ModuleGroupCollection = SchemaNodeGroupCollection<ModuleSchema>;
 
 class OptionListProvider;
@@ -177,7 +173,13 @@ public:
 		_label = spec.label();
 		_path = spec.path();
 		_tags = StringSet{ spec.tag().begin(), spec.tag().end() };
+	}
 
+	const ModuleSchemaList& childModules() const { return _childModules; }
+	const ModuleGroupCollection& childModuleGroups() const { return _childModuleGroups; }
+
+protected:
+	void addChildModules(const Spec& spec, const OptionListProvider* optionListProvider = nullptr) {
 		ModuleGroupCollection::Builder childGroupBuilder;
 		childGroupBuilder.addDeclaredGroups(spec.childgroup());
 
@@ -189,10 +191,6 @@ public:
 		_childModuleGroups = childGroupBuilder.build();
 	}
 
-	const ModuleSchemaList& childModules() const { return _childModules; }
-	const ModuleGroupCollection& childModuleGroups() const { return _childModuleGroups; }
-
-protected:
 	ModuleSchemaList _childModules;
 	ModuleGroupCollection _childModuleGroups;
 };

@@ -2,6 +2,9 @@
 
 ModuleSchema::ModuleSchema(const Spec& spec, const OptionListProvider* optionListProvider)
 	: ParentSchemaNode(spec, optionListProvider) {
+
+	addChildModules(spec, optionListProvider);
+
 	ParamGroupCollection::Builder paramGroupBuilder;
 	paramGroupBuilder.addDeclaredGroups(spec.paramgroup());
 

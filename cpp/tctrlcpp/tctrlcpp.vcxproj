@@ -140,6 +140,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\gensrc\tctrl-schema.pb.cc" />
+    <ClCompile Include="src\schema\AppSchema.cpp" />
     <ClCompile Include="src\schema\ModuleSchema.cpp" />
     <ClCompile Include="src\schema\ParamSchema.cpp" />
     <ClCompile Include="src\schema\SchemaNode.cpp" />
@@ -147,6 +148,8 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\gensrc\tctrl-schema.pb.h" />
+    <ClInclude Include="src\schema\AppSchema.h" />
+    <ClInclude Include="src\schema\Common.h" />
     <ClInclude Include="src\schema\ModuleSchema.h" />
     <ClInclude Include="src\schema\ParamSchema.h" />
     <ClInclude Include="src\schema\SchemaNode.h" />

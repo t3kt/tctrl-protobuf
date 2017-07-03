@@ -103,12 +103,11 @@ using IntParamSchema = NumericParamSchema<int>;
 using FloatParamSchema = NumericParamSchema<double>;
 
 using tctrl::schema::ParamOption;
-using ParamOptionList = std::vector<ParamOption>;
+using ParamOptionList = tctrl::schema::OptionList;
 
 class OptionListProvider {
 public:
-	virtual bool hasOptionList(const std::string& key) const = 0;
-	virtual const ParamOptionList& getOptionList(const std::string& key) const = 0;
+	virtual const ParamOptionList* getOptionList(const std::string& key) const = 0;
 };
 
 class MenuParamSchema : public ScalarParamSchema<std::string> {
@@ -117,10 +116,15 @@ public:
 		: ScalarParamSchema(spec)
 		, _valueIndex(spec.has_valueindex() ? std::optional<int>(spec.valueindex().value()) : std::optional<int>()) {
 		if (spec.option_size() > 0) {
-			_options = { std::begin(spec.option()), std::end(spec.option()) };
+			for (const auto& option : spec.option()) {
+				*(_options.add_option()) = option;
+			}
 		}
-		else if (optionListProvider != nullptr && !spec.optionlistkey().empty() && optionListProvider->hasOptionList(spec.optionlistkey())) {
-			_options = optionListProvider->getOptionList(spec.optionlistkey());
+		else if (optionListProvider != nullptr && !spec.optionlistkey().empty()) {
+			const auto options = optionListProvider->getOptionList(spec.optionlistkey());
+			if (options != nullptr) {
+				_options = *options;
+			}
 		}
 	}
 
