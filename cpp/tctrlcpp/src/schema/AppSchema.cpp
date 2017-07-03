@@ -1,6 +1,8 @@
 #include "AppSchema.h"
 #include "Common.h"
 #include "SchemaUtil.h"
+#include <sstream>
+#include <iomanip>
 
 AppSchemaPtr AppSchema::createFromJson(const std::string& jsonText) {
 	auto appSpec = readMessageFromJson<Spec>(jsonText);
@@ -38,4 +40,13 @@ const ParamOptionList* AppSchema::getOptionList(const std::string& key) const {
 
 const ConnectionInfo* AppSchema::getConnectionInfo(const std::string& key) const {
 	return tryGetFromMap(_connections, key);
+}
+
+std::string AppSchema::debugText() const {
+  std::ostringstream out;
+  out << "AppSchema{";
+  out << "key: " << key();
+  out << "}";
+
+  return out.str();
 }

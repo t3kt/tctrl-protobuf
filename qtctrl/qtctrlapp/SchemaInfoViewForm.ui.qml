@@ -8,9 +8,11 @@ Item {
 
     Column {
         id: column
+    }
 
-        TreeView {
-            id: schemaTree
-        }
+    TextEdit {
+        id: textEdit
+        text: qsTr("Text Edit")
+        font.pixelSize: 12
     }
 }

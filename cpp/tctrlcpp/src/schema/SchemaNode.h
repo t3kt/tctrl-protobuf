@@ -8,6 +8,7 @@
 #include <vector>
 #include <tctrl-schema.pb.h>
 #include <exception>
+#include <iostream>
 
 using StringSet = std::unordered_set<std::string>;
 
@@ -21,6 +22,8 @@ public:
 	bool hasTag(const std::string& tag) const {
 		return _tags.find(tag) != _tags.end();
 	}
+
+  virtual std::string debugText() const { return "SchemaNode"; }
 
 protected:
 	std::string _key;

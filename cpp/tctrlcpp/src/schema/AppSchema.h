@@ -24,6 +24,8 @@ public:
 	const ModuleSchemaMap& allModulesByPath() const { return _allModulesByPath; }
 
 	ModuleSchemaPtr getModuleByPath(const std::string& path) { return _allModulesByPath[path]; }
+
+  std::string debugText() const override;
 private:
 	void registerModules(const ModuleSchemaList& modules);
 	void registerModule(ModuleSchemaPtr mod);
