@@ -29,7 +29,8 @@ SOURCES += \
     ../../cpp/tctrlcpp/src/schema/ParamSchema.cpp \
     ../../cpp/tctrlcpp/src/schema/SchemaNode.cpp \
     ../../cpp/tctrlcpp/src/schema/SchemaUtil.cpp \
-    ../../cpp/gensrc/tctrl-schema.pb.cc
+    ../../cpp/gensrc/tctrl-schema.pb.cc \
+    schemaitemmodel.cpp
 
 HEADERS += \
         qtctrlcore.h \
@@ -39,7 +40,8 @@ HEADERS += \
     ../../cpp/tctrlcpp/src/schema/ParamSchema.h \
     ../../cpp/tctrlcpp/src/schema/SchemaNode.h \
     ../../cpp/tctrlcpp/src/schema/SchemaUtil.h \
-    ../../cpp/gensrc/tctrl-schema.pb.h
+    ../../cpp/gensrc/tctrl-schema.pb.h \
+    schemaitemmodel.h
 unix {
     target.path = /usr/lib
     INSTALLS += target
