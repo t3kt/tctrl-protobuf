@@ -1,10 +1,10 @@
 #pragma once
+#include "Common.h"
 #include "SchemaNode.h"
 #include "SchemaUtil.h"
 #include <iterator>
 #include <tctrl-schema.pb.h>
 #include <memory>
-#include <optional>
 #include <vector>
 
 using tctrl::schema::ParamType;

@@ -1,10 +1,10 @@
 #pragma once
 
+#include "Common.h"
 #include <google/protobuf/repeated_field.h>
 #include <google/protobuf/struct.pb.h>
 #include <google/protobuf/util/json_util.h>
 #include <exception>
-#include <optional>
 #include <string>
 #include <unordered_map>
 
