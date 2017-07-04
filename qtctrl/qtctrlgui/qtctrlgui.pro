@@ -25,13 +25,16 @@ DEFINES += QT_DEPRECATED_WARNINGS
 
 SOURCES += \
         main.cpp \
-        tctrlmainwindow.cpp
+        tctrlmainwindow.cpp \
+    schemainfoform.cpp
 
 HEADERS += \
-        tctrlmainwindow.h
+        tctrlmainwindow.h \
+    schemainfoform.h
 
 FORMS += \
-        tctrlmainwindow.ui
+        tctrlmainwindow.ui \
+    schemainfoform.ui
 
 
 INCLUDEPATH += \
