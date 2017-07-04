@@ -41,5 +41,5 @@ void TctrlMainWindow::on_actionLoad_Schema_triggered()
         jsonText += input.readLine() + "\n";
     }
     _appSchema = AppSchema::createFromJson(jsonText.toStdString());
-    ui->schemaJsonTextBrowser->setText(jsonText);
+//    ui->schemaJsonTextBrowser->setText(jsonText);
 }

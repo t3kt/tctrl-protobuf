@@ -17,12 +17,12 @@ void SchemaInfoForm::attachSchema(AppSchemaPtr appSchema) {
     _appSchema = appSchema;
     auto info = ui->infoTable;
     if (_appSchema) {
-        info->setItem(0, 0, new QTableWidgetItem("-"));
-        info->setItem(1, 0, new QTableWidgetItem("-"));
-        info->setItem(2, 0, new QTableWidgetItem("-"));
+        info->setItem(0, 0, new QTableWidgetItem(tr("-")));
+        info->setItem(1, 0, new QTableWidgetItem(tr("-")));
+        info->setItem(2, 0, new QTableWidgetItem(tr("-")));
     } else {
-        info->setItem(0, 1, new QTableWidgetItem(appSchema->key()));
-        info->setItem(0, 2, new QTableWidgetItem(appSchema->label()));
-        info->setItem(0, 3, new QTableWidgetItem(appSchema->description()));
+        info->setItem(0, 1, new QTableWidgetItem(QString::fromStdString(appSchema->key())));
+        info->setItem(0, 2, new QTableWidgetItem(QString::fromStdString(appSchema->label())));
+        info->setItem(0, 3, new QTableWidgetItem(QString::fromStdString(appSchema->description())));
     }
 }

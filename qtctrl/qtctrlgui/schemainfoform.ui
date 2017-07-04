@@ -29,7 +29,7 @@
       <number>9</number>
      </property>
      <property name="columnCount">
-      <number>4</number>
+      <number>2</number>
      </property>
      <attribute name="horizontalHeaderVisible">
       <bool>false</bool>
@@ -71,8 +71,6 @@
        <string>Value</string>
       </property>
      </column>
-     <column/>
-     <column/>
      <item row="0" column="0">
       <property name="text">
        <string>App Key</string>
